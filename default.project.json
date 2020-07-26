@@ -1,0 +1,26 @@
+{
+    "name": "Roblox-The-Witching-Hour-Remastered",
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "$path": "./src/ReplicatedStorage",
+            "ExternalUtil": {
+                "$className": "Folder",
+                "NexusInstance": {
+                    "$path": "./module/Nexus-Instance/src"
+                },
+                "NexusProject": {
+                    "$path": "./module/Nexus-Project/src",
+                    "NexusInstance": {
+                        "$path": "./module/Nexus-Project/module/Nexus-Instance/src"
+                    }
+                }
+            }
+        },
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$path": "./src/ServerScriptService"
+        }
+    }
+}
