@@ -2,6 +2,17 @@
     "name": "Roblox-The-Witching-Hour-Remastered",
     "tree": {
         "$className": "DataModel",
+        "Lighting": {
+            "$className": "Lighting",
+            "$properties": {
+                "Technology": {
+                    "Type": "Enum",
+                    "Value": 4
+                },
+                "ClockTime": 0
+            },
+            "$path": "./src/Lighting"
+        },
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
             "$path": "./src/ReplicatedStorage",
