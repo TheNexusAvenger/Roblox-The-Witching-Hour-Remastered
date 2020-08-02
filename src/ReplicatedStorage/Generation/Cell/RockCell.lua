@@ -32,6 +32,7 @@ end
 Destroys the cell.
 --]]
 function RockCell:Destroy()
+    self.super:Destroy()
     Workspace.Terrain:FillBlock(CFrame.new(self.X * 100,28,self.Y * 100),Vector3.new(100,84,100),Enum.Material.Air)
 end
 

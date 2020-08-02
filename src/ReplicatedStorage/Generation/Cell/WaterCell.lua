@@ -40,6 +40,7 @@ end
 Destroys the cell.
 --]]
 function WaterCell:Destroy()
+    self.super:Destroy()
     self.Blocker:Destroy()
     Workspace.Terrain:FillBlock(CFrame.new(self.X * 100,-8,self.Y * 100),Vector3.new(100,12,100),Enum.Material.Air)
 end

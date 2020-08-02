@@ -29,6 +29,7 @@ end
 Destroys the cell.
 --]]
 function GrassCell:Destroy()
+    self.super:Destroy()
     --TODO: Destroy trees
 end
 

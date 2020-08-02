@@ -113,6 +113,7 @@ end
 Destroys the cell.
 --]]
 function RoadCell:Destroy()
+    self.super:Destroy()
     self.RoadModel:Destroy()
 end
 
