@@ -49,8 +49,8 @@ function HouseCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
 
     --Assemble the house model.
     local HouseModel = Instance.new("Model")
-    HouseModel.Name = "House_"..tostring(X).."_"..tostring(Y)
-    HouseModel.Parent = Workspace
+    HouseModel.Name = "House"
+    HouseModel.Parent = self.CellModel
     self.HouseModel = HouseModel
 
     local BaseLevel = self:AddModel(Components["BaseLevels"],HouseCenter)
@@ -128,8 +128,6 @@ function HouseCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
             end
         end
     end
-
-    --TODO: Generate trees
     
     --TODO: Set up the state
     --TODO: Set up clicking

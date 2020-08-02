@@ -35,10 +35,10 @@ function BaseGrassCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCe
     Workspace.Terrain:FillBlock(CFrame.new(X * 100,-8,Y * 100),Vector3.new(100,12,100),Enum.Material.Grass)
 
     --Create the leaves.
-    local LeavesModel = Instance.new("Model")
-    LeavesModel.Name = "Leaves_"..tostring(X).."_"..tostring(Y)
-    LeavesModel.Parent = Workspace
-    self.LeavesModel = LeavesModel
+    local CellModel = Instance.new("Model")
+    CellModel.Name = "Cell_"..tostring(X).."_"..tostring(Y)
+    CellModel.Parent = Workspace
+    self.CellModel = CellModel
     for _ = 1,self.RandomNumberGenerator:NextInteger(8,12) do
         local Size = self.RandomNumberGenerator:NextNumber(8,12)
         local LeavesPart = Instance.new("Part")
@@ -49,7 +49,7 @@ function BaseGrassCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCe
         LeavesPart.CanCollide = false
         LeavesPart.TopSurface = "Smooth"
         LeavesPart.BottomSurface = "Smooth"
-        LeavesPart.Parent = LeavesModel
+        LeavesPart.Parent = CellModel
         
         local LeavesDecal = Instance.new("Decal")
         LeavesDecal.Texture = "rbxassetid://134660590"
@@ -65,8 +65,8 @@ function BaseGrassCell:Destroy()
     --Clear the grass.
     Workspace.Terrain:FillBlock(CFrame.new(self.X * 100,-8,self.Y * 100),Vector3.new(100,12,100),Enum.Material.Air)
 
-    --Clear the leaves.
-    self.LeavesModel:Destroy()
+    --Clear the cell.
+    self.CellModel:Destroy()
 end
 
 
