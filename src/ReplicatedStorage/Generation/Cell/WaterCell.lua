@@ -26,8 +26,8 @@ function WaterCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
     local Blocker = Instance.new("Part")
     Blocker.Transparency = 1
     Blocker.Anchored = true
-    Blocker.Size = Vector3.new(100,200,100)
-    Blocker.CFrame = CFrame.new(X * 100,90,Y * 100)
+    Blocker.Size = Vector3.new(100,100,100)
+    Blocker.CFrame = CFrame.new(X * 100,45,Y * 100)
     Blocker.Parent = Workspace
     self.Blocker = Blocker
     
