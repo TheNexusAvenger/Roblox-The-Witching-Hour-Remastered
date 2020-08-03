@@ -70,11 +70,4 @@ end
 
 
 
---Set up players joining.
-Players.PlayerAdded:Connect(function(Player)
-    CharacterService:SpawnCharacter(Player)
-end)
-
-
-
 return CharacterService
