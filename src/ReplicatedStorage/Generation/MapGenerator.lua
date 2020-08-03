@@ -4,7 +4,9 @@ TheNexusAvenger
 Generates the map from the map data.
 --]]
 
-local CELLS_PER_PASS = 10
+local NORMAL_CELLS_PER_PASS = 3
+local ACCELERATED_CELL_CREATION_THRESHOLD = 50
+local ACCELERATED_CELLS_PER_PASS_MULTIPLIER = 0.25
 local MAP_RADIUS = 10
 local CLEAR_MAP_RADIUS = 13
 local ID_TO_CELL_TYPE = {
@@ -50,6 +52,7 @@ function MapGenerator:__new()
     self.LastX = 0
     self.LastY = 0
     self.QueuedAction = {}
+    self.TotalQueuedCreateActions = 0
     self.Cells = {}
 end
 
@@ -99,6 +102,12 @@ end
 Performs a pass on the queued cells.
 --]]
 function MapGenerator:UpdateQueuedCells()
+    --Determine how many cells to create.
+    local MaxCellsToCreate = NORMAL_CELLS_PER_PASS
+    if self.TotalQueuedCreateActions >= ACCELERATED_CELL_CREATION_THRESHOLD then
+        MaxCellsToCreate = math.ceil(self.TotalQueuedCreateActions * ACCELERATED_CELLS_PER_PASS_MULTIPLIER)
+    end
+
     --Fetch the cells to update.
     local CellsToUpdate = {}
     local CreateCellCalls = 0
@@ -106,6 +115,7 @@ function MapGenerator:UpdateQueuedCells()
         --Ignore the cell if it shouldn't be created.
         if Action[1] == "CREATE" and not self:CellInLastCall(Action[2],Action[3]) then
             Action[1] = "IGNORE"
+            self.TotalQueuedCreateActions = self.TotalQueuedCreateActions - 1
         end
 
         --Add the cell to update.
@@ -113,7 +123,7 @@ function MapGenerator:UpdateQueuedCells()
         if Action[1] == "CREATE" then
             CreateCellCalls = CreateCellCalls + 1
         end
-        if CreateCellCalls >= CELLS_PER_PASS then
+        if CreateCellCalls >= MaxCellsToCreate then
             break
         end
     end
@@ -123,6 +133,7 @@ function MapGenerator:UpdateQueuedCells()
         local Action = self.QueuedAction[CellId]
         if Action[1] == "CREATE" then
             self:GenerateCell(Action[2],Action[3])
+            self.TotalQueuedCreateActions = self.TotalQueuedCreateActions - 1
         elseif Action[1] == "DELETE" then
             self.Cells[CellId]:Destroy()
             self.Cells[CellId] = nil
@@ -138,6 +149,7 @@ function MapGenerator:QueueGenerateCell(X,Y)
     local CellId = tostring(X).."_"..tostring(Y)
     if not self.Cells[CellId] and not self.QueuedAction[CellId] and self:GetCellTypeId(X,Y) >= 1 then
         self.QueuedAction[CellId] = {"CREATE",X,Y}
+        self.TotalQueuedCreateActions = self.TotalQueuedCreateActions + 1
     end
 end
 
