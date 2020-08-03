@@ -28,7 +28,7 @@ local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInst
 
 local CellGenerators = {
     Grass = ReplicatedStorageProject:GetResource("Generation.Cell.GrassCell"),
-    --Swamp = ReplicatedStorageProject:GetResource("Generation.Cell.SwampCell"),
+    Swamp = ReplicatedStorageProject:GetResource("Generation.Cell.SwampCell"),
     --Pumpkins = ReplicatedStorageProject:GetResource("Generation.Cell.PumpkinsCell"),
     Water = ReplicatedStorageProject:GetResource("Generation.Cell.WaterCell"),
     Rock = ReplicatedStorageProject:GetResource("Generation.Cell.RockCell"),
