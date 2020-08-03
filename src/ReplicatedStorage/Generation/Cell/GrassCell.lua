@@ -26,7 +26,7 @@ function GrassCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
     --Generate trees.
     local Center = CFrame.new(X * 100,0,Y * 100)
     for i = 1,2 do
-        Tree.new(Center * CFrame.Angles(0,(math.pi * i) + self.RandomNumberGenerator:NextNumber(-math.rad(30),math.rad(30)),0) * CFrame.new(0,0,self.RandomNumberGenerator:NextNumber(5,50)),self.CellModel,self.RandomNumberGenerator)
+        Tree.new(Center * CFrame.Angles(0,(math.pi * i) + self.RandomNumberGenerator:NextNumber(-math.rad(60),math.rad(60)),0) * CFrame.new(0,0,self.RandomNumberGenerator:NextNumber(5,50)),self.CellModel,self.RandomNumberGenerator)
     end
 end
 
