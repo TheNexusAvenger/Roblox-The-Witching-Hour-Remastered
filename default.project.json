@@ -5,6 +5,7 @@
         "Lighting": {
             "$className": "Lighting",
             "$properties": {
+                "Brightness": 0,
                 "Technology": {
                     "Type": "Enum",
                     "Value": 4
@@ -12,6 +13,12 @@
                 "ClockTime": 0
             },
             "$path": "./src/Lighting"
+        },
+        "Players": {
+            "$className": "Players",
+            "$properties": {
+                "CharacterAutoLoads": false
+            }
         },
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
