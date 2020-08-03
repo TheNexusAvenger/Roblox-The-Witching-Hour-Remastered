@@ -47,18 +47,35 @@ Creates the map generator.
 function MapGenerator:__new()
     self:InitializeSuper()
 
+    self.LastX = 0
+    self.LastY = 0
     self.QueuedAction = {}
     self.Cells = {}
+end
+
+--[[
+Returns if a cell position is in the range
+of the last call.
+--]]
+function MapGenerator:CellInLastCall(X,Y)
+    return math.abs(X - self.LastX) < CLEAR_MAP_RADIUS and math.abs(Y - self.LastY) < CLEAR_MAP_RADIUS
+end
+
+--[[
+Returns the cell id at a given coordinate.
+--]]
+function MapGenerator:GetCellTypeId(X,Y)
+    if not MapCellData[X] then
+        return -1
+    end
+    return MapCellData[X][Y] or -1
 end
 
 --[[
 Returns the cell name at a given coordinate.
 --]]
 function MapGenerator:GetCellType(X,Y)
-    if not MapCellData[X] then
-        return ID_TO_CELL_TYPE[-1]
-    end
-    return ID_TO_CELL_TYPE[MapCellData[X][Y] or -1]
+    return ID_TO_CELL_TYPE[self:GetCellTypeId(X,Y)]
 end
 
 --[[
@@ -84,9 +101,19 @@ Performs a pass on the queued cells.
 function MapGenerator:UpdateQueuedCells()
     --Fetch the cells to update.
     local CellsToUpdate = {}
-    for CellId,_ in pairs(self.QueuedAction) do
+    local CreateCellCalls = 0
+    for CellId,Action in pairs(self.QueuedAction) do
+        --Ignore the cell if it shouldn't be created.
+        if Action[1] == "CREATE" and not self:CellInLastCall(Action[2],Action[3]) then
+            Action[1] = "IGNORE"
+        end
+
+        --Add the cell to update.
         table.insert(CellsToUpdate,CellId)
-        if #CellsToUpdate >= CELLS_PER_PASS then
+        if Action[1] == "CREATE" then
+            CreateCellCalls = CreateCellCalls + 1
+        end
+        if CreateCellCalls >= CELLS_PER_PASS then
             break
         end
     end
@@ -109,7 +136,7 @@ Queues generating a cell.
 --]]
 function MapGenerator:QueueGenerateCell(X,Y)
     local CellId = tostring(X).."_"..tostring(Y)
-    if not self.Cells[CellId] and not self.QueuedAction[CellId] then
+    if not self.Cells[CellId] and not self.QueuedAction[CellId] and self:GetCellTypeId(X,Y) >= 1 then
         self.QueuedAction[CellId] = {"CREATE",X,Y}
     end
 end
@@ -128,6 +155,8 @@ end
 Generates the cells centered around a region.
 --]]
 function MapGenerator:GenerateCells(CenterX,CenterY)
+    self.LastX,self.LastY = CenterX,CenterY
+
     --Generate the cell the player is in.
     self:GenerateCell(CenterX,CenterY)
 
@@ -140,7 +169,7 @@ function MapGenerator:GenerateCells(CenterX,CenterY)
 
     --Queue deleting cells.
     for _,Cell in pairs(self.Cells) do
-        if math.abs(Cell.X - CenterX) >= CLEAR_MAP_RADIUS or math.abs(Cell.Y - CenterY) >= CLEAR_MAP_RADIUS then
+        if not self:CellInLastCall(Cell.X,Cell.Y) then
             self:QueueDeleteCell(Cell.X,Cell.Y)
         end
     end
