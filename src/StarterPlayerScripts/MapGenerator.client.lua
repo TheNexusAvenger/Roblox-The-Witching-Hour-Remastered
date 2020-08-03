@@ -4,8 +4,8 @@ TheNexusAvenger
 Generates the map around the player.
 --]]
 
+local Workspace = game:GetService("Workspace")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
@@ -13,26 +13,12 @@ local MapGenerator = ReplicatedStorageProject:GetResource("Generation.MapGenerat
 
 
 
---[[
-Handles a character being added.
---]]
-local function CharacterAdded(Character)
-    if Character then
-        local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
-        while HumanoidRootPart.Parent do
-            local Center = HumanoidRootPart.Position
-            MapGenerator:GenerateCells(math.floor((Center.X/100) + 0.5),math.floor((Center.Z/100) + 0.5))
-            wait()
-        end
-    end
-end
-
-
-
---Set up the local player.
-local Player = Players.LocalPlayer
-Player.CharacterAdded:Connect(CharacterAdded)
-CharacterAdded(Player.Character)
+--Set up changing the center to generate.
+local Camera = Workspace.CurrentCamera
+Camera:GetPropertyChangedSignal("CFrame"):Connect(function()
+    local CameraCenter = Camera.CFrame
+    MapGenerator:GenerateCells(math.floor((CameraCenter.X/100) + 0.5),math.floor((CameraCenter.Z/100) + 0.5))
+end)
 
 --Set up updating the generator.
 RunService.Stepped:Connect(function()

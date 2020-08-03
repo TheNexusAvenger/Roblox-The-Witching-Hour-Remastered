@@ -155,6 +155,10 @@ end
 Generates the cells centered around a region.
 --]]
 function MapGenerator:GenerateCells(CenterX,CenterY)
+    --Return if the position didn't change.
+    if CenterX == self.LastX and CenterY == self.LastY then
+        return
+    end
     self.LastX,self.LastY = CenterX,CenterY
 
     --Generate the cell the player is in.
