@@ -6,6 +6,7 @@ Generates the map around the player.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local MapGenerator = ReplicatedStorageProject:GetResource("Generation.MapGenerator").new()
@@ -32,3 +33,8 @@ end
 local Player = Players.LocalPlayer
 Player.CharacterAdded:Connect(CharacterAdded)
 CharacterAdded(Player.Character)
+
+--Set up updating the generator.
+RunService.Stepped:Connect(function()
+    MapGenerator:UpdateQueuedCells()
+end)
