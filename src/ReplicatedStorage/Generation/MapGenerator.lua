@@ -4,7 +4,7 @@ TheNexusAvenger
 Generates the map from the map data.
 --]]
 
-local CELLS_PER_PASS = 5
+local CELLS_PER_PASS = 10
 local MAP_RADIUS = 10
 local CLEAR_MAP_RADIUS = 13
 local ID_TO_CELL_TYPE = {
