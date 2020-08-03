@@ -128,6 +128,9 @@ end
 Generates the cells centered around a region.
 --]]
 function MapGenerator:GenerateCells(CenterX,CenterY)
+    --Generate the cell the player is in.
+    self:GenerateCell(CenterX,CenterY)
+
     --Queue generating the cells.
     for X = CenterX - MAP_RADIUS,CenterX + MAP_RADIUS do
         for Y = CenterY - MAP_RADIUS,CenterY + MAP_RADIUS do
