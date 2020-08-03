@@ -32,30 +32,13 @@ function BaseGrassCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCe
     self.RandomNumberGenerator = Random.new(math.noise(RANDOM_SEED,X/100,Y/100) * (10^15))
 
     --Create the grass.
-    Workspace.Terrain:FillBlock(CFrame.new(X * 100,-8,Y * 100),Vector3.new(100,12,100),Enum.Material.Grass)
+    Workspace.Terrain:FillBlock(CFrame.new(X * 100,-8,Y * 100),Vector3.new(100,12,100),Enum.Material.LeafyGrass)
 
     --Create the leaves.
     local CellModel = Instance.new("Model")
     CellModel.Name = "Cell_"..tostring(X).."_"..tostring(Y)
     CellModel.Parent = Workspace
     self.CellModel = CellModel
-    for _ = 1,self.RandomNumberGenerator:NextInteger(8,12) do
-        local Size = self.RandomNumberGenerator:NextNumber(8,12)
-        local LeavesPart = Instance.new("Part")
-        LeavesPart.Transparency = 1
-        LeavesPart.Size = Vector3.new(Size,0.2,Size)
-        LeavesPart.CFrame = CFrame.new((X * 100) + (self.RandomNumberGenerator:NextNumber(-45,45)),-0.075,(Y * 100) + (self.RandomNumberGenerator:NextNumber(-45,45))) * CFrame.Angles(0,self.RandomNumberGenerator:NextNumber(-math.pi,math.pi),0)
-        LeavesPart.Anchored = true
-        LeavesPart.CanCollide = false
-        LeavesPart.TopSurface = "Smooth"
-        LeavesPart.BottomSurface = "Smooth"
-        LeavesPart.Parent = CellModel
-        
-        local LeavesDecal = Instance.new("Decal")
-        LeavesDecal.Texture = "rbxassetid://134660590"
-        LeavesDecal.Face = "Top"
-        LeavesDecal.Parent = LeavesPart
-    end
 end
 
 --[[
