@@ -5,7 +5,9 @@ Generates a house cell.
 --]]
 
 local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TweenService = game:GetService("TweenService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
@@ -13,6 +15,8 @@ local BaseGrassCell = ReplicatedStorageProject:GetResource("Generation.Cell.Base
 local HouseData = ReplicatedStorageProject:GetResource("Generation.Houses")
 local PoleItems = ReplicatedStorageProject:GetResource("Generation.Houses.PoleItems")
 local StairItems = ReplicatedStorageProject:GetResource("Generation.Houses.StairItems")
+local HouseState = ReplicatedStorageProject:GetResource("GameState.HouseState")
+local StartHouse = ReplicatedStorageProject:GetResource("GameReplication.HouseReplication.StartHouse")
 
 local HouseCell = BaseGrassCell:Extend()
 HouseCell:SetClassName("HouseCell")
@@ -24,6 +28,7 @@ Creates a cell.
 --]]
 function HouseCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellType)
     self:InitializeSuper(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellType)
+    self.CurrentState = "ACTIVE"
 
     --Get the house data.
     local WallColor = HouseData.Colors.WallColors[self.RandomNumberGenerator:NextInteger(1,#HouseData.Colors.WallColors)]
@@ -39,12 +44,12 @@ function HouseCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
 
     --Determine the center.
     local HouseCenter = CFrame.new(X * 100,0,Y * 100)
-    if TopCellType == "Road" then
-        HouseCenter = HouseCenter * CFrame.Angles(0,math.pi,0)
-    elseif LeftCellType == "Road" then
+    if LeftCellType == "Road" then
         HouseCenter = HouseCenter * CFrame.Angles(0,math.pi * (1/2),0)
     elseif RightCellType == "Road" then
         HouseCenter = HouseCenter * CFrame.Angles(0,math.pi * (3/2),0)
+    elseif TopCellType == "Road" then
+        HouseCenter = HouseCenter * CFrame.Angles(0,math.pi,0)
     end
 
     --Assemble the house model.
@@ -129,8 +134,51 @@ function HouseCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
         end
     end
     
-    --TODO: Set up the state
-    --TODO: Set up clicking
+    --Set up the door.
+    local MainDoorPart = HouseModel:WaitForChild("Door"):WaitForChild("MainDoor")
+    self.MainDoorPart = MainDoorPart
+
+    local DoorSound = Instance.new("Sound")
+    DoorSound.SoundId = "http://www.roblox.com/asset/?id=130168771"
+    DoorSound.Parent = MainDoorPart
+    self.DoorSound = DoorSound
+
+    local DoorClickDetector = Instance.new("ClickDetector")
+    DoorClickDetector.MaxActivationDistance = 20
+    DoorClickDetector.Parent = MainDoorPart
+    self.DoorClickDetector = DoorClickDetector
+
+    DoorClickDetector.MouseClick:Connect(function()
+        if self.CurrentState == "ACTIVE" then
+            StartHouse:FireServer(X,Y)
+        end
+    end)
+    MainDoorPart.Touched:Connect(function(TouchPart)
+        if self.CurrentState == "ACTIVE" then
+            local Character = Players.LocalPlayer.Character
+            if Character and TouchPart:IsDescendantOf(Character) then
+                StartHouse:FireServer(X,Y)
+            end
+        end
+    end)
+
+    --Connect the state events.
+    self.Events = {}
+    local CellId = tostring(X).."_"..tostring(Y)
+    table.insert(self.Events,HouseState.ChildAdded:Connect(function(Child)
+        if Child.Name == CellId then
+            table.insert(self.Events,Child.Changed:Connect(function()
+                self:FetchState()
+            end))
+            self:FetchState()
+        end
+    end))
+    table.insert(self.Events,HouseState.ChildRemoved:Connect(function(Child)
+        if Child.Name == CellId then
+            self:FetchState()
+        end
+    end))
+    self:FetchState()
 end
 
 --[[
@@ -161,11 +209,171 @@ function HouseCell:AddModel(ModelPath,Center)
 end
 
 --[[
+Updates the state of the house if it changed.
+--]]
+function HouseCell:UpdateState()
+    --Clear the starting animation.
+    if self.StartingAnimationModel then
+        self.StartingAnimationModel:Destroy()
+        self.StartingAnimationModel = nil
+    end
+
+    if self.CurrentState == "ACTIVE" then
+        --Turn on the lights and allow clicking.
+        for _,WindowModel in pairs(self.HouseModel:WaitForChild("Windows"):GetChildren()) do
+            local Curtain = WindowModel:WaitForChild("Curtain")
+            local Light = Curtain:WaitForChild("Light")
+            Curtain.BrickColor = BrickColor.new("Pastel yellow")
+            Curtain.Material = "Neon"
+            Light.Enabled = true
+        end
+        self.DoorClickDetector.MaxActivationDistance = 20
+    elseif self.CurrentState == "INACTIVE" then
+        --Turn off the lights and disable clicking.
+        for _,WindowModel in pairs(self.HouseModel:WaitForChild("Windows"):GetChildren()) do
+            local Curtain = WindowModel:WaitForChild("Curtain")
+            local Light = Curtain:WaitForChild("Light")
+            Curtain.BrickColor = BrickColor.new("Black")
+            Curtain.Material = "SmoothPlastic"
+            Light.Enabled = false
+        end
+        self.DoorClickDetector.MaxActivationDistance = 0
+    elseif self.CurrentState == "STARTING" then
+        --Turn on the lights and disable clicking.
+        for _,WindowModel in pairs(self.HouseModel:WaitForChild("Windows"):GetChildren()) do
+            local Curtain = WindowModel:WaitForChild("Curtain")
+            local Light = Curtain:WaitForChild("Light")
+            Curtain.BrickColor = BrickColor.new("Pastel yellow")
+            Curtain.Material = "Neon"
+            Light.Enabled = true
+        end
+        self.DoorClickDetector.MaxActivationDistance = 0
+
+        --Run the animation.
+        coroutine.wrap(function()
+            --Create the container and walls.
+            local StartingAnimationModel = Instance.new("Model")
+            StartingAnimationModel.Name = "StartingAnimationModel"
+            StartingAnimationModel.Parent = self.CellModel
+            self.StartingAnimationModel = StartingAnimationModel
+
+            local Gradients = {}
+            for i = 0,1.5,0.5 do
+                local Border = Instance.new("Part")
+                Border.Transparency = 1
+                Border.CFrame = CFrame.new(self.X * 100,2,self.Y * 100) * CFrame.Angles(0,math.pi * i,0) * CFrame.new(0,0,50)
+                Border.Size = Vector3.new(100,4,0.2)
+                Border.Anchored = true
+                Border.CanCollide = false
+                Border.Parent = StartingAnimationModel
+
+                local BorderMesh = Instance.new("BlockMesh")
+                BorderMesh.Scale = Vector3.new(1,1,0)
+                BorderMesh.Parent = Border
+
+                local Gradient = Instance.new("Decal")
+                Gradient.Color3 = Color3.new(0,170/255,255/255)
+                Gradient.Transparency = 1
+                Gradient.Texture = "http://www.roblox.com/asset/?id=154741878"
+                Gradient.Face = "Front"
+                Gradient.Parent = Border
+                table.insert(Gradients,Gradient)
+
+                local Gradient = Instance.new("Decal")
+                Gradient.Color3 = Color3.new(0,170/255,255/255)
+                Gradient.Transparency = 1
+                Gradient.Texture = "http://www.roblox.com/asset/?id=154741878"
+                Gradient.Face = "Back"
+                Gradient.Parent = Border
+                table.insert(Gradients,Gradient)
+            end
+
+            --Create the text.
+            local DingPart = Instance.new("Part")
+            DingPart.Transparency = 1
+            DingPart.Size = Vector3.new(10,5,1)
+            DingPart.CFrame = self.MainDoorPart.CFrame * CFrame.Angles(0,0,math.pi/2) * CFrame.new(0,4,-3)
+            DingPart.Anchored = true
+            DingPart.CanCollide = false
+            DingPart.Parent = StartingAnimationModel
+
+            local DingTexture = Instance.new("Decal")
+            DingTexture.Texture = "http://www.roblox.com/asset/?id=130170915"
+            DingTexture.Transparency = 1
+            DingTexture.Parent = DingPart
+
+            local DongPart = Instance.new("Part")
+            DongPart.Transparency = 1
+            DongPart.Size = Vector3.new(10,5,1)
+            DongPart.CFrame = self.MainDoorPart.CFrame * CFrame.Angles(0,0,math.pi/2) * CFrame.new(0,4,-3)
+            DongPart.Anchored = true
+            DongPart.CanCollide = false
+            DongPart.Parent = StartingAnimationModel
+
+            local DongTexture = Instance.new("Decal")
+            DongTexture.Texture = "http://www.roblox.com/asset/?id=130169494"
+            DongTexture.Transparency = 1
+            DongTexture.Parent = DongPart
+
+            --Tween the gradients.
+            for _,Gradient in pairs(Gradients) do
+                TweenService:Create(Gradient,TweenInfo.new(3),{
+                    Transparency = 0,
+                }):Play()
+            end
+
+            --Play the sound.
+            self.DoorSound:Play()
+
+            --Display the text.
+            DingTexture.Transparency = 0
+            TweenService:Create(DingPart,TweenInfo.new(5.5,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{
+                CFrame = self.MainDoorPart.CFrame * CFrame.Angles(0,0,math.pi/2) * CFrame.new(math.random(-1,1),13,-4),
+            }):Play()
+            wait(0.15)
+            DongTexture.Transparency = 0
+            TweenService:Create(DongPart,TweenInfo.new(5.5,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{
+                CFrame = self.MainDoorPart.CFrame * CFrame.Angles(0,0,math.pi/2) * CFrame.new(math.random(-1,1),8,-4),
+            }):Play()
+
+            --Hide the text.
+            wait(3 - 0.15)
+            TweenService:Create(DingTexture,TweenInfo.new(1.5),{
+                Transparency = 1,
+            }):Play()
+            wait(0.15)
+            TweenService:Create(DongTexture,TweenInfo.new(1.5),{
+                Transparency = 1,
+            }):Play()
+        end)()
+    end
+end
+
+--[[
+Fetches the replicated state of the house.
+--]]
+function HouseCell:FetchState()
+    --Fetch the state.
+    local StateObject = HouseState:FindFirstChild(tostring(self.X).."_"..tostring(self.Y))
+    local NewState = (StateObject and StateObject.Value or "ACTIVE")
+
+    --Update the state if it changed.
+    if NewState ~= self.CurrentState then
+        self.CurrentState = NewState
+        self:UpdateState()
+    end
+end
+
+--[[
 Destroys the cell.
 --]]
 function HouseCell:Destroy()
     self.super:Destroy()
     self.HouseModel:Destroy()
+    for _,Event in pairs(self.Events) do
+        Event:Disconnect()
+    end
+    self.Events = {}
 end
 
 
