@@ -30,3 +30,8 @@ local CharacterService = ServerScriptServiceProject:GetResource("Service.Charact
 Players.PlayerAdded:Connect(function(Player)
     CharacterService:SpawnCharacter(Player)
 end)
+
+--Load the NPC models. Can't be saved directly
+--to a model file and imported with Rojo.
+local NPCService = ServerScriptServiceProject:GetResource("Service.NPCService")
+NPCService:LoadNPCModels()

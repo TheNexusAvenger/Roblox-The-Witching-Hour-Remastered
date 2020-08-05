@@ -1,0 +1,152 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Meta name="ExplicitAutoJoints">true</Meta>
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Folder" referent="RBXB6256798AF074C7FB4602F3DD8282BB9">
+		<Properties>
+			<BinaryString name="AttributesSerialize"></BinaryString>
+			<string name="Name">NPCHumanoidDescriptions</string>
+			<BinaryString name="Tags"></BinaryString>
+		</Properties>
+		<Item class="HumanoidDescription" referent="RBX6A8A267CE4FE4D459A62A00F21559A2A">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="BackAccessory"></string>
+				<float name="BodyTypeScale">0.300000012</float>
+				<int64 name="ClimbAnimation">0</int64>
+				<float name="DepthScale">1</float>
+				<string name="EmotesDataInternal"></string>
+				<string name="EquippedEmotesDataInternal"></string>
+				<int64 name="Face">10907541</int64>
+				<string name="FaceAccessory"></string>
+				<int64 name="FallAnimation">0</int64>
+				<string name="FrontAccessory"></string>
+				<int64 name="GraphicTShirt">0</int64>
+				<string name="HairAccessory"></string>
+				<string name="HatAccessory">11844853</string>
+				<int64 name="Head">0</int64>
+				<Color3 name="HeadColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<float name="HeadScale">1</float>
+				<float name="HeightScale">1</float>
+				<int64 name="IdleAnimation">0</int64>
+				<int64 name="JumpAnimation">0</int64>
+				<int64 name="LeftArm">27112052</int64>
+				<Color3 name="LeftArmColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="LeftLeg">27112056</int64>
+				<Color3 name="LeftLegColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<string name="Name">Builderman</string>
+				<string name="NeckAccessory"></string>
+				<int64 name="Pants">129458426</int64>
+				<float name="ProportionScale">1</float>
+				<int64 name="RightArm">27112039</int64>
+				<Color3 name="RightArmColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="RightLeg">27112068</int64>
+				<Color3 name="RightLegColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="RunAnimation">0</int64>
+				<int64 name="Shirt">13343843</int64>
+				<string name="ShouldersAccessory"></string>
+				<int64 name="SwimAnimation">0</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<int64 name="Torso">27112025</int64>
+				<Color3 name="TorsoColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<string name="WaistAccessory"></string>
+				<int64 name="WalkAnimation">0</int64>
+				<float name="WidthScale">1</float>
+			</Properties>
+		</Item>
+		<Item class="HumanoidDescription" referent="RBXBD09647A274044538F0A17B3FE3EFD2D">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="BackAccessory"></string>
+				<float name="BodyTypeScale">0.300000012</float>
+				<int64 name="ClimbAnimation">0</int64>
+				<float name="DepthScale">1</float>
+				<string name="EmotesDataInternal"></string>
+				<string name="EquippedEmotesDataInternal"></string>
+				<int64 name="Face">117522793</int64>
+				<string name="FaceAccessory"></string>
+				<int64 name="FallAnimation">0</int64>
+				<string name="FrontAccessory"></string>
+				<int64 name="GraphicTShirt">0</int64>
+				<string name="HairAccessory"></string>
+				<string name="HatAccessory">124909182</string>
+				<int64 name="Head">0</int64>
+				<Color3 name="HeadColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<float name="HeadScale">1</float>
+				<float name="HeightScale">1</float>
+				<int64 name="IdleAnimation">0</int64>
+				<int64 name="JumpAnimation">0</int64>
+				<int64 name="LeftArm">124909333</int64>
+				<Color3 name="LeftArmColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="LeftLeg">124909400</int64>
+				<Color3 name="LeftLegColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<string name="Name">Frazzled Clerk Jim</string>
+				<string name="NeckAccessory"></string>
+				<int64 name="Pants">0</int64>
+				<float name="ProportionScale">1</float>
+				<int64 name="RightArm">124909450</int64>
+				<Color3 name="RightArmColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="RightLeg">124909574</int64>
+				<Color3 name="RightLegColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="RunAnimation">0</int64>
+				<int64 name="Shirt">0</int64>
+				<string name="ShouldersAccessory"></string>
+				<int64 name="SwimAnimation">0</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<int64 name="Torso">124909603</int64>
+				<Color3 name="TorsoColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<string name="WaistAccessory"></string>
+				<int64 name="WalkAnimation">0</int64>
+				<float name="WidthScale">1</float>
+			</Properties>
+		</Item>
+	</Item>
+</roblox>

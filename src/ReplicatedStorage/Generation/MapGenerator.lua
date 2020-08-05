@@ -89,12 +89,15 @@ local CUSTOM_CELLS = {
 }
 
 
+
 local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
+local NPCLocations = ReplicatedStorageProject:GetResource("GameData.NPCLocations")
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 
 local CellGenerators = {
@@ -147,7 +150,55 @@ function MapGenerator:GenerateCustomCells()
     end
 
     --Generate the NPCs.
-    --TODO
+    for NPCName,NPCData in pairs(NPCLocations) do
+        coroutine.wrap(function()
+            --Clone and set up the model.
+            local NPCModel = ReplicatedStorageProject:GetResource("NPCModels."..tostring(NPCName)):Clone()
+            local Humanoid,HumnoidRootPart = NPCModel:WaitForChild("Humanoid"),NPCModel:WaitForChild("HumanoidRootPart")
+            NPCModel.PrimaryPart = HumnoidRootPart
+
+            --Determine the center CFrame.
+            local Height = Humanoid.HipHeight + HumnoidRootPart.Size.Y/2
+            local Center = CFrame.new(NPCData.CellX * 100,0,NPCData.CellY * 100) * NPCData.OffsetCFrame * CFrame.new(0,Height,0)
+
+            --Move the model.
+            NPCModel:SetPrimaryPartCFrame(Center)
+            NPCModel.Parent = Workspace
+
+            --Add the bounding box.
+            local BoundingBox = Instance.new("Part")
+            BoundingBox.Size = Vector3.new(5,Height * 2,5)
+            BoundingBox.CFrame = Center
+            BoundingBox.Transparency = 1
+            BoundingBox.Anchored = true
+            BoundingBox.CanCollide = false
+            BoundingBox.Parent = NPCModel
+
+            local ClickDetector = Instance.new("ClickDetector")
+            ClickDetector.MaxActivationDistance = 20
+            ClickDetector.Parent = BoundingBox
+
+            --Set up interactions.
+            ClickDetector.MouseClick:Connect(function()
+                --TODO: Start dialog
+            end)
+            BoundingBox.Touched:Connect(function(TouchPart)
+                local Character = Players.LocalPlayer.Character
+                if Character and TouchPart:IsDescendantOf(Character) then
+                    --TODO: Start dialog
+                end
+            end)
+
+            --Start the idle animation.
+            local Animation = Instance.new("Animation")
+            Animation.AnimationId = "rbxassetid://"..tostring(NPCData.IdleAnimationId)
+            local AnimationTrack = Humanoid:LoadAnimation(Animation)
+            AnimationTrack.DidLoop:Connect(function()
+                AnimationTrack:Play()
+            end)
+            AnimationTrack:Play()
+        end)()
+    end
 end
 
 --[[
