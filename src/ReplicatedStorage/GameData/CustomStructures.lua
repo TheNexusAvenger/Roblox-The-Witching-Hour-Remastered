@@ -80,5 +80,11 @@ return {
             --Fill the fountain with water.
             Workspace.Terrain:FillCylinder(CFrame.new(17400,2,1300),4,28,Enum.Material.Water)
         end},
+        ["Generation.CustomStructures.ReeseMcBloxsHouse"] = {119,33,function()
+            --Fill the dirt for the garden.
+            Workspace.Terrain:FillBlock(CFrame.new(11900 - 24,-4,3300 - 16),Vector3.new(20,4,8),Enum.Material.Ground)
+            Workspace.Terrain:FillBlock(CFrame.new(11900 - 24,-4,3300),Vector3.new(20,4,8),Enum.Material.Ground)
+            Workspace.Terrain:FillBlock(CFrame.new(11900 - 4,-4,3300 + 36),Vector3.new(12,4,8),Enum.Material.Ground)
+        end},
     },
 }
