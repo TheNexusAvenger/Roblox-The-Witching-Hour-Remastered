@@ -20,15 +20,85 @@ local ID_TO_CELL_TYPE = {
     [6] = "Road",
     [7] = "House",
 }
+local CUSTOM_CELLS = {
+    --Builderman's Town hall.
+    {180,12,"BaseGrass"},
+    {180,13,"BaseGrass"},
+    {180,14,"BaseGrass"},
+    {179,12,"BaseGrass"},
+    {179,13,"BaseGrass"},
+    {179,14,"BaseGrass"},
+
+    --Center statue.
+    {174,13,"BaseGrass"},
+
+    --ReeseMcBlox's House.
+    {119,33,"BaseGrass"},
+
+    --Tarabyte's House.
+    {64,35,"BaseGrass"},
+    {64,36,"BaseGrass"},
+    {63,35,"BaseGrass"},
+    {63,36,"BaseGrass"},
+
+    --Sorcus's Graveyard.
+    {24,9,"BaseGrass"},
+    
+    --ChiefJustus's Cave.
+    {61,54,"BaseGrass"},
+
+    --SolarCrane's Log Mansion.
+    {14,87,"BaseGrass"},
+    {14,88,"BaseGrass"},
+    {13,87,"BaseGrass"},
+    {13,88,"BaseGrass"},
+
+    --Jeditkacheff's Swamp Cabin.
+    {153,74,"Swamp"},
+
+    --Shedletskys' Houses.
+    {199,103,"BaseGrass"},
+    {199,104,"BaseGrass"},
+    {197,103,"BaseGrass"},
+    {197,104,"BaseGrass"},
+
+    --OstrichSized's Pyramic.
+    {106,117,"BaseGrass"},
+    {106,118,"BaseGrass"},
+    {105,117,"BaseGrass"},
+    {105,118,"BaseGrass"},
+
+    --OnlyTwentyCharacter's Log Cabin.
+    {20,162,"BaseGrass"},
+
+    --StickMasterLuke's Barn.
+    {175,177,"BaseGrass"},
+    {175,178,"BaseGrass"},
+    {174,177,"BaseGrass"},
+    {174,178,"BaseGrass"},
+    {173,177,"BaseGrass"},
+    {173,178,"BaseGrass"},
+
+    --Fusroblox's Mansion.
+    {100,194,"BaseGrass"},
+    {100,195,"BaseGrass"},
+    {100,196,"BaseGrass"},
+    {99,194,"BaseGrass"},
+    {99,195,"BaseGrass"},
+    {99,196,"BaseGrass"},
+}
 
 
+local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 
 local CellGenerators = {
+    BaseGrass = ReplicatedStorageProject:GetResource("Generation.Cell.BaseGrassCell"),
     Grass = ReplicatedStorageProject:GetResource("Generation.Cell.GrassCell"),
     Swamp = ReplicatedStorageProject:GetResource("Generation.Cell.SwampCell"),
     Pumpkins = ReplicatedStorageProject:GetResource("Generation.Cell.PumpkinsCell"),
@@ -36,6 +106,9 @@ local CellGenerators = {
     Rock = ReplicatedStorageProject:GetResource("Generation.Cell.RockCell"),
     Road = ReplicatedStorageProject:GetResource("Generation.Cell.RoadCell"),
     House = ReplicatedStorageProject:GetResource("Generation.Cell.HouseCell"),
+}
+local CustomStructures = {
+    [ReplicatedStorageProject:GetResource("Generation.CustomStructures.TownHall")] = {179,13},
 }
 
 local MapGenerator = NexusObject:Extend()
@@ -54,6 +127,27 @@ function MapGenerator:__new()
     self.QueuedAction = {}
     self.TotalQueuedCreateActions = 0
     self.Cells = {}
+end
+
+--[[
+Generates the custom cells.
+--]]
+function MapGenerator:GenerateCustomCells()
+    --Generate the cells.
+    for _,CellData in pairs(CUSTOM_CELLS) do
+        local X,Y = CellData[1],CellData[2]
+        CellGenerators[CellData[3]].new(X,Y,self:GetCellType(X,Y+1),self:GetCellType(X,Y-1),self:GetCellType(X-1,Y),self:GetCellType(X+1,Y))
+    end
+
+    --Generate the structures.
+    for StructureModel,Location in pairs(CustomStructures) do
+        local NewStructureModel = StructureModel:Clone()
+        NewStructureModel:SetPrimaryPartCFrame(CFrame.new(Location[1] * 100,-0.5,Location[2] * 100))
+        NewStructureModel.Parent = Workspace
+    end
+
+    --Generate the NPCs.
+    --TODO
 end
 
 --[[

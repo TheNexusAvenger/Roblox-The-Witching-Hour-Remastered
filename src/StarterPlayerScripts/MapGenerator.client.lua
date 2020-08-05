@@ -10,6 +10,7 @@ local RunService = game:GetService("RunService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local MapGenerator = ReplicatedStorageProject:GetResource("Generation.MapGenerator").new()
+MapGenerator:GenerateCustomCells()
 
 
 

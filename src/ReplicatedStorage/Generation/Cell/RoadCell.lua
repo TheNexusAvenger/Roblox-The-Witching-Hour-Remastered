@@ -4,7 +4,6 @@ TheNexusAvenger
 Generates a road cell.
 --]]
 
-local Workspace = game:GetService("Workspace")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
@@ -26,7 +25,7 @@ function RoadCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTyp
     local CenterX,CenterY = X * 100,Y * 100
     local RoadModel = Instance.new("Model")
     RoadModel.Name = "Road"
-    RoadModel.Parent = Workspace
+    RoadModel.Parent = self.CellModel
     self.RoadModel = RoadModel
 
     self:CreateConcretePart(Vector3.new(90,1,90),CFrame.new(CenterX,0,CenterY),BrickColor.new("Black"))
