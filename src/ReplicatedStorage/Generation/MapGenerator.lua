@@ -78,6 +78,10 @@ function MapGenerator:GenerateCustomCells()
         local NewStructureModel = ReplicatedStorageProject:GetResource(StructurePath):Clone()
         NewStructureModel:SetPrimaryPartCFrame(CFrame.new(Location[1] * 100,-0.5,Location[2] * 100))
         NewStructureModel.Parent = Workspace
+
+        if Location[3] then
+            Location[3]()
+        end
     end
 
     --Generate the NPCs.

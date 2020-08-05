@@ -4,6 +4,8 @@ TheNexusAvenger
 Custom cells and locations for custom cells.
 --]]
 
+local Workspace = game:GetService("Workspace")
+
 return {
     Cells = {
         --Builderman's Town hall.
@@ -74,5 +76,9 @@ return {
     },
     Structures = {
         ["Generation.CustomStructures.TownHall"] = {179,13},
+        ["Generation.CustomStructures.Fountain"] = {174,13,function()
+            --Fill the fountain with water.
+            Workspace.Terrain:FillCylinder(CFrame.new(17400,2,1300),4,28,Enum.Material.Water)
+        end},
     },
 }
