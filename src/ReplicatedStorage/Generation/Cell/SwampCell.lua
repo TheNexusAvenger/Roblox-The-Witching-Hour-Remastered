@@ -53,7 +53,8 @@ function SwampCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
 	Mist.Material = "Grass"
 	Mist.Size = Vector3.new(100,2,100)
 	Mist.CFrame = CFrame.new(X * 100,-0.5,Y * 100)
-	Mist.Anchored = true
+    Mist.Anchored = true
+    Mist.CanCollide = false
 	Mist.TopSurface = "Smooth"
 	Mist.BottomSurface = "Smooth"
     Mist.Parent = self.CellModel

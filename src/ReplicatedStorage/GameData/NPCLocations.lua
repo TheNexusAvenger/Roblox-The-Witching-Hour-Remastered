@@ -47,7 +47,6 @@ return {
         OffsetCFrame = CFrame.Angles(0,-math.pi/2,0) * CFrame.new(7,2,-25) * CFrame.Angles(0,math.rad(15),0),
         IdleAnimationId = 507766388,
     },
-
     ["StickMasterLuke"] = {
         CellX = 175,
         CellY = 178,
@@ -58,6 +57,18 @@ return {
         CellX = 174,
         CellY = 177,
         OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(7,73,-4) * CFrame.Angles(0,math.rad(185),0),
+        IdleAnimationId = 507766388,
+    },
+    ["Darthskrill"] = {
+        CellX = 153,
+        CellY = 74,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-5,8,-15) * CFrame.Angles(0,math.rad(120),0),
+        IdleAnimationId = 507766388,
+    },
+    ["CodeWriter"] = {
+        CellX = 153,
+        CellY = 74,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(46,0,-16) * CFrame.Angles(0,math.rad(-90),0),
         IdleAnimationId = 507766388,
     },
 }

@@ -40,7 +40,7 @@ return {
         {13,87,"BaseGrass"},
         {13,88,"BaseGrass"},
     
-        --Jeditkacheff's Swamp Cabin.
+        --Darkskrills's Swamp Cabin.
         {153,74,"Swamp"},
     
         --Shedletskys' Houses.
@@ -95,5 +95,6 @@ return {
             Workspace.Terrain:FillBlock(CFrame.new(17456,-4,17754),Vector3.new(96,4,44),Enum.Material.Ground)
             Workspace.Terrain:FillBlock(CFrame.new(17304,-4,17750),Vector3.new(108,4,16),Enum.Material.Ground)
         end},
+        ["Generation.CustomStructures.DarthskrillsSwampCabin"] = {153,74},
     },
 }
