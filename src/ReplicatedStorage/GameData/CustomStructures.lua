@@ -51,7 +51,7 @@ return {
         {197,104,"BaseGrass"},
         {197,105,"BaseGrass"},
     
-        --OstrichSized's Pyramic.
+        --OstrichSized's Pyramid.
         {106,117,"BaseGrass"},
         {106,118,"BaseGrass"},
         {105,117,"BaseGrass"},
@@ -96,5 +96,9 @@ return {
             Workspace.Terrain:FillBlock(CFrame.new(17304,-4,17750),Vector3.new(108,4,16),Enum.Material.Ground)
         end},
         ["Generation.CustomStructures.DarthskrillsSwampCabin"] = {153,74},
+        ["Generation.CustomStructures.OstrichSizedsPyramid"] = {105,117,function()
+            --Fill the sand for the pyramid.
+            Workspace.Terrain:FillBlock(CFrame.new(10550,-4,11750),Vector3.new(200,4,200),Enum.Material.Sand)
+        end},
     },
 }
