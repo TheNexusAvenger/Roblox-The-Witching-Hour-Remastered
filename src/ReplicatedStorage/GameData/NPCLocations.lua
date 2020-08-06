@@ -17,8 +17,6 @@ return {
         OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-8,0,-10) * CFrame.Angles(0,math.rad(40),0),
         IdleAnimationId = 507766951,
     },
-
-    
     ["ReeseMcBlox"] = {
         CellX = 119,
         CellY = 33,
@@ -29,6 +27,24 @@ return {
         CellX = 119,
         CellY = 33,
         OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(31,0,5) * CFrame.Angles(0,-math.pi/2,0),
+        IdleAnimationId = 507766388,
+    },
+    ["Shedletsky"] = {
+        CellX = 199,
+        CellY = 104,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-28,2,-25) * CFrame.Angles(0,math.rad(15),0),
+        IdleAnimationId = 507766388,
+    },
+    ["Telamom"] = {
+        CellX = 199,
+        CellY = 104,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(74,0,31) * CFrame.Angles(0,math.rad(195),0),
+        IdleAnimationId = 507766388,
+    },
+    ["BrightEyes"] = {
+        CellX = 197,
+        CellY = 104,
+        OffsetCFrame = CFrame.Angles(0,-math.pi/2,0) * CFrame.new(7,2,-25) * CFrame.Angles(0,math.rad(15),0),
         IdleAnimationId = 507766388,
     },
 }

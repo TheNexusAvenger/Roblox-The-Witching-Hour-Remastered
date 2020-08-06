@@ -76,6 +76,7 @@ function MapGenerator:GenerateCustomCells()
     --Generate the structures.
     for StructurePath,Location in pairs(CustomStructures.Structures) do
         local NewStructureModel = ReplicatedStorageProject:GetResource(StructurePath):Clone()
+        NewStructureModel.PrimaryPart = NewStructureModel:WaitForChild("Center")
         NewStructureModel:SetPrimaryPartCFrame(CFrame.new(Location[1] * 100,-0.5,Location[2] * 100))
         NewStructureModel.Parent = Workspace
 

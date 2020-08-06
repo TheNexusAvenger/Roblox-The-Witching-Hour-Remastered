@@ -46,8 +46,10 @@ return {
         --Shedletskys' Houses.
         {199,103,"BaseGrass"},
         {199,104,"BaseGrass"},
+        {199,105,"BaseGrass"},
         {197,103,"BaseGrass"},
         {197,104,"BaseGrass"},
+        {197,105,"BaseGrass"},
     
         --OstrichSized's Pyramic.
         {106,117,"BaseGrass"},
@@ -86,5 +88,7 @@ return {
             Workspace.Terrain:FillBlock(CFrame.new(11900 - 24,-4,3300),Vector3.new(20,4,8),Enum.Material.Ground)
             Workspace.Terrain:FillBlock(CFrame.new(11900 - 4,-4,3300 + 36),Vector3.new(12,4,8),Enum.Material.Ground)
         end},
+        ["Generation.CustomStructures.ShedletskysMansion"] = {199,104},
+        ["Generation.CustomStructures.BrightEyessMansion"] = {197,104},
     },
 }
