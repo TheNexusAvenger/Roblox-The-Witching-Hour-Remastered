@@ -5,8 +5,8 @@ Controls spawning and modifying characters.
 Class is static (should not be created).
 --]]
 
-local BASE_SPAWN_GRID_X = 198--178
-local BASE_SPAWN_GRID_Y = 104--13
+local BASE_SPAWN_GRID_X = 178
+local BASE_SPAWN_GRID_Y = 13
 local RESPAWN_DELAY = 5
 
 

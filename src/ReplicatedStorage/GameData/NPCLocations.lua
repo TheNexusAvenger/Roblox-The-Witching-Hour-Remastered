@@ -47,4 +47,17 @@ return {
         OffsetCFrame = CFrame.Angles(0,-math.pi/2,0) * CFrame.new(7,2,-25) * CFrame.Angles(0,math.rad(15),0),
         IdleAnimationId = 507766388,
     },
+
+    ["StickMasterLuke"] = {
+        CellX = 175,
+        CellY = 178,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(37,0,-20) * CFrame.Angles(0,math.rad(-75),0),
+        IdleAnimationId = 507766388,
+    },
+    ["Jmargh"] = {
+        CellX = 174,
+        CellY = 177,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(7,73,-4) * CFrame.Angles(0,math.rad(185),0),
+        IdleAnimationId = 507766388,
+    },
 }

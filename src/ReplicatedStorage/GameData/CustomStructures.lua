@@ -90,5 +90,10 @@ return {
         end},
         ["Generation.CustomStructures.ShedletskysMansion"] = {199,104},
         ["Generation.CustomStructures.BrightEyessMansion"] = {197,104},
+        ["Generation.CustomStructures.StickMasterLukesBarn"] = {173,177,function()
+            --Fill the dirt for the barn.
+            Workspace.Terrain:FillBlock(CFrame.new(17456,-4,17754),Vector3.new(96,4,44),Enum.Material.Ground)
+            Workspace.Terrain:FillBlock(CFrame.new(17304,-4,17750),Vector3.new(108,4,16),Enum.Material.Ground)
+        end},
     },
 }
