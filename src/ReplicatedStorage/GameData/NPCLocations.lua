@@ -83,4 +83,16 @@ return {
         OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-2,0,40) * CFrame.Angles(0,math.rad(90),0),
         IdleAnimationId = 507766388,
     },
+    ["Tarabyte"] = {
+        CellX = 63,
+        CellY = 35,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-50,20,10),
+        IdleAnimationId = 507766388,
+    },
+    ["Coatp0cketninja"] = {
+        CellX = 64,
+        CellY = 35,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-15,0,0) * CFrame.Angles(0,math.rad(150),0),
+        IdleAnimationId = 507766388,
+    },
 }

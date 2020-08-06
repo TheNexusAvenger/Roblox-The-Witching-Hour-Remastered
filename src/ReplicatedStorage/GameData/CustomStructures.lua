@@ -23,8 +23,6 @@ return {
         {119,33,"BaseGrass"},
     
         --Tarabyte's House.
-        {64,35,"BaseGrass"},
-        {64,36,"BaseGrass"},
         {63,35,"BaseGrass"},
         {63,36,"BaseGrass"},
     
@@ -100,5 +98,6 @@ return {
             --Fill the sand for the pyramid.
             Workspace.Terrain:FillBlock(CFrame.new(10550,-4,11750),Vector3.new(200,4,200),Enum.Material.Sand)
         end},
+        ["Generation.CustomStructures.TarabytesHouse"] = {63,35},
     },
 }
