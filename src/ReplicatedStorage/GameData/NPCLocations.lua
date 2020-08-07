@@ -95,4 +95,16 @@ return {
         OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-15,0,0) * CFrame.Angles(0,math.rad(150),0),
         IdleAnimationId = 507766388,
     },
+    ["Sorcus"] = {
+        CellX = 24,
+        CellY = 9,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(14,28,26) * CFrame.Angles(0,math.rad(-75),0),
+        IdleAnimationId = 507766388,
+    },
+    ["Games"] = {
+        CellX = 24,
+        CellY = 9,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-27,0,40) * CFrame.Angles(0,math.rad(105),0),
+        IdleAnimationId = 507766388,
+    },
 }
