@@ -100,5 +100,6 @@ return {
         end},
         ["Generation.CustomStructures.TarabytesHouse"] = {63,35},
         ["Generation.CustomStructures.SorcussGraveyard"] = {24,9},
+        ["Generation.CustomStructures.ChiefJustussCave"] = {61,54},
     },
 }

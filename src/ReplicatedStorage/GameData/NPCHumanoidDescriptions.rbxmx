@@ -1198,5 +1198,145 @@
 				<float name="WidthScale">1</float>
 			</Properties>
 		</Item>
+		<Item class="HumanoidDescription" referent="RBXA1743EB4E8614183931BA1C454E39A94">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="BackAccessory"></string>
+				<float name="BodyTypeScale">0.300000012</float>
+				<int64 name="ClimbAnimation">0</int64>
+				<float name="DepthScale">1</float>
+				<string name="EmotesDataInternal"></string>
+				<string name="EquippedEmotesDataInternal"></string>
+				<int64 name="Face">0</int64>
+				<string name="FaceAccessory"></string>
+				<int64 name="FallAnimation">0</int64>
+				<string name="FrontAccessory"></string>
+				<int64 name="GraphicTShirt">0</int64>
+				<string name="HairAccessory"></string>
+				<string name="HatAccessory">110706148</string>
+				<int64 name="Head">0</int64>
+				<Color3 name="HeadColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<float name="HeadScale">1</float>
+				<float name="HeightScale">1</float>
+				<int64 name="IdleAnimation">0</int64>
+				<int64 name="JumpAnimation">0</int64>
+				<int64 name="LeftArm">109350569</int64>
+				<Color3 name="LeftArmColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="LeftLeg">109350612</int64>
+				<Color3 name="LeftLegColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<string name="Name">ChiefJustus</string>
+				<string name="NeckAccessory"></string>
+				<int64 name="Pants">0</int64>
+				<float name="ProportionScale">1</float>
+				<int64 name="RightArm">109350647</int64>
+				<Color3 name="RightArmColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="RightLeg">109350703</int64>
+				<Color3 name="RightLegColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="RunAnimation">0</int64>
+				<int64 name="Shirt">0</int64>
+				<string name="ShouldersAccessory"></string>
+				<int64 name="SwimAnimation">0</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<int64 name="Torso">109350773</int64>
+				<Color3 name="TorsoColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<string name="WaistAccessory"></string>
+				<int64 name="WalkAnimation">0</int64>
+				<float name="WidthScale">1</float>
+			</Properties>
+		</Item>
+		<Item class="HumanoidDescription" referent="RBX24D0A9765CF045A8995590E2B9C40142">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="BackAccessory"></string>
+				<float name="BodyTypeScale">0.300000012</float>
+				<int64 name="ClimbAnimation">0</int64>
+				<float name="DepthScale">1</float>
+				<string name="EmotesDataInternal"></string>
+				<string name="EquippedEmotesDataInternal"></string>
+				<int64 name="Face">7074661</int64>
+				<string name="FaceAccessory"></string>
+				<int64 name="FallAnimation">0</int64>
+				<string name="FrontAccessory"></string>
+				<int64 name="GraphicTShirt">0</int64>
+				<string name="HairAccessory">293313637</string>
+				<string name="HatAccessory"></string>
+				<int64 name="Head">0</int64>
+				<Color3 name="HeadColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<float name="HeadScale">1</float>
+				<float name="HeightScale">1</float>
+				<int64 name="IdleAnimation">0</int64>
+				<int64 name="JumpAnimation">0</int64>
+				<int64 name="LeftArm">0</int64>
+				<Color3 name="LeftArmColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="LeftLeg">0</int64>
+				<Color3 name="LeftLegColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<string name="Name">Keith</string>
+				<string name="NeckAccessory"></string>
+				<int64 name="Pants">1813940</int64>
+				<float name="ProportionScale">1</float>
+				<int64 name="RightArm">0</int64>
+				<Color3 name="RightArmColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="RightLeg">0</int64>
+				<Color3 name="RightLegColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<int64 name="RunAnimation">0</int64>
+				<int64 name="Shirt">3475840</int64>
+				<string name="ShouldersAccessory"></string>
+				<int64 name="SwimAnimation">0</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<int64 name="Torso">0</int64>
+				<Color3 name="TorsoColor">
+					<R>1</R>
+					<G>0.800000012</G>
+					<B>0.600000024</B>
+				</Color3>
+				<string name="WaistAccessory"></string>
+				<int64 name="WalkAnimation">0</int64>
+				<float name="WidthScale">1</float>
+			</Properties>
+		</Item>
 	</Item>
 </roblox>
