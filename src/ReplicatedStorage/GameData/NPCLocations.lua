@@ -119,4 +119,16 @@ return {
         OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-10,65,-12) * CFrame.Angles(0,math.rad(75),0),
         IdleAnimationId = 507766388,
     },
+    ["OnlyTwentyCharacters"] = {
+        CellX = 20,
+        CellY = 162,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(15,3,-10) * CFrame.Angles(0,math.rad(-105),0),
+        IdleAnimationId = 507766388,
+    },
+    ["Dbapostle"] = {
+        CellX = 20,
+        CellY = 162,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-30,0,-20) * CFrame.Angles(0,math.rad(90),0),
+        IdleAnimationId = 507766388,
+    },
 }
