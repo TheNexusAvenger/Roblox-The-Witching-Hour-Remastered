@@ -55,13 +55,15 @@ function NPCService:LoadNPCModels()
         NewCharacter.Parent = ReplicatedStorage
 
         --Apply the humanoid description.
-        local Worked,Error = pcall(function()
-            NewCharacter:WaitForChild("Humanoid"):ApplyDescription(HumanoidDescription)
-        end)
-        if not Worked then
-            warn("Failed to load humanoid description for "..tostring(HumanoidDescription.Name).." because"..tostring(Error))
-        end
-        NewCharacter.Parent = NPCModels
+        coroutine.wrap(function()
+            local Worked,Error = pcall(function()
+                NewCharacter:WaitForChild("Humanoid"):ApplyDescription(HumanoidDescription)
+            end)
+            if not Worked then
+                warn("Failed to load humanoid description for "..tostring(HumanoidDescription.Name).." because"..tostring(Error))
+            end
+            NewCharacter.Parent = NPCModels
+        end)()
     end
 end
 
