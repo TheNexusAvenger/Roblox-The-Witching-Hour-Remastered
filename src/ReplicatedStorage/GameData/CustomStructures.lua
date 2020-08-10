@@ -32,11 +32,16 @@ return {
         --ChiefJustus's Cave.
         {61,54,"BaseGrass"},
     
-        --SolarCrane's Log Mansion.
+        --SolarCrane's Mansion.
         {14,87,"BaseGrass"},
         {14,88,"BaseGrass"},
+        {14,89,"BaseGrass"},
         {13,87,"BaseGrass"},
         {13,88,"BaseGrass"},
+        {13,89,"BaseGrass"},
+        {12,87,"BaseGrass"},
+        {12,88,"BaseGrass"},
+        {12,89,"BaseGrass"},
     
         --Darkskrills's Swamp Cabin.
         {153,74,"Swamp"},
@@ -102,5 +107,17 @@ return {
         ["Generation.CustomStructures.SorcussGraveyard"] = {24,9},
         ["Generation.CustomStructures.ChiefJustussCave"] = {61,54},
         ["Generation.CustomStructures.OnlyTwentyCharactersLogCabin"] = {20,162},
+        ["Generation.CustomStructures.SolarCranesMansion"] = {13,88,function()
+            --Fill the grass for the hill.
+            for _,Part in pairs(Workspace:WaitForChild("SolarCranesMansion"):WaitForChild("TerrainHill"):GetChildren()) do
+                if Part:IsA("BasePart") then
+                    if Part.Shape == Enum.PartType.Ball then
+                        Workspace.Terrain:FillBall(Part.CFrame.p,Part.Size.X/2,Enum.Material.LeafyGrass)
+                    else
+                        Workspace.Terrain:FillBlock(Part.CFrame,Part.Size,Enum.Material.LeafyGrass)
+                    end
+                end
+            end
+        end},
     },
 }

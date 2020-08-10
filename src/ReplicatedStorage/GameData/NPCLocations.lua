@@ -131,4 +131,16 @@ return {
         OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-30,0,-20) * CFrame.Angles(0,math.rad(90),0),
         IdleAnimationId = 507766388,
     },
+    ["SolarCrane"] = {
+        CellX = 12,
+        CellY = 88,
+        OffsetCFrame = CFrame.Angles(0,-math.pi/2,0) * CFrame.new(-18,134,-10) * CFrame.Angles(0,math.rad(60),0),
+        IdleAnimationId = 507766388,
+    },
+    ["Raeglyn"] = {
+        CellX = 14,
+        CellY = 89,
+        OffsetCFrame = CFrame.Angles(0,-math.pi/2,0) * CFrame.new(-50,7.2,30),
+        IdleAnimationId = 507766388,
+    },
 }
