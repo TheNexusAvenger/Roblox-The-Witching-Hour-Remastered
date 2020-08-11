@@ -119,5 +119,6 @@ return {
                 end
             end
         end},
+        ["Generation.CustomStructures.FusrobloxsMansion"] = {99,194},
     },
 }

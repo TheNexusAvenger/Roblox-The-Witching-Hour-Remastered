@@ -143,4 +143,16 @@ return {
         OffsetCFrame = CFrame.Angles(0,-math.pi/2,0) * CFrame.new(-50,7.2,30),
         IdleAnimationId = 507766388,
     },
+    ["Fusroblox"] = {
+        CellX = 99,
+        CellY = 195,
+        OffsetCFrame = CFrame.new(20,34,-20),
+        IdleAnimationId = 507766388,
+    },
+    ["Totbl"] = {
+        CellX = 99,
+        CellY = 195,
+        OffsetCFrame = CFrame.new(20,0,-57),
+        IdleAnimationId = 507766388,
+    },
 }
