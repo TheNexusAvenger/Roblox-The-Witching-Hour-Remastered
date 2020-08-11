@@ -5,6 +5,20 @@ Custom cells and locations for custom cells.
 --]]
 
 local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local Tree = ReplicatedStorageProject:GetResource("Generation.Tree")
+local TreeRandomGenerator = Random.new(243326526256) --Arbitrary random seed, but must be consistent to have the trees be the same between clients.
+
+--[[
+Generates a tree.
+--]]
+local function GenerateTree(X,Z,Parent)
+    Tree.new(CFrame.new(X,0,Z) * CFrame.Angles(0,TreeRandomGenerator:NextNumber() * 2 * math.pi,0),Parent,TreeRandomGenerator)
+end
+
+
 
 return {
     Cells = {
@@ -33,12 +47,12 @@ return {
         {61,54,"BaseGrass"},
     
         --SolarCrane's Mansion.
-        {14,87,"BaseGrass"},
+        {14,87,"Grass"},
         {14,88,"BaseGrass"},
-        {14,89,"BaseGrass"},
-        {13,87,"BaseGrass"},
+        {14,89,"Grass"},
+        {13,87,"Grass"},
         {13,88,"BaseGrass"},
-        {13,89,"BaseGrass"},
+        {13,89,"Grass"},
         {12,87,"BaseGrass"},
         {12,88,"BaseGrass"},
         {12,89,"BaseGrass"},
@@ -97,13 +111,31 @@ return {
             --Fill the dirt for the barn.
             Workspace.Terrain:FillBlock(CFrame.new(17456,-4,17754),Vector3.new(96,4,44),Enum.Material.Ground)
             Workspace.Terrain:FillBlock(CFrame.new(17304,-4,17750),Vector3.new(108,4,16),Enum.Material.Ground)
+
+            --Add extra trees.
+            local StickMasterLukesBarn = Workspace:WaitForChild("StickMasterLukesBarn")
+            GenerateTree(17360,17720,StickMasterLukesBarn)
+            GenerateTree(17320,17720,StickMasterLukesBarn)
+            GenerateTree(17280,17720,StickMasterLukesBarn)
+            GenerateTree(17360,17780,StickMasterLukesBarn)
+            GenerateTree(17320,17780,StickMasterLukesBarn)
+            GenerateTree(17280,17780,StickMasterLukesBarn)
         end},
         ["Generation.CustomStructures.DarthskrillsSwampCabin"] = {153,74},
         ["Generation.CustomStructures.OstrichSizedsPyramid"] = {105,117,function()
             --Fill the sand for the pyramid.
             Workspace.Terrain:FillBlock(CFrame.new(10550,-4,11750),Vector3.new(200,4,200),Enum.Material.Sand)
         end},
-        ["Generation.CustomStructures.TarabytesHouse"] = {63,35},
+        ["Generation.CustomStructures.TarabytesHouse"] = {63,35,function()
+            --Add extra trees.
+            local TarabytesHouse = Workspace:WaitForChild("TarabytesHouse")
+            GenerateTree(6300 + 30,3500 - 20,TarabytesHouse)
+            GenerateTree(6300 - 40,3500 + 10,TarabytesHouse)
+            GenerateTree(6300 - 10,3500 - 30,TarabytesHouse)
+            GenerateTree(6300 - 20,3600 + 40,TarabytesHouse)
+            GenerateTree(6300 + 30,3600 + 20,TarabytesHouse)
+            GenerateTree(6300 - 30,3600 - 10,TarabytesHouse)
+        end},
         ["Generation.CustomStructures.SorcussGraveyard"] = {24,9},
         ["Generation.CustomStructures.ChiefJustussCave"] = {61,54},
         ["Generation.CustomStructures.OnlyTwentyCharactersLogCabin"] = {20,162},
