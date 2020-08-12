@@ -40,6 +40,10 @@
             "$className": "ServerScriptService",
             "$path": "./src/ServerScriptService"
         },
+        "StarterGui": {
+            "$className": "StarterGui",
+            "$path": "./src/StarterGui"
+        },
         "StarterPlayer": {
             "$className": "StarterPlayer",
             "StarterPlayerScripts": {
