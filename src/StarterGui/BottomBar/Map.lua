@@ -23,6 +23,7 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
+local Landmarks = ReplicatedStorageProject:GetResource("GameData.Landmarks")
 
 local Map = NexusObject:Extend()
 Map:SetClassName("Map")
@@ -72,6 +73,31 @@ function Map:__new(Container,MaxGridWidth)
             self.CellFrames[X][Y] = Cell
         end
     end
+
+    --Create the landmarks.
+    for Name,LocationData in pairs(Landmarks) do
+        local LandmarkIcon = Instance.new("ImageLabel")
+        LandmarkIcon.BackgroundTransparency = 1
+        LandmarkIcon.Size = UDim2.new(1/FULL_MAP_SIZE_CELLS,0,1/FULL_MAP_SIZE_CELLS,0)
+        LandmarkIcon.AnchorPoint = Vector2.new(0.5,0.5)
+        LandmarkIcon.Position = UDim2.new((LocationData[2] - 0.5)/FULL_MAP_SIZE_CELLS,0,(FULL_MAP_SIZE_CELLS - LocationData[1] + 0.5)/FULL_MAP_SIZE_CELLS,0)
+        LandmarkIcon.Image = "rbxassetid://131348500"
+        LandmarkIcon.ZIndex = 3
+        LandmarkIcon.Parent = FullContainer
+
+        local LandmarkText = Instance.new("TextLabel")
+        LandmarkText.BackgroundTransparency = 1
+        LandmarkText.Size = UDim2.new(3,0,0.5,0)
+        LandmarkText.Position = UDim2.new(0.5,0,-0.5,0)
+        LandmarkText.AnchorPoint = Vector2.new(0.5,0)
+        LandmarkText.Font = Enum.Font.Antique
+        LandmarkText.Text = Name
+        LandmarkText.TextColor3 = Color3.new(1,1,1)
+        LandmarkText.TextScaled = true
+        LandmarkText.TextXAlignment = "Center"
+        LandmarkText.ZIndex = 3
+        LandmarkText.Parent = LandmarkIcon
+    end
 end
 
 --[[
@@ -113,7 +139,7 @@ function Map:UpdateMap()
     --Update the positions.
     local MinMapPos,MaxMapPos = (self.ViewableWidth/2) + 0.5,FULL_MAP_SIZE_CELLS - (self.ViewableWidth/2) + 0.5
     local MapCenterX,MapCenterY = math.clamp(self.LastX,MinMapPos,MaxMapPos),math.clamp(self.LastY,MinMapPos,MaxMapPos)
-    self.FullContainer.Position = UDim2.new(-(MapCenterY/self.ViewableWidth),0,-((FULL_MAP_SIZE_CELLS - MapCenterX)/self.ViewableWidth),0)
+    self.FullContainer.Position = UDim2.new(0.5 + (0.5/self.ViewableWidth) - (MapCenterY/self.ViewableWidth),0,0.5 - (0.5/self.ViewableWidth) - (((FULL_MAP_SIZE_CELLS - MapCenterX)/self.ViewableWidth)),0)
     self.CellContainer.Position = UDim2.new(0.5 - (((MapCenterY/self.ViewableWidth)) % (1/self.ViewableWidth)),0,0.5 - ((((FULL_MAP_SIZE_CELLS - MapCenterX)/self.ViewableWidth)) % (1/self.ViewableWidth)),0)
 
     --Update the cells if the display should be updated.
