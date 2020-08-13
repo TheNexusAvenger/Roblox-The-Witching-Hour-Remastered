@@ -24,6 +24,7 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
 local Landmarks = ReplicatedStorageProject:GetResource("GameData.Landmarks")
+local CharacterIndicator = require(script:WaitForChild("CharacterIndicator"))
 
 local Map = NexusObject:Extend()
 Map:SetClassName("Map")
@@ -43,6 +44,7 @@ function Map:__new(Container,MaxGridWidth)
     self.LastGridUpdateY = -1
     self.ViewableWidth = 6
     self.MaxGridWidth = MaxGridWidth
+    self.CharacterIndicators = {}
 
     --Create the containers.
     local FullContainer = Instance.new("Frame")
@@ -78,7 +80,7 @@ function Map:__new(Container,MaxGridWidth)
     for Name,LocationData in pairs(Landmarks) do
         local LandmarkIcon = Instance.new("ImageLabel")
         LandmarkIcon.BackgroundTransparency = 1
-        LandmarkIcon.Size = UDim2.new(1/FULL_MAP_SIZE_CELLS,0,1/FULL_MAP_SIZE_CELLS,0)
+        LandmarkIcon.Size = UDim2.new(0.8/FULL_MAP_SIZE_CELLS,0,0.8/FULL_MAP_SIZE_CELLS,0)
         LandmarkIcon.AnchorPoint = Vector2.new(0.5,0.5)
         LandmarkIcon.Position = UDim2.new((LocationData[2] - 0.5)/FULL_MAP_SIZE_CELLS,0,(FULL_MAP_SIZE_CELLS - LocationData[1] + 0.5)/FULL_MAP_SIZE_CELLS,0)
         LandmarkIcon.Image = "rbxassetid://131348500"
@@ -87,8 +89,8 @@ function Map:__new(Container,MaxGridWidth)
 
         local LandmarkText = Instance.new("TextLabel")
         LandmarkText.BackgroundTransparency = 1
-        LandmarkText.Size = UDim2.new(3,0,0.5,0)
-        LandmarkText.Position = UDim2.new(0.5,0,-0.5,0)
+        LandmarkText.Size = UDim2.new(3,0,0.6,0)
+        LandmarkText.Position = UDim2.new(0.5,0,-0.6,0)
         LandmarkText.AnchorPoint = Vector2.new(0.5,0)
         LandmarkText.Font = Enum.Font.Antique
         LandmarkText.Text = Name
@@ -147,6 +149,30 @@ function Map:UpdateMap()
     if NewCellX ~= self.LastGridUpdateX or NewCellY ~= self.LastGridUpdateY then
         self.LastGridUpdateX,self.LastGridUpdateY = NewCellX,NewCellY
         self:UpdateCells()
+    end
+end
+
+--[[
+Removes a character indicator.
+--]]
+function Map:RemoveCharacterIndicator(Player)
+    local Indicator = self.CharacterIndicators[Player]
+    if Indicator then
+        self.CharacterIndicators[Player] = nil
+        Indicator:Destroy()
+    end
+end
+
+--[[
+Adds a character indicator.
+--]]
+function Map:AddCharacterIndicator(Player)
+    --Remove the existing indicator.
+    self:RemoveCharacterIndicator(Player)
+
+    --Add the indicator.
+    if Player.Character then
+        self.CharacterIndicators[Player] = CharacterIndicator.new(self.FullContainer,Player)
     end
 end
 

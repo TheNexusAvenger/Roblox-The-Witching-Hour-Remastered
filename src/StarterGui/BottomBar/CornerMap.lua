@@ -145,7 +145,8 @@ function CornerMap:__new(BottomFrame)
         self:PlayerAdded(Player)
     end)
     Players.PlayerRemoving:Connect(function(Player)
-        --TODO: Implement
+        self.MiniMap:RemoveCharacterIndicator(Player)
+        self.FullMap:RemoveCharacterIndicator(Player)
     end)
 end
 
@@ -167,7 +168,9 @@ Invoked when a character is added.
 function CornerMap:CharacterAdded(Character,Player)
     local Head = Character:WaitForChild("Head")
 
-    --TODO: Set up the player indicator
+    --Add the character indicators.
+    self.MiniMap:AddCharacterIndicator(Player)
+    self.FullMap:AddCharacterIndicator(Player)
 
     --Set up updating the map.
     if Player == Players.LocalPlayer then
