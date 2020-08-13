@@ -10,6 +10,7 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
+local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
 local Map = require(script.Parent:WaitForChild("Map"))
 
 local CornerMap = NexusObject:Extend()
@@ -48,13 +49,19 @@ function CornerMap:__new(BottomFrame)
 
     local Background = Instance.new("ImageLabel")
     Background.BackgroundTransparency = 1
-    Background.Size = UDim2.new(0.9 * 1.4,0,0.9,0)
-    Background.SizeConstraint = Enum.SizeConstraint.RelativeYY
     Background.Position = UDim2.new(0.5,0,1.5,0)
     Background.AnchorPoint = Vector2.new(0.5,0.5)
     Background.Image = "rbxassetid://131274595"
     Background.Parent = MapScreenGui
     
+    AspectRatioSwitcher.new(MapScreenGui,1.4,function()
+        Background.Size = UDim2.new(0.9 * 1.4,0,0.9,0)
+        Background.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    end,function()
+        Background.Size = UDim2.new(0.9,0,0.9/1.4,0)
+        Background.SizeConstraint = Enum.SizeConstraint.RelativeXX
+    end)
+
     local MapContainer = Instance.new("Frame")
     MapContainer.Size = UDim2.new(0.8,0,0.8,0)
     MapContainer.SizeConstraint = Enum.SizeConstraint.RelativeYY
