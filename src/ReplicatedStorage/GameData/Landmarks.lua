@@ -9,7 +9,7 @@ return {
     ["ReeseMcBlox"] = {119,33,},
     ["Tarabyte"] = {63,35.5,},
     ["Shedletsky"] = {199,104,},
-    ["BrightEyes"] = {199,102,},
+    ["BrightEyes"] = {197,104,},
     ["Darthskrill"] = {153,74,},
     ["StickMasterLuke"] = {175,177.5,},
     ["ChiefJustus"] = {61,54,},
