@@ -186,6 +186,7 @@ function Map:UpdateMap()
     --Update the positions.
     local MinMapPos,MaxMapPos = (self.ViewableWidth/2) + 0.5,FULL_MAP_SIZE_CELLS - (self.ViewableWidth/2) + 0.5
     local MapCenterX,MapCenterY = math.clamp(self.LastX,MinMapPos,MaxMapPos),math.clamp(self.LastY,MinMapPos,MaxMapPos)
+    self.LastX,self.LastY = MapCenterX,MapCenterY
     self.FullContainer.Position = UDim2.new(0.5 + (0.5/self.ViewableWidth) - (MapCenterY/self.ViewableWidth),0,0.5 - (0.5/self.ViewableWidth) - (((FULL_MAP_SIZE_CELLS - MapCenterX)/self.ViewableWidth)),0)
     self.CellContainer.Position = UDim2.new(0.5 - (((MapCenterY/self.ViewableWidth)) % (1/self.ViewableWidth)),0,0.5 - ((((FULL_MAP_SIZE_CELLS - MapCenterX)/self.ViewableWidth)) % (1/self.ViewableWidth)),0)
 

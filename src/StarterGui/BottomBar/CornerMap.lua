@@ -5,6 +5,7 @@ Map for the bottom bar.
 --]]
 
 local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
 
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
@@ -124,6 +125,9 @@ function CornerMap:__new(BottomFrame)
 
     --Connect the main map events.
     local CurrentZoom = 6
+    local LastMousePosition
+    self.DraggingMainMap = false
+    self.MainMapAttached = true
     ZoomInButton.Button.MouseButton1Down:Connect(function()
         if DB then
             DB = false
@@ -140,6 +144,30 @@ function CornerMap:__new(BottomFrame)
             CurrentZoom = math.clamp(CurrentZoom + 2,6,16)
             FullMap:SetViewableWidth(CurrentZoom)
             DB = true
+        end
+    end)
+    MapContainer.InputBegan:Connect(function(Input,Processed)
+        if not Processed and not self.DraggingMainMap and (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) then
+            LastMousePosition = Input.Position
+            self.DraggingMainMap = true
+            self.MainMapAttached = false
+        end
+    end)
+    UserInputService.InputEnded:Connect(function(Input)
+        if self.DraggingMainMap and (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) then
+            self.DraggingMainMap = false
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(Input)
+        if self.DraggingMainMap and (Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch) then
+            --Determine the delta.
+            local MouseDelta = Input.Position - LastMousePosition
+            local PixelsPerCell = MapContainer.AbsoluteSize.X/CurrentZoom
+            local CellDeltaX,CellDeltaY = MouseDelta.X/PixelsPerCell,MouseDelta.Y/PixelsPerCell
+            LastMousePosition = Input.Position
+
+            --Move the map.
+            FullMap:SetCenter(FullMap.LastX + CellDeltaY,FullMap.LastY - CellDeltaX)
         end
     end)
 
@@ -210,7 +238,9 @@ function CornerMap:CharacterAdded(Character,Player)
         while Character.Parent do
             local PosX,PosY = Head.CFrame.X/100,Head.CFrame.Z/100
             self.MiniMap:SetCenter(PosX,PosY)
-            self.FullMap:SetCenter(PosX,PosY)
+            if self.MainMapAttached then
+                self.FullMap:SetCenter(PosX,PosY) 
+            end
             wait()
         end
     end
