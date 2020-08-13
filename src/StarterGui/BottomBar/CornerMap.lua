@@ -106,6 +106,7 @@ function CornerMap:__new(BottomFrame)
     local MiniMap = Map.new(MiniMapContainer,9)
     self.MiniMap = MiniMap
     local FullMap = Map.new(MapContainer,19)
+    FullMap:EnableWarping()
     self.FullMap = FullMap
 
     --Set up opening and closing the map.

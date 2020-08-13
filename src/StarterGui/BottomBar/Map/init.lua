@@ -24,11 +24,16 @@ local CONFIDENCE_ID_TO_COLOR = {
 
 
 
-local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TweenService = game:GetService("TweenService")
+
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
 local MapConfidenceData = ReplicatedStorageProject:GetResource("GameData.MapConfidenceData")
+local TeleportLocations = ReplicatedStorageProject:GetResource("GameData.TeleportLocations")
 local Landmarks = ReplicatedStorageProject:GetResource("GameData.Landmarks")
 local CharacterIndicator = require(script:WaitForChild("CharacterIndicator"))
 
@@ -106,6 +111,22 @@ function Map:__new(Container,MaxGridWidth)
         LandmarkText.TextXAlignment = "Center"
         LandmarkText.ZIndex = 3
         LandmarkText.Parent = LandmarkIcon
+    end
+    
+    --Create the warp icons.
+    local WarpIcons = {}
+    self.WarpIcons = WarpIcons
+    for Name,LocationData in pairs(TeleportLocations) do
+        local WarpIcon = Instance.new("ImageButton")
+        WarpIcon.BackgroundTransparency = 1
+        WarpIcon.Size = UDim2.new(0.8/FULL_MAP_SIZE_CELLS,0,0.8/FULL_MAP_SIZE_CELLS,0)
+        WarpIcon.AnchorPoint = Vector2.new(0.5,0.5)
+        WarpIcon.Position = UDim2.new((LocationData[2] - 0.5)/FULL_MAP_SIZE_CELLS,0,(FULL_MAP_SIZE_CELLS - LocationData[1] + 0.5)/FULL_MAP_SIZE_CELLS,0)
+        WarpIcon.Image = "rbxassetid://131348539"
+        WarpIcon.ZIndex = 4
+        --WarpIcon.Visible = fasle --TODO: Implement buying warping and the map being discovered.
+        WarpIcon.Parent = FullContainer
+        WarpIcons[Name] = WarpIcon
     end
 end
 
@@ -197,6 +218,45 @@ function Map:AddCharacterIndicator(Player)
     --Add the indicator.
     if Player.Character then
         self.CharacterIndicators[Player] = CharacterIndicator.new(self.FullContainer,Player)
+    end
+end
+
+--[[
+Enables being able to use the warp buttons.
+--]]
+function Map:EnableWarping()
+    for Name,Button in pairs(self.WarpIcons) do
+        local LocationData = TeleportLocations[Name]
+
+        --Set up clicking the buttons.
+        local DB = true
+        Button.MouseButton1Down:Connect(function()
+            if DB then
+                DB = false
+                local Character = Players.LocalPlayer.Character
+                if Character then
+                    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+                    if Character then
+                        --Display the animation.
+                        local Scale = Instance.new("UIScale")
+                        Scale.Parent = Button
+                        for i = 1,3 do
+                            TweenService:Create(Scale,TweenInfo.new(0.5),{ Scale = 1.5 }):Play()
+                            wait(0.5)
+                            TweenService:Create(Scale,TweenInfo.new(0.5),{ Scale = 1 }):Play()
+                            wait(0.5)
+                        end
+                        Scale:Destroy()
+
+                        --Teleport the player.
+                        HumanoidRootPart.CFrame = CFrame.new(LocationData[1] * 100,3,LocationData[2] * 100) * CFrame.Angles(0,(-math.pi/2) + LocationData[3],0) * CFrame.new(math.random(-10,10),0,math.random(-10,10))
+                    end
+                end
+                
+                wait()
+                DB = true
+            end
+        end)
     end
 end
 
