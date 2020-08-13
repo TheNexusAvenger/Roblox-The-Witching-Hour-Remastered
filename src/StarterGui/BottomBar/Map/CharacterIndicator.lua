@@ -54,9 +54,10 @@ function CharacterIndicator:__new(MapContainer,Player)
     PlayerNameText.Parent = PlayerIconBack
 
     --Connect the events.
+    local Character = Player.Character
     self.Head = Player.Character:WaitForChild("Head")
     coroutine.wrap(function()
-        while self.Head.Parent and self.PlayerIconBack.Parent do
+        while Character.Parent and self.PlayerIconBack.Parent do
             self:UpdatePosition()
             wait()
         end

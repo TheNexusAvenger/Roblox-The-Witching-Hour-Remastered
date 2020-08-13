@@ -42,7 +42,13 @@
         },
         "StarterGui": {
             "$className": "StarterGui",
-            "$path": "./src/StarterGui"
+            "$path": "./src/StarterGui", 
+            "$properties": {
+                "ResetPlayerGuiOnSpawn": {
+                    "Type": "Bool",
+                    "Value": false
+                }
+            }
         },
         "StarterPlayer": {
             "$className": "StarterPlayer",

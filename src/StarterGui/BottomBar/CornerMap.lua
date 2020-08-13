@@ -206,7 +206,7 @@ function CornerMap:CharacterAdded(Character,Player)
 
     --Set up updating the map.
     if Player == Players.LocalPlayer then
-        while Head.Parent do
+        while Character.Parent do
             local PosX,PosY = Head.CFrame.X/100,Head.CFrame.Z/100
             self.MiniMap:SetCenter(PosX,PosY)
             self.FullMap:SetCenter(PosX,PosY)
