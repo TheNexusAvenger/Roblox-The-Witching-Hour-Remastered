@@ -6,6 +6,7 @@ Initialies the bottom bar.
 
 local Background = require(script:WaitForChild("Background"))
 local CornerMenuButtons = require(script:WaitForChild("CornerMenuButtons"))
+local CenterStats = require(script:WaitForChild("CenterStats"))
 local CornerMap = require(script:WaitForChild("CornerMap"))
 
 
@@ -24,4 +25,5 @@ BottomFrame.Parent = ScreenGui
 --Initialize the bottom bar.
 Background.new(BottomFrame)
 CornerMenuButtons.new(BottomFrame)
+CenterStats.new(BottomFrame)
 CornerMap.new(BottomFrame)
