@@ -16,6 +16,11 @@ local ID_TO_TEXTURE = {
     [6] = {"rbxassetid://130857349"}, --Road
     [7] = {"rbxassetid://130857451","rbxassetid://130857442","rbxassetid://130857424"}, --House
 }
+local CONFIDENCE_ID_TO_COLOR = {
+    [0] = Color3.new(0,1,0),
+    [1] = Color3.new(1,0,0),
+    [2] = Color3.new(0,0,1),
+}
 
 
 
@@ -23,6 +28,7 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
+local MapConfidenceData = ReplicatedStorageProject:GetResource("GameData.MapConfidenceData")
 local Landmarks = ReplicatedStorageProject:GetResource("GameData.Landmarks")
 local CharacterIndicator = require(script:WaitForChild("CharacterIndicator"))
 
@@ -45,6 +51,7 @@ function Map:__new(Container,MaxGridWidth)
     self.ViewableWidth = 6
     self.MaxGridWidth = MaxGridWidth
     self.CharacterIndicators = {}
+    self.ShowMapConfidence = false
 
     --Create the containers.
     local FullContainer = Instance.new("Frame")
@@ -119,13 +126,30 @@ function Map:GetCellTexture(X,Y)
 end
 
 --[[
+Returns the color to use for a cell representing
+the confidence value. Will return white
+if displaying it is disabled.
+--]]
+function Map:GetCellConfidenceColor(X,Y)
+    --Return the color for a cell.
+    if self.ShowMapConfidence and MapConfidenceData[X] and MapConfidenceData[X][Y] then
+        return CONFIDENCE_ID_TO_COLOR[MapConfidenceData[X][Y]] or Color3.new(1,1,1)
+    end
+
+    --Return white (disabled or no data).
+    return Color3.new(1,1,1)
+end
+
+--[[
 Updates the cells of the map.
 --]]
 function Map:UpdateCells()
     local StartX,StartY = math.floor(self.LastGridUpdateX - (self.MaxGridWidth/2)),math.floor(self.LastGridUpdateY - (self.MaxGridWidth/2))
     for XOffset,ImageLabels in pairs(self.CellFrames) do
         for YOffset,ImageLabel in pairs(ImageLabels) do
-            ImageLabel.Image = self:GetCellTexture(StartX + (YOffset + 1),StartY + (XOffset - 1))
+            local X,Y = StartX + (YOffset + 1),StartY + (XOffset - 1)
+            ImageLabel.Image = self:GetCellTexture(X,Y)
+            ImageLabel.ImageColor3 = self:GetCellConfidenceColor(X,Y)
         end
     end
 end
@@ -191,6 +215,14 @@ the X and Y axes.
 function Map:SetViewableWidth(Width)
     self.ViewableWidth = Width
     self:UpdateMap()
+end
+
+--[[
+Sets the map confidence being visible or not.
+--]]
+function Map:SetMapConfidence(MapConfidence)
+    self.ShowMapConfidence = MapConfidence
+    self:UpdateCells()
 end
 
 

@@ -155,6 +155,31 @@ function CornerMap:__new(BottomFrame)
         self.MiniMap:RemoveCharacterIndicator(Player)
         self.FullMap:RemoveCharacterIndicator(Player)
     end)
+
+    --Register a toggle command for the map confidence data.
+    coroutine.wrap(function()
+        local NexusAdminAPI = ReplicatedStorageProject:GetResource("NexusAdminClient")
+        
+        NexusAdminAPI.Registry:LoadCommand({
+            Keyword = "showmapconfidence",
+            Prefix = NexusAdminAPI.Configuration.CommandPrefix,
+            Category = "GameDebug",
+            Description = "Displays the confidence of the map data. Green is confirmed by video, red is not confirmed, and blue is arbitrary.",
+            AdminLevel = -1,
+            Arguments = {
+                {
+                    Type = "boolean",
+                    Name = "Show",
+                    Default = true,
+                    Description = "Whether the confidence values should be shown.",
+                },
+            },
+            Run = function(_,CommandContext,ShowMapConfidence)
+                self.MiniMap:SetMapConfidence(ShowMapConfidence)
+                self.FullMap:SetMapConfidence(ShowMapConfidence)
+            end,
+        })
+    end)()
 end
 
 --[[
