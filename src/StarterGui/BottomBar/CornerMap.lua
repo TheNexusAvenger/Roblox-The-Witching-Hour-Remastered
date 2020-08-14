@@ -11,6 +11,7 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
+local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
 local Map = require(script.Parent:WaitForChild("Map"))
 
@@ -103,6 +104,18 @@ function CornerMap:__new(BottomFrame)
     Legend.Image = "rbxassetid://131274953"
     Legend.Parent = Background
 
+    local RecenterImage = Instance.new("ImageLabel")
+    RecenterImage.BackgroundTransparency = 1
+    RecenterImage.AnchorPoint = Vector2.new(0.5,1)
+    RecenterImage.Size = UDim2.new(0.1 * (188/52),0,0.1,0)
+    RecenterImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    RecenterImage.Position = UDim2.new(0.5,0,0.95,0)
+    RecenterImage.ZIndex = 8
+    RecenterImage.Visible = false
+    RecenterImage.Parent = MapContainer
+    local RecenterButton = WideTextButtonDecorator.new(RecenterImage,"RECENTER")
+    self.RecenterImage = RecenterImage
+
     --Initialize the maps.
     local MiniMap = Map.new(MiniMapContainer,9)
     self.MiniMap = MiniMap
@@ -151,6 +164,7 @@ function CornerMap:__new(BottomFrame)
             LastMousePosition = Input.Position
             self.DraggingMainMap = true
             self.MainMapAttached = false
+            RecenterImage.Visible = true
         end
     end)
     UserInputService.InputEnded:Connect(function(Input)
@@ -168,6 +182,15 @@ function CornerMap:__new(BottomFrame)
 
             --Move the map.
             FullMap:SetCenter(FullMap.LastX + CellDeltaY,FullMap.LastY - CellDeltaX)
+        end
+    end)
+    RecenterButton.Button.MouseButton1Down:Connect(function()
+        if DB and not self.DraggingMainMap then
+            DB = false
+            self.MainMapAttached = true
+            RecenterImage.Visible = false
+            wait()
+            DB = true
         end
     end)
 

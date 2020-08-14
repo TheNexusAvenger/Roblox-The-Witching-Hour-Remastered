@@ -24,6 +24,7 @@ function ImageEventBinder:__new(ImageLabel,ButtonSize,BaseImage,HoverImage,Press
     Button.BackgroundTransparency = 1
     Button.Size = ButtonSize
     Button.Text = ""
+    Button.ZIndex = ImageLabel.ZIndex
     Button.Parent = ImageLabel
 
     --Storage the state.
