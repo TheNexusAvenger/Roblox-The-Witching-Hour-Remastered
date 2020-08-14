@@ -4,12 +4,18 @@ TheNexusAvenger
 Map for the bottom bar.
 --]]
 
+local MAP_LANDMARK_MAX_MOVE_SPEED = 25
+
+
+
 local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
+local Landmarks = ReplicatedStorageProject:GetResource("GameData.Landmarks")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
@@ -116,12 +122,73 @@ function CornerMap:__new(BottomFrame)
     local RecenterButton = WideTextButtonDecorator.new(RecenterImage,"RECENTER")
     self.RecenterImage = RecenterImage
 
+    local LandmarkList = Instance.new("ScrollingFrame")
+    LandmarkList.BackgroundTransparency = 1
+    LandmarkList.BorderSizePixel = 0
+    LandmarkList.AnchorPoint = Vector2.new(1,0)
+    LandmarkList.Position = UDim2.new(0.94,12,0.07,0)
+    LandmarkList.Size = UDim2.new(0.25 * (1/4) * (188/52),12,0.25,0)
+    LandmarkList.Parent = Background
+
     --Initialize the maps.
     local MiniMap = Map.new(MiniMapContainer,9)
     self.MiniMap = MiniMap
     local FullMap = Map.new(MapContainer,19)
     FullMap:EnableWarping()
     self.FullMap = FullMap
+
+    --Sort the landmark names by alphabetical order.
+    local LandmarkNames = {}
+    for LandmarkName,_ in pairs(Landmarks) do
+        table.insert(LandmarkNames,LandmarkName)
+    end
+    table.sort(LandmarkNames)
+
+    --Add the landmarks to the list.
+    LandmarkList.CanvasSize = UDim2.new(0,0,(0.25/4) * #LandmarkNames,0)
+    local CurrentTween
+    for i,LandmarkName in pairs(LandmarkNames) do
+        --Create the button.
+        local LandmarkImage = Instance.new("ImageLabel")
+        LandmarkImage.BackgroundTransparency = 1
+        LandmarkImage.Size = UDim2.new(1,-12,1/#LandmarkNames,0)
+        LandmarkImage.Position = UDim2.new(0,0,(i - 1)/#LandmarkNames,0)
+        LandmarkImage.Parent = LandmarkList
+        local LandmarkButton = WideTextButtonDecorator.new(LandmarkImage,LandmarkName)
+
+        --Connect clicking the button.
+        local LandmarkData = Landmarks[LandmarkName]
+        local DB = true
+        LandmarkButton.Button.MouseButton1Down:Connect(function()
+            if DB then
+                DB = false
+
+                --Calculate the tween.
+                local StartX,StartY = FullMap.LastX,FullMap.LastY
+                local DeltaX,DeltaY = LandmarkData[1] - StartX,LandmarkData[2] - StartY
+                local TravelDistance = ((DeltaX ^ 2) + (DeltaY ^ 2)) ^ 0.5
+                local TravelTime = TravelDistance / MAP_LANDMARK_MAX_MOVE_SPEED
+
+                --Tween the map to the target while it isn't being dragged or recentered.
+                local StartTime = tick()
+                CurrentTween = StartTime
+                self.MainMapAttached = false
+                RecenterImage.Visible = true
+                while not self.DraggingMainMap and not self.MainMapAttached and CurrentTween == StartTime and tick() - StartTime <= TravelTime do
+                    --Determine and smooth the delta.
+                    local Delta = (tick() - StartTime)/TravelTime
+                    Delta = (1 - math.cos(Delta * math.pi))/2
+
+                    --Move the map.
+                    local X,Y = StartX + (DeltaX * Delta),StartY + (DeltaY * Delta)
+                    FullMap:SetCenter(X,Y)
+                    RunService.RenderStepped:Wait()
+                end
+
+                DB = true
+            end
+        end)
+    end
 
     --Set up opening and closing the map.
     local DB = true
