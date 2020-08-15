@@ -40,6 +40,13 @@
             "$className": "ServerScriptService",
             "$path": "./src/ServerScriptService"
         },
+        "ServerStorage": {
+            "$className": "ServerStorage",
+            "UnitTests": {
+                "$className": "Folder",
+                "$path": "./test"
+            }
+        },
         "StarterGui": {
             "$className": "StarterGui",
             "$path": "./src/StarterGui", 
