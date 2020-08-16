@@ -10,6 +10,7 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
+local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
 local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
 
 local CornerMenuButtons = NexusObject:Extend()
@@ -87,17 +88,46 @@ function CornerMenuButtons:__new(BottomFrame)
     QuestsImage.Parent = MenuBottomBarBackground
     local QuestsButton = ImageEventBinder.new(QuestsImage,UDim2.new(62/128,0,45/64,0),"rbxassetid://132718256","rbxassetid://132717904","rbxassetid://132717928")
 
-    InventoryButton.Button.MouseButton1Down:Connect(function()
-        --TODO: Implement
-    end)
-    StoreButton.Button.MouseButton1Down:Connect(function()
-        --TODO: Implement
-    end)
-    CollectablesButton.Button.MouseButton1Down:Connect(function()
-        --TODO: Implement
-    end)
-    QuestsButton.Button.MouseButton1Down:Connect(function()
-        --TODO: Implement
+    local CreditsImage = Instance.new("ImageLabel")
+    CreditsImage.BackgroundTransparency = 1
+    CreditsImage.Size = UDim2.new(0.15 * (188/52),0,0.15,0)
+    CreditsImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    CreditsImage.Position = UDim2.new(0.16,0,0.65,0)
+    CreditsImage.Parent = MenuBottomBarBackground
+    local CreditsButton = WideTextButtonDecorator.new(CreditsImage,"CREDITS")
+
+    --Set up the buttons.
+    local GuiOpenStatesFolder = Instance.new("Folder")
+    GuiOpenStatesFolder.Name = "GuiOpenStates"
+    GuiOpenStatesFolder.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
+    self.GuiOpenStatesFolder = GuiOpenStatesFolder
+
+    self:ConnectButton(InventoryButton.Button,"Inventory")
+    self:ConnectButton(StoreButton.Button,"Store")
+    self:ConnectButton(CollectablesButton.Button,"Collectables")
+    self:ConnectButton(QuestsButton.Button,"Quests")
+    self:ConnectButton(CreditsButton.Button,"Credits")
+end
+
+--[[
+Connects a button for a given open state.
+--]]
+function CornerMenuButtons:ConnectButton(Button,OpenStateName)
+    --Set up the open state value.
+    local ValueObject = Instance.new("BoolValue")
+    ValueObject.Name = OpenStateName
+    ValueObject.Value = false
+    ValueObject.Parent = self.GuiOpenStatesFolder
+    
+    --Connect the button.
+    local DB = true
+    Button.MouseButton1Down:Connect(function()
+        if DB then
+            DB = false
+            ValueObject.Value = not ValueObject.Value
+            wait()
+            DB = true
+        end
     end)
 end
 
