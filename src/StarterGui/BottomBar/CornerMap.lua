@@ -79,6 +79,15 @@ function CornerMap:__new(BottomFrame)
     MapContainer.ClipsDescendants = true
     MapContainer.Parent = Background
 
+    local MapCloseImage = Instance.new("ImageLabel")
+    MapCloseImage.BackgroundTransparency = 1
+    MapCloseImage.AnchorPoint = Vector2.new(1,0)
+    MapCloseImage.Size = UDim2.new(0.065,0,0.065,0)
+    MapCloseImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    MapCloseImage.Position = UDim2.new(1,0,0,0)
+    MapCloseImage.Parent = Background
+    local MapCloseButton = ImageEventBinder.new(MapCloseImage,UDim2.new(1,0,1,0),"rbxassetid://131302488","rbxassetid://131302438","rbxassetid://131302465")
+
     local MapCover = Instance.new("ImageLabel")
     MapCover.BackgroundTransparency = 1
     MapCover.Size = UDim2.new(0.82,0,0.82,0)
@@ -211,6 +220,15 @@ function CornerMap:__new(BottomFrame)
             DB = false
             MapOpen = not MapOpen
             Background:TweenPosition(UDim2.new(0.5,0,MapOpen and 0.5 or 1.5),"Out","Quad",0.5,true)
+            wait()
+            DB = true
+        end
+    end)
+    MapCloseButton.Button.MouseButton1Down:Connect(function()
+        if DB then
+            DB = false
+            MapOpen = false
+            Background:TweenPosition(UDim2.new(0.5,0,1.5),"Out","Quad",0.5,true)
             wait()
             DB = true
         end
