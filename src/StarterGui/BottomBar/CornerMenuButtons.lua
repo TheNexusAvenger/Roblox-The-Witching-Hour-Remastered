@@ -4,10 +4,13 @@ TheNexusAvenger
 Menu buttons for the bottom bar.
 --]]
 
+local Players = game:GetService("Players")
+
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
+local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
 
 local CornerMenuButtons = NexusObject:Extend()
 CornerMenuButtons:SetClassName("CornerMenuButtons")
@@ -30,6 +33,7 @@ function CornerMenuButtons:__new(BottomFrame)
     MenuBottomBarBackground.Parent = BottomFrame
 
     --Create the currency display.
+    local StatsPlayerData = PlayerData.GetPlayerData(Players.LocalPlayer)
     local CandyIcon = Instance.new("ImageLabel")
     CandyIcon.BackgroundTransparency = 1
     CandyIcon.Size = UDim2.new(0.14,0,0.14,0)
@@ -43,14 +47,16 @@ function CornerMenuButtons:__new(BottomFrame)
     CandyText.Position = UDim2.new(1.05,0,-0.25,0)
     CandyText.Font = Enum.Font.Antique
     CandyText.TextScaled = true
-    CandyText.Text = "0"
+    CandyText.Text = tostring(StatsPlayerData:GetValue("Currency"))
     CandyText.TextColor3 = Color3.new(238/255,205/255,255/255)
     CandyText.TextStrokeColor3 = Color3.new(0,0,0)
     CandyText.TextStrokeTransparency = 0
     CandyText.TextXAlignment = Enum.TextXAlignment.Left
     CandyText.Parent = CandyIcon
 
-    --TODO: Connect updating the candy.
+    StatsPlayerData:GetValueChangedSignal("Currency"):Connect(function()
+        CandyText.Text = tostring(StatsPlayerData:GetValue("Currency"))
+    end)
     
     --Create the buttons.
     local InventoryImage = Instance.new("ImageLabel")
