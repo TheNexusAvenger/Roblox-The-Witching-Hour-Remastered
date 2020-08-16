@@ -6,7 +6,7 @@ Displays the map of the game.
 
 local FULL_MAP_SIZE_CELLS = 200
 local ID_TO_TEXTURE = {
-    [-1] = {"rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131316239"}, --Unknown
+    [-1] = {"rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131315995","rbxassetid://131316239"}, --Unknown
     [0] = {"rbxassetid://130857246"}, --Custom structure (grass)
     [1] = {"rbxassetid://130857246"}, --Grass
     [2] = {"rbxassetid://132785906"}, --Swamp
@@ -35,6 +35,7 @@ local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
 local MapConfidenceData = ReplicatedStorageProject:GetResource("GameData.MapConfidenceData")
 local TeleportLocations = ReplicatedStorageProject:GetResource("GameData.TeleportLocations")
 local Landmarks = ReplicatedStorageProject:GetResource("GameData.Landmarks")
+local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
 local CharacterIndicator = require(script:WaitForChild("CharacterIndicator"))
 
 local Map = NexusObject:Extend()
@@ -45,7 +46,7 @@ Map:SetClassName("Map")
 --[[
 Creates a map.
 --]]
-function Map:__new(Container,MaxGridWidth)
+function Map:__new(Container,MaxGridWidth,DiscoveredCellsBoolGrid)
     self:InitializeSuper()
 
     --Set up the initial state.
@@ -57,6 +58,7 @@ function Map:__new(Container,MaxGridWidth)
     self.MaxGridWidth = MaxGridWidth
     self.CharacterIndicators = {}
     self.ShowMapConfidence = false
+    self.DiscoveredCellsBoolGrid = DiscoveredCellsBoolGrid
 
     --Create the containers.
     local FullContainer = Instance.new("Frame")
@@ -113,6 +115,14 @@ function Map:__new(Container,MaxGridWidth)
         LandmarkText.Parent = LandmarkIcon
     end
     
+    --Connect warping being purchased.
+    local MapPlayerData = PlayerData.GetPlayerData(Players.LocalPlayer)
+    self.WarpIconsVisible = MapPlayerData:GetValue("WarpPurchased")
+    MapPlayerData:GetValueChangedSignal("WarpPurchased"):Connect(function()
+        self.WarpIconsVisible = MapPlayerData:GetValue("WarpPurchased")
+        self:UpdateWarpIconVisibility()
+    end)
+
     --Create the warp icons.
     local WarpIcons = {}
     self.WarpIcons = WarpIcons
@@ -124,7 +134,7 @@ function Map:__new(Container,MaxGridWidth)
         WarpIcon.Position = UDim2.new((LocationData[2] - 0.5)/FULL_MAP_SIZE_CELLS,0,(FULL_MAP_SIZE_CELLS - LocationData[1] + 0.5)/FULL_MAP_SIZE_CELLS,0)
         WarpIcon.Image = "rbxassetid://131348539"
         WarpIcon.ZIndex = 4
-        --WarpIcon.Visible = fasle --TODO: Implement buying warping and the map being discovered.
+        WarpIcon.Visible = false
         WarpIcon.Parent = FullContainer
         WarpIcons[Name] = WarpIcon
     end
@@ -134,11 +144,9 @@ end
 Returns the texture to use for a given cell.
 --]]
 function Map:GetCellTexture(X,Y)
-    --TODO: Return if the cell hasn't been discovered.
-
     --Get the ids to pick from.
     local Ids = ID_TO_TEXTURE[-1]
-    if MapCellData[X] and MapCellData[X][Y] then
+    if self.DiscoveredCellsBoolGrid:GetValue(X,Y) and MapCellData[X] and MapCellData[X][Y] then
         Ids = ID_TO_TEXTURE[MapCellData[X][Y]] or ID_TO_TEXTURE[-1]
     end
 
@@ -162,6 +170,16 @@ function Map:GetCellConfidenceColor(X,Y)
 end
 
 --[[
+Updates the visibility of the warp icons.
+--]]
+function Map:UpdateWarpIconVisibility()
+    for WarpIconName,WarpIcon in pairs(self.WarpIcons) do
+        local WarpData = TeleportLocations[WarpIconName]
+        WarpIcon.Visible = self.WarpIconsVisible and self.DiscoveredCellsBoolGrid:GetValue(math.floor(WarpData[1] + 0.5),math.floor(WarpData[2] + 0.5))
+    end
+end
+
+--[[
 Updates the cells of the map.
 --]]
 function Map:UpdateCells()
@@ -173,6 +191,7 @@ function Map:UpdateCells()
             ImageLabel.ImageColor3 = self:GetCellConfidenceColor(X,Y)
         end
     end
+    self:UpdateWarpIconVisibility()
 end
 
 --[[

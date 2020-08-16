@@ -34,10 +34,25 @@ function PlayerDataService:LoadPlayer(Player)
 end
 
 --[[
+Returns the player data object for a player.
+--]]
+function PlayerDataService:GetPlayerData(Player)
+    return self.PlayerData[Player]
+end
+
+--[[
+Saves the player data for a player.
+--]]
+function PlayerDataService:SavesPlayerData(Player)
+    --TODO: Implement
+end
+
+--[[
 Clears a player.
 --]]
 function PlayerDataService:ClearPlayer(Player)
-    --TODO: Flush player data.
+    --Save the player data.
+    self:SavesPlayerData(Player)
 
     --Clear the resources.
     self.PlayerData[Player] = nil

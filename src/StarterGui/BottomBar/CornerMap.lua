@@ -19,6 +19,8 @@ local Landmarks = ReplicatedStorageProject:GetResource("GameData.Landmarks")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local BoolGrid = ReplicatedStorageProject:GetResource("UI.BoolGrid")
+local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
 local Map = require(script.Parent:WaitForChild("Map"))
 
 local CornerMap = NexusObject:Extend()
@@ -131,11 +133,22 @@ function CornerMap:__new(BottomFrame)
     LandmarkList.Parent = Background
 
     --Initialize the maps.
-    local MiniMap = Map.new(MiniMapContainer,9)
+    local MapPlayerData = PlayerData.GetPlayerData(Players.LocalPlayer)
+    local DiscoveredCellsBoolGrid = BoolGrid.new(200,200)
+
+    local MiniMap = Map.new(MiniMapContainer,9,DiscoveredCellsBoolGrid)
     self.MiniMap = MiniMap
-    local FullMap = Map.new(MapContainer,19)
+    local FullMap = Map.new(MapContainer,19,DiscoveredCellsBoolGrid)
     FullMap:EnableWarping()
     self.FullMap = FullMap
+
+    --Set up updating the visibility.
+    DiscoveredCellsBoolGrid:LoadFromString(MapPlayerData:GetValue("DiscoveredMapCells"))
+    MapPlayerData:GetValueChangedSignal("DiscoveredMapCells"):Connect(function()
+        DiscoveredCellsBoolGrid:LoadFromString(MapPlayerData:GetValue("DiscoveredMapCells"))
+        MiniMap:UpdateCells()
+        FullMap:UpdateCells()
+    end)
 
     --Sort the landmark names by alphabetical order.
     local LandmarkNames = {}

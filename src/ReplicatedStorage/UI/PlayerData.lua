@@ -13,6 +13,10 @@ local PLAYER_DATA_LAYOUT = {
         Type = "Integer",
         Default = 0,
     },
+    WarpPurchased = {
+        Type = "Boolean",
+        Default = false,
+    },
 }
 local TYPE_TO_SERIALIZATION = {
     String = {
@@ -32,6 +36,9 @@ local TYPE_TO_SERIALIZATION = {
     },
     Integer = {
         ValueType = "IntValue",
+    },
+    Boolean = {
+        ValueType = "BoolValue",
     },
 }
 

@@ -28,11 +28,14 @@ end
 --Set up players joining.
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
+local MapDiscoveryService = ServerScriptServiceProject:GetResource("Service.MapDiscoveryService")
 Players.PlayerAdded:Connect(function(Player)
     PlayerDataService:LoadPlayer(Player)
     CharacterService:SpawnCharacter(Player)
+    MapDiscoveryService:LoadPlayer(Player)
 end)
 Players.PlayerRemoving:Connect(function(Player)
+    MapDiscoveryService:ClearPlayer(Player)
     PlayerDataService:ClearPlayer(Player)
 end)
 
