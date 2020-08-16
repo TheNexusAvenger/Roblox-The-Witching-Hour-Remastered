@@ -32,6 +32,9 @@ Players.PlayerAdded:Connect(function(Player)
     PlayerDataService:LoadPlayer(Player)
     CharacterService:SpawnCharacter(Player)
 end)
+Players.PlayerRemoving:Connect(function(Player)
+    PlayerDataService:ClearPlayer(Player)
+end)
 
 --Load the NPC models. Can't be saved directly
 --to a model file and imported with Rojo.
