@@ -2,6 +2,7 @@
 TheNexusAvenger
 
 Controls the houses and starting dungeons.
+Class is static (should not be created).
 --]]
 
 local Players = game:GetService("Players")

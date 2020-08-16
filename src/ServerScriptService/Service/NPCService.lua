@@ -2,6 +2,7 @@
 TheNexusAvenger
 
 Controls loading NPC models and interactions with them.
+Class is static (should not be created).
 --]]
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")

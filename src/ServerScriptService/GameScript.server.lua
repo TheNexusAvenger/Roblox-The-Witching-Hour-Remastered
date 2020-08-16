@@ -27,7 +27,9 @@ end
 
 --Set up players joining.
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
+local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 Players.PlayerAdded:Connect(function(Player)
+    PlayerDataService:LoadPlayer(Player)
     CharacterService:SpawnCharacter(Player)
 end)
 

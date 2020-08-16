@@ -17,7 +17,7 @@ BoolGrid:SetClassName("BoolGrid")
 
 
 --[[
-Creates an aspect ratio swticher.
+Creates a bool grid.
 --]]
 function BoolGrid:__new(GridSizeX,GridSizeY,DefaultValue)
     self:InitializeSuper()
@@ -73,20 +73,21 @@ function BoolGrid:LoadFromString(DataString)
     --Set the data from the string.
     for X = 1,self.GridSizeX do
         local Row = Data[X]
-        print(game.HttpService:JSONEncode(Row))
-        local CurrentValue = Row[1]
-        local CurrentNumber = 2
-        local Remaining = Row[2]
-        for Y = 1,self.GridSizeY do
-            --Set the value.
-            self.Grid[X][Y] = CurrentValue
-            Remaining = Remaining - 1
+        if Row then
+            local CurrentValue = Row[1]
+            local CurrentNumber = 2
+            local Remaining = Row[2]
+            for Y = 1,self.GridSizeY do
+                --Set the value.
+                self.Grid[X][Y] = CurrentValue
+                Remaining = Remaining - 1
 
-            --Set the next value if there is it should be changed.
-            if Remaining == 0 then
-                CurrentValue = not CurrentValue
-                CurrentNumber = CurrentNumber + 1
-                Remaining = Row[CurrentNumber] or 0
+                --Set the next value if there is it should be changed.
+                if Remaining == 0 then
+                    CurrentValue = not CurrentValue
+                    CurrentNumber = CurrentNumber + 1
+                    Remaining = Row[CurrentNumber] or 0
+                end
             end
         end
     end
