@@ -9,6 +9,10 @@ local PLAYER_DATA_LAYOUT = {
         Type = "String",
         Default = "[]"
     },
+    CollectedBloxkins = {
+        Type = "Table",
+        Default = "[]"
+    },
     Currency = {
         Type = "Integer",
         Default = 0,
@@ -24,10 +28,10 @@ local TYPE_TO_SERIALIZATION = {
     },
     Table = {
         ValueType = "StringValue",
-        Encode = function(Data)
+        Serialize = function(Data)
             return game:GetService("HttpService"):JSONEncode(Data)
         end,
-        Decode = function(String)
+        Deserialize = function(String)
             return game:GetService("HttpService"):JSONDecode(String)
         end,
     },
