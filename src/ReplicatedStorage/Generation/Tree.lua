@@ -36,8 +36,8 @@ function Tree:__new(Center,Parent,RandomNumberGenerator)
 
     --Create the trunk.
     local TrunkLength = RandomNumberGenerator:NextNumber(8,10)
-	Center = self:CreateWood(TrunkLength,3,Center * CFrame.new(0,-1,0) * CFrame.Angles(RandomNumberGenerator:NextNumber(-math.rad(5),math.rad(5)),0,RandomNumberGenerator:NextNumber(-math.rad(5),math.rad(5)),0))
-    Center = self:CreateWood(TrunkLength,3,Center * CFrame.Angles(RandomNumberGenerator:NextNumber(-math.rad(10),math.rad(10)),0,RandomNumberGenerator:NextNumber(-math.rad(10),math.rad(10)),0))
+	Center = self:CreateWood(TrunkLength,3,Center * CFrame.new(0,-1,0) * CFrame.Angles(RandomNumberGenerator:NextNumber(-math.rad(5),math.rad(5)),0,RandomNumberGenerator:NextNumber(-math.rad(5),math.rad(5))))
+    Center = self:CreateWood(TrunkLength,3,Center * CFrame.Angles(RandomNumberGenerator:NextNumber(-math.rad(10),math.rad(10)),0,RandomNumberGenerator:NextNumber(-math.rad(10),math.rad(10))))
     
     --Create the branches.
 	local TotalBranches = RandomNumberGenerator:NextInteger(3,4)

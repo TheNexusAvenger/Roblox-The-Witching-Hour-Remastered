@@ -144,7 +144,7 @@ return {
             for _,Part in pairs(Workspace:WaitForChild("SolarCranesMansion"):WaitForChild("TerrainHill"):GetChildren()) do
                 if Part:IsA("BasePart") then
                     if Part.Shape == Enum.PartType.Ball then
-                        Workspace.Terrain:FillBall(Part.CFrame.p,Part.Size.X/2,Enum.Material.LeafyGrass)
+                        Workspace.Terrain:FillBall(Part.Position,Part.Size.X/2,Enum.Material.LeafyGrass)
                     else
                         Workspace.Terrain:FillBlock(Part.CFrame,Part.Size,Enum.Material.LeafyGrass)
                     end

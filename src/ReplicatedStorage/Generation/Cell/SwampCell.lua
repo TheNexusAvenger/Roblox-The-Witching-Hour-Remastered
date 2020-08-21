@@ -59,7 +59,8 @@ function SwampCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
 	Mist.BottomSurface = "Smooth"
     Mist.Parent = self.CellModel
     
-    local MistMesh = Instance.new("BlockMesh")
+    local MistMesh = Instance.new("SpecialMesh")
+    MistMesh.MeshType = Enum.MeshType.Brick
     MistMesh.Scale = Vector3.new(1,0,1)
     MistMesh.Parent = Mist
 end

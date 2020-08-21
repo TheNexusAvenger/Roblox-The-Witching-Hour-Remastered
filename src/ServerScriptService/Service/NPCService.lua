@@ -30,10 +30,10 @@ function NPCService:LoadNPCModels()
     NPCModels.Parent = ReplicatedStorage
 
     --Load the character model.
-    local Worked,CharacterModel = pcall(function()
+    local LoadModelWorked,CharacterModel = pcall(function()
         return InsertService:LoadAsset(1664543044):GetChildren()[1]
     end)
-    if not Worked then
+    if not LoadModelWorked then
         warn("Failed to insert the default character model because "..tostring(CharacterModel))
 
         --Create the backup model.
@@ -57,10 +57,10 @@ function NPCService:LoadNPCModels()
 
         --Apply the humanoid description.
         coroutine.wrap(function()
-            local Worked,Error = pcall(function()
+            local ApplyDescriptionWorked,Error = pcall(function()
                 NewCharacter:WaitForChild("Humanoid"):ApplyDescription(HumanoidDescription)
             end)
-            if not Worked then
+            if not ApplyDescriptionWorked then
                 warn("Failed to load humanoid description for "..tostring(HumanoidDescription.Name).." because"..tostring(Error))
             end
             NewCharacter.Parent = NPCModels

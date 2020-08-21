@@ -59,12 +59,12 @@ function HouseCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellTy
     self.HouseModel = HouseModel
 
     local BaseLevel = self:AddModel(Components["BaseLevels"],HouseCenter)
-    local Front = self:AddModel(Components["Fronts"],HouseCenter)
+    self:AddModel(Components["Fronts"],HouseCenter)
     local SecondLevel
     if Components["SecondLevels"] then
         SecondLevel = self:AddModel(Components["SecondLevels"],BaseLevel:WaitForChild("TopCenter").CFrame)
     end
-    local Roof = self:AddModel(Components["Roofs"],SecondLevel and SecondLevel:WaitForChild("TopCenter").CFrame or BaseLevel:WaitForChild("TopCenter").CFrame)
+    self:AddModel(Components["Roofs"],SecondLevel and SecondLevel:WaitForChild("TopCenter").CFrame or BaseLevel:WaitForChild("TopCenter").CFrame)
     if Components["Additions"] then
         self:AddModel(Components["Additions"],HouseCenter)
     end
@@ -267,25 +267,26 @@ function HouseCell:UpdateState()
                 Border.CanCollide = false
                 Border.Parent = StartingAnimationModel
 
-                local BorderMesh = Instance.new("BlockMesh")
+                local BorderMesh = Instance.new("SpecialMesh")
+                BorderMesh.MeshType = Enum.MeshType.Brick
                 BorderMesh.Scale = Vector3.new(1,1,0)
                 BorderMesh.Parent = Border
 
-                local Gradient = Instance.new("Decal")
-                Gradient.Color3 = Color3.new(0,170/255,255/255)
-                Gradient.Transparency = 1
-                Gradient.Texture = "http://www.roblox.com/asset/?id=154741878"
-                Gradient.Face = "Front"
-                Gradient.Parent = Border
-                table.insert(Gradients,Gradient)
+                local FrontGradient = Instance.new("Decal")
+                FrontGradient.Color3 = Color3.new(0,170/255,255/255)
+                FrontGradient.Transparency = 1
+                FrontGradient.Texture = "http://www.roblox.com/asset/?id=154741878"
+                FrontGradient.Face = "Front"
+                FrontGradient.Parent = Border
+                table.insert(Gradients,FrontGradient)
 
-                local Gradient = Instance.new("Decal")
-                Gradient.Color3 = Color3.new(0,170/255,255/255)
-                Gradient.Transparency = 1
-                Gradient.Texture = "http://www.roblox.com/asset/?id=154741878"
-                Gradient.Face = "Back"
-                Gradient.Parent = Border
-                table.insert(Gradients,Gradient)
+                local BackGradient = Instance.new("Decal")
+                BackGradient.Color3 = Color3.new(0,170/255,255/255)
+                BackGradient.Transparency = 1
+                BackGradient.Texture = "http://www.roblox.com/asset/?id=154741878"
+                BackGradient.Face = "Back"
+                BackGradient.Parent = Border
+                table.insert(Gradients,BackGradient)
             end
 
             --Create the text.
