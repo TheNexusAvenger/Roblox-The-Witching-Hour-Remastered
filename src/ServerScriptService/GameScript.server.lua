@@ -25,6 +25,11 @@ for _,ServiceModule in pairs(ServerScriptServiceProject:GetResource("Service"):G
     ServerScriptServiceProject:GetResource("Service."..ServiceModule.Name)
 end
 
+--Initialize the resources before loading players.
+--These resources are required by the players on join.
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
+InventoryService:LoadCharacterAssets()
+
 --Set up players joining.
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
@@ -38,6 +43,13 @@ Players.PlayerRemoving:Connect(function(Player)
     MapDiscoveryService:ClearPlayer(Player)
     PlayerDataService:ClearPlayer(Player)
 end)
+for _,Player in pairs(Players:GetPlayers()) do
+    coroutine.wrap(function()
+        PlayerDataService:LoadPlayer(Player)
+        CharacterService:SpawnCharacter(Player)
+        MapDiscoveryService:LoadPlayer(Player)
+    end)()
+end
 
 --Load the NPC models. Can't be saved directly
 --to a model file and imported with Rojo.

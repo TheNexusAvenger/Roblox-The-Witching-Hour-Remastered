@@ -5,14 +5,13 @@ Main window for the inventory.
 --]]
 
 local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local UserInputService = game:GetService("UserInputService")
 
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local ItemIcon = require(script.Parent:WaitForChild("ItemIcon"))
 
 local InventoryWindow = NexusObject:Extend()
 InventoryWindow:SetClassName("InventoryWindow")
