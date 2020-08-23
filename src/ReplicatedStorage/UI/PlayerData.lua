@@ -7,11 +7,15 @@ Reads and manipulates player data.
 local PLAYER_DATA_LAYOUT = {
     DiscoveredMapCells = {
         Type = "String",
-        Default = "[]"
+        Default = "[]",
     },
     CollectedBloxkins = {
         Type = "Table",
-        Default = "[]"
+        Default = "[]",
+    },
+    Inventory = {
+        Type = "Table",
+        Default = "[]",
     },
     Currency = {
         Type = "Integer",

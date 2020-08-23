@@ -46,6 +46,10 @@ end
 Sets the item to display.
 --]]
 function ItemIcon:SetItem(ModelName)
+    --Return if the model name hasn't changed.
+    if self.LastModelname == ModelName then return end
+    self.LastModelname = ModelName
+
     --Destroy the existing model.
     if self.Model then
         self.Model:Destroy()

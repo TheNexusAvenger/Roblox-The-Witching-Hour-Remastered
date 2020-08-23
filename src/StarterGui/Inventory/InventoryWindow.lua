@@ -4,6 +4,10 @@ TheNexusAvenger
 Main window for the inventory.
 --]]
 
+local SLOTS_PER_PAGE = 35
+
+
+
 local Players = game:GetService("Players")
 
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
@@ -12,6 +16,7 @@ local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInst
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
 local ItemIcon = require(script.Parent:WaitForChild("ItemIcon"))
+local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
 
 local InventoryWindow = NexusObject:Extend()
 InventoryWindow:SetClassName("InventoryWindow")
@@ -25,6 +30,7 @@ function InventoryWindow:__new()
     self:InitializeSuper()
 
     --Create the window.
+    self.Inventory = Inventory.new(Players.LocalPlayer)
     local InventoryScreenGui = Instance.new("ScreenGui")
     InventoryScreenGui.Name = "Inventory"
     InventoryScreenGui.DisplayOrder = 2
@@ -195,13 +201,13 @@ function InventoryWindow:__new()
     PetCollarSlot.Visible = false
     PetCollarSlot.Parent = Background
 
-    local PetCapeSlot = Instance.new("ImageLabel")
-    PetCapeSlot.BackgroundTransparency = 1
-    PetCapeSlot.Size = UDim2.new(64/902,0,64/644,0)
-    PetCapeSlot.Position = UDim2.new(369/902,0,358/644,0)
-    PetCapeSlot.Image = "rbxassetid://131528494"
-    PetCapeSlot.Visible = false
-    PetCapeSlot.Parent = Background
+    local PetBackSlot = Instance.new("ImageLabel")
+    PetBackSlot.BackgroundTransparency = 1
+    PetBackSlot.Size = UDim2.new(64/902,0,64/644,0)
+    PetBackSlot.Position = UDim2.new(369/902,0,358/644,0)
+    PetBackSlot.Image = "rbxassetid://131528494"
+    PetBackSlot.Visible = false
+    PetBackSlot.Parent = Background
     
     local PetAnkleSlot = Instance.new("ImageLabel")
     PetAnkleSlot.BackgroundTransparency = 1
@@ -244,7 +250,7 @@ function InventoryWindow:__new()
             PetTypeContainer.Visible = true
             PetHatSlot.Visible = true
             PetCollarSlot.Visible = true
-            PetCapeSlot.Visible = true
+            PetBackSlot.Visible = true
             PetAnkleSlot.Visible = true
             wait()
             DB = true
@@ -266,7 +272,7 @@ function InventoryWindow:__new()
             PetTypeContainer.Visible = false
             PetHatSlot.Visible = false
             PetCollarSlot.Visible = false
-            PetCapeSlot.Visible = false
+            PetBackSlot.Visible = false
             PetAnkleSlot.Visible = false
             wait()
             DB = true
@@ -296,6 +302,7 @@ function InventoryWindow:__new()
     InventoryLeftImage.Size = UDim2.new(39/329,0,28/558,0)
     InventoryLeftImage.Position = UDim2.new(63/329,0,1 + (-31/558),0)
     InventoryLeftImage.Parent = InventoryBack
+    self.InventoryLeftImage = InventoryLeftImage
     local InventoryLeftButton = ImageEventBinder.new(InventoryLeftImage,UDim2.new(1,0,1,0),"rbxassetid://131462464","rbxassetid://131462433","rbxassetid://131462447")
 
     local InventoryRightImage = Instance.new("ImageButton")
@@ -304,6 +311,7 @@ function InventoryWindow:__new()
     InventoryRightImage.Size = UDim2.new(39/329,0,28/558,0)
     InventoryRightImage.Position = UDim2.new(263/329,0,1 + (-31/558),0)
     InventoryRightImage.Parent = InventoryBack
+    self.InventoryRightImage = InventoryRightImage
     local InventoryRightButton = ImageEventBinder.new(InventoryRightImage,UDim2.new(1,0,1,0),"rbxassetid://131462518","rbxassetid://131462503","rbxassetid://131462515")
 
     local PageText = Instance.new("TextLabel")
@@ -315,6 +323,66 @@ function InventoryWindow:__new()
     PageText.TextColor3 = Color3.new(238/255,205/255,255/255)
     PageText.TextScaled = true
     PageText.Parent = InventoryBack
+    self.PageText = PageText
+
+    self.InventorySlotFrames = {}
+    self.InventorySlotIcons = {}
+    for i = 1,SLOTS_PER_PAGE do
+        local SlotFrame = Instance.new("Frame")
+        SlotFrame.BackgroundTransparency = 1
+        SlotFrame.Size = UDim2.new(64/329,0,64/558,0)
+        SlotFrame.Position = UDim2.new((2 + (65 * ((i - 1) % 5)))/329,0,(43 + (65 * math.floor((i - 1)/5)))/558,0)
+        SlotFrame.Parent = InventoryBack
+        table.insert(self.InventorySlotFrames,SlotFrame)
+
+        local ItemFrame = ItemIcon.new()
+        ItemFrame:SetParent(SlotFrame)
+        table.insert(self.InventorySlotIcons,ItemFrame)
+    end
+    self.SpecialInventorySlots = {
+        PlayerHat = PlayerHeadSlot,
+        PlayerTorso = PlayerTorsoSlot,
+        PlayerLeftArm = PlayerLeftArmSlot,
+        PlayerRightArm = PlayerRightArmSlot,
+        PlayerLeftLeg = PlayerLeftLegSlot,
+        PlayerRightLeg = PlayerRightLegSlot,
+        PetHat = PetHatSlot,
+        PetCollar = PetCollarSlot,
+        PetBack = PetBackSlot,
+        PetAnkle = PetAnkleSlot,
+    }
+    self.SpecialInventoryIcons = {}
+    for SlotName,SlotFrame in pairs(self.SpecialInventorySlots) do
+        local ItemFrame = ItemIcon.new()
+        ItemFrame:SetParent(SlotFrame)
+        self.SpecialInventoryIcons[SlotName] = ItemFrame
+    end
+
+    --Connect updating the inventory.
+    self.CurrentPage = 1
+    self.MaxPages = 3
+    InventoryLeftButton.Button.MouseButton1Down:Connect(function()
+        if DB then
+            DB = false
+            self.CurrentPage = math.max(1,self.CurrentPage - 1)
+            self:UpdateInventory()
+            wait()
+            DB = true
+        end
+    end)
+    InventoryRightButton.Button.MouseButton1Down:Connect(function()
+        if DB then
+            DB = false
+            self.CurrentPage = math.min(self.MaxPages,self.CurrentPage + 1)
+            self:UpdateInventory()
+            wait()
+            DB = true
+        end
+    end)
+    self.Inventory.InventoryChanged:Connect(function()
+        self:UpdateInventory()
+    end)
+    self:UpdateInventory()
 
     --Connect opening and closing.
     local OpenValue = script.Parent.Parent:WaitForChild("GuiOpenStates"):WaitForChild("Inventory")
@@ -325,6 +393,39 @@ function InventoryWindow:__new()
         Background:TweenPosition(UDim2.new(0.5,0,1.5,0),"Out","Quad",0.5,true)
         OpenValue.Value = false
     end)
+end
+
+--[[
+Updates the inventory.
+--]]
+function InventoryWindow:UpdateInventory()
+    --Update the page display.
+    self.MaxPages = self.Inventory:GetMaxItems() / SLOTS_PER_PAGE
+    self.InventoryLeftImage.Visible = (self.CurrentPage ~= 1)
+    self.InventoryRightImage.Visible = (self.CurrentPage ~= self.MaxPages)
+    self.PageText.Text = tostring(self.CurrentPage)
+
+    --Update the main slots.
+    local SlotsIdOffset = SLOTS_PER_PAGE * (self.CurrentPage - 1)
+    for i = 1,SLOTS_PER_PAGE do
+        local Item = self.Inventory:GetItem(i + SlotsIdOffset)
+        local Icon = self.InventorySlotIcons[i]
+        if Item then
+            Icon:SetItem(Item.Name)
+        else
+            Icon:SetItem()
+        end
+    end
+
+    --Update the equipped slots.
+    for SlotName,Icon in pairs(self.SpecialInventoryIcons) do
+        local Item = self.Inventory:GetItem(SlotName)
+        if Item then
+            Icon:SetItem(Item.Name)
+        else
+            Icon:SetItem()
+        end
+    end
 end
 
 
