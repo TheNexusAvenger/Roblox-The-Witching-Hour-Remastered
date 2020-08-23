@@ -11,11 +11,14 @@ local RESPAWN_DELAY = 5
 
 
 
-local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
+
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
+
+local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
 
 local CharacterService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 CharacterService:SetClassName("CharacterService")
@@ -23,6 +26,22 @@ CharacterService.LastPlayerCFrames = {}
 ServerScriptServiceProject:SetContextResource(CharacterService)
 
 
+
+--[[
+Returns the Roblox id for a given slot
+of a player's inventory. Returns 0 if
+no items is equipped in the slot.
+--]]
+function CharacterService:GetRobloxIdForSlot(Player,SlotName)
+    --Return the item's Roblox id.
+    local Item = InventoryService:GetItem(Player,SlotName)
+    if Item and Item.Name then
+        return ItemData[Item.Name].RobloxId
+    end
+    
+    --Return 0 (not found).
+    return 0
+end
 
 --[[
 Returns the humanoid description to use
@@ -38,7 +57,13 @@ function CharacterService:GetHumanoidDescription(Player)
     Description.LeftLegColor = BrickColor.new("Bright blue").Color
     Description.RightLegColor = BrickColor.new("Bright blue").Color
 
-    --TODO: Determine body parts.
+    --Add the body parts.
+    Description.HatAccessory = self:GetRobloxIdForSlot(Player,"PlayerHat")
+    Description.Torso = self:GetRobloxIdForSlot(Player,"PlayerTorso")
+    Description.LeftArm = self:GetRobloxIdForSlot(Player,"PlayerLeftArm")
+    Description.RightArm = self:GetRobloxIdForSlot(Player,"PlayerRightArm")
+    Description.LeftLeg = self:GetRobloxIdForSlot(Player,"PlayerLeftLeg")
+    Description.RightLeg = self:GetRobloxIdForSlot(Player,"PlayerRightLeg")
     
     --Return the description.
     return Description
@@ -65,6 +90,13 @@ function CharacterService:SpawnCharacter(Player)
     Humanoid.Died:Connect(function()
         wait(RESPAWN_DELAY)
         self:SpawnCharacter(Player)
+    end)
+
+    --Connect the inventory changing.
+    InventoryService:GetInventoryChangedEvent(Player):Connect(function()
+        if Character.Parent then
+            Humanoid:ApplyDescription(self:GetHumanoidDescription(Player))
+        end
     end)
 end
 

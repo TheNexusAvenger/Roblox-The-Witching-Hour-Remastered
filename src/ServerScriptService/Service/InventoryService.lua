@@ -13,12 +13,28 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 
 local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.ItemData")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
+local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
 
 local InventoryService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 InventoryService:SetClassName("InventoryService")
+InventoryService.PlayerInventories = {}
 ServerScriptServiceProject:SetContextResource(InventoryService)
 
 
+
+--[[
+Initializes the inventory for a player.
+--]]
+function InventoryService:LoadPlayer(Player)
+    self.PlayerInventories[Player] = Inventory.new(Player)
+end
+
+--[[
+Clears a player.
+--]]
+function InventoryService:ClearPlayer(Player)
+    self.PlayerInventories[Player] = nil
+end
 
 --[[
 Inserts all of the character items. Yields for them all
@@ -57,6 +73,21 @@ function InventoryService:LoadCharacterAssets()
     while AssetsRemaining > 0 do
         AssetLoaded.Event:Wait()
     end
+end
+
+--[[
+Returns the item for a given slot.
+--]]
+function InventoryService:GetItem(Player,SlotName)
+    local PlayerInventory = self.PlayerInventories[Player]
+    return PlayerInventory and PlayerInventory:GetItem(SlotName)
+end
+
+--[[
+Returns the inventory changed event for a player.
+--]]
+function InventoryService:GetInventoryChangedEvent(Player)
+    return self.PlayerInventories[Player].InventoryChanged
 end
 
 
