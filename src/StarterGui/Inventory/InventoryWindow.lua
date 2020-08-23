@@ -15,8 +15,9 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
-local ItemIcon = require(script.Parent:WaitForChild("ItemIcon"))
 local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
+local ItemIcon = require(script.Parent:WaitForChild("ItemIcon"))
+local PlayerDisplay = require(script.Parent:WaitForChild("PlayerDisplay"))
 
 local InventoryWindow = NexusObject:Extend()
 InventoryWindow:SetClassName("InventoryWindow")
@@ -113,6 +114,7 @@ function InventoryWindow:__new()
     PlayerHeadSlot.Size = UDim2.new(64/902,0,64/644,0)
     PlayerHeadSlot.Position = UDim2.new(44/902,0,164/644,0)
     PlayerHeadSlot.Image = "rbxassetid://131490682"
+    PlayerHeadSlot.ZIndex = 4
     PlayerHeadSlot.Parent = Background
     
     local PlayerTorsoSlot = Instance.new("ImageLabel")
@@ -120,6 +122,7 @@ function InventoryWindow:__new()
     PlayerTorsoSlot.Size = UDim2.new(64/902,0,64/644,0)
     PlayerTorsoSlot.Position = UDim2.new(369/902,0,258/644,0)
     PlayerTorsoSlot.Image = "rbxassetid://131462130"
+    PlayerTorsoSlot.ZIndex = 4
     PlayerTorsoSlot.Parent = Background
     
     local PlayerRightArmSlot = Instance.new("ImageLabel")
@@ -127,6 +130,7 @@ function InventoryWindow:__new()
     PlayerRightArmSlot.Size = UDim2.new(64/902,0,64/644,0)
     PlayerRightArmSlot.Position = UDim2.new(44/902,0,358/644,0)
     PlayerRightArmSlot.Image = "rbxassetid://131489625"
+    PlayerRightArmSlot.ZIndex = 4
     PlayerRightArmSlot.Parent = Background
     
     local PlayerRightLegSlot = Instance.new("ImageLabel")
@@ -134,6 +138,7 @@ function InventoryWindow:__new()
     PlayerRightLegSlot.Size = UDim2.new(64/902,0,64/644,0)
     PlayerRightLegSlot.Position = UDim2.new(44/902,0,434/644,0)
     PlayerRightLegSlot.Image = "rbxassetid://131490729"
+    PlayerRightLegSlot.ZIndex = 4
     PlayerRightLegSlot.Parent = Background
     
     local PlayerLeftArmSlot = Instance.new("ImageLabel")
@@ -141,6 +146,7 @@ function InventoryWindow:__new()
     PlayerLeftArmSlot.Size = UDim2.new(64/902,0,64/644,0)
     PlayerLeftArmSlot.Position = UDim2.new(369/902,0,358/644,0)
     PlayerLeftArmSlot.Image = "rbxassetid://131490698"
+    PlayerLeftArmSlot.ZIndex = 4
     PlayerLeftArmSlot.Parent = Background
     
     local PlayerLeftLegSlot = Instance.new("ImageLabel")
@@ -148,7 +154,16 @@ function InventoryWindow:__new()
     PlayerLeftLegSlot.Size = UDim2.new(64/902,0,64/644,0)
     PlayerLeftLegSlot.Position = UDim2.new(369/902,0,434/644,0)
     PlayerLeftLegSlot.Image = "rbxassetid://131490717"
+    PlayerLeftLegSlot.ZIndex = 4
     PlayerLeftLegSlot.Parent = Background
+
+    local PlayerDisplayFrame = Instance.new("Frame")
+    PlayerDisplayFrame.BackgroundTransparency = 1
+    PlayerDisplayFrame.Size = UDim2.new(0.6,0,0.6,0)
+    PlayerDisplayFrame.Position = UDim2.new(0.05,0,0.2,0)
+    PlayerDisplayFrame.SizeConstraint = "RelativeYY"
+    PlayerDisplayFrame.Parent = Background
+    self.PlayerDisplay = PlayerDisplay.new(PlayerDisplayFrame)
 
     --Create the pet inventory slots.
     local PetTypeContainer = Instance.new("ImageLabel")
@@ -222,6 +237,7 @@ function InventoryWindow:__new()
     PetModeToggleImage.BackgroundTransparency = 1
     PetModeToggleImage.Size = UDim2.new(108/902,0,111/644,0)
     PetModeToggleImage.Position = UDim2.new(342/902,0,104/644,0)
+    PetModeToggleImage.ZIndex = 4
     PetModeToggleImage.Parent = Background
     local PetModeToggleButton = ImageEventBinder.new(PetModeToggleImage,UDim2.new(1,0,1,0),"rbxassetid://132064980","rbxassetid://132064940","rbxassetid://132064966")
 
@@ -245,6 +261,7 @@ function InventoryWindow:__new()
             PlayerRightLegSlot.Visible = false
             PlayerLeftArmSlot.Visible = false
             PlayerLeftLegSlot.Visible = false
+            PlayerDisplay.Visible = false
 
             CharacterModeToggleImage.Visible = true
             PetTypeContainer.Visible = true
@@ -267,6 +284,7 @@ function InventoryWindow:__new()
             PlayerRightLegSlot.Visible = true
             PlayerLeftArmSlot.Visible = true
             PlayerLeftLegSlot.Visible = true
+            PlayerDisplay.Visible = true
 
             CharacterModeToggleImage.Visible = false
             PetTypeContainer.Visible = false
@@ -426,6 +444,14 @@ function InventoryWindow:UpdateInventory()
             Icon:SetItem()
         end
     end
+
+    --Update the player model.
+    self.PlayerDisplay:SetHat(self.Inventory:GetItem("PlayerHat"))
+    self.PlayerDisplay:SetItem("Torso",self.Inventory:GetItem("PlayerTorso"))
+    self.PlayerDisplay:SetItem("LeftArm",self.Inventory:GetItem("PlayerLeftArm"))
+    self.PlayerDisplay:SetItem("RightArm",self.Inventory:GetItem("PlayerRightArm"))
+    self.PlayerDisplay:SetItem("LeftLeg",self.Inventory:GetItem("PlayerLeftLeg"))
+    self.PlayerDisplay:SetItem("RightLeg",self.Inventory:GetItem("PlayerRightLeg"))
 end
 
 

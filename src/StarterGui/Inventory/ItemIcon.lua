@@ -112,6 +112,7 @@ Sets the parent of the frame.
 --]]
 function ItemIcon:SetParent(Parent)
     self.ViewportFrame.Parent = Parent
+    self.ViewportFrame.ZIndex = Parent.ZIndex
 end
 
 --[[

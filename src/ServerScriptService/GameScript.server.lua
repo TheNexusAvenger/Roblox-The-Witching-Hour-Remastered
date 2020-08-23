@@ -30,6 +30,11 @@ end
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 InventoryService:LoadCharacterAssets()
 
+--Load the NPC models. Can't be saved directly
+--to a model file and imported with Rojo.
+local NPCService = ServerScriptServiceProject:GetResource("Service.NPCService")
+NPCService:LoadNPCModels()
+
 --Set up players joining.
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
@@ -50,8 +55,3 @@ for _,Player in pairs(Players:GetPlayers()) do
         MapDiscoveryService:LoadPlayer(Player)
     end)()
 end
-
---Load the NPC models. Can't be saved directly
---to a model file and imported with Rojo.
-local NPCService = ServerScriptServiceProject:GetResource("Service.NPCService")
-NPCService:LoadNPCModels()

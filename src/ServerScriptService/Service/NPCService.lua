@@ -47,6 +47,8 @@ function NPCService:LoadNPCModels()
         HumanoidRootPart.Size = Vector3.new(4,5,1)
         HumanoidRootPart.Parent = CharacterModel
     end
+    CharacterModel.Name = "R15CharacterModel"
+    CharacterModel:Clone().Parent = ReplicatedStorage
 
     --Load the characters.
     for _,HumanoidDescription in pairs(NPCHumanoidDescriptions:GetChildren()) do
