@@ -161,7 +161,7 @@ function PlayerDisplay:SetItem(LimbName,Item)
                 for _,Part in pairs(LimbModelR15:GetChildren()) do
                     if Part:IsA("BasePart") then
                         local BodyPartEnum = Enum.BodyPartR15[Part.Name]
-                        self.Humanoid:ReplaceBodyPartR15(BodyPartEnum,Part)
+                        self.Humanoid:ReplaceBodyPartR15(BodyPartEnum,Part:Clone())
                         BodyPartsChanged[BodyPartEnum] = Part.Name
                     end
                 end
@@ -176,7 +176,7 @@ function PlayerDisplay:SetItem(LimbName,Item)
             if not BodyPartsChanged[BodyPartEnum] then
                 local Part = R15CharacterModel:FindFirstChild(PartName)
                 if Part then
-                    self.Humanoid:ReplaceBodyPartR15(BodyPartEnum,Part)
+                    self.Humanoid:ReplaceBodyPartR15(BodyPartEnum,Part:Clone())
                 end
             end
         end

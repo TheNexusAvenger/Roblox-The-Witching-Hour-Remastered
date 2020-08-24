@@ -111,6 +111,46 @@ NexusUnitTesting:RegisterUnitTest(InventoryTest.new("TestRemoveSlots"):SetRun(fu
     self:AssertEquals(#self.CuT1:GetItemSlots("MockItem2"),1,"Total slots are incorrect.")
 end))
 
+--[[
+Tests validating slots.
+--]]
+NexusUnitTesting:RegisterUnitTest(InventoryTest.new("TestCanFitInSlot"):SetRun(function(self)
+    --Add 5 items.
+    self.CuT1:AddItem({Name="VirtualBloxconHelmet"})
+    self.CuT1:AddItem({Name="VirtualBloxconHelmet"})
+    self.CuT1:AddItem({Name="VirtualBloxconTorso"})
+    self.CuT1:AddItem({Name="VirtualBloxconTorso"})
+    self.CuT1:AddItem({Name="VirtualBloxconHelmet"})
+
+    --Test the ability for items to be able to be in slots.
+    self:AssertTrue(self.CuT1:CanFitInSlot({Name="UnknownItem"},"5"),"Unknown item can't fit in a number slot.")
+    self:AssertTrue(self.CuT1:CanFitInSlot({Name="UnknownItem"},5),"Unknown item can't fit in a number slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="UnknownItem"},0),"Unknown item can fit in out of bounds slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="UnknownItem"},106),"Unknown item can fit in out of bounds slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="UnknownItem"},5.4),"Unknown item can fit in decimal slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="UnknownItem"},"PlayerHat"),"Unknown item can fit in special slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="UnknownItem"},"PlayerTorso"),"Unknown item can fit in special slot.")
+
+    self:AssertTrue(self.CuT1:CanFitInSlot({Name="VirtualBloxconHelmet"},"5"),"Known item can't fit in a number slot.")
+    self:AssertTrue(self.CuT1:CanFitInSlot({Name="VirtualBloxconHelmet"},5),"Known item can't fit in a number slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="VirtualBloxconHelmet"},0),"Known item can fit in out of bounds slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="VirtualBloxconHelmet"},106),"Known item can fit in out of bounds slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="VirtualBloxconHelmet"},5.4),"Unknown item can fit in decimal slot.")
+    self:AssertTrue(self.CuT1:CanFitInSlot({Name="VirtualBloxconHelmet"},"PlayerHat"),"Known item can't fit in special slot.")
+    self:AssertFalse(self.CuT1:CanFitInSlot({Name="VirtualBloxconHelmet"},"PlayerTorso"),"Known item can fit in special slot.")
+
+    --Swap an item and assert the swapping is valid.
+    self.CuT1:SwapSlots(2,"PlayerHat")
+    self:AssertTrue(self.CuT1:CanSwap(3,4),"Can't swap between numbers.")
+    self:AssertTrue(self.CuT1:CanSwap(3,10),"Can't swap between numbers with one empty.")
+    self:AssertTrue(self.CuT1:CanSwap(10,3),"Can't swap between numbers with one empty.")
+    self:AssertTrue(self.CuT1:CanSwap("PlayerHat",5),"Can't swap between same type and number.")
+    self:AssertTrue(self.CuT1:CanSwap(5,"PlayerHat"),"Can't swap between same type and number.")
+    self:AssertFalse(self.CuT1:CanSwap("PlayerHat",3),"Can swap between same type and number.")
+    self:AssertFalse(self.CuT1:CanSwap(3,"PlayerHat"),"Can swap between same type and number.")
+    self:AssertFalse(self.CuT1:CanSwap("PlayerHat","PlayerTorso"),"Can swap between different types.")
+end))
+
 
 
 return true

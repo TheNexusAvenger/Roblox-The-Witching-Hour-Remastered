@@ -9,6 +9,7 @@ local SLOTS_PER_PAGE = 35
 
 
 local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
 
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
@@ -18,6 +19,7 @@ local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatio
 local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
 local ItemIcon = require(script.Parent:WaitForChild("ItemIcon"))
 local PlayerDisplay = require(script.Parent:WaitForChild("PlayerDisplay"))
+local SwapSlots = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.SwapSlots")
 
 local InventoryWindow = NexusObject:Extend()
 InventoryWindow:SetClassName("InventoryWindow")
@@ -36,6 +38,7 @@ function InventoryWindow:__new()
     InventoryScreenGui.Name = "Inventory"
     InventoryScreenGui.DisplayOrder = 2
     InventoryScreenGui.Parent = script.Parent.Parent
+    self.InventoryScreenGui = InventoryScreenGui
 
     local Background = Instance.new("ImageLabel")
     Background.BackgroundTransparency = 1
@@ -261,7 +264,7 @@ function InventoryWindow:__new()
             PlayerRightLegSlot.Visible = false
             PlayerLeftArmSlot.Visible = false
             PlayerLeftLegSlot.Visible = false
-            PlayerDisplay.Visible = false
+            PlayerDisplayFrame.Visible = false
 
             CharacterModeToggleImage.Visible = true
             PetTypeContainer.Visible = true
@@ -284,7 +287,7 @@ function InventoryWindow:__new()
             PlayerRightLegSlot.Visible = true
             PlayerLeftArmSlot.Visible = true
             PlayerLeftLegSlot.Visible = true
-            PlayerDisplay.Visible = true
+            PlayerDisplayFrame.Visible = true
 
             CharacterModeToggleImage.Visible = false
             PetTypeContainer.Visible = false
@@ -404,12 +407,158 @@ function InventoryWindow:__new()
 
     --Connect opening and closing.
     local OpenValue = script.Parent.Parent:WaitForChild("GuiOpenStates"):WaitForChild("Inventory")
+    self.OpenValue = OpenValue
     OpenValue.Changed:Connect(function()
         Background:TweenPosition(UDim2.new(0.5,0,OpenValue.Value and 0.5 or 1.5,0),"Out","Quad",0.5,true)
     end)
     InventoryCloseButton.Button.MouseButton1Down:Connect(function()
         Background:TweenPosition(UDim2.new(0.5,0,1.5,0),"Out","Quad",0.5,true)
         OpenValue.Value = false
+    end)
+
+    --Set up dragging.
+    self:SetUpDraggning()
+end
+
+--[[
+Returns if a point is in a frame.
+--]]
+function InventoryWindow:PointInFrame(X,Y,Frame)
+    local Size,Position = Frame.AbsoluteSize,Frame.AbsolutePosition
+    return Frame.Visible and X >= Position.X and X <= Position.X + Size.X and Y >= Position.Y and Y <= Position.Y + Size.Y
+end
+
+--[[
+Sets up dragging of items.
+--]]
+function InventoryWindow:SetUpDraggning()
+    local CurrentSlot,CurrentDraggingFrame,CurrentIcon
+    local DraggingOffsetX,DraggingOffsetY
+
+    --Connect items being pressed.
+    UserInputService.InputBegan:Connect(function(Input,Processed)
+        --Return if the input was already processed or it wasn't a click.
+        if Processed or (Input.UserInputType ~= Enum.UserInputType.MouseButton1 and Input.UserInputType ~= Enum.UserInputType.Touch) then
+            return
+        end
+
+        --Return if the inventory isn't open.
+        if not self.OpenValue.Value then
+            return
+        end
+
+        --Determine the slot to start from.
+        local Slot,StartSlotFrame
+        for SlotName,SlotFrame in pairs(self.SpecialInventorySlots) do
+            if self:PointInFrame(Input.Position.X,Input.Position.Y,SlotFrame) then
+                Slot = SlotName
+                StartSlotFrame = SlotFrame
+                break
+            end
+        end
+        if not Slot then
+            for i,SlotFrame in pairs(self.InventorySlotFrames) do
+                if self:PointInFrame(Input.Position.X,Input.Position.Y,SlotFrame) then
+                    Slot = i + ((self.CurrentPage - 1)* SLOTS_PER_PAGE)
+                    StartSlotFrame = SlotFrame
+                    break
+                end
+            end
+        end
+        
+        --Return if the slot or item doesn't exist.
+        if not Slot then return end
+        local Item = self.Inventory:GetItem(Slot)
+        if not Item then return end
+
+        --Create the dragging frame.
+        CurrentSlot = Slot
+        DraggingOffsetX = StartSlotFrame.AbsolutePosition.X - Input.Position.X
+        DraggingOffsetY = StartSlotFrame.AbsolutePosition.Y - Input.Position.Y
+
+        CurrentDraggingFrame = Instance.new("Frame")
+        CurrentDraggingFrame.BackgroundTransparency = 1
+        CurrentDraggingFrame.Size = UDim2.new(0,StartSlotFrame.AbsoluteSize.X,0,StartSlotFrame.AbsoluteSize.Y)
+        CurrentDraggingFrame.Position = UDim2.new(0,StartSlotFrame.AbsolutePosition.X,0,StartSlotFrame.AbsolutePosition.Y)
+        CurrentDraggingFrame.ZIndex = 20
+        CurrentDraggingFrame.Parent = self.InventoryScreenGui
+
+        CurrentIcon = ItemIcon.new()
+        CurrentIcon:SetParent(CurrentDraggingFrame)
+        CurrentIcon:SetItem(Item.Name)
+        
+        --Hide the starting icon.
+        for SlotName,SlotIcon in pairs(self.SpecialInventoryIcons) do
+            if SlotName == Slot then
+                SlotIcon.ViewportFrame.Visible = false
+                break
+            end
+        end
+        for SlotName,SlotIcon in pairs(self.InventorySlotIcons) do
+            if SlotName == Slot then
+                SlotIcon.ViewportFrame.Visible = false
+                break
+            end
+        end
+    end)
+
+    --Connect dragging.
+    UserInputService.InputChanged:Connect(function(Input)
+        --Return if the input it wasn't a click.
+        if Input.UserInputType ~= Enum.UserInputType.MouseMovement and Input.UserInputType ~= Enum.UserInputType.Touch then
+            return
+        end
+
+        --Move the frame.
+        if CurrentDraggingFrame then
+            CurrentDraggingFrame.Position = UDim2.new(0,Input.Position.X + DraggingOffsetX,0,Input.Position.Y + DraggingOffsetY)
+        end
+    end)
+
+    --Connect ending the dragging.
+    UserInputService.InputEnded:Connect(function(Input)
+        --Return if the input it wasn't a click.
+        if Input.UserInputType ~= Enum.UserInputType.MouseButton1 and Input.UserInputType ~= Enum.UserInputType.Touch then
+            return
+        end
+
+        --Return if dragging wasn't started.
+        if not CurrentDraggingFrame then
+            return
+        end
+
+        --Determine the ending slot.
+        local Slot
+        for SlotName,SlotFrame in pairs(self.SpecialInventorySlots) do
+            if self:PointInFrame(Input.Position.X,Input.Position.Y,SlotFrame) then
+                Slot = SlotName
+                break
+            end
+        end
+        if not Slot then
+            for i,SlotFrame in pairs(self.InventorySlotFrames) do
+                if self:PointInFrame(Input.Position.X,Input.Position.Y,SlotFrame) then
+                    Slot = i + ((self.CurrentPage - 1)* SLOTS_PER_PAGE)
+                    break
+                end
+            end
+        end
+
+        --Swap the slots if they can be swapped.
+        if Slot and self.Inventory:CanSwap(CurrentSlot,Slot) then
+            self.Inventory:SwapSlots(CurrentSlot,Slot)
+            SwapSlots:FireServer(CurrentSlot,Slot)
+        end
+        CurrentDraggingFrame:Destroy()
+        CurrentIcon:Destroy()
+
+        --Show the original icon.
+        for _,SlotIcon in pairs(self.SpecialInventoryIcons) do
+            SlotIcon.ViewportFrame.Visible = true
+        end
+        for _,SlotIcon in pairs(self.InventorySlotIcons) do
+            SlotIcon.ViewportFrame.Visible = true
+        end
     end)
 end
 

@@ -10,6 +10,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local NexusEventCreator = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEventCreator")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
 local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
 
 local Inventory = NexusObject:Extend()
@@ -87,6 +88,51 @@ function Inventory:GetItemSlots(ItemName)
 
     --Return the cached result.
     return self.CachedSlotResults[ItemName]
+end
+
+--[[
+Returns if an item can exist in a given slot.
+--]]
+function Inventory:CanFitInSlot(Item,Slot)
+    --Return true if the slot is a number and is in bounds.
+    local SlotNumber = tonumber(Slot)
+    if SlotNumber then
+        if SlotNumber < 1 or SlotNumber > self:GetMaxItems() or SlotNumber % 1 ~= 0 then
+            return false
+        end
+        return true
+    end
+
+    --Return if the item fits the given slot name.
+    local ItemName = Item.Name
+    if ItemName then
+        local Data = ItemData[ItemName]
+        if Data then
+           return Data.ItemType == Slot 
+        end
+    end
+    return false
+end
+
+--[[
+Returns if 2 slots can swap.
+--]]
+function Inventory:CanSwap(Slot1,Slot2)
+    --Get the items for the slots.
+    local Item1,Item2 = self:GetItem(Slot1),self:GetItem(Slot2)
+
+    --Return false if the first item can't go to the given slot.
+    if Item1 and not self:CanFitInSlot(Item1,Slot2) then
+        return false
+    end
+
+    --Return false if the second item can't go to the given slot.
+    if Item2 and not self:CanFitInSlot(Item2,Slot1) then
+        return false
+    end
+
+    --Return true (can swap).
+    return true
 end
 
 --[[

@@ -14,11 +14,26 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.ItemData")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
 local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
+local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 
 local InventoryService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 InventoryService:SetClassName("InventoryService")
 InventoryService.PlayerInventories = {}
 ServerScriptServiceProject:SetContextResource(InventoryService)
+
+
+
+--Set up the replication.
+local InventoryReplication = Instance.new("Folder")
+InventoryReplication.Name = "InventoryReplication"
+InventoryReplication.Parent = GameReplication
+
+local SwapSlots = Instance.new("RemoteEvent")
+SwapSlots.Name = "SwapSlots"
+SwapSlots.Parent = InventoryReplication
+SwapSlots.OnServerEvent:Connect(function(Player,Slot1,Slot2)
+    InventoryService:SwapSlots(Player,Slot1,Slot2)
+end)
 
 
 
@@ -88,6 +103,16 @@ Returns the inventory changed event for a player.
 --]]
 function InventoryService:GetInventoryChangedEvent(Player)
     return self.PlayerInventories[Player].InventoryChanged
+end
+
+--[[
+Swaps two slots in a player's inventory.
+--]]
+function InventoryService:SwapSlots(Player,Slot1,Slot2)
+    local PlayerInventory = self.PlayerInventories[Player]
+    if PlayerInventory:CanSwap(Slot1,Slot2) then
+        PlayerInventory:SwapSlots(Slot1,Slot2)
+    end
 end
 
 
