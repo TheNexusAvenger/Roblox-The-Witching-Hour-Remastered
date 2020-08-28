@@ -11,6 +11,7 @@ local InsertService = game:GetService("InsertService")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
+local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.ItemData")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
 local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
@@ -33,6 +34,16 @@ SwapSlots.Name = "SwapSlots"
 SwapSlots.Parent = InventoryReplication
 SwapSlots.OnServerEvent:Connect(function(Player,Slot1,Slot2)
     InventoryService:SwapSlots(Player,Slot1,Slot2)
+end)
+
+local SetPet = Instance.new("RemoteEvent")
+SetPet.Name = "SetPet"
+SetPet.Parent = InventoryReplication
+SetPet.OnServerEvent:Connect(function(Player,PetName)
+    local PlayerData = PlayerDataService:GetPlayerData(Player)
+    if PetName == "Dog" or PlayerData:GetValue("PetsOwned")[PetName] then
+        PlayerData:SetValue("CurrentPet",PetName)
+    end
 end)
 
 

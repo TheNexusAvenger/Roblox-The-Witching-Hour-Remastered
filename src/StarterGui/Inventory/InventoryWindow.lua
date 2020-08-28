@@ -16,11 +16,13 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
 local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
 local ItemIcon = require(script.Parent:WaitForChild("ItemIcon"))
 local PlayerDisplay = require(script.Parent:WaitForChild("PlayerDisplay"))
 local PetDisplay = require(script.Parent:WaitForChild("PetDisplay"))
 local SwapSlots = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.SwapSlots")
+local SetPet = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.SetPet")
 
 local InventoryWindow = NexusObject:Extend()
 InventoryWindow:SetClassName("InventoryWindow")
@@ -35,6 +37,7 @@ function InventoryWindow:__new()
 
     --Create the window.
     self.Inventory = Inventory.new(Players.LocalPlayer)
+    self.PlayerData = PlayerData.GetPlayerData(Players.LocalPlayer)
     local InventoryScreenGui = Instance.new("ScreenGui")
     InventoryScreenGui.Name = "Inventory"
     InventoryScreenGui.DisplayOrder = 2
@@ -202,7 +205,33 @@ function InventoryWindow:__new()
     PandaToggleButton.Image = "rbxassetid://132065130"
     PandaToggleButton.Parent = PetTypeContainer
 
-    --TODO: Implement hovering and selecting
+    self.PetToggleButtons = {
+        Dog = {DogToggleButton,"rbxassetid://132064980","rbxassetid://132064940","rbxassetid://132064966"},
+        Cat = {CatToggleButton,"rbxassetid://132064800","rbxassetid://132064800","rbxassetid://132064768"},
+        Panda = {PandaToggleButton,"rbxassetid://132065130","rbxassetid://132065075","rbxassetid://132065098"},
+    }
+
+    local DB = true
+    for PetName,ButtonData in pairs(self.PetToggleButtons) do
+        ButtonData[1].MouseEnter:Connect(function()
+            if self.PlayerData:GetValue("CurrentPet") ~= PetName then
+                ButtonData[1].Image = ButtonData[3]
+            end
+        end)
+        ButtonData[1].MouseLeave:Connect(function()
+            if self.PlayerData:GetValue("CurrentPet") ~= PetName then
+                ButtonData[1].Image = ButtonData[2]
+            end
+        end)
+        ButtonData[1].MouseButton1Down:Connect(function()
+            if DB then
+                DB = false
+                self:SetPet(PetName)
+                wait()
+                DB = true
+            end
+        end)
+    end
 
     local PetHatSlot = Instance.new("ImageLabel")
     PetHatSlot.BackgroundTransparency = 1
@@ -415,6 +444,12 @@ function InventoryWindow:__new()
     self.Inventory.InventoryChanged:Connect(function()
         self:UpdateInventory()
     end)
+    self.PlayerData:GetValueChangedSignal("PetsOwned"):Connect(function()
+        self:UpdateInventory()
+    end)
+    self.PlayerData:GetValueChangedSignal("CurrentPet"):Connect(function()
+        self:UpdateInventory()
+    end)
     self:UpdateInventory()
 
     --Connect opening and closing.
@@ -606,6 +641,20 @@ function InventoryWindow:UpdateInventory()
         end
     end
 
+    --Update the selected pet.
+    local CurrentPet = self.PlayerData:GetValue("CurrentPet")
+    local PetsOwned = self.PlayerData:GetValue("PetsOwned")
+    for PetName,ButtonData in pairs(self.PetToggleButtons) do
+        ButtonData[1].Visible = (PetName == "Dog" or PetsOwned[PetName] == true)
+        if PetName == CurrentPet then
+            ButtonData[1].Image = ButtonData[4]
+        else
+            if ButtonData[1].Image == ButtonData[4] then
+                ButtonData[1].Image = ButtonData[2]
+            end
+        end
+    end
+
     --Update the player model.
     self.PlayerDisplay:SetHat(self.Inventory:GetItem("PlayerHat"))
     self.PlayerDisplay:SetItem("Torso",self.Inventory:GetItem("PlayerTorso"))
@@ -617,7 +666,15 @@ function InventoryWindow:UpdateInventory()
     self.PetDisplay:SetItem("PetCostumeCollar",self.Inventory:GetItem("PetCostumeCollar"))
     self.PetDisplay:SetItem("PetCostumeBack",self.Inventory:GetItem("PetCostumeBack"))
     self.PetDisplay:SetItem("PetCostumeAnkle",self.Inventory:GetItem("PetCostumeAnkle"))
-    self.PetDisplay:SetPet("Dog") --TODO: Load from active pet.
+    self.PetDisplay:SetPet(CurrentPet)
+end
+
+--[[
+Sets the pet to use.
+--]]
+function InventoryWindow:SetPet(PetName)
+    SetPet:FireServer(PetName)
+    self.PlayerData:SetValue("CurrentPet",PetName)
 end
 
 

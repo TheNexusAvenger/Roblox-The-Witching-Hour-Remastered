@@ -17,6 +17,14 @@ local PLAYER_DATA_LAYOUT = {
         Type = "Table",
         Default = "[]",
     },
+    PetsOwned = {
+        Type = "Table",
+        Default = "[]",
+    },
+    CurrentPet = {
+        Type = "String",
+        Default = "Dog",
+    },
     Currency = {
         Type = "Integer",
         Default = 0,
