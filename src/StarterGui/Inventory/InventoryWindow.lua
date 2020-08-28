@@ -19,6 +19,7 @@ local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatio
 local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
 local ItemIcon = require(script.Parent:WaitForChild("ItemIcon"))
 local PlayerDisplay = require(script.Parent:WaitForChild("PlayerDisplay"))
+local PetDisplay = require(script.Parent:WaitForChild("PetDisplay"))
 local SwapSlots = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.SwapSlots")
 
 local InventoryWindow = NexusObject:Extend()
@@ -235,6 +236,15 @@ function InventoryWindow:__new()
     PetAnkleSlot.Visible = false
     PetAnkleSlot.Parent = Background
 
+    local PetDisplayFrame = Instance.new("Frame")
+    PetDisplayFrame.BackgroundTransparency = 1
+    PetDisplayFrame.Size = UDim2.new(0.6,0,0.6,0)
+    PetDisplayFrame.Position = UDim2.new(0.05,0,0.2,0)
+    PetDisplayFrame.SizeConstraint = "RelativeYY"
+    PetDisplayFrame.Visible = false
+    PetDisplayFrame.Parent = Background
+    self.PetDisplay = PetDisplay.new(PetDisplayFrame)
+
     --Create the toggle buttons.
     local PetModeToggleImage = Instance.new("ImageLabel")
     PetModeToggleImage.BackgroundTransparency = 1
@@ -272,6 +282,7 @@ function InventoryWindow:__new()
             PetCollarSlot.Visible = true
             PetBackSlot.Visible = true
             PetAnkleSlot.Visible = true
+            PetDisplayFrame.Visible = true
             wait()
             DB = true
         end
@@ -295,6 +306,7 @@ function InventoryWindow:__new()
             PetCollarSlot.Visible = false
             PetBackSlot.Visible = false
             PetAnkleSlot.Visible = false
+            PetDisplayFrame.Visible = false
             wait()
             DB = true
         end
@@ -367,10 +379,10 @@ function InventoryWindow:__new()
         PlayerRightArm = PlayerRightArmSlot,
         PlayerLeftLeg = PlayerLeftLegSlot,
         PlayerRightLeg = PlayerRightLegSlot,
-        PetHat = PetHatSlot,
-        PetCollar = PetCollarSlot,
-        PetBack = PetBackSlot,
-        PetAnkle = PetAnkleSlot,
+        PetCostumeHat = PetHatSlot,
+        PetCostumeCollar = PetCollarSlot,
+        PetCostumeBack = PetBackSlot,
+        PetCostumeAnkle = PetAnkleSlot,
     }
     self.SpecialInventoryIcons = {}
     for SlotName,SlotFrame in pairs(self.SpecialInventorySlots) do
@@ -601,6 +613,11 @@ function InventoryWindow:UpdateInventory()
     self.PlayerDisplay:SetItem("RightArm",self.Inventory:GetItem("PlayerRightArm"))
     self.PlayerDisplay:SetItem("LeftLeg",self.Inventory:GetItem("PlayerLeftLeg"))
     self.PlayerDisplay:SetItem("RightLeg",self.Inventory:GetItem("PlayerRightLeg"))
+    self.PetDisplay:SetItem("PetCostumeHat",self.Inventory:GetItem("PetCostumeHat"))
+    self.PetDisplay:SetItem("PetCostumeCollar",self.Inventory:GetItem("PetCostumeCollar"))
+    self.PetDisplay:SetItem("PetCostumeBack",self.Inventory:GetItem("PetCostumeBack"))
+    self.PetDisplay:SetItem("PetCostumeAnkle",self.Inventory:GetItem("PetCostumeAnkle"))
+    self.PetDisplay:SetPet("Dog") --TODO: Load from active pet.
 end
 
 

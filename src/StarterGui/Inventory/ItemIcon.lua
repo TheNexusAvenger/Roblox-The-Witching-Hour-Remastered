@@ -91,7 +91,19 @@ function ItemIcon:SetItem(ModelName)
             end
         end
     else
-        --TODO: Custom items, pet accessories
+        if ModelData.MeshId then
+            --Create the mesh.
+            local Part = Instance.new("Part")
+            Part.Size = ModelData.Size or Vector3.new(1,1,1)
+            Part.Parent = self.ViewportFrame
+            self.Model = Part
+
+            local Mesh = Instance.new("SpecialMesh")
+            Mesh.MeshType = Enum.MeshType.FileMesh
+            Mesh.MeshId = "rbxassetid://"..tostring(ModelData.MeshId)
+            Mesh.TextureId = "rbxassetid://"..tostring(ModelData.TextureId)
+            Mesh.Parent = Part
+        end
     end
 
     --Update the camera.

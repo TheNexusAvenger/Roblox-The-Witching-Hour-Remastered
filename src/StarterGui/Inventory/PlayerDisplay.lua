@@ -19,7 +19,7 @@ local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.Ite
 local R15CharacterModel = ReplicatedStorageProject:GetResource("R15CharacterModel")
 
 local PlayerDisplay = NexusObject:Extend()
-PlayerDisplay:SetClassName("ItemIcon")
+PlayerDisplay:SetClassName("PlayerDisplay")
 
 
 
