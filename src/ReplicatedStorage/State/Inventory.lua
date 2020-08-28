@@ -11,7 +11,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local NexusEventCreator = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEventCreator")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
-local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
+local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 
 local Inventory = NexusObject:Extend()
 Inventory:SetClassName("Inventory")

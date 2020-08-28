@@ -10,7 +10,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
-local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
+local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 
 local PlayerDataService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 PlayerDataService:SetClassName("PlayerDataService")

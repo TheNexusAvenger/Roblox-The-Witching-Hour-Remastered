@@ -9,7 +9,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
-local BoolGrid = ReplicatedStorageProject:GetResource("UI.BoolGrid")
+local BoolGrid = ReplicatedStorageProject:GetResource("State.BoolGrid")
 
 
 

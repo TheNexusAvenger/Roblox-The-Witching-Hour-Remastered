@@ -35,7 +35,7 @@ local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
 local MapConfidenceData = ReplicatedStorageProject:GetResource("GameData.MapConfidenceData")
 local TeleportLocations = ReplicatedStorageProject:GetResource("GameData.TeleportLocations")
 local Landmarks = ReplicatedStorageProject:GetResource("GameData.Landmarks")
-local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
+local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 local CharacterIndicator = require(script:WaitForChild("CharacterIndicator"))
 
 local Map = NexusObject:Extend()

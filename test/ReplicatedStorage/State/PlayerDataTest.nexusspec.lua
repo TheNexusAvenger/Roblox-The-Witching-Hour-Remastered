@@ -8,7 +8,7 @@ local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
-local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
+local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 
 
 

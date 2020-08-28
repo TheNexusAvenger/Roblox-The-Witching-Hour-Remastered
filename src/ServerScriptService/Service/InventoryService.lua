@@ -14,7 +14,7 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.ItemData")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
-local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
+local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 
 local InventoryService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()

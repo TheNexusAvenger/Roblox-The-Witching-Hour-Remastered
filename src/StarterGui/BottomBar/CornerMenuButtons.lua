@@ -11,7 +11,7 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
-local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData")
+local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 
 local CornerMenuButtons = NexusObject:Extend()
 CornerMenuButtons:SetClassName("CornerMenuButtons")

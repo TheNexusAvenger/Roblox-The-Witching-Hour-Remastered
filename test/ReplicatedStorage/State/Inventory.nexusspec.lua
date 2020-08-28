@@ -9,7 +9,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
-local Inventory = ReplicatedStorageProject:GetResource("UI.Inventory")
+local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
 
 
 

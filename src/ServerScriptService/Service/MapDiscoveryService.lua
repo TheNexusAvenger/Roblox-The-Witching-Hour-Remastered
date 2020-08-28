@@ -10,7 +10,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
-local BoolGrid = ReplicatedStorageProject:GetResource("UI.BoolGrid")
+local BoolGrid = ReplicatedStorageProject:GetResource("State.BoolGrid")
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 
 local MapDiscoveryService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()

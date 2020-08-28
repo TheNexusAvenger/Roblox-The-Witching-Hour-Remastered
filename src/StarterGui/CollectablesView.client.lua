@@ -12,7 +12,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local Bloxkins = ReplicatedStorageProject:GetResource("GameData.Bloxkins")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
-local PlayerData = ReplicatedStorageProject:GetResource("UI.PlayerData").GetPlayerData(Players.LocalPlayer)
+local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData").GetPlayerData(Players.LocalPlayer)
 
 
 
