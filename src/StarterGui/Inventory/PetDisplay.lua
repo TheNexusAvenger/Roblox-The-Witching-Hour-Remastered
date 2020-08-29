@@ -86,7 +86,7 @@ function PetDisplay:SetPet(PetName)
 	--Set the clothing.
 	local ExistingClothing = self.LastClothes
 	for Slot,_ in pairs(SLOT_TO_PART_NAME) do
-		self:SetItem(Slot,ExistingClothing[Slot],true)
+		self:SetItem(Slot,{Name=ExistingClothing[Slot]},true)
 	end
 
 	--Start animating the pet.
