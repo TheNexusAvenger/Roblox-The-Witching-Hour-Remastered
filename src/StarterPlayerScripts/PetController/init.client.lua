@@ -7,7 +7,7 @@ Initializes and controls the pets of the player.
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 
-local Player = Players.LocalPlayer
+local LocalPlayer = Players.LocalPlayer
 local PetMovement = require(script:WaitForChild("PetMovement"))
 local PetAnimation = require(script:WaitForChild("PetAnimation"))
 
@@ -18,13 +18,17 @@ Sets up a pet.
 --]]
 local function PetAdded(Character,Pet)
     --Set up the pet movement and animations.
-    PetMovement(Character,Pet)
+    if Character == LocalPlayer.Character then
+        PetMovement(Character,Pet)
+    end
     PetAnimation(Pet)
 
     --Move the pet to Workspace. Parenting to the character
     --flinging when jumping when the pet is stuck.
-    wait()
-    Pet.Parent = Workspace
+    if Character == LocalPlayer.Character then
+        wait()
+        Pet.Parent = Workspace
+    end
 end
 
 --[[
@@ -45,10 +49,22 @@ local function CharacterAdded(Character)
     end
 end
 
+--[[
+Sets up a player.
+--]]
+function PlayerAdded(Player)
+    Player.CharacterAdded:Connect(CharacterAdded)
+    if Player.Character then
+        CharacterAdded(Player.Character)
+    end
+end
 
 
---Set up the characters.
-Player.CharacterAdded:Connect(CharacterAdded)
-if Player.Character then
-    CharacterAdded(Player.Character)
+
+--Set up players.
+Players.PlayerAdded:Connect(PlayerAdded)
+for _,Player in pairs(Players:GetPlayers()) do
+    coroutine.wrap(function()
+        PlayerAdded(Player)
+    end)()
 end
