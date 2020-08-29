@@ -16,14 +16,15 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
-local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
-
 local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
 
 local CharacterService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 CharacterService:SetClassName("CharacterService")
 CharacterService.LastPlayerCFrames = {}
 ServerScriptServiceProject:SetContextResource(CharacterService)
+
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
+local PetService = ServerScriptServiceProject:GetResource("Service.PetService")
 
 
 
@@ -96,8 +97,12 @@ function CharacterService:SpawnCharacter(Player)
     InventoryService:GetInventoryChangedEvent(Player):Connect(function()
         if Character.Parent then
             Humanoid:ApplyDescription(self:GetHumanoidDescription(Player))
+            PetService:UpdatePet(Player)
         end
     end)
+
+    --Spawn the pet.
+    PetService:SpawnPet(Player)
 end
 
 

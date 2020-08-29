@@ -11,7 +11,6 @@ local InsertService = game:GetService("InsertService")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
-local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.ItemData")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
@@ -21,6 +20,9 @@ local InventoryService = ReplicatedStorageProject:GetResource("ExternalUtil.Nexu
 InventoryService:SetClassName("InventoryService")
 InventoryService.PlayerInventories = {}
 ServerScriptServiceProject:SetContextResource(InventoryService)
+
+local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
+local PetService = ServerScriptServiceProject:GetResource("Service.PetService")
 
 
 
@@ -43,6 +45,7 @@ SetPet.OnServerEvent:Connect(function(Player,PetName)
     local PlayerData = PlayerDataService:GetPlayerData(Player)
     if PetName == "Dog" or PlayerData:GetValue("PetsOwned")[PetName] then
         PlayerData:SetValue("CurrentPet",PetName)
+        PetService:SpawnPet(Player)
     end
 end)
 
