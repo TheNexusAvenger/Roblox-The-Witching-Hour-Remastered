@@ -15,10 +15,10 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
+local ItemIcon = ReplicatedStorageProject:GetResource("UI.ItemIcon")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
-local ItemIcon = require(script.Parent:WaitForChild("ItemIcon"))
 local PlayerDisplay = require(script.Parent:WaitForChild("PlayerDisplay"))
 local PetDisplay = require(script.Parent:WaitForChild("PetDisplay"))
 local SwapSlots = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.SwapSlots")
