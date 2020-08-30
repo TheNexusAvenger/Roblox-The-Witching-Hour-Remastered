@@ -33,6 +33,10 @@ local PLAYER_DATA_LAYOUT = {
         Type = "Boolean",
         Default = false,
     },
+    Quests = {
+        Type = "Table",
+        Default = "[]",
+    },
 }
 local TYPE_TO_SERIALIZATION = {
     String = {

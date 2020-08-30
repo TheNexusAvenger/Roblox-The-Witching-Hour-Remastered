@@ -678,35 +678,35 @@ return {
         Size = Vector3.new(0.3,0.3,0.3),
     },
 
-    --Spider costume.
-    ["PetSpiderCostumeHat"] = {
-        DisplayName = "Spider Costume Hat",
+    --Witch costume.
+    ["PetWitchCostumeHat"] = {
+        DisplayName = "Witch Costume Hat",
         ItemType = "PetCostumeHat",
-        CostumeName = "Spider",
+        CostumeName = "Witch",
         MeshId = 132566464,
         TextureId = 133250108,
         Size = Vector3.new(1.4,1.4,1.4),
     },
-    ["PetSpiderCostumeCollar"] = {
-        DisplayName = "Spider Costume Collar",
+    ["PetWitchCostumeCollar"] = {
+        DisplayName = "Witch Costume Collar",
         ItemType = "PetCostumeCollar",
-        CostumeName = "Spider",
+        CostumeName = "Witch",
         MeshId = 132567849,
         TextureId = 133250108,
         Size = Vector3.new(1,1,1),
     },
-    ["PetSpiderCostumeCape"] = {
-        DisplayName = "Spider Costume Cape",
+    ["PetWitchCostumeCape"] = {
+        DisplayName = "Witch Costume Cape",
         ItemType = "PetCostumeBack",
-        CostumeName = "Spider",
+        CostumeName = "Witch",
         MeshId = 132566900,
         TextureId = 133250108,
         Size = Vector3.new(1.5,1.5,1.5),
     },
-    ["PetSpiderCostumeAnklet"] = {
-        DisplayName = "Spider Costume Anklet",
+    ["PetWitchCostumeAnklet"] = {
+        DisplayName = "Witch Costume Anklet",
         ItemType = "PetCostumeAnkle",
-        CostumeName = "Spider",
+        CostumeName = "Witch",
         MeshId = 132762876,
         TextureId = 133250108,
         Size = Vector3.new(0.3,0.3,0.3),
@@ -845,6 +845,111 @@ return {
         CostumeName = "Devil",
         MeshId = 132762876,
         TextureId = 133463314,
+        Size = Vector3.new(0.3,0.3,0.3),
+    },
+
+    --Werewolf costume.
+    --TODO: Textures are unknown.
+    ["PetWerewolfCostumeHat"] = {
+        DisplayName = "Werewolf Costume Hat",
+        ItemType = "PetCostumeHat",
+        CostumeName = "Werewolf",
+        MeshId = 132566464,
+        TextureId = 0,
+        Size = Vector3.new(1.4,1.4,1.4),
+    },
+    ["PetWerewolfCostumeCollar"] = {
+        DisplayName = "Werewolf Costume Collar",
+        ItemType = "PetCostumeCollar",
+        CostumeName = "Werewolf",
+        MeshId = 132567849,
+        TextureId = 0,
+        Size = Vector3.new(1,1,1),
+    },
+    ["PetWerewolfCostumeCape"] = {
+        DisplayName = "Werewolf Costume Cape",
+        ItemType = "PetCostumeBack",
+        CostumeName = "Werewolf",
+        MeshId = 132566900,
+        TextureId = 0,
+        Size = Vector3.new(1.5,1.5,1.5),
+    },
+    ["PetWerewolfCostumeAnklet"] = {
+        DisplayName = "Werewolf Costume Hat",
+        ItemType = "PetCostumeAnkle",
+        CostumeName = "Werewolf",
+        MeshId = 132762876,
+        TextureId = 0,
+        Size = Vector3.new(0.3,0.3,0.3),
+    },
+
+    --Ghost costume.
+    --TODO: Textures are unknown.
+    ["PetGhostCostumeHat"] = {
+        DisplayName = "Ghost Costume Hat",
+        ItemType = "PetCostumeHat",
+        CostumeName = "Ghost",
+        MeshId = 132566464,
+        TextureId = 0,
+        Size = Vector3.new(1.4,1.4,1.4),
+    },
+    ["PetGhostCostumeCollar"] = {
+        DisplayName = "Ghost Costume Collar",
+        ItemType = "PetCostumeCollar",
+        CostumeName = "Ghost",
+        MeshId = 132567849,
+        TextureId = 0,
+        Size = Vector3.new(1,1,1),
+    },
+    ["PetGhostCostumeCape"] = {
+        DisplayName = "Ghost Costume Cape",
+        ItemType = "PetCostumeBack",
+        CostumeName = "Ghost",
+        MeshId = 132566900,
+        TextureId = 0,
+        Size = Vector3.new(1.5,1.5,1.5),
+    },
+    ["PetGhostCostumeAnklet"] = {
+        DisplayName = "Ghost Costume Hat",
+        ItemType = "PetCostumeAnkle",
+        CostumeName = "Ghost",
+        MeshId = 132762876,
+        TextureId = 0,
+        Size = Vector3.new(0.3,0.3,0.3),
+    },
+
+    --Grim Reaper costume.
+    --TODO: Textures are unknown.
+    ["PetGrimReaperReaperCostumeHat"] = {
+        DisplayName = "Grim Reaper Costume Hat",
+        ItemType = "PetCostumeHat",
+        CostumeName = "GrimReaper",
+        MeshId = 132566464,
+        TextureId = 0,
+        Size = Vector3.new(1.4,1.4,1.4),
+    },
+    ["PetGrimReaperCostumeCollar"] = {
+        DisplayName = "Grim Reaper Costume Collar",
+        ItemType = "PetCostumeCollar",
+        CostumeName = "GrimReaper",
+        MeshId = 132567849,
+        TextureId = 0,
+        Size = Vector3.new(1,1,1),
+    },
+    ["PetGrimReaperCostumeCape"] = {
+        DisplayName = "Grim Reaper Costume Cape",
+        ItemType = "PetCostumeBack",
+        CostumeName = "GrimReaper",
+        MeshId = 132566900,
+        TextureId = 0,
+        Size = Vector3.new(1.5,1.5,1.5),
+    },
+    ["PetGrimReaperCostumeAnklet"] = {
+        DisplayName = "Grim Reaper Costume Hat",
+        ItemType = "PetCostumeAnkle",
+        CostumeName = "GrimReaper",
+        MeshId = 132762876,
+        TextureId = 0,
         Size = Vector3.new(0.3,0.3,0.3),
     },
 }

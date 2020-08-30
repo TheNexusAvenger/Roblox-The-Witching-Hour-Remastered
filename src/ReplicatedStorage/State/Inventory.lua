@@ -14,6 +14,8 @@ local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 
 local Inventory = NexusObject:Extend()
+Inventory.CachedInventory = {}
+setmetatable(Inventory.CachedInventory,{__mode="k"})
 Inventory:SetClassName("Inventory")
 
 
@@ -36,6 +38,20 @@ function Inventory:__new(Player)
         self.CachedSlotResults = {}
         self.InventoryChanged:Fire(self.Inventory)
     end)
+end
+
+--[[
+Returns an inventory object for a
+given player.
+--]]
+function Inventory.GetInventory(Player)
+    --Create the cached object if it doesn't exist.
+    if not Inventory.CachedInventory[Player] then
+        Inventory.CachedInventory[Player] = Inventory.new(Player)
+    end
+
+    --Return the cached object.
+    return Inventory.CachedInventory[Player]
 end
 
 --[[

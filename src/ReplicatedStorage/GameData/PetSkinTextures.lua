@@ -87,4 +87,34 @@ return {
         Panda = 133464691,
         Dragon = 133464373,
     },
+
+    --TODO: The textures are unknown.
+    ["Wereworlf"] = {
+        Dog = 132549809,
+        Cat = 132553894,
+        Pig = 0,
+        Horse = 0,
+        Panda = 132554561,
+        Dragon =  0,
+    },
+
+    --TODO: The textures are unknown.
+    ["Ghost"] = {
+        Dog = 132549809,
+        Cat = 132553894,
+        Pig = 0,
+        Horse = 0,
+        Panda = 132554561,
+        Dragon =  0,
+    },
+
+    --TODO: The textures are unknown.
+    ["GrimReaper"] = {
+        Dog = 132549809,
+        Cat = 132553894,
+        Pig = 0,
+        Horse = 0,
+        Panda = 132554561,
+        Dragon =  0,
+    },
 }

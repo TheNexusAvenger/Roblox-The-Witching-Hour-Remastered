@@ -36,7 +36,7 @@ function InventoryWindow:__new()
     self:InitializeSuper()
 
     --Create the window.
-    self.Inventory = Inventory.new(Players.LocalPlayer)
+    self.Inventory = Inventory.GetInventory(Players.LocalPlayer)
     self.PlayerData = PlayerData.GetPlayerData(Players.LocalPlayer)
     local InventoryScreenGui = Instance.new("ScreenGui")
     InventoryScreenGui.Name = "Inventory"

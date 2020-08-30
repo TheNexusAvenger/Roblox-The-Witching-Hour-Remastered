@@ -54,7 +54,7 @@ return {
 		PosY = 320,
 		SizeY = 448,
 	},
-	["JediTkacheff"] = {
+	["Darthskrill"] = {
 		LockedImage = "rbxassetid://132678233",
 		UnlockedImage = "rbxassetid://132678258",
 		PosX = 408,

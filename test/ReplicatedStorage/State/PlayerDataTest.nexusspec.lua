@@ -31,7 +31,7 @@ Tests initializing from data.
 NexusUnitTesting:RegisterUnitTest(PlayerDataTest.new("TestInitializeFromSerializedData"):SetRun(function(self)
     --Test loading with no data.
     self.CuT:InitializeFromSerializedData()
-    self:AssertEquals(#self.Folder:GetChildren(),7,"Wrong amount of values created.")
+    self:AssertEquals(#self.Folder:GetChildren(),8,"Wrong amount of values created.")
     self:AssertEquals(self.CuT:GetValue("DiscoveredMapCells"),"[]","Default is incorrect.")
     self:AssertEquals(self.Folder.DiscoveredMapCells.Value,"[]","Default value is incorrect.")
     self:AssertEquals(self.CuT:GetValue("Currency"),0,"Default is incorrect.")
@@ -39,7 +39,7 @@ NexusUnitTesting:RegisterUnitTest(PlayerDataTest.new("TestInitializeFromSerializ
 
     --Test loading with some data.
     self.CuT:InitializeFromSerializedData({Currency=10})
-    self:AssertEquals(#self.Folder:GetChildren(),7,"Wrong amount of values created.")
+    self:AssertEquals(#self.Folder:GetChildren(),8,"Wrong amount of values created.")
     self:AssertEquals(self.CuT:GetValue("DiscoveredMapCells"),"[]","Default is incorrect.")
     self:AssertEquals(self.Folder.DiscoveredMapCells.Value,"[]","Default value is incorrect.")
     self:AssertEquals(self.CuT:GetValue("Currency"),10,"Set value is incorrect.")
@@ -47,7 +47,7 @@ NexusUnitTesting:RegisterUnitTest(PlayerDataTest.new("TestInitializeFromSerializ
 
     --Test loading with extra data.
     self.CuT:InitializeFromSerializedData({Currency=10,UnknownValue="Fail"})
-    self:AssertEquals(#self.Folder:GetChildren(),7,"Wrong amount of values created.")
+    self:AssertEquals(#self.Folder:GetChildren(),8,"Wrong amount of values created.")
     self:AssertEquals(self.CuT:GetValue("DiscoveredMapCells"),"[]","Default is incorrect.")
     self:AssertEquals(self.Folder.DiscoveredMapCells.Value,"[]","Default value is incorrect.")
     self:AssertEquals(self.CuT:GetValue("Currency"),10,"Set value is incorrect.")

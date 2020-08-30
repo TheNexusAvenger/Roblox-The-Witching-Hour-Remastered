@@ -55,7 +55,7 @@ end)
 Initializes the inventory for a player.
 --]]
 function InventoryService:LoadPlayer(Player)
-    self.PlayerInventories[Player] = Inventory.new(Player)
+    self.PlayerInventories[Player] = Inventory.GetInventory(Player)
 end
 
 --[[
