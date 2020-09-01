@@ -116,12 +116,12 @@ function MapGenerator:GenerateCustomCells()
 
             --Set up interactions.
             ClickDetector.MouseClick:Connect(function()
-                --TODO: Start dialog
+                Players.LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("DialogView"):WaitForChild("StartDialog"):Fire(NPCName)
             end)
             BoundingBox.Touched:Connect(function(TouchPart)
                 local Character = Players.LocalPlayer.Character
                 if Character and TouchPart:IsDescendantOf(Character) then
-                    --TODO: Start dialog
+                    Players.LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("DialogView"):WaitForChild("StartDialog"):Fire(NPCName)
                 end
             end)
 
