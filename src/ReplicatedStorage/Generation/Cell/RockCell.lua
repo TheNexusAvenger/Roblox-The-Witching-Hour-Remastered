@@ -22,8 +22,6 @@ Creates a cell.
 function RockCell:__new(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellType)
     self:InitializeSuper(X,Y,TopCellType,BottomCellType,LeftCellType,RightCellType)
 
-    --TODO: Generate house
-
     --Create the grass.
     Workspace.Terrain:FillBlock(CFrame.new(X * 100,28,Y * 100),Vector3.new(100,84,100),Enum.Material.Sandstone)
 end
