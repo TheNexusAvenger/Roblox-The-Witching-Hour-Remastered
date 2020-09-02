@@ -210,6 +210,45 @@ NexusUnitTesting:RegisterUnitTest(QuestsTest.new("TestDialogOrder"):SetRun(funct
     self:AssertDialog("Builderman","Builderman_ALL_DONE")
 end))
 
+--[[
+Tests adding and completing quests.
+--]]
+NexusUnitTesting:RegisterUnitTest(QuestsTest.new("TestAddingAndCompletingQuests"):SetRun(function(self)
+    --Assert quests are added correctly.
+    self.CuT:AddQuest("Fortifying Town Hall")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Fortifying Town Hall",ActiveQuests={["Fortifying Town Hall"] = true},CompletedQuests={},MonsterKillCounters={}},"Quest data is invalid.")
+    self.CuT:AddQuest("Fortifying Town Hall")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Fortifying Town Hall",ActiveQuests={["Fortifying Town Hall"] = true},CompletedQuests={},MonsterKillCounters={}},"Quest data is invalid.")
+    self.CuT:AddQuest("Clean-up Crew")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Fortifying Town Hall",ActiveQuests={["Fortifying Town Hall"] = true,["Clean-up Crew"] = true},CompletedQuests={},MonsterKillCounters={["Ghost Spider"] = 0}},"Quest data is invalid.")
+    self.CuT:AddQuest("Paw-inormal Activity")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Fortifying Town Hall",ActiveQuests={["Fortifying Town Hall"] = true,["Clean-up Crew"] = true,["Paw-inormal Activity"] = true},CompletedQuests={},MonsterKillCounters={["Ghost Spider"] = 0,["Ghost Wolf"] = 0}},"Quest data is invalid.")
+
+    --Assert quests are completed correctly.
+    self.CuT:CompleteQuest("Fortifying Town Hall")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Fortifying Town Hall",ActiveQuests={["Fortifying Town Hall"] = true,["Clean-up Crew"] = true,["Paw-inormal Activity"] = true},CompletedQuests={},MonsterKillCounters={["Ghost Spider"] = 0,["Ghost Wolf"] = 0}},"Quest data is invalid.")
+    self:SetInventory({"Old Board","Old Board","Old Board","Old Board"})
+    self.CuT:CompleteQuest("Fortifying Town Hall")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest=self.CuT.QuestData.SelectedQuest,ActiveQuests={["Clean-up Crew"] = true,["Paw-inormal Activity"] = true},CompletedQuests={["Fortifying Town Hall"] = true},MonsterKillCounters={["Ghost Spider"] = 0,["Ghost Wolf"] = 0}},"Quest data is invalid.")
+    for i = 1,13 do
+        self.CuT:RegisterMonsterKill("Ghost Spider")
+    end
+    for i = 1,20 do
+        self.CuT:RegisterMonsterKill("Ghost Wolf")
+    end
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest=self.CuT.QuestData.SelectedQuest,ActiveQuests={["Clean-up Crew"] = true,["Paw-inormal Activity"] = true},CompletedQuests={["Fortifying Town Hall"] = true},MonsterKillCounters={["Ghost Spider"] = 13,["Ghost Wolf"] = 20}},"Quest data is invalid.")
+    self.CuT:SelectQuest("Paw-inormal Activity")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Paw-inormal Activity",ActiveQuests={["Clean-up Crew"] = true,["Paw-inormal Activity"] = true},CompletedQuests={["Fortifying Town Hall"] = true},MonsterKillCounters={["Ghost Spider"] = 13,["Ghost Wolf"] = 20}},"Quest data is invalid.")
+    self.CuT:SelectQuest("Clean-up Crew")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Clean-up Crew",ActiveQuests={["Clean-up Crew"] = true,["Paw-inormal Activity"] = true},CompletedQuests={["Fortifying Town Hall"] = true},MonsterKillCounters={["Ghost Spider"] = 13,["Ghost Wolf"] = 20}},"Quest data is invalid.")
+    self.CuT:SelectQuest("Clean-up Crew")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Clean-up Crew",ActiveQuests={["Clean-up Crew"] = true,["Paw-inormal Activity"] = true},CompletedQuests={["Fortifying Town Hall"] = true},MonsterKillCounters={["Ghost Spider"] = 13,["Ghost Wolf"] = 20}},"Quest data is invalid.")
+    self.CuT:CompleteQuest("Clean-up Crew")
+    self:AssertEquals(self.CuT.QuestData,{SelectedQuest="Paw-inormal Activity",ActiveQuests={["Paw-inormal Activity"] = true},CompletedQuests={["Fortifying Town Hall"] = true,["Clean-up Crew"] = true},MonsterKillCounters={["Ghost Wolf"] = 20}},"Quest data is invalid.")
+    self.CuT:CompleteQuest("Paw-inormal Activity")
+    self:AssertEquals(self.CuT.QuestData,{ActiveQuests={},CompletedQuests={["Fortifying Town Hall"] = true,["Clean-up Crew"] = true,["Paw-inormal Activity"] = true},MonsterKillCounters={}},"Quest data is invalid.")
+end))
+
 
 
 --Return the quests class so it can be used by sub-modules.

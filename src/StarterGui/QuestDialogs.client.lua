@@ -13,6 +13,8 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local Quests = ReplicatedStorageProject:GetResource("State.Quests").new(Players.LocalPlayer)
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local StartQuest = ReplicatedStorageProject:GetResource("GameReplication.QuestReplication.StartQuest")
+local TurnInQuest = ReplicatedStorageProject:GetResource("GameReplication.QuestReplication.TurnInQuest")
 
 
 
@@ -100,13 +102,15 @@ end
 
 
 
+--TODO: Lock player, unlock player
+
 --[[
 Runs the dialog for a specific step.
 --]]
-local function RunDialogSection(DialogData)
+local function RunDialogSection(DialogData,NPCName)
     --Turn in a quest if there is one to turn in.
     if DialogData.TurnIn then
-        --TODO: Turn in quests
+        TurnInQuest:FireServer(NPCName,DialogData.TurnIn)
     end
 
     --Update the text bubble.
@@ -133,12 +137,13 @@ local function RunDialogSection(DialogData)
 
                         --Claim the quest.
                         if RepsonseData.Quest then
-                            --TODO: Claim quest
+                            Quests:AddQuest(RepsonseData.Quest)
+                            StartQuest:FireServer(NPCName,RepsonseData.Quest)
                         end
 
                         if RepsonseData.Response then
                             --Run the next dialog.
-                            RunDialogSection(RepsonseData.Response)
+                            RunDialogSection(RepsonseData.Response,NPCName)
                         else
                             --End the dialog.
                             Background:TweenPosition(UDim2.new(0.5,0,1.5,0),"Out","Quad",0.5,true)
@@ -166,14 +171,14 @@ end
 --[[
 Starts a dialog.
 --]]
-local function RunDialog(DialogData,Adornee)
+local function RunDialog(DialogData,NPCName,Adornee)
     --Show the GUIs.
     NPCDialogBillboardGui.Enabled = true
     NPCDialogBillboardGui.Adornee = Adornee
     Background:TweenPosition(UDim2.new(0.5,0,1,0),"Out","Quad",0.5,true)
 
     --Run the dialog.
-    RunDialogSection(DialogData)
+    RunDialogSection(DialogData,NPCName)
 end
 
 --[[
@@ -192,7 +197,7 @@ local function RunDialogForNPC(NPCName)
     end
 
     --Run the dialog.
-    RunDialog(DialogData,Workspace:WaitForChild(NPCName):WaitForChild("Head"))
+    RunDialog(DialogData,NPCName,Workspace:WaitForChild(NPCName):WaitForChild("Head"))
 end
 
 

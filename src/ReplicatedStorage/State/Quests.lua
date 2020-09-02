@@ -57,6 +57,7 @@ end
 Populates missing attributes of quest data.
 --]]
 function Quests:FixQuestData()
+    --Add the missing tables.
     if not self.QuestData.CompletedQuests then
         self.QuestData.CompletedQuests = {}
     end
@@ -65,6 +66,21 @@ function Quests:FixQuestData()
     end
     if not self.QuestData.MonsterKillCounters then
         self.QuestData.MonsterKillCounters = {}
+    end
+
+    --Remove the selected quest if it is not active.
+    if self.QuestData.SelectedQuest and not self.QuestData.ActiveQuests[self.QuestData.SelectedQuest] then
+        self.QuestData.SelectedQuest = nil
+    end
+    
+    --Add a selected quest if none exists.
+    if not self.QuestData.SelectedQuest then
+        for QuestName,QuestActive in pairs(self.QuestData.ActiveQuests) do
+            if QuestActive then
+                self.QuestData.SelectedQuest = QuestName
+                break
+            end
+        end
     end
 end
 
@@ -179,6 +195,83 @@ function Quests:GetDialogForNPC(NPCName)
             return DialogData
         end
     end
+end
+
+--[[
+Saves the quest values.
+--]]
+function Quests:Save()
+    self:FixQuestData()
+    self.PlayerData:SetValue("Quests",self.QuestData)
+end
+
+--[[
+Adds a quest.
+--]]
+function Quests:AddQuest(QuestName)
+    --Return if the quest hasn't been unlocked.
+    if not self:QuestConditonValid(QuestName,"NotUnlocked") then
+        return
+    end
+
+    --Add the quuest and add the monster counter if needed.
+    local QuestData = QuestsData[QuestName]
+    self.QuestData.ActiveQuests[QuestName] = true
+    if QuestData and QuestData.RequiredMonsters and QuestData.RequiredMonsters[1] then
+        self.QuestData.MonsterKillCounters[QuestData.RequiredMonsters[1].Name] = 0
+    end
+
+    --Save the quests.
+    self:Save()
+end
+
+--[[
+Completes a quest.
+--]]
+function Quests:CompleteQuest(QuestName)
+    --Return if the quest hasn't been completed.
+    if not self:QuestConditonValid(QuestName,"AllItems") then
+        return
+    end
+
+    --Move the quest and remove the kill counter.
+    local QuestData = QuestsData[QuestName]
+    self.QuestData.ActiveQuests[QuestName] = nil
+    self.QuestData.CompletedQuests[QuestName] = true
+    if QuestData and QuestData.RequiredMonsters and QuestData.RequiredMonsters[1] then
+        self.QuestData.MonsterKillCounters[QuestData.RequiredMonsters[1].Name] = nil
+    end
+
+    --Save the quests.
+    self:Save()
+end
+
+--[[
+Selects the primary quest to display.
+--]]
+function Quests:SelectQuest(QuestName)
+    --Return if the quest isn't an option.
+    if not self:QuestConditonValid(QuestName,{"Inventory","AllItems"}) then
+        return
+    end
+
+    --Select the quest and save the quests.
+    self.QuestData.SelectedQuest = QuestName
+    self:Save()
+end
+
+--[[
+Registers a monster kill.
+--]]
+function Quests:RegisterMonsterKill(MonsterName)
+    --Return if the monster isn't being tracked.
+    if not self.QuestData.MonsterKillCounters[MonsterName] then
+        return
+    end
+
+    --Increment the monster counter and save the quests.
+    self.QuestData.MonsterKillCounters[MonsterName] = self.QuestData.MonsterKillCounters[MonsterName] + 1
+    self:Save()
 end
 
 
