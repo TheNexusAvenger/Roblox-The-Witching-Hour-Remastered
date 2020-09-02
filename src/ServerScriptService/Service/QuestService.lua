@@ -55,7 +55,7 @@ end)
 Initializes the data for a player.
 --]]
 function QuestService:LoadPlayer(Player)
-    self.PlayerQuests[Player] = Quests.new(Player)
+    self.PlayerQuests[Player] = Quests.GetQuests(Player)
 end
 
 --[[

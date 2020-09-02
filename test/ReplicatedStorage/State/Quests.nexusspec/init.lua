@@ -35,7 +35,7 @@ function QuestsTest:Setup()
     self.QuestsValue = QuestsValue
 
     --Create the component under testing.
-    self.CuT = Quests.new(MockPlayer)
+    self.CuT = Quests.GetQuests(MockPlayer)
 end
 
 --[[

@@ -28,6 +28,7 @@ local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
 
 local Quests = NexusObject:Extend()
+Quests.CachedQuests = {}
 Quests:SetClassName("Quests")
 
 
@@ -51,6 +52,20 @@ function Quests:__new(Player)
         self.QuestsChanged:Fire()
         self:FixQuestData()
     end)
+end
+
+--[[
+Returns a quests object for a
+given player.
+--]]
+function Quests.GetQuests(Player)
+    --Create the cached object if it doesn't exist.
+    if not Quests.CachedQuests[Player] then
+        Quests.CachedQuests[Player] = Quests.new(Player)
+    end
+
+    --Return the cached object.
+    return Quests.CachedQuests[Player]
 end
 
 --[[
