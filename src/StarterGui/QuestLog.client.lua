@@ -221,7 +221,8 @@ local function UpdateDisplay()
     end
 
     --Update the list.
-    local ListLength = math.max(#CurrentQuestNames,456/31)
+    local MinimumHeight = 456/31
+    local ListLength = math.max(#CurrentQuestNames,MinimumHeight)
     for i,QuestName in pairs(CurrentQuestNames) do
         local ButtonData = ListButtons[i]
         ButtonData[1].Size = UDim2.new(1,0,1/ListLength,0)
@@ -237,7 +238,11 @@ local function UpdateDisplay()
             ButtonData[1].Image = "rbxassetid://132881723"
         end
     end
-    QuestsScroll.CanvasSize = UDim2.new(0,0,ListLength * (31/456) * 0.72,0)
+    if ListLength == MinimumHeight then
+        QuestsScroll.CanvasSize = UDim2.new(0,0,0,0)
+    else
+        QuestsScroll.CanvasSize = UDim2.new(0,0,ListLength * (31/456) * 0.72,0)
+    end
 
     --Update the selected quest display.
     if SelectedQuest then
