@@ -6,6 +6,7 @@ Displays the active quest for the player.
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local StarterGui = game:GetService("StarterGui")
 local GuiService = game:GetService("GuiService")
 local TweenService = game:GetService("TweenService")
 
@@ -17,6 +18,9 @@ local Quests = ReplicatedStorageProject:GetResource("State.Quests").GetQuests(Pl
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory").GetInventory(Players.LocalPlayer)
 
 
+
+--Disable the player list.
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList,false)
 
 --Create the ScreenGui.
 local ScreenGui = Instance.new("ScreenGui")
