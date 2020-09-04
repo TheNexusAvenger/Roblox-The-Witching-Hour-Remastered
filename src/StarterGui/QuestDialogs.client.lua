@@ -20,6 +20,7 @@ local TurnInQuest = ReplicatedStorageProject:GetResource("GameReplication.QuestR
 
 --Create the ScreenGui.
 local DB = true
+local DialogActive = false
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "DialogView"
 ScreenGui.DisplayOrder = 2
@@ -102,7 +103,27 @@ end
 
 
 
---TODO: Lock player, unlock player
+--[[
+Ends the dialog.
+--]]
+local function EndDialog()
+    --Hide the dialog.
+    DialogActive = false
+    NPCDialogBillboardGui.Enabled = false
+    Background:TweenPosition(UDim2.new(0.5,0,1.5,0),"Out","Quad",0.5,true)
+
+    --Unlock the player.
+    local Character = Players.LocalPlayer.Character
+    if Character then
+        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+        if HumanoidRootPart then
+            local PositionLock = HumanoidRootPart:FindFirstChild("PositionLock")
+            if PositionLock then
+                PositionLock:Destroy()
+            end
+        end
+    end
+end
 
 --[[
 Runs the dialog for a specific step.
@@ -146,8 +167,7 @@ local function RunDialogSection(DialogData,NPCName)
                             RunDialogSection(RepsonseData.Response,NPCName)
                         else
                             --End the dialog.
-                            Background:TweenPosition(UDim2.new(0.5,0,1.5,0),"Out","Quad",0.5,true)
-                            NPCDialogBillboardGui.Enabled = false
+                            EndDialog()
                         end
 
                         wait()
@@ -161,7 +181,8 @@ local function RunDialogSection(DialogData,NPCName)
         end
     else
         --Hide the dialog.
-        Background:TweenPosition(UDim2.new(0.5,0,1.5,0),"Out","Quad",0.5,true)
+        EndDialog()
+        NPCDialogBillboardGui.Enabled = true
         delay(5,function()
             NPCDialogBillboardGui.Enabled = false
         end)
@@ -173,9 +194,23 @@ Starts a dialog.
 --]]
 local function RunDialog(DialogData,NPCName,Adornee)
     --Show the GUIs.
+    DialogActive = true
     NPCDialogBillboardGui.Enabled = true
     NPCDialogBillboardGui.Adornee = Adornee
     Background:TweenPosition(UDim2.new(0.5,0,1,0),"Out","Quad",0.5,true)
+
+    --Lock the player.
+    local Character = Players.LocalPlayer.Character
+    if Character then
+        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+        if HumanoidRootPart and not HumanoidRootPart:FindFirstChild("PositionLock") then
+            local PositionLock = Instance.new("BodyPosition")
+            PositionLock.Name = "PositionLock"
+            PositionLock.Position = HumanoidRootPart.Position
+            PositionLock.MaxForce = Vector3.new(math.huge,0,math.huge)
+            PositionLock.Parent = HumanoidRootPart
+        end
+    end
 
     --Run the dialog.
     RunDialogSection(DialogData,NPCName)
@@ -186,7 +221,7 @@ Starts a dialog for a given NPC.
 --]]
 local function RunDialogForNPC(NPCName)
     --Return if a dialog is in progress.
-    if NPCDialogBillboardGui.Enabled then
+    if DialogActive then
         return
     end
 
