@@ -280,6 +280,7 @@ function Quests:AddQuest(QuestName)
     end
 
     --Save the quests.
+    self.QuestData.SelectedQuest = QuestName
     self:Save()
 end
 
