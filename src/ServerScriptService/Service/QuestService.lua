@@ -42,7 +42,7 @@ StartQuest.OnServerEvent:Connect(function(Player,NPCName,QuestName)
 end)
 
 local SelectQuest = Instance.new("RemoteEvent")
-SelectQuest.Name = "StartQuest"
+SelectQuest.Name = "SelectQuest"
 SelectQuest.Parent = QuestReplication
 
 SelectQuest.OnServerEvent:Connect(function(Player,QuestName)

@@ -11,7 +11,7 @@ return {
 		Description = "Collect 6 black iron ingots.",
 		QuestType = "Items",
 		RequiredItems = {
-			DisplayName = "Black Iron Ingot",
+			DisplayName = "Black Iron Ingots",
 			{
 				Name = "Black Iron Ingot",
 				Amount = 6
@@ -41,7 +41,7 @@ return {
 		Description = "Collect 13 Swords",
 		QuestType = "Items",
 		RequiredItems = {
-			DisplayName = "Sword",
+			DisplayName = "Swords",
 			{
 				Name = "Sword",
 				Amount = 13
@@ -74,7 +74,7 @@ return {
 		Description = "Collect ALL of the chicken.",
 		QuestType = "Items",
 		RequiredItems = {
-			DisplayName = "Chicken Leg",
+			DisplayName = "Chicken Legs",
 			{
 				Name = "Chicken Leg",
 				Amount = 61
@@ -318,7 +318,7 @@ return {
 		Description = "Defeat 15 swamp wolves to help Darthskrill.",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Swamp Wolf",
+			DisplayName = "Swamp Wolves",
 			{
 				Name = "Swamp Wolf",
 				Amount = 15
@@ -475,7 +475,7 @@ return {
 		Description = "Silence the wolves around Tarabyte's house.",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Howler",
+			DisplayName = "Howlers",
 			{
 				Name = "Howler",
 				Amount = 17
@@ -533,7 +533,7 @@ return {
 		Description = "Defeat monsters and take their trick or treat bags, then return them to Keith",
 		QuestType = "Items",
 		RequiredItems = {
-			DisplayName = "Trick or Treat Bag",
+			DisplayName = "Trick or Treat Bags",
 			{
 				Name = "Trick or Treat Bag",
 				Amount = 13
@@ -582,7 +582,7 @@ return {
 		Description = "Defeat 10 scare-ubs to bring An00bus home",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Scare-ub",
+			DisplayName = "Scare-ubs",
 			{
 				Name = "Scare-ub",
 				Amount = 10
@@ -601,7 +601,7 @@ return {
 		Description = "Gather 10 Squeeky Scarabs.",
 		QuestType = "Items",
 		RequiredItems = {
-			DisplayName = "Squeeky Scarab",
+			DisplayName = "Squeeky Scarabs",
 			{
 				Name = "Squeeky Scarab",
 				Amount = 13
@@ -644,7 +644,7 @@ return {
 		Description = "Retrieve some Creeper Crunchies from the wily Desert Jackal thieves",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Desert Jackal",
+			DisplayName = "Desert Jackals",
 			{
 				Name = "Desert Jackal",
 				Amount = 20
@@ -692,7 +692,7 @@ return {
 		Description = "Get 9 Zombie Antidotes to cure StickMasterLuke.",
 		QuestType = "Items",
 		RequiredItems = {
-			DisplayName = "Zombie Antidote",
+			DisplayName = "Zombie Antidotes",
 			{
 				Name = "Zombie Antidote",
 				Amount = 9
@@ -736,7 +736,7 @@ return {
 		Description = "Kill 20 Zombies",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Zombie",
+			DisplayName = "Zombies",
 			{
 				Name = "Zombie",
 				Amount = 20
@@ -750,7 +750,7 @@ return {
 		Description = "Bring 16 T-bone Steaks to StickMasterLuke.",
 		QuestType = "Items",
 		RequiredItems = {
-			DisplayName = "T-bone Steak",
+			DisplayName = "T-bone Steaks",
 			{
 				Name = "T-bone Steak",
 				Amount = 16
@@ -831,7 +831,7 @@ return {
 		Description = "Rid the Castle Area of Blood Fangs",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Blood Fang",
+			DisplayName = "Blood Fangs",
 			{
 				Name = "Blood Fang",
 				Amount = 17
@@ -905,7 +905,7 @@ return {
 		Description = "Clear out the area around the Log Cabin of Ghost Spiders.",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Ghost Spider",
+			DisplayName = "Ghost Spiders",
 			{
 				Name = "Ghost Spider",
 				Amount = 13
@@ -978,7 +978,7 @@ return {
 		Description = "Kill 20 Ghost Wolves",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Ghost Wolf",
+			DisplayName = "Ghost Wolves",
 			{
 				Name = "Ghost Wolf",
 				Amount = 20
@@ -1023,7 +1023,7 @@ return {
 		Description = "Kill 20 Ghosts to prove your stuff!",
 		QuestType = "Monsters",
 		RequiredMonsters = {
-			DisplayName = "Ghost",
+			DisplayName = "Ghosts",
 			{
 				Name = "Ghost",
 				Amount = 20

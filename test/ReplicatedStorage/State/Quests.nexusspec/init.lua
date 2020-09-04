@@ -184,6 +184,104 @@ NexusUnitTesting:RegisterUnitTest(QuestsTest.new("TestQuestConditonValid"):SetRu
 end))
 
 --[[
+Test the GetStatusIcon method.
+--]]
+NexusUnitTesting:RegisterUnitTest(QuestsTest.new("TestGetStatusIcon"):SetRun(function(self)
+    --Test the icons for an item quest.
+    self:AssertEquals(self.CuT:GetStatusIcon("Mech Suit"),"rbxassetid://133436920")
+    self:SetQuests({ActiveQuests={["Mech Suit"] = true},CompletedQuests={}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Mech Suit"),"rbxassetid://132881863")
+    self:SetInventory({"Black Iron Ingot","Black Iron Ingot","Black Iron Ingot"})
+    self:AssertEquals(self.CuT:GetStatusIcon("Mech Suit"),"rbxassetid://132881863")
+    self:SetInventory({"Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot"})
+    self:AssertEquals(self.CuT:GetStatusIcon("Mech Suit"),"rbxassetid://132881888")
+    self:SetQuests({ActiveQuests={},CompletedQuests={["Mech Suit"] = true}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Mech Suit"),"rbxassetid://133436976")
+
+    --Test the conditions for an NPC quest.
+    self:AssertEquals(self.CuT:GetStatusIcon("Find Telamom"),"rbxassetid://133436920")
+    self:SetQuests({ActiveQuests={["Find Telamom"] = true},CompletedQuests={}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Find Telamom"),"rbxassetid://132881888")
+    self:SetQuests({ActiveQuests={},CompletedQuests={["Find Telamom"] = true}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Find Telamom"),"rbxassetid://133436976")
+
+    --Test the conditions for an Dressup quest.
+    self:AssertEquals(self.CuT:GetStatusIcon("Fur'-ocious Fashion"),"rbxassetid://133436920")
+    self:SetQuests({ActiveQuests={["Fur'-ocious Fashion"] = true},CompletedQuests={}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Fur'-ocious Fashion"),"rbxassetid://132881863")
+    self:SetInventory({PetCostumeHat="PetCatCostumeHat",PetCostumeCollar="PetCostumeCollar",PetCostumeAnkle="PetCatCostumeAnklet"})
+    self:AssertEquals(self.CuT:GetStatusIcon("Fur'-ocious Fashion"),"rbxassetid://132881863")
+    self:SetInventory({PetCostumeHat="PetCatCostumeHat",PetCostumeCollar="PetCostumeCollar",PetCostumeBack="PetSwampMonsterCostumeCape",PetCostumeAnkle="PetCatCostumeAnklet"})
+    self:AssertEquals(self.CuT:GetStatusIcon("Fur'-ocious Fashion"),"rbxassetid://132881863")
+    self:SetInventory({PetCostumeHat="PetCatCostumeHat",PetCostumeCollar="PetCostumeCollar",PetCostumeBack="PetCatCostumeCape",PetCostumeAnkle="PetCatCostumeAnklet"})
+    self:AssertEquals(self.CuT:GetStatusIcon("Fur'-ocious Fashion"),"rbxassetid://132881888")
+    self:SetQuests({ActiveQuests={},CompletedQuests={["Fur'-ocious Fashion"] = true}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Fur'-ocious Fashion"),"rbxassetid://133436976")
+
+    --Test the conditions for an Monsters quest.
+    self:AssertEquals(self.CuT:GetStatusIcon("Attack Of The SwampWolves"),"rbxassetid://133436920")
+    self:SetQuests({ActiveQuests={["Attack Of The SwampWolves"] = true},CompletedQuests={}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Attack Of The SwampWolves"),"rbxassetid://132881863")
+    self:SetQuests({ActiveQuests={["Attack Of The SwampWolves"] = true},CompletedQuests={},MonsterKillCounters={["Swamp Wolf"] = 4}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Attack Of The SwampWolves"),"rbxassetid://132881863")
+    self:SetQuests({ActiveQuests={["Attack Of The SwampWolves"] = true},CompletedQuests={},MonsterKillCounters={["Swamp Wolf"] = 15}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Attack Of The SwampWolves"),"rbxassetid://132881888")
+    self:SetQuests({ActiveQuests={},CompletedQuests={["Attack Of The SwampWolves"] = true}})
+    self:AssertEquals(self.CuT:GetStatusIcon("Attack Of The SwampWolves"),"rbxassetid://133436976")
+end))
+
+--[[
+Test the GetStatusText method.
+--]]
+NexusUnitTesting:RegisterUnitTest(QuestsTest.new("TestGetStatusText"):SetRun(function(self)
+    --Test the icons for an item quest.
+    self:AssertEquals(self.CuT:GetStatusText("Mech Suit"),"Not Unlocked")
+    self:SetQuests({ActiveQuests={["Mech Suit"] = true},CompletedQuests={}})
+    self:AssertEquals(self.CuT:GetStatusText("Mech Suit"),"0/6 Black Iron Ingots")
+    self:SetInventory({"Black Iron Ingot","Black Iron Ingot","Black Iron Ingot"})
+    self:AssertEquals(self.CuT:GetStatusText("Mech Suit"),"3/6 Black Iron Ingots")
+    self:SetInventory({"Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot"})
+    self:AssertEquals(self.CuT:GetStatusText("Mech Suit"),"6/6 Black Iron Ingots")
+    self:SetInventory({"Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot","Black Iron Ingot"})
+    self:AssertEquals(self.CuT:GetStatusText("Mech Suit"),"6/6 Black Iron Ingots")
+    self:SetQuests({ActiveQuests={},CompletedQuests={["Mech Suit"] = true}})
+    self:AssertEquals(self.CuT:GetStatusText("Mech Suit"),"Completed")
+
+    --Test the conditions for an NPC quest.
+    self:AssertEquals(self.CuT:GetStatusText("Find Telamom"),"Not Unlocked")
+    self:SetQuests({ActiveQuests={["Find Telamom"] = true},CompletedQuests={}})
+    self:AssertEquals(self.CuT:GetStatusText("Find Telamom"),"Find Telamom")
+    self:SetQuests({ActiveQuests={},CompletedQuests={["Find Telamom"] = true}})
+    self:AssertEquals(self.CuT:GetStatusText("Find Telamom"),"Completed")
+
+    --Test the conditions for an Dressup quest.
+    self:AssertEquals(self.CuT:GetStatusText("Fur'-ocious Fashion"),"Not Unlocked")
+    self:SetQuests({ActiveQuests={["Fur'-ocious Fashion"] = true},CompletedQuests={}})
+    self:AssertEquals(self.CuT:GetStatusText("Fur'-ocious Fashion"),"Equip the Cat Companion Set")
+    self:SetInventory({PetCostumeHat="PetCatCostumeHat",PetCostumeCollar="PetCostumeCollar",PetCostumeAnkle="PetCatCostumeAnklet"})
+    self:AssertEquals(self.CuT:GetStatusText("Fur'-ocious Fashion"),"Equip the Cat Companion Set")
+    self:SetInventory({PetCostumeHat="PetCatCostumeHat",PetCostumeCollar="PetCostumeCollar",PetCostumeBack="PetSwampMonsterCostumeCape",PetCostumeAnkle="PetCatCostumeAnklet"})
+    self:AssertEquals(self.CuT:GetStatusText("Fur'-ocious Fashion"),"Equip the Cat Companion Set")
+    self:SetInventory({PetCostumeHat="PetCatCostumeHat",PetCostumeCollar="PetCostumeCollar",PetCostumeBack="PetCatCostumeCape",PetCostumeAnkle="PetCatCostumeAnklet"})
+    self:AssertEquals(self.CuT:GetStatusText("Fur'-ocious Fashion"),"Equip the Cat Companion Set")
+    self:SetQuests({ActiveQuests={},CompletedQuests={["Fur'-ocious Fashion"] = true}})
+    self:AssertEquals(self.CuT:GetStatusText("Fur'-ocious Fashion"),"Completed")
+
+    --Test the conditions for an Monsters quest.
+    self:AssertEquals(self.CuT:GetStatusText("Attack Of The SwampWolves"),"Not Unlocked")
+    self:SetQuests({ActiveQuests={["Attack Of The SwampWolves"] = true},CompletedQuests={}})
+    self:AssertEquals(self.CuT:GetStatusText("Attack Of The SwampWolves"),"0/15 Swamp Wolves")
+    self:SetQuests({ActiveQuests={["Attack Of The SwampWolves"] = true},CompletedQuests={},MonsterKillCounters={["Swamp Wolf"] = 4}})
+    self:AssertEquals(self.CuT:GetStatusText("Attack Of The SwampWolves"),"4/15 Swamp Wolves")
+    self:SetQuests({ActiveQuests={["Attack Of The SwampWolves"] = true},CompletedQuests={},MonsterKillCounters={["Swamp Wolf"] = 15}})
+    self:AssertEquals(self.CuT:GetStatusText("Attack Of The SwampWolves"),"15/15 Swamp Wolves")
+    self:SetQuests({ActiveQuests={["Attack Of The SwampWolves"] = true},CompletedQuests={},MonsterKillCounters={["Swamp Wolf"] = 18}})
+    self:AssertEquals(self.CuT:GetStatusText("Attack Of The SwampWolves"),"15/15 Swamp Wolves")
+    self:SetQuests({ActiveQuests={},CompletedQuests={["Attack Of The SwampWolves"] = true}})
+    self:AssertEquals(self.CuT:GetStatusText("Attack Of The SwampWolves"),"Completed")
+end))
+
+--[[
 Tests the dialogs data order as a base test. The full
 quests flow is covered by other tests.
 --]]

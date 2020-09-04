@@ -213,6 +213,47 @@ function Quests:GetDialogForNPC(NPCName)
 end
 
 --[[
+Returns the status icon for the given quest.
+--]]
+function Quests:GetStatusIcon(QuestName)
+    if self:QuestConditonValid(QuestName,"TurnedIn") then
+        return "rbxassetid://133436976"
+    elseif self:QuestConditonValid(QuestName,"AllItems") then
+        return "rbxassetid://132881888"
+    elseif self:QuestConditonValid(QuestName,"Inventory") then
+        return "rbxassetid://132881863"
+    else
+        return "rbxassetid://133436920"
+    end
+end
+
+--[[
+Returns the status text of the quest.
+--]]
+function Quests:GetStatusText(QuestName)
+    --Return the basic results.
+    if self:QuestConditonValid(QuestName,"NotUnlocked") then
+        return "Not Unlocked"
+    elseif self:QuestConditonValid(QuestName,"TurnedIn") then
+        return "Completed"
+    end
+
+    --Return a full result.
+    local QuestData = QuestsData[QuestName]
+    if QuestData.QuestType == "Items" then
+        local RequiredItems = QuestData.RequiredItems[1]
+        return tostring(math.min(RequiredItems.Amount,#self.Inventory:GetItemSlots(RequiredItems.Name))).."/"..tostring(RequiredItems.Amount).." "..QuestData.RequiredItems.DisplayName
+    elseif QuestData.QuestType == "Dressup" then
+        return "Equip the "..QuestData.RequiredSet.DisplayName
+    elseif QuestData.QuestType == "Monsters" then
+        local RequiredMonsters = QuestData.RequiredMonsters[1]
+        return tostring(math.min(RequiredMonsters.Amount,self.QuestData.MonsterKillCounters[RequiredMonsters.Name] or 0)).."/"..tostring(RequiredMonsters.Amount).." "..QuestData.RequiredMonsters.DisplayName
+    elseif QuestData.QuestType == "NPC" then
+        return "Find "..QuestData.RequiredNPC.Name
+    end
+end
+
+--[[
 Saves the quest values.
 --]]
 function Quests:Save()
