@@ -217,7 +217,7 @@ Returns the status icon for the given quest.
 --]]
 function Quests:GetStatusIcon(QuestName)
     if self:QuestConditonValid(QuestName,"TurnedIn") then
-        return "rbxassetid://133436976"
+        return "rbxassetid://132881903"
     elseif self:QuestConditonValid(QuestName,"AllItems") then
         return "rbxassetid://132881888"
     elseif self:QuestConditonValid(QuestName,"Inventory") then
@@ -232,22 +232,24 @@ Returns the status text of the quest.
 --]]
 function Quests:GetStatusText(QuestName)
     --Return the basic results.
+    local QuestData = QuestsData[QuestName]
     if self:QuestConditonValid(QuestName,"NotUnlocked") then
         return "Not Unlocked"
     elseif self:QuestConditonValid(QuestName,"TurnedIn") then
-        return "Completed"
+        return "Quest Complete!"
+    elseif self:QuestConditonValid(QuestName,"AllItems") and QuestData.QuestType ~= "NPC" then
+        return "Ready to turn in!"
     end
 
     --Return a full result.
-    local QuestData = QuestsData[QuestName]
     if QuestData.QuestType == "Items" then
         local RequiredItems = QuestData.RequiredItems[1]
-        return tostring(math.min(RequiredItems.Amount,#self.Inventory:GetItemSlots(RequiredItems.Name))).."/"..tostring(RequiredItems.Amount).." "..QuestData.RequiredItems.DisplayName
+        return tostring(#self.Inventory:GetItemSlots(RequiredItems.Name)).."/"..tostring(RequiredItems.Amount).." "..QuestData.RequiredItems.DisplayName
     elseif QuestData.QuestType == "Dressup" then
         return "Equip the "..QuestData.RequiredSet.DisplayName
     elseif QuestData.QuestType == "Monsters" then
         local RequiredMonsters = QuestData.RequiredMonsters[1]
-        return tostring(math.min(RequiredMonsters.Amount,self.QuestData.MonsterKillCounters[RequiredMonsters.Name] or 0)).."/"..tostring(RequiredMonsters.Amount).." "..QuestData.RequiredMonsters.DisplayName
+        return tostring(self.QuestData.MonsterKillCounters[RequiredMonsters.Name] or 0).."/"..tostring(RequiredMonsters.Amount).." "..QuestData.RequiredMonsters.DisplayName
     elseif QuestData.QuestType == "NPC" then
         return "Find "..QuestData.RequiredNPC.Name
     end
