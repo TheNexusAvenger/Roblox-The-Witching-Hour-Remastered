@@ -10,6 +10,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
+local QuestsData = ReplicatedStorageProject:GetResource("GameData.Quest.Quests")
 local Quests = ReplicatedStorageProject:GetResource("State.Quests")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 
@@ -17,6 +18,9 @@ local QuestService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusIns
 QuestService:SetClassName("QuestService")
 QuestService.PlayerQuests = {}
 ServerScriptServiceProject:SetContextResource(QuestService)
+
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
+local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 
 
 
@@ -144,7 +148,35 @@ function QuestService:CompleteQuest(Player,NPCName,QuestName)
     --Complete the quest if it is valid.
     if QuestValid(Dialog) then
         PlayerQuests:CompleteQuest(QuestName)
-        --TODO: Give rewards
+        
+        --Remove the quest items.
+        local QuestData = QuestsData[QuestName]
+        if QuestData.QuestType == "Items" then
+            local RequiredItems = QuestData.RequiredItems[1]
+            InventoryService:RemoveItemsByName(Player,RequiredItems.Name)
+        end
+
+        --Reward the player.
+        for RewardType,Reward in pairs(QuestData.Rewards or {}) do
+            local PlayerData = PlayerDataService:GetPlayerData(Player)
+            if RewardType == "Badge" then
+                --Award a bloxkin.
+                local Bloxkins = PlayerData:GetValue("CollectedBloxkins")
+                Bloxkins[Reward] = true
+                PlayerData:SetValue("CollectedBloxkins",Bloxkins)
+            elseif RewardType == "XP" then
+                --Award XP.
+                local XP = PlayerData:GetValue("XP") + Reward
+                PlayerData:SetValue("XP",XP)
+            elseif RewardType == "Items" then
+                --Award items.
+                for _,Item in pairs(Reward) do
+                    for i = 1,Item.Amount do
+                        InventoryService:AddItem(Player,Item.Name)
+                    end
+                end
+            end
+        end
     end
 end
 

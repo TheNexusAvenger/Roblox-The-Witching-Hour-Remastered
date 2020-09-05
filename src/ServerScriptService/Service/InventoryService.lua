@@ -151,6 +151,14 @@ function InventoryService:SwapSlots(Player,Slot1,Slot2)
     end
 end
 
+--[[
+Removes the items of a player's inventory.
+--]]
+function InventoryService:RemoveItemsByName(Player,Name)
+    local PlayerInventory = self.PlayerInventories[Player]
+    PlayerInventory:RemoveSlots(PlayerInventory:GetItemSlots(Name))
+end
+
 
 
 return InventoryService

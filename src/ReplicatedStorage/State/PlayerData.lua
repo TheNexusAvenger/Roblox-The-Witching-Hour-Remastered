@@ -37,6 +37,10 @@ local PLAYER_DATA_LAYOUT = {
         Type = "Table",
         Default = "[]",
     },
+    XP = {
+        Type = "Integer",
+        Default = 0,
+    },
 }
 local TYPE_TO_SERIALIZATION = {
     String = {
