@@ -120,6 +120,28 @@ function InventoryService:GetInventoryChangedEvent(Player)
 end
 
 --[[
+Adds an item to a player's inventory.
+Returns if it was successful.
+--]]
+function InventoryService:AddItem(Player,Item)
+    --Wrap the item as a table if it is a string.
+    if type(Item) == "string" then
+        Item = {Name=Item}
+    end
+
+    --Get the next open slot and return false if the inventory is full.
+    local PlayerInventory = self.PlayerInventories[Player]
+    local OpenSlot = PlayerInventory:GetNextOpenSlot()
+    if not OpenSlot then
+        return false
+    end
+
+    --Add the item and return true.
+    PlayerInventory:AddItem(Item)
+    return true
+end
+
+--[[
 Swaps two slots in a player's inventory.
 --]]
 function InventoryService:SwapSlots(Player,Slot1,Slot2)
