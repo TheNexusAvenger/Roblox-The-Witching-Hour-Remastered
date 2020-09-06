@@ -183,8 +183,11 @@ local function RunDialogSection(DialogData,NPCName)
         --Hide the dialog.
         EndDialog()
         NPCDialogBillboardGui.Enabled = true
+        local OriginalText = NPCDialogText.Text
         delay(5,function()
-            NPCDialogBillboardGui.Enabled = false
+            if OriginalText == NPCDialogText.Text then
+                NPCDialogBillboardGui.Enabled = false
+            end
         end)
     end
 end
