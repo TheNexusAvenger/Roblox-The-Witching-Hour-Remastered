@@ -953,6 +953,169 @@ return {
         Size = Vector3.new(0.3,0.3,0.3),
     },
 
+
+
+    --[[
+    Inventory items.
+    --]]
+    ["InventoryExpander"] = {
+        DisplayName = "Inventory Expander",
+        ItemType = "InventoryItem",
+        TextureId = 132793056 ,
+    },
+    ["VisionRadiusIncrease"] = {
+        DisplayName = "Vision Radius Increase",
+        ItemType = "InventoryItem",
+        TextureId = 132795587,
+    },
+    ["Old Board"] = {
+        DisplayName = "Old Board",
+        ItemType = "InventoryItem",
+        TextureId = 132792490,
+    },
+    ["Black Iron Ingot"] = {
+        DisplayName = "Black Iron Ingot",
+        ItemType = "InventoryItem",
+        TextureId = 132792202,
+    },
+    ["Sword"] = {
+        DisplayName = "Sword",
+        ItemType = "InventoryItem",
+        TextureId = 132792159,
+    },
+    ["Shedletsky Action Figure"] = {
+        DisplayName = "Shedletsky Action Figure",
+        ItemType = "InventoryItem",
+        TextureId = 132792544,
+    },
+    ["Chicken Legs"] = {
+        DisplayName = "Chicken Legs",
+        ItemType = "InventoryItem",
+        TextureId = 132792283,
+    },
+    ["Friendly Jack o Lantern"] = {
+        DisplayName = "Friendly Jack o Lantern",
+        ItemType = "InventoryItem",
+        TextureId = 132792469,
+    },
+    ["Purple Fuzzy Spider Leg"] = {
+        DisplayName = "Purple Fuzzy Spider Leg",
+        ItemType = "InventoryItem",
+        TextureId = 132792396,
+    },
+    ["Candy Corn"] = {
+        DisplayName = "Candy Corn",
+        ItemType = "InventoryItem",
+        TextureId = 132792266,
+    },
+    ["Haunted Pumpkin Seeds"] = {
+        DisplayName = "Haunted Pumpkin Seeds",
+        ItemType = "InventoryItem",
+        TextureId = 132792425,
+    },
+    ["Hairy Swamp Spider Fangs"] = {
+        DisplayName = "Hairy Swamp Spider Fangs",
+        ItemType = "InventoryItem",
+        TextureId = 132792577,
+    },
+    ["Tarabyte's Magic Brush"] = {
+        DisplayName = "Tarabyte's Magic Brush",
+        ItemType = "InventoryItem",
+        TextureId = 132792619,
+    },
+    ["Coatp0ckets Magic Needles"] = {
+        DisplayName = "Coatp0ckets Magic Needles",
+        ItemType = "InventoryItem",
+        TextureId = 132792336,
+    },
+    ["Trick or Treat Bag"] = {
+        DisplayName = "Trick or Treat Bag",
+        ItemType = "InventoryItem",
+        TextureId = 132792181,
+    },
+    ["Squeeky Scarab"] = {
+        DisplayName = "Squeeky Scarab",
+        ItemType = "InventoryItem",
+        TextureId = 132792595,
+    },
+    ["Creeper Crunchies"] = {
+        DisplayName = "Creeper Crunchies",
+        ItemType = "InventoryItem",
+        TextureId = 132792371,
+    },
+    ["Zombie Antidotes"] = {
+        DisplayName = "Zombie Antidotes",
+        ItemType = "InventoryItem",
+        TextureId = 133470976,
+    },
+    ["Arrows"] = {
+        DisplayName = "Arrows",
+        ItemType = "InventoryItem",
+        TextureId = 133470937,
+    },
+    ["T-bone Steak"] = {
+        DisplayName = "T-bone Steak",
+        ItemType = "InventoryItem",
+        TextureId = 133470955,
+    },
+    ["Lost Marbles"] = {
+        DisplayName = "Lost Marbles",
+        ItemType = "InventoryItem",
+        TextureId = 133551795,
+    },
+    ["Nuts and Bolts"] = {
+        DisplayName = "Nuts and Bolts",
+        ItemType = "InventoryItem",
+        TextureId = 133551771,
+    },
+    ["Matches"] = {
+        DisplayName = "Matches",
+        ItemType = "InventoryItem",
+        TextureId = 322883387, --TODO: Texture is unknown.
+    },
+    ["Dog Treats"] = {
+        DisplayName = "Dog Treats",
+        ItemType = "InventoryItem",
+        TextureId = 322883387, --TODO: Texture is unknown.
+    },
+    ["Ghost Candles"] = {
+        DisplayName = "Ghost Candles",
+        ItemType = "InventoryItem",
+        TextureId = 322883387, --TODO: Texture is unknown.
+    },
+    ["Spirit Box Piece"] = {
+        DisplayName = "Spirit Box Piece",
+        ItemType = "InventoryItem",
+        TextureId = 322883387, --TODO: Texture is unknown.
+    },
+    ["Lens"] = {
+        DisplayName = "Lens",
+        ItemType = "InventoryItem",
+        TextureId = 322883387, --TODO: Texture is unknown.
+    },
+    ["Souls"] = {
+        DisplayName = "Souls",
+        ItemType = "InventoryItem",
+        TextureId = 322883387, --TODO: Texture is unknown.
+    },
+    ["Quest Chest"] = {
+        DisplayName = "Quest Chest",
+        ItemType = "InventoryItem",
+        TextureId = 133233609,
+    },
+    ["TreasureChest"] = {
+        DisplayName = "Treasure Chest",
+        ItemType = "InventoryItem",
+        TextureId = 133270735,
+    },
+    ["TreasureKey"] = {
+        DisplayName = "Treasure Key",
+        ItemType = "InventoryItem",
+        TextureId = 132945186,
+    },
+    
+
+
     --[[
     Map indicators.
     --]]
