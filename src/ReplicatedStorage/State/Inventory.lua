@@ -67,7 +67,7 @@ Returns the total amount of items
 the inventory can store.
 --]]
 function Inventory:GetMaxItems()
-    return 3 * 35 --TODO: Calculate the total amount of pages from the inventory expanders.
+    return (3 + #self:GetItemSlots("InventoryExpander")) * 35
 end
 
 --[[
