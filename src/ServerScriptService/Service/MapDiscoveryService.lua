@@ -12,6 +12,7 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 
 local BoolGrid = ReplicatedStorageProject:GetResource("State.BoolGrid")
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
+local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 
 local MapDiscoveryService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 MapDiscoveryService:SetClassName("MapDiscoveryService")
@@ -26,6 +27,7 @@ Initializes the data for a player.
 function MapDiscoveryService:LoadPlayer(Player)
     --Set up the grid.
     local PlayerData = PlayerDataService:GetPlayerData(Player)
+    local Inventory = InventoryService.PlayerInventories[Player]
     local PlayerBoolGrid = BoolGrid.new(200,200)
     self.DiscoveredCellsBoolGrids[Player] = PlayerBoolGrid
     self.DiscoveredCellsBoolGrids[Player]:LoadFromString(PlayerData:GetValue("DiscoveredMapCells"))
@@ -39,7 +41,7 @@ function MapDiscoveryService:LoadPlayer(Player)
                 local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
                 if HumanoidRootPart then
                     local CenterX,CenterY = math.floor((HumanoidRootPart.Position.X/100) + 0.5),math.floor((HumanoidRootPart.Position.Z/100) + 0.5)
-                    local Range = 2 --TODO: Determine range depending on inventory.
+                    local Range = 2 + #Inventory:GetItemSlots("VisionRadiusIncrease")
                     
                     --Discover the sections and mark if new sections were discovered.
                     local SectionsWereDiscovered = false
