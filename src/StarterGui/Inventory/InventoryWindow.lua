@@ -14,6 +14,7 @@ local UserInputService = game:GetService("UserInputService")
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local ItemIcon = ReplicatedStorageProject:GetResource("UI.ItemIcon")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
@@ -547,7 +548,15 @@ function InventoryWindow:SetUpDraggning()
         --Return if the slot or item doesn't exist.
         if not Slot then return end
         local Item = self.Inventory:GetItem(Slot)
-        if not Item then return end
+        if not Item or not Item.Name then return end
+
+        --Return if the item can't be dragged.
+        local SlotItemData = ItemData[Item.Name]
+        if SlotItemData and SlotItemData.CanDragCallback then
+            if not SlotItemData.CanDragCallback(self.Inventory,Slot) then
+                return
+            end
+        end
 
         --Create the dragging frame.
         CurrentSlot = Slot

@@ -4,6 +4,12 @@ TheNexusAvenger
 Data about meshes and items for the inventory.
 --]]
 
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
+
+
+
 return {
     --[[
     Player packages.
@@ -1102,11 +1108,33 @@ return {
         DisplayName = "Quest Chest",
         ItemType = "InventoryItem",
         TextureId = 133233609,
+        CanDragCallback = function(Inventory,Slot)
+            --Unlock the chest.
+            local UnlockChest = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.UnlockChest")
+            UnlockChest:FireServer(Slot)
+
+            --Return false (will just be unlocked).
+            return false
+        end,
     },
     ["TreasureChest"] = {
         DisplayName = "Treasure Chest",
         ItemType = "InventoryItem",
         TextureId = 133270735,
+        CanDragCallback = function(Inventory,Slot)
+            --Unlock the chest if a key exists.
+            if #Inventory:GetItemSlots("TreasureKey") > 0 then
+                --Unlock the chest.
+                local UnlockChest = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.UnlockChest")
+                UnlockChest:FireServer(Slot)
+
+                --Return false (will just be unlocked).
+                return false
+            end
+
+            --Return true (not unlockable).
+            return true
+        end,
     },
     ["TreasureKey"] = {
         DisplayName = "Treasure Key",

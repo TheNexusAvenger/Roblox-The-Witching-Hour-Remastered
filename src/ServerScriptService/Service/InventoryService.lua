@@ -49,6 +49,13 @@ SetPet.OnServerEvent:Connect(function(Player,PetName)
     end
 end)
 
+local UnlockChest = Instance.new("RemoteEvent")
+UnlockChest.Name = "UnlockChest"
+UnlockChest.Parent = InventoryReplication
+UnlockChest.OnServerEvent:Connect(function(Player,Slot)
+    InventoryService:UnlockChest(Player,Slot)
+end)
+
 
 
 --[[
@@ -149,6 +156,13 @@ function InventoryService:AddItem(Player,Item)
 end
 
 --[[
+Awards a random item to the given player.
+--]]
+function InventoryService:AwardRandomItem(Player,Zone)
+    --TODO: Implement
+end
+
+--[[
 Swaps two slots in a player's inventory.
 --]]
 function InventoryService:SwapSlots(Player,Slot1,Slot2)
@@ -156,6 +170,36 @@ function InventoryService:SwapSlots(Player,Slot1,Slot2)
     if PlayerInventory:CanSwap(Slot1,Slot2) then
         PlayerInventory:SwapSlots(Slot1,Slot2)
     end
+end
+
+--[[
+Unlocks a chest for a player.
+--]]
+function InventoryService:UnlockChest(Player,Slot)
+    --Return if the item isnt' a chest.
+    local PlayerInventory = self.PlayerInventories[Player]
+    local Item = PlayerInventory:GetItem(Slot)
+    if not Item or (Item.Name ~= "Quest Chest" and Item.Name ~= "TreasureChest") then
+        return
+    end
+
+    --Remove a key if it is a treasure chest.
+    if Item.Name == "TreasureChest" then
+        --Return if a key doesn't exist.
+        local KeySlots = PlayerInventory:GetItemSlots("TreasureKey")
+        if #KeySlots == 0 then
+            return
+        end
+
+        --Remove a key.
+        PlayerInventory:RemoveSlot(KeySlots[1])
+    end
+
+    --Remove the chest.
+    PlayerInventory:RemoveSlot(Slot)
+
+    --Add a new random item.
+    self:AwardRandomItem(Player,Item.Zone)
 end
 
 --[[
