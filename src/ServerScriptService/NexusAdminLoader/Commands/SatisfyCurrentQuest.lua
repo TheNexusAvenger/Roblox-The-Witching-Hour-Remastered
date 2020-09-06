@@ -9,6 +9,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService"))
 local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
+local NPCLocations = ReplicatedStorageProject:GetResource("GameData.NPCLocations")
 local QuestData = ReplicatedStorageProject:GetResource("GameData.Quest.Quests")
 local QuestService = ServerScriptServiceProject:GetResource("Service.QuestService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
@@ -53,6 +54,18 @@ return {
                         local RequiredMonsters = SelectedQuest.RequiredMonsters[1]
                         for i = 1,RequiredMonsters.Amount do
                             PlayerQuests:RegisterMonsterKill(RequiredMonsters.Name)
+                        end
+                    elseif SelectedQuest.QuestType == "NPC" then
+                        --Teleport the player to the NPC.
+                        local RequiredNPC = SelectedQuest.RequiredNPC.Name
+                        local Location = NPCLocations[RequiredNPC]
+                        local TargetCFrame = CFrame.new(Location.CellX * 100,4,Location.CellY * 100) * Location.OffsetCFrame * CFrame.new(0,0,-3) * CFrame.Angles(0,math.pi,0)
+                        local Character = Player.Character
+                        if Character then
+                            local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+                            if HumanoidRootPart then
+                                HumanoidRootPart.CFrame = TargetCFrame
+                            end
                         end
                     end
                 end

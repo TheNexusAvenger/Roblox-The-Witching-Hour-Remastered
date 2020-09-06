@@ -2572,8 +2572,12 @@ return {
 			RequiredQuests = {
 				{
 					Name = "A Mysterious Potion",
-					Status = "AllItems"
-				}
+					Status = {"AllItems","TurnedIn"},
+				},
+				{
+					Name = "Return to ReeseMcBlox",
+					Status = "NotUnlocked",
+				},
 			},
 			TurnIn = "A Mysterious Potion",
 			Text = "Thanks for the help! Oh I forgot, ReeseMcBlox was looking for me. Go tell her I'll catch up with her later, I need to conjure up this potion first!",
@@ -4910,7 +4914,7 @@ return {
 					}
 				},
 				{
-					"That sounds too far away...",
+					Text = "That sounds too far away...",
 					End = true
 				}
 			}
