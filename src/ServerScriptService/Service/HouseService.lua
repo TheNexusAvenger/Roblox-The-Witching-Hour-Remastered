@@ -16,7 +16,7 @@ HouseService:SetClassName("HouseService")
 HouseService.LastPlayerCFrames = {}
 ServerScriptServiceProject:SetContextResource(HouseService)
 
-local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
+local MapCellData = ReplicatedStorageProject:GetResource("GameData.Generation.MapCells")
 local GameState = ReplicatedStorageProject:GetResource("GameState")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 

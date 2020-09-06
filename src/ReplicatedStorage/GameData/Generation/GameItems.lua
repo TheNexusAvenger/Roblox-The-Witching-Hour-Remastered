@@ -7,7 +7,7 @@ Enum type for the game items.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
-local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
 
 
 

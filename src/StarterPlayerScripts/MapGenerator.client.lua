@@ -9,7 +9,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
-local TeleportLocations = ReplicatedStorageProject:GetResource("GameData.TeleportLocations")
+local TeleportLocations = ReplicatedStorageProject:GetResource("GameData.Generation.TeleportLocations")
 local MapGenerator = ReplicatedStorageProject:GetResource("Generation.MapGenerator").new()
 MapGenerator:GenerateCustomCells()
 

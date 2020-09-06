@@ -15,7 +15,7 @@ local RunService = game:GetService("RunService")
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
-local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.ItemData")
+local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.Item.Items")
 local R15CharacterModel = ReplicatedStorageProject:GetResource("R15CharacterModel")
 
 local PlayerDisplay = NexusObject:Extend()

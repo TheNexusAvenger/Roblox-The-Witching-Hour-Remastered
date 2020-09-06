@@ -15,7 +15,7 @@ local NPCService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInsta
 NPCService:SetClassName("NPCService")
 ServerScriptServiceProject:SetContextResource(NPCService)
 
-local NPCHumanoidDescriptions = ReplicatedStorageProject:GetResource("GameData.NPCHumanoidDescriptions")
+local NPCHumanoidDescriptions = ReplicatedStorageProject:GetResource("GameData.Generation.NPCHumanoidDescriptions")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 
 

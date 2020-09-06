@@ -14,7 +14,7 @@ local UserInputService = game:GetService("UserInputService")
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
-local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local ItemIcon = ReplicatedStorageProject:GetResource("UI.ItemIcon")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")

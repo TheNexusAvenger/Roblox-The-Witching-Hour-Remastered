@@ -11,8 +11,8 @@ local InsertService = game:GetService("InsertService")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
-local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.ItemData")
-local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
+local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.Item.Items")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 

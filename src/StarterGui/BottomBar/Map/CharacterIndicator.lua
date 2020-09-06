@@ -10,7 +10,7 @@ local FULL_MAP_SIZE_CELLS = 200
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
-local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
 
 local CharacterIndicator = NexusObject:Extend()

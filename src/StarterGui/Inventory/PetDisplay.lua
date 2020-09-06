@@ -21,8 +21,8 @@ local RunService = game:GetService("RunService")
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
-local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
-local PetSkinTextures = ReplicatedStorageProject:GetResource("GameData.PetSkinTextures")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
+local PetSkinTextures = ReplicatedStorageProject:GetResource("GameData.Item.PetSkinTextures")
 
 local PetDisplay = NexusObject:Extend()
 PetDisplay:SetClassName("PetDisplay")

@@ -29,9 +29,9 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
-local CustomStructures = ReplicatedStorageProject:GetResource("GameData.CustomStructures")
-local MapCellData = ReplicatedStorageProject:GetResource("GameData.MapCellData")
-local NPCLocations = ReplicatedStorageProject:GetResource("GameData.NPCLocations")
+local CustomStructures = ReplicatedStorageProject:GetResource("GameData.Generation.CustomStructures")
+local MapCellData = ReplicatedStorageProject:GetResource("GameData.Generation.MapCells")
+local NPCLocations = ReplicatedStorageProject:GetResource("GameData.Generation.NPCLocations")
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 
 local CellGenerators = {

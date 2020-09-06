@@ -16,7 +16,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
-local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
 
 local CharacterService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 CharacterService:SetClassName("CharacterService")

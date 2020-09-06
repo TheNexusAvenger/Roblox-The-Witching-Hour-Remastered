@@ -18,8 +18,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
-local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
-local PetSkinTextures = ReplicatedStorageProject:GetResource("GameData.PetSkinTextures")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
+local PetSkinTextures = ReplicatedStorageProject:GetResource("GameData.Item.PetSkinTextures")
 
 local PetService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 PetService:SetClassName("PetService")
