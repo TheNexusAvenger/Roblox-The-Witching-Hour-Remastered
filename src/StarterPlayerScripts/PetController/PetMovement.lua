@@ -21,6 +21,7 @@ return function (CharacterModel,PetModel)
 
     --Set up moving the pet.
     local LastJumpStart
+    local LastTeleport = 0
     coroutine.wrap(function()
         while PetModel.Parent and CharacterHumanoid.Health > 0 do
             --Determine the target CFrame and distance.
@@ -28,10 +29,11 @@ return function (CharacterModel,PetModel)
             local PetDistance = (TargetCFrame.Position - PetHumanoidRootPart.Position).magnitude
 
             --Move the pet.
-            if PetDistance >= MAX_DISTANCE_TO_TELEPORT then
+            if PetDistance >= MAX_DISTANCE_TO_TELEPORT and tick() - LastTeleport > 0.5 then
                 PetHumanoidRootPart.CFrame = TargetCFrame
 
                 --Display an animation for teleporting the pet.
+                LastTeleport = tick()
                 for _,Part in pairs(PetModel:GetDescendants()) do
                     if Part:IsA("BasePart") then
                         Part.Transparency = Part.Transparency + 1
