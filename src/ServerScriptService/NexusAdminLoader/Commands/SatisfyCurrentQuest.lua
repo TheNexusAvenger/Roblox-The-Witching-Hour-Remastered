@@ -42,7 +42,7 @@ return {
                     elseif SelectedQuest.QuestType == "Dressup" then
                         --Set the pet item slots to the pet costume.
                         local RequiredSet = SelectedQuest.RequiredSet.Name
-                        local PlayerInventory = InventoryService.PlayerInventories[Player]
+                        local PlayerInventory = InventoryService:GetInventory(Player)
                         for ItemName,Data in pairs(ItemData) do
                             if Data.CostumeName == RequiredSet then
                                 PlayerInventory.Inventory[Data.ItemType] = {Name=ItemName}

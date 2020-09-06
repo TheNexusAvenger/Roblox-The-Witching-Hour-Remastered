@@ -105,6 +105,13 @@ function InventoryService:LoadCharacterAssets()
 end
 
 --[[
+Returns the inventory object for a player.
+--]]
+function InventoryService:GetInventory(Player)
+    return self.PlayerInventories[Player]
+end
+
+--[[
 Returns the item for a given slot.
 --]]
 function InventoryService:GetItem(Player,SlotName)

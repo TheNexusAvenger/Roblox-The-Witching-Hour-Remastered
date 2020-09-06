@@ -27,7 +27,7 @@ Initializes the data for a player.
 function MapDiscoveryService:LoadPlayer(Player)
     --Set up the grid.
     local PlayerData = PlayerDataService:GetPlayerData(Player)
-    local Inventory = InventoryService.PlayerInventories[Player]
+    local Inventory = InventoryService:GetInventory(Player)
     local PlayerBoolGrid = BoolGrid.new(200,200)
     self.DiscoveredCellsBoolGrids[Player] = PlayerBoolGrid
     self.DiscoveredCellsBoolGrids[Player]:LoadFromString(PlayerData:GetValue("DiscoveredMapCells"))
