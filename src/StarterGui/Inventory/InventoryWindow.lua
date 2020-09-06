@@ -164,6 +164,32 @@ function InventoryWindow:__new()
     PlayerLeftLegSlot.ZIndex = 4
     PlayerLeftLegSlot.Parent = Background
 
+    local EyeBackgroundSlot = Instance.new("ImageLabel")
+    EyeBackgroundSlot.BackgroundTransparency = 1
+    EyeBackgroundSlot.Size = UDim2.new(64/902,0,64/644,0)
+    EyeBackgroundSlot.Position = UDim2.new(168/902,0,434/644,0)
+    EyeBackgroundSlot.Image = "rbxassetid://5655605683"
+    EyeBackgroundSlot.ZIndex = 4
+    EyeBackgroundSlot.Parent = Background
+
+    local EyeBackgroundItemFrame = ItemIcon.new()
+    EyeBackgroundItemFrame:SetParent(EyeBackgroundSlot)
+    EyeBackgroundItemFrame:SetItem("MapEyeBackBrown")
+    self.EyeBackgroundItemFrame = EyeBackgroundItemFrame
+
+    local EyeFrontSlot = Instance.new("ImageLabel")
+    EyeFrontSlot.BackgroundTransparency = 1
+    EyeFrontSlot.Size = UDim2.new(64/902,0,64/644,0)
+    EyeFrontSlot.Position = UDim2.new(244/902,0,434/644,0)
+    EyeFrontSlot.Image = "rbxassetid://5655605683"
+    EyeFrontSlot.ZIndex = 4
+    EyeFrontSlot.Parent = Background
+
+    local EyeFrontItemFrame = ItemIcon.new()
+    EyeFrontItemFrame:SetParent(EyeFrontSlot)
+    EyeFrontItemFrame:SetItem("MapEyeFrontDefault")
+    self.EyeFrontItemFrame = EyeFrontItemFrame
+
     local PlayerDisplayFrame = Instance.new("Frame")
     PlayerDisplayFrame.BackgroundTransparency = 1
     PlayerDisplayFrame.Size = UDim2.new(0.6,0,0.6,0)
@@ -291,7 +317,6 @@ function InventoryWindow:__new()
     CharacterModeToggleImage.Parent = Background
     local CharacterModeToggleButton = ImageEventBinder.new(CharacterModeToggleImage,UDim2.new(0.8,0,0.8,0),"rbxassetid://131528431","rbxassetid://131528431","rbxassetid://131528420")
 
-    local DB = true
     PetModeToggleButton.Button.MouseButton1Down:Connect(function()
         if DB then
             DB = false
@@ -303,6 +328,8 @@ function InventoryWindow:__new()
             PlayerRightLegSlot.Visible = false
             PlayerLeftArmSlot.Visible = false
             PlayerLeftLegSlot.Visible = false
+            EyeBackgroundSlot.Visible = false
+            EyeFrontSlot.Visible = false
             PlayerDisplayFrame.Visible = false
 
             CharacterModeToggleImage.Visible = true
@@ -328,6 +355,8 @@ function InventoryWindow:__new()
             PlayerLeftArmSlot.Visible = true
             PlayerLeftLegSlot.Visible = true
             PlayerDisplayFrame.Visible = true
+            EyeBackgroundSlot.Visible = true
+            EyeFrontSlot.Visible = true
 
             CharacterModeToggleImage.Visible = false
             PetTypeContainer.Visible = false
@@ -408,6 +437,8 @@ function InventoryWindow:__new()
         PlayerRightArm = PlayerRightArmSlot,
         PlayerLeftLeg = PlayerLeftLegSlot,
         PlayerRightLeg = PlayerRightLegSlot,
+        MapEyeBack = EyeBackgroundSlot,
+        MapEyeFront = EyeFrontSlot,
         PetCostumeHat = PetHatSlot,
         PetCostumeCollar = PetCollarSlot,
         PetCostumeBack = PetBackSlot,
@@ -667,6 +698,18 @@ function InventoryWindow:UpdateInventory()
     self.PetDisplay:SetItem("PetCostumeBack",self.Inventory:GetItem("PetCostumeBack"))
     self.PetDisplay:SetItem("PetCostumeAnkle",self.Inventory:GetItem("PetCostumeAnkle"))
     self.PetDisplay:SetPet(CurrentPet)
+
+    --Update the map indicator items.
+    if self.Inventory:GetItem("MapEyeBack") then
+        self.EyeBackgroundItemFrame:SetItem()
+    else
+        self.EyeBackgroundItemFrame:SetItem("MapEyeBackBrown")
+    end
+    if self.Inventory:GetItem("MapEyeFront") then
+        self.EyeFrontItemFrame:SetItem()
+    else
+        self.EyeFrontItemFrame:SetItem("MapEyeFrontDefault")
+    end
 end
 
 --[[

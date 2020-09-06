@@ -10,6 +10,8 @@ local FULL_MAP_SIZE_CELLS = 200
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.ItemData")
+local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
 
 local CharacterIndicator = NexusObject:Extend()
 CharacterIndicator:SetClassName("PlayerIndicator")
@@ -23,12 +25,10 @@ function CharacterIndicator:__new(MapContainer,Player)
     self:InitializeSuper()
 
     --Create the image labels.
-    --TODO: Custom eye colors
     local PlayerIconBack = Instance.new("ImageLabel")
     PlayerIconBack.BackgroundTransparency = 1
     PlayerIconBack.Size = UDim2.new(0.6/FULL_MAP_SIZE_CELLS,0,0.6/FULL_MAP_SIZE_CELLS,0)
     PlayerIconBack.AnchorPoint = Vector2.new(0.5,0.5)
-    PlayerIconBack.Image = "rbxassetid://131311865"
     PlayerIconBack.ZIndex = 5
     PlayerIconBack.Parent = MapContainer
     self.PlayerIconBack = PlayerIconBack
@@ -36,9 +36,9 @@ function CharacterIndicator:__new(MapContainer,Player)
     local PlayerIconFront = Instance.new("ImageLabel")
     PlayerIconFront.BackgroundTransparency = 1
     PlayerIconFront.Size = UDim2.new(1,0,1,0)
-    PlayerIconFront.Image = "rbxassetid://131312022"
     PlayerIconFront.ZIndex = 5
     PlayerIconFront.Parent = PlayerIconBack
+    self.PlayerIconFront = PlayerIconFront
 
     local PlayerNameText = Instance.new("TextLabel")
     PlayerNameText.BackgroundTransparency = 1
@@ -56,12 +56,30 @@ function CharacterIndicator:__new(MapContainer,Player)
     --Connect the events.
     local Character = Player.Character
     self.Head = Player.Character:WaitForChild("Head")
+    self.Inventory = Inventory.GetInventory(Player)
     coroutine.wrap(function()
         while Character.Parent and self.PlayerIconBack.Parent do
             self:UpdatePosition()
             wait()
         end
     end)()
+    self.InventoryChangedEvent = self.Inventory.InventoryChanged:Connect(function()
+        self:UpdateTextures()
+    end)
+    self:UpdateTextures()
+end
+
+--[[
+Updates the textures of the eye.
+--]]
+function CharacterIndicator:UpdateTextures()
+    --Update the back.
+    local EyeBackName = (self.Inventory:GetItem("MapEyeBack") or {Name="MapEyeBackBrown"}).Name
+    self.PlayerIconBack.Image = "rbxassetid://"..tostring(ItemData[EyeBackName].TextureId)
+
+    --Update the front.
+    local EyeFrontName = (self.Inventory:GetItem("MapEyeFront") or {Name="MapEyeFrontDefault"}).Name
+    self.PlayerIconFront.Image = "rbxassetid://"..tostring(ItemData[EyeFrontName].TextureId)
 end
 
 --[[
@@ -75,6 +93,7 @@ end
 Destroys the indicator.
 --]]
 function CharacterIndicator:Destroy()
+    self.InventoryChangedEvent:Disconnect()
     self.PlayerIconBack:Destroy()
 end
 

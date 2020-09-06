@@ -59,7 +59,7 @@ function ItemIcon:SetItem(ModelName)
     end
 
     --Return if the model name is undefined (such as clearing).
-    if not ModelName then return end
+    if not ModelName or not ItemData[ModelName] then return end
 
     --Create the model.
     local ModelData = ItemData[ModelName]
@@ -103,6 +103,28 @@ function ItemIcon:SetItem(ModelName)
             Mesh.MeshId = "rbxassetid://"..tostring(ModelData.MeshId)
             Mesh.TextureId = "rbxassetid://"..tostring(ModelData.TextureId)
             Mesh.Parent = Part
+        elseif ModelData.TextureId then
+             --Create the mesh.
+             local Part = Instance.new("Part")
+             Part.Transparency = 1
+             Part.Size = ModelData.Size or Vector3.new(1,1,1)
+             Part.Parent = self.ViewportFrame
+             self.Model = Part
+ 
+             local Mesh = Instance.new("SpecialMesh")
+             Mesh.MeshType = Enum.MeshType.Brick
+             Mesh.Scale = Vector3.new(1,1,0)
+             Mesh.Parent = Part
+
+             local Front = Instance.new("Decal")
+             Front.Texture = "rbxassetid://"..tostring(ModelData.TextureId)
+             Front.Face = Enum.NormalId.Front
+             Front.Parent = Part
+
+             local Back = Instance.new("Decal")
+             Back.Texture = "rbxassetid://"..tostring(ModelData.TextureId)
+             Back.Face = Enum.NormalId.Back
+             Back.Parent = Part
         end
     end
 

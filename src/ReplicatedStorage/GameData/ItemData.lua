@@ -952,4 +952,98 @@ return {
         TextureId = 0,
         Size = Vector3.new(0.3,0.3,0.3),
     },
+
+    --[[
+    Map indicators.
+    --]]
+    ["MapEyeBackYellow"] = {
+        DisplayName = "Yellow Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311939,
+    },
+    ["MapEyeBackRed"] = {
+        DisplayName = "Red Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311933,
+    },
+    ["MapEyeBackPurple"] = {
+        DisplayName = "Purple Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311927,
+    },
+    ["MapEyeBackPink"] = {
+        DisplayName = "Pink Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311914,
+    },
+    ["MapEyeBackOrange"] = {
+        DisplayName = "Orange Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311902,
+    },
+    ["MapEyeBackGrey"] = {
+        DisplayName = "Grey Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311897,
+    },
+    ["MapEyeBackGreen"] = {
+        DisplayName = "Green Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311879,
+    },
+    ["MapEyeBackBrown"] = {
+        DisplayName = "Brown Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311865,
+    },
+    ["MapEyeBackBlue"] = {
+        DisplayName = "Blue Eye Map Indicator",
+        ItemType = "MapEyeBack",
+        TextureId = 131311777,
+    },
+    ["MapEyeFrontX"] = {
+        DisplayName = "X Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131312124,
+    },
+    ["MapEyeFrontSwirl"] = {
+        DisplayName = "Swirl Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131312112,
+    },
+    ["MapEyeFrontStar"] = {
+        DisplayName = "Star Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131312101,
+    },
+    ["MapEyeFrontRadioactive"] = {
+        DisplayName = "Radioactive Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131312094,
+    },
+    ["MapEyeFrontMoon"] = {
+        DisplayName = "Moon Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131312082,
+    },
+    ["MapEyeFrontHeart"] = {
+        DisplayName = "Heart Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131312068,
+    },
+    ["MapEyeFrontDefault"] = {
+        DisplayName = "Default Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131312022,
+    },
+    ["MapEyeFrontCat"] = {
+        DisplayName = "Cat Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131312006,
+    },
+    ["MapEyeFrontBurst"] = {
+        DisplayName = "Burst Pupil Map Indicator",
+        ItemType = "MapEyeFront",
+        TextureId = 131311995,
+    },
 }
