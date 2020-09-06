@@ -77,6 +77,12 @@ return {
         OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(-2,0,-40) * CFrame.Angles(0,math.rad(90),0),
         IdleAnimationId = 507766388,
     },
+    ["Matt Dusek"] = {
+        CellX = 106,
+        CellY = 117,
+        OffsetCFrame = CFrame.Angles(0,math.pi/2,0) * CFrame.new(30,0,-10) * CFrame.Angles(0,math.rad(-90),0),
+        IdleAnimationId = 507766388,
+    },
     ["Creature Keeper"] = {
         CellX = 105,
         CellY = 118,
