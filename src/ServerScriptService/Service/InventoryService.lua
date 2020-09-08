@@ -56,6 +56,13 @@ UnlockChest.OnServerEvent:Connect(function(Player,Slot)
     InventoryService:UnlockChest(Player,Slot)
 end)
 
+local DeleteItem = Instance.new("RemoteEvent")
+DeleteItem.Name = "DeleteItem"
+DeleteItem.Parent = InventoryReplication
+DeleteItem.OnServerEvent:Connect(function(Player,Slot)
+    InventoryService:DeleteItem(Player,Slot)
+end)
+
 
 
 --[[
@@ -208,6 +215,14 @@ Removes the items of a player's inventory.
 function InventoryService:RemoveItemsByName(Player,Name)
     local PlayerInventory = self.PlayerInventories[Player]
     PlayerInventory:RemoveSlots(PlayerInventory:GetItemSlots(Name))
+end
+
+--[[
+Deletes an item from a player's inventory.
+--]]
+function InventoryService:DeleteItem(Player,Slot)
+    local PlayerInventory = self.PlayerInventories[Player]
+    PlayerInventory:RemoveSlot(Slot)
 end
 
 

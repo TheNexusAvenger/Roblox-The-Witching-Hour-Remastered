@@ -16,6 +16,7 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
+local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
 local ItemIcon = ReplicatedStorageProject:GetResource("UI.ItemIcon")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
@@ -24,6 +25,7 @@ local PlayerDisplay = require(script.Parent:WaitForChild("PlayerDisplay"))
 local PetDisplay = require(script.Parent:WaitForChild("PetDisplay"))
 local SwapSlots = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.SwapSlots")
 local SetPet = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.SetPet")
+local DeleteItem = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.DeleteItem")
 
 local InventoryWindow = NexusObject:Extend()
 InventoryWindow:SetClassName("InventoryWindow")
@@ -659,7 +661,7 @@ function InventoryWindow:SetUpDraggning()
 
         --Destroy the item if the ending slot was the trash.
         if Slot == "Trash" then
-            warn("PROMPT: "..CurrentSlot)
+            self:PromptDelete(CurrentSlot)
         end
     end)
 end
@@ -742,6 +744,93 @@ Sets the pet to use.
 function InventoryWindow:SetPet(PetName)
     SetPet:FireServer(PetName)
     self.PlayerData:SetValue("CurrentPet",PetName)
+end
+
+--[[
+Prompts deleting an item.
+--]]
+function InventoryWindow:PromptDelete(Slot)
+    --Get the item data or return if it doesn't exist.
+    local Item = self.Inventory:GetItem(Slot)
+    if not Item then
+        return
+    end
+    local Data = ItemData[Item.Name]
+    if not Data then
+        return
+    end
+
+    --Create the Gui.
+    local DeleteScreenGui = Instance.new("ScreenGui")
+    DeleteScreenGui.Name = "Inventory"
+    DeleteScreenGui.DisplayOrder = 10
+    DeleteScreenGui.Parent = script.Parent.Parent
+
+    local Background = Instance.new("ImageLabel")
+    Background.BackgroundTransparency = 1
+    Background.AnchorPoint = Vector2.new(0.5,0.5)
+    Background.Size = UDim2.new(0.15 * (188/52),0,0.15,0)
+    Background.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    Background.Position = UDim2.new(0.5,0,-0.2,0)
+    Background.Image = "rbxassetid://5558262263"
+    Background.Parent = DeleteScreenGui
+    Background:TweenPosition(UDim2.new(0.5,0,0.5,0),"Out","Quad",0.5)
+
+    local DeleteText = Instance.new("TextLabel")
+    DeleteText.BackgroundTransparency = 1
+    DeleteText.Size = UDim2.new(0.8,0,0.3,0)
+    DeleteText.Position = UDim2.new(0.1,0,0.15,0)
+    DeleteText.Font = Enum.Font.Antique
+    DeleteText.Text = "Delete "..(Data.DisplayName or tostring(Item.Name))
+    DeleteText.TextColor3 = Color3.new(40/255,40/255,40/255)
+    DeleteText.TextScaled = true
+    DeleteText.Parent = Background
+
+    local ConfirmImage = Instance.new("ImageLabel")
+    ConfirmImage.BackgroundTransparency = 1
+    ConfirmImage.AnchorPoint = Vector2.new(1,0)
+    ConfirmImage.Size = UDim2.new(0.4 * (188/52),0,0.4,0)
+    ConfirmImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    ConfirmImage.Position = UDim2.new(0.475,0,0.45,0)
+    ConfirmImage.Image = "rbxassetid://5558262263"
+    ConfirmImage.Parent = Background
+    local ConfirmButton = WideTextButtonDecorator.new(ConfirmImage,"Yes")
+
+    local CancelImage = Instance.new("ImageLabel")
+    CancelImage.BackgroundTransparency = 1
+    CancelImage.Size = UDim2.new(0.4 * (188/52),0,0.4,0)
+    CancelImage.SizeConstraint = Enum.SizeConstraint.RelativeYY
+    CancelImage.Position = UDim2.new(0.525,0,0.45,0)
+    CancelImage.Image = "rbxassetid://5558262263"
+    CancelImage.Parent = Background
+    local CancelButton = WideTextButtonDecorator.new(CancelImage,"No")
+
+    --Connect the buttons.
+    local DB = true
+    ConfirmButton.Button.MouseButton1Down:Connect(function()
+        if DB then
+            DB = false
+
+            --Delete the item.
+            self.Inventory:RemoveSlot(Slot)
+            DeleteItem:FireServer(Slot)
+
+            --Close the dialog.
+            Background:TweenPosition(UDim2.new(0.5,0,-0.2,0),"Out","Quad",0.5,true,function()
+                DeleteScreenGui:Destroy()
+            end)
+        end
+    end)
+    CancelButton.Button.MouseButton1Down:Connect(function()
+        if DB then
+            DB = false
+
+            --Close the dialog.
+            Background:TweenPosition(UDim2.new(0.5,0,-0.2,0),"Out","Quad",0.5,true,function()
+                DeleteScreenGui:Destroy()
+            end)
+        end
+    end)
 end
 
 
