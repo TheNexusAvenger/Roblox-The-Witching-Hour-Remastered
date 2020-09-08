@@ -62,6 +62,7 @@ local ListButtons = {}
 --Create the ScreenGui.
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "QuestLogView"
+ScreenGui.DisplayOrder = 2
 ScreenGui.Parent = script.Parent
 
 --Create the container.

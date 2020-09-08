@@ -25,6 +25,7 @@ StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList,false)
 --Create the ScreenGui.
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ActiveQuestTopDisplay"
+ScreenGui.DisplayOrder = 2
 ScreenGui.Parent = script.Parent
 
 --Create the container.
