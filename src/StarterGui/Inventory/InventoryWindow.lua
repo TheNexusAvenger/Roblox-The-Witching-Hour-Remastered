@@ -417,6 +417,15 @@ function InventoryWindow:__new()
     PageText.Parent = InventoryBack
     self.PageText = PageText
 
+    local TrashBackgroundSlot = Instance.new("ImageLabel")
+    TrashBackgroundSlot.BackgroundTransparency = 1
+    TrashBackgroundSlot.AnchorPoint = Vector2.new(1,1)
+    TrashBackgroundSlot.Size = UDim2.new(64/902,0,64/644,0)
+    TrashBackgroundSlot.Position = UDim2.new(876/902,0,607/644,0)
+    TrashBackgroundSlot.Image = "rbxassetid://5655605683"
+    TrashBackgroundSlot.ZIndex = 4
+    TrashBackgroundSlot.Parent = Background
+
     self.InventorySlotFrames = {}
     self.InventorySlotIcons = {}
     for i = 1,SLOTS_PER_PAGE do
@@ -444,6 +453,7 @@ function InventoryWindow:__new()
         PetCostumeCollar = PetCollarSlot,
         PetCostumeBack = PetBackSlot,
         PetCostumeAnkle = PetAnkleSlot,
+        Trash = TrashBackgroundSlot,
     }
     self.SpecialInventoryIcons = {}
     for SlotName,SlotFrame in pairs(self.SpecialInventorySlots) do
@@ -645,6 +655,11 @@ function InventoryWindow:SetUpDraggning()
         end
         for _,SlotIcon in pairs(self.InventorySlotIcons) do
             SlotIcon.ViewportFrame.Visible = true
+        end
+
+        --Destroy the item if the ending slot was the trash.
+        if Slot == "Trash" then
+            warn("PROMPT: "..CurrentSlot)
         end
     end)
 end
