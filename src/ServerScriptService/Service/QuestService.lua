@@ -63,6 +63,14 @@ function QuestService:LoadPlayer(Player)
 end
 
 --[[
+Returns if the given quest is valid
+for a given condition.
+--]]
+function QuestService:QuestConditonValid(Player,QuestName,Condition)
+    return self.PlayerQuests[Player]:QuestConditonValid(QuestName,Condition)
+end
+
+--[[
 Starts a quest for a player. Performs security
 checks to make sure the player can only accept a
 quest in the current dialog. The quest name

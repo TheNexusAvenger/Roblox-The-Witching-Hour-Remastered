@@ -13,6 +13,7 @@ local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Proje
 
 local ItemDataModule = ReplicatedStorageProject:GetObjectReference("GameData.Item.Items")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
+local Quests = ReplicatedStorageProject:GetResource("GameData.Quest.Quests")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 
@@ -23,6 +24,7 @@ ServerScriptServiceProject:SetContextResource(InventoryService)
 
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 local PetService = ServerScriptServiceProject:GetResource("Service.PetService")
+local QuestService = ServerScriptServiceProject:GetResource("Service.QuestService")
 
 
 
@@ -164,9 +166,54 @@ end
 
 --[[
 Awards a random item to the given player.
+Returns if an item was given.
 --]]
 function InventoryService:AwardRandomItem(Player,Zone)
-    --TODO: Implement
+    --Return if the inventory is full.
+    local PlayerInventory = self:GetInventory(Player)
+    if not PlayerInventory:GetNextOpenSlot() then
+        return false
+    end
+    
+    --Compile the options for items.
+    local Items = {}
+    for ItemName,Data in pairs(ItemData) do
+        if Data.Awardable ~= false and (Zone == nil or Zone == Data.Zone) then
+            --Determine how many of an item the player can have.
+            local TotalPossible = 1
+            local QuestName = Data.Quest
+            if QuestName then
+                if QuestService:QuestConditonValid(Player,QuestName,"Inventory") then
+                    --Set the total possible as the items for the quest.
+                    local QuestData = Quests[QuestName]
+                    if QuestData and QuestData.RequiredItems and QuestData.RequiredItems[1] and QuestData.RequiredItems[1].Name == ItemName then
+                        TotalPossible = QuestData.RequiredItems[1].Amount or 0
+                    end
+                else
+                    --Set the item as unobtainable.
+                    TotalPossible = 0
+                end
+            end
+
+            --Add the item if the player can have more of an item.
+            if TotalPossible > #PlayerInventory:GetItemSlots(ItemName) then
+                table.insert(Items,ItemName)
+            end
+        end
+    end
+
+    --Award without the zone limit if no options are possible for the zone.
+    if Zone ~= nil and #Items == 0 then
+        return self:AwardRandomItem(Player)
+    end
+
+    --Add a random item if one exists.
+    if #Items > 0 then
+        self:AddItem(Player,Items[math.random(1,#Items)])
+        return true
+    else
+        return false
+    end
 end
 
 --[[
