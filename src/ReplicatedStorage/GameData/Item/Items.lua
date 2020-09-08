@@ -1353,6 +1353,7 @@ return {
             return false
         end,
         Awardable = false,
+        IncludeZoneData = true,
     },
     ["TreasureChest"] = {
         DisplayName = "Treasure Chest",
@@ -1372,6 +1373,7 @@ return {
             --Return true (not unlockable).
             return true
         end,
+        IncludeZoneData = true,
     },
     ["TreasureKey"] = {
         DisplayName = "Treasure Key",

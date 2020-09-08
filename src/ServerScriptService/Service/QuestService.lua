@@ -11,6 +11,8 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
 local QuestsData = ReplicatedStorageProject:GetResource("GameData.Quest.Quests")
+local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
+local NPCLocations = ReplicatedStorageProject:GetResource("GameData.Generation.NPCLocations")
 local Quests = ReplicatedStorageProject:GetResource("State.Quests")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 
@@ -180,7 +182,11 @@ function QuestService:CompleteQuest(Player,NPCName,QuestName)
                 --Award items.
                 for _,Item in pairs(Reward) do
                     for i = 1,Item.Amount do
-                        InventoryService:AddItem(Player,Item.Name)
+                        local NewItem = {Name=Item.Name}
+                        if ItemData[Item.Name].IncludeZoneData then
+                            NewItem.Zone = NPCLocations[NPCName].Zone
+                        end
+                        InventoryService:AddItem(Player,NewItem)
                     end
                 end
             end
