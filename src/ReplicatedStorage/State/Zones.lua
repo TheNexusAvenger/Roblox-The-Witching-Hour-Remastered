@@ -13,6 +13,7 @@ local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInst
 
 local Zones = NexusObject:Extend()
 Zones.CachedResults = {}
+Zones.MapGraph = nil --TODO: Implement
 Zones:SetClassName("Zones")
 
 
@@ -20,9 +21,9 @@ Zones:SetClassName("Zones")
 --[[
 Returns the zone for a given cell.
 --]]
+function Zones:GetZone(X,Y)
 
-
-
+end
 
 
 
