@@ -30,14 +30,24 @@ end
 Adds a node to the graph.
 --]]
 function GraphSolver:AddNode(Id,X,Y)
-    self.Nodes[Id] = {X=X,Y=Y}
-    self.Edges[Id] = {}
+    if not self.Nodes[Id] then
+        self.Nodes[Id] = {X=X,Y=Y}
+        self.Edges[Id] = {}
+    end
 end
 
 --[[
 Adds an edge between 2 nodes.
 --]]
 function GraphSolver:AddEdge(Id1,Id2)
+    --Return if the edge exists.
+    for _,EdgeId in pairs(self.Edges[Id1]) do
+        if EdgeId == Id2 then
+            return
+        end
+    end
+
+    --Add the edge.
     table.insert(self.Edges[Id1],Id2)
     table.insert(self.Edges[Id2],Id1)
 end

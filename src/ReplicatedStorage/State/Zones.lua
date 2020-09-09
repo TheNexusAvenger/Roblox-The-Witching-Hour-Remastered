@@ -10,10 +10,11 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
+local MapGraphSolver = ReplicatedStorageProject:GetResource("State.PathFind.MapGraphSolver")
 
 local Zones = NexusObject:Extend()
 Zones.CachedResults = {}
-Zones.MapGraph = nil --TODO: Implement
+Zones.MapGraph = MapGraphSolver.Create()
 Zones:SetClassName("Zones")
 
 
