@@ -2,6 +2,12 @@
     "name": "Roblox-The-Witching-Hour-Remastered",
     "tree": {
         "$className": "DataModel",
+        "Workspace": {
+            "$className": "Workspace",
+            "$properties": {
+                "FallenPartsDestroyHeight": -50000
+            }
+        },
         "Lighting": {
             "$className": "Lighting",
             "$properties": {
