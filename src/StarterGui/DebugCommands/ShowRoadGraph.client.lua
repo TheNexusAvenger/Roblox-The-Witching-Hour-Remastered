@@ -53,13 +53,18 @@ NexusAdminAPI.Registry:LoadCommand({
                     local EdgePart = Instance.new("Part")
                     EdgePart.Name = "DebugRoadEdge"
                     EdgePart.Color = Color3.new(1,1,0)
-                    EdgePart.Size = Vector3.new(10,10,Distance * 100)
+                    EdgePart.Size = Vector3.new(10,10,100)
                     EdgePart.CFrame = CFrame.new(Vector3.new(StartVertex.X * 100,100,StartVertex.Y * 100),Vector3.new(EndVertex.X * 100,100,EndVertex.Y * 100)) * CFrame.new(0,0,-(Distance * 100)/2)
                     EdgePart.Anchored = true
                     EdgePart.CanCollide = false
                     EdgePart.TopSurface = Enum.SurfaceType.Smooth
                     EdgePart.BottomSurface = Enum.SurfaceType.Smooth
                     EdgePart.Parent = Workspace
+
+                    local EdgeMesh = Instance.new("SpecialMesh")
+                    EdgeMesh.MeshType = Enum.MeshType.Brick
+                    EdgeMesh.Scale = Vector3.new(1,1,Distance)
+                    EdgeMesh.Parent = EdgePart
                 end
             end
 
