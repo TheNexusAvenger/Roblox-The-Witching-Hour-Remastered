@@ -162,6 +162,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                 CharacterService:SaveLastSpot(Player)
                 self:SetActive(Player)
                 AlivePlayersMap[Player] = true
+                Character.Parent = DungeonModel
                 PlayersAlive = PlayersAlive + 1
                 Humanoid.Died:Connect(function()
                     self:SetInactive(Player)
@@ -199,7 +200,6 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
             if not InventoryService:GetInventory(Player):GetNextOpenSlot() then
                 DisplayMessage:FireClient(Player,"You have no more space in your inventory. Please free some space by buying more pages or deleting some items from it.")
             else
-                --TODO: Add random chance of treasure chest.
                 if math.random() <= REWARD_TREASURE_CHEST_CHANGE then
                     InventoryService:AddItem(Player,{Name="TreasureChest",Zone=Zone})
                     DisplayReward:FireClient(Player,"TreasureChest")
@@ -223,6 +223,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                 local Humanoid = Character:FindFirstChild("Humanoid")
                 if Humanoid then
                     Humanoid.Health = Humanoid.MaxHealth
+                    Character.Parent = Workspace
                 end
             end
         end
