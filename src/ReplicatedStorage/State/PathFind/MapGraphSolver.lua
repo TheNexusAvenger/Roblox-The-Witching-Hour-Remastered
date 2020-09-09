@@ -206,7 +206,7 @@ function MapGraphSolver:PopulateRoadEnds()
         --Add the edge.
         for _,EndId in pairs(ConnectableNodes) do
             local End = Nodes[EndId]
-            if self:IsPathBlocked(Start[1],Start[2],End[1],End[2]) then
+            if not self:IsPathBlocked(Start[1],Start[2],End[1],End[2]) then
                 self:AddEdge(Start[3],End[3])
                 break
             end
