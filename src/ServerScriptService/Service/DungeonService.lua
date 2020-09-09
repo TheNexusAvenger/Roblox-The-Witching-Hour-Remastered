@@ -162,7 +162,6 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                 CharacterService:SaveLastSpot(Player)
                 self:SetActive(Player)
                 AlivePlayersMap[Player] = true
-                Character.Parent = DungeonModel
                 PlayersAlive = PlayersAlive + 1
                 Humanoid.Died:Connect(function()
                     self:SetInactive(Player)
@@ -223,7 +222,6 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                 local Humanoid = Character:FindFirstChild("Humanoid")
                 if Humanoid then
                     Humanoid.Health = Humanoid.MaxHealth
-                    Character.Parent = Workspace
                 end
             end
         end
