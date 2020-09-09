@@ -43,6 +43,10 @@ local StartDungeon = Instance.new("RemoteEvent")
 StartDungeon.Name = "StartDungeon"
 StartDungeon.Parent = DungeonReplication
 
+local EndDungeon = Instance.new("RemoteEvent")
+EndDungeon.Name = "EndDungeon"
+EndDungeon.Parent = DungeonReplication
+
 local ClearDungeon = Instance.new("RemoteEvent")
 ClearDungeon.Name = "ClearDungeon"
 ClearDungeon.Parent = DungeonReplication
@@ -163,9 +167,10 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                     self:SetInactive(Player)
                     PlayersAlive = PlayersAlive - 1
                     AlivePlayersMap[Player] = nil
+                    EndDungeon:FireClient(Player,X,Y)
                 end)
 
-                StartDungeon:FireClient(Player,X,Y,IsTreasureDungeon)
+                StartDungeon:FireClient(Player,X,Y,Type)
             end
         end
     end
@@ -190,13 +195,14 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
         --Award the items to the players.
         for Player,_ in pairs(AlivePlayersMap) do
             self:SetInactive(Player)
+            EndDungeon:FireClient(Player,X,Y)
             if not InventoryService:GetInventory(Player):GetNextOpenSlot() then
-                DisplayMessage:FireClient(Player,"Your inventory is full.")
+                DisplayMessage:FireClient(Player,"You have no more space in your inventory. Please free some space by buying more pages or deleting some items from it.")
             else
                 --TODO: Add random chance of treasure chest.
                 if math.random() <= REWARD_TREASURE_CHEST_CHANGE then
                     InventoryService:AddItem(Player,{Name="TreasureChest",Zone=Zone})
-                    DisplayReward:FireClient(Player,"Treasure Chest")
+                    DisplayReward:FireClient(Player,"TreasureChest")
                 else
                     local ItemAwarded,ItemName = InventoryService:AwardRandomItem(Player,Zone)
                     if ItemAwarded then
@@ -207,7 +213,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                 end
             end
         end
-        wait(3)
+        wait(5)
 
         --Teleport the players out of the house.
         for Player,_ in pairs(AlivePlayersMap) do
