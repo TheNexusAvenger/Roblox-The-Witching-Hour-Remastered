@@ -19,6 +19,7 @@ ServerScriptServiceProject:SetContextResource(HouseService)
 local MapCellData = ReplicatedStorageProject:GetResource("GameData.Generation.MapCells")
 local GameState = ReplicatedStorageProject:GetResource("GameState")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
+local DungeonService = ServerScriptServiceProject:GetResource("Service.DungeonService")
 
 
 
@@ -109,8 +110,7 @@ function HouseService:StartHouse(X,Y)
     --Start the house.
     self:SetHouseState(X,Y,"INACTIVE")
     if #PlayersInCell > 0 then
-        --TODO: Start dungeon.
-        --TODO: Wait for dungeon to end.
+        DungeonService:RunDungeon(X,Y,PlayersInCell)
         wait(10)
     else
         wait(30)

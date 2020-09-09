@@ -166,7 +166,8 @@ end
 
 --[[
 Awards a random item to the given player.
-Returns if an item was given.
+Returns if an item was given and the name
+of the item.
 --]]
 function InventoryService:AwardRandomItem(Player,Zone)
     --Return if the inventory is full.
@@ -209,8 +210,9 @@ function InventoryService:AwardRandomItem(Player,Zone)
 
     --Add a random item if one exists.
     if #Items > 0 then
-        self:AddItem(Player,Items[math.random(1,#Items)])
-        return true
+        local ItemName = Items[math.random(1,#Items)]
+        self:AddItem(Player,ItemName)
+        return true,ItemName
     else
         return false
     end

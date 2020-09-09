@@ -1373,6 +1373,7 @@ return {
             --Return true (not unlockable).
             return true
         end,
+        Awardable = false,
         IncludeZoneData = true,
     },
     ["TreasureKey"] = {

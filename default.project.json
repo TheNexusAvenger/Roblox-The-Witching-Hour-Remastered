@@ -42,6 +42,7 @@
         },
         "ServerStorage": {
             "$className": "ServerStorage",
+            "$path": "./src/ServerStorage",
             "UnitTests": {
                 "$className": "Folder",
                 "$path": "./test"

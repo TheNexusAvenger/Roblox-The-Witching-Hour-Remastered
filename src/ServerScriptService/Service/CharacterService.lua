@@ -80,8 +80,9 @@ function CharacterService:SpawnCharacter(Player)
     --Move the character.
     local Character = Player.Character
     local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
-    if CharacterService.LastPlayerCFrames[Player] then
-        HumanoidRootPart.LastPlayerCFrames = CharacterService.LastPlayerCFrames[Player]
+    if self.LastPlayerCFrames[Player] then
+        HumanoidRootPart.CFrame = self.LastPlayerCFrames[Player]
+        self.LastPlayerCFrames[Player] = nil
     else
         HumanoidRootPart.CFrame = CFrame.new((BASE_SPAWN_GRID_X * 100) + math.random(-30,30),3.5,(BASE_SPAWN_GRID_Y * 100) + math.random(-30,30)) * CFrame.Angles(0,-math.pi/2,0)
     end
@@ -103,6 +104,32 @@ function CharacterService:SpawnCharacter(Player)
 
     --Spawn the pet.
     PetService:SpawnPet(Player)
+end
+
+--[[
+Saves the last CFrame of a player.
+--]]
+function CharacterService:SaveLastSpot(Player)
+    local Character = Player.Character
+    if Character then
+        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+        if HumanoidRootPart then
+            self.LastPlayerCFrames[Player] = HumanoidRootPart.CFrame
+        end
+    end
+end
+
+--[[
+Teleports the player to last CFrame.
+--]]
+function CharacterService:TeleportToLastSpot(Player)
+    local Character = Player.Character
+    if Character and self.LastPlayerCFrames[Player] then
+        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+        if HumanoidRootPart then
+            HumanoidRootPart.CFrame = self.LastPlayerCFrames[Player]
+        end
+    end
 end
 
 
