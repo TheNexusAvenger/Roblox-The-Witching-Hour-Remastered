@@ -123,6 +123,8 @@ function MapGraphSolver:CellIsRoadNode(X,Y)
         return true
     elseif not TopIsRoad and not BottomIsRoad and not LeftIsRoad and RightIsRoad then
         return true
+    elseif not TopIsRoad and not BottomIsRoad and not LeftIsRoad and not RightIsRoad then
+        return true
     end
     return false
 end
