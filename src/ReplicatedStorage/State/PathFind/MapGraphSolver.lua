@@ -223,7 +223,7 @@ function MapGraphSolver:PopulateNPCs()
     for _,NPCLocationData in pairs(NPCLocations) do
         local X,Y = NPCLocationData.CellX,NPCLocationData.CellY
         local Id = tostring(X).."_"..tostring(Y)
-        table.insert(Nodes,{X,Y,Id})
+        Nodes[Id] = {X,Y,Id}
         self:AddNode(Id,X,Y)
     end
 
@@ -232,7 +232,7 @@ function MapGraphSolver:PopulateNPCs()
         --Get the closest node.
         local LowestDistance,ClosestNodeId = math.huge,nil
         for Id,_ in pairs(self.Nodes) do
-            if Id ~= Start[3] then
+            if Id ~= Start[3] and not Nodes[Id] then
                 local Distance = self:GetDistance(Start[3],Id)
                 if Distance < LowestDistance then
                     LowestDistance = Distance
