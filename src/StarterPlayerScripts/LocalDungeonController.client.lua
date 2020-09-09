@@ -71,7 +71,6 @@ end
 DungeonsContainer.ChildAdded:Connect(DungeonAdded)
 
 --Connect the remote events.
---TODO: Connect the 3rd argument (type) in another script to display the chest message.
 StartDungeon.OnClientEvent:Connect(function(X,Y)
     --Set the current dungeon.
     local Id = tostring(X).."_"..tostring(Y)
