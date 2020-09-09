@@ -23,6 +23,8 @@ DungeonService:SetClassName("DungeonService")
 DungeonService.ActivePlayers = {}
 ServerScriptServiceProject:SetContextResource(DungeonService)
 
+local DungeonAllocation = ReplicatedStorageProject:GetResource("State.DungeonAllocation")
+DungeonService.DungeonAllocation = DungeonAllocation.new()
 local Zones = ReplicatedStorageProject:GetResource("State.Zones")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 local Dungeon = ServerStorageProject:GetResource("Dungeon")
@@ -103,11 +105,11 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
     local IsTreasureDungeon = math.random() <= DUNGEON_TREASURE_CHEST_CHANCE
     local Type = IsTreasureDungeon and "Treasure" or "Monster"
 
-    local Id = tostring(X).."_"..tostring(Y)
+    local Height,Id = self.DungeonAllocation:Allocate(X,Y)
     local DungeonModel = Dungeon:Clone()
     DungeonModel.Name = Id
     DungeonModel.PrimaryPart = DungeonModel:WaitForChild("Ground")
-    DungeonModel:SetPrimaryPartCFrame(CFrame.new(X * 100,-250,Y * 100))
+    DungeonModel:SetPrimaryPartCFrame(CFrame.new(X * 100,-250 * Height,Y * 100))
     DungeonModel.Parent = DungeonsContainer
 
     local DungeonCompleted = false
@@ -232,6 +234,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
 
     --Clear the dungeon.
     ClearDungeon:FireAllClients(X,Y,Id)
+    self.DungeonAllocation:Dellocate(Id)
     DungeonModel:Destroy()
 end
 
