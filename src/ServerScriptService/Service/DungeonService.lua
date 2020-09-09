@@ -103,8 +103,9 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
     local IsTreasureDungeon = math.random() <= DUNGEON_TREASURE_CHEST_CHANCE
     local Type = IsTreasureDungeon and "Treasure" or "Monster"
 
+    local Id = tostring(X).."_"..tostring(Y)
     local DungeonModel = Dungeon:Clone()
-    DungeonModel.Name = tostring(X).."_"..tostring(Y)
+    DungeonModel.Name = Id
     DungeonModel.PrimaryPart = DungeonModel:WaitForChild("Ground")
     DungeonModel:SetPrimaryPartCFrame(CFrame.new(X * 100,-250,Y * 100))
     DungeonModel.Parent = DungeonsContainer
@@ -167,10 +168,10 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                     self:SetInactive(Player)
                     PlayersAlive = PlayersAlive - 1
                     AlivePlayersMap[Player] = nil
-                    EndDungeon:FireClient(Player,X,Y)
+                    EndDungeon:FireClient(Player,X,Y,Id)
                 end)
 
-                StartDungeon:FireClient(Player,X,Y,Type)
+                StartDungeon:FireClient(Player,X,Y,Id,Type)
             end
         end
     end
@@ -195,7 +196,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
         --Award the items to the players.
         for Player,_ in pairs(AlivePlayersMap) do
             self:SetInactive(Player)
-            EndDungeon:FireClient(Player,X,Y)
+            EndDungeon:FireClient(Player,X,Y,Id)
             if not InventoryService:GetInventory(Player):GetNextOpenSlot() then
                 DisplayMessage:FireClient(Player,"You have no more space in your inventory. Please free some space by buying more pages or deleting some items from it.")
             else
@@ -230,7 +231,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
     end
 
     --Clear the dungeon.
-    ClearDungeon:FireAllClients(X,Y)
+    ClearDungeon:FireAllClients(X,Y,Id)
     DungeonModel:Destroy()
 end
 

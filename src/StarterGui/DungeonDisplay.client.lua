@@ -94,7 +94,7 @@ ItemAwardText.Parent = Background
 
 
 --Connect the events.
-StartDungeon.OnClientEvent:Connect(function(_,_,Type)
+StartDungeon.OnClientEvent:Connect(function(_,_,_,Type)
     if Type == "Treasure" then
         TreasureTopText.Visible = true
         TreasureBottomText.Visible = true

@@ -71,9 +71,8 @@ end
 DungeonsContainer.ChildAdded:Connect(DungeonAdded)
 
 --Connect the remote events.
-StartDungeon.OnClientEvent:Connect(function(X,Y)
+StartDungeon.OnClientEvent:Connect(function(X,Y,Id)
     --Set the current dungeon.
-    local Id = tostring(X).."_"..tostring(Y)
     CurrentDungeon = Id
     UpdateVisibleDungeons()
 
@@ -81,8 +80,7 @@ StartDungeon.OnClientEvent:Connect(function(X,Y)
     TeleportPlayerToDungeon()
 end)
 
-ClearDungeon.OnClientEvent:Connect(function(X,Y)
-    local Id = tostring(X).."_"..tostring(Y)
+ClearDungeon.OnClientEvent:Connect(function(X,Y,Id)
     StoredDungeons[Id] = nil
     if CurrentDungeon == Id then
         CurrentDungeon = nil
