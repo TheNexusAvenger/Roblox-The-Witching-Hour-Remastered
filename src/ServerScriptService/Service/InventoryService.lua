@@ -5,6 +5,11 @@ Controls the inventory of the player.
 Class is static (should not be created).
 --]]
 
+local QUEST_ITEM_MULTIPLIER = 5
+
+
+
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local InsertService = game:GetService("InsertService")
 
@@ -182,6 +187,7 @@ function InventoryService:AwardRandomItem(Player,Zone)
         if Data.Awardable ~= false and (Zone == nil or Zone == Data.Zone) then
             --Determine how many of an item the player can have.
             local TotalPossible = 1
+            local Multiplier = 1
             local QuestName = Data.Quest
             if QuestName then
                 if QuestService:QuestConditonValid(Player,QuestName,"Inventory") then
@@ -189,6 +195,7 @@ function InventoryService:AwardRandomItem(Player,Zone)
                     local QuestData = Quests[QuestName]
                     if QuestData and QuestData.RequiredItems and QuestData.RequiredItems[1] and QuestData.RequiredItems[1].Name == ItemName then
                         TotalPossible = QuestData.RequiredItems[1].Amount or 0
+                        Multiplier = QUEST_ITEM_MULTIPLIER
                     end
                 else
                     --Set the item as unobtainable.
@@ -198,7 +205,9 @@ function InventoryService:AwardRandomItem(Player,Zone)
 
             --Add the item if the player can have more of an item.
             if TotalPossible > #PlayerInventory:GetItemSlots(ItemName) then
-                table.insert(Items,ItemName)
+                for i = 1,Multiplier do
+                    table.insert(Items,ItemName)
+                end
             end
         end
     end
