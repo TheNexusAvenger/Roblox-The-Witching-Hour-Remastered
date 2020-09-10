@@ -114,6 +114,11 @@ function PetDisplay:SetItem(Slot,Item,ForceUpdate)
 	end
 	self.LastClothes[Slot] = Name
 
+	--Return if the pet is not set.
+	if not self.Pet or not self.Clothes then
+		return
+	end
+
 	--Determine the texture.
 	local Texture
 	if Name and ItemData[Name] then
