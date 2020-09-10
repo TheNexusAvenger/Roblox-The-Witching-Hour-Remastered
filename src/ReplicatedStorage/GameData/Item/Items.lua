@@ -1193,10 +1193,11 @@ return {
         Quest = "Action Figure Madness",
         Zone = "Vampire",
     },
-    ["Chicken Legs"] = {
-        DisplayName = "Chicken Legs",
+    ["Chicken Leg"] = {
+        DisplayName = "Chicken Leg",
         ItemType = "InventoryItem",
-        TextureId = 132792283,
+        MeshId = 13073626,
+        TextureId = 13073598,
         Quest = "Fried Chicken Fracas",
         Zone = "Vampire",
     },
