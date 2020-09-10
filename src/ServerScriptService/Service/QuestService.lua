@@ -55,6 +55,10 @@ SelectQuest.OnServerEvent:Connect(function(Player,QuestName)
     QuestService:SelectQuest(Player,QuestName)
 end)
 
+local DisplayItemAwards = Instance.new("RemoteEvent")
+DisplayItemAwards.Name = "DisplayItemAwards"
+DisplayItemAwards.Parent = QuestReplication
+
 
 
 --[[
@@ -167,6 +171,7 @@ function QuestService:CompleteQuest(Player,NPCName,QuestName)
         end
 
         --Reward the player.
+        local RewardsToDisplay = {}
         for RewardType,Reward in pairs(QuestData.Rewards or {}) do
             local PlayerData = PlayerDataService:GetPlayerData(Player)
             if RewardType == "Badge" then
@@ -174,6 +179,7 @@ function QuestService:CompleteQuest(Player,NPCName,QuestName)
                 local Bloxkins = PlayerData:GetValue("CollectedBloxkins")
                 Bloxkins[Reward] = true
                 PlayerData:SetValue("CollectedBloxkins",Bloxkins)
+                table.insert(RewardsToDisplay,{Type="Bloxkin",Name=Reward})
             elseif RewardType == "XP" then
                 --Award XP.
                 local XP = PlayerData:GetValue("XP") + Reward
@@ -187,10 +193,12 @@ function QuestService:CompleteQuest(Player,NPCName,QuestName)
                             NewItem.Zone = NPCLocations[NPCName].Zone
                         end
                         InventoryService:AddItem(Player,NewItem)
+                        table.insert(RewardsToDisplay,{Type="Item",Name=Reward})
                     end
                 end
             end
         end
+        DisplayItemAwards:FireClient(Player,RewardsToDisplay)
     end
 end
 

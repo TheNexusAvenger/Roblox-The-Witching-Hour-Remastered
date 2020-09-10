@@ -13,6 +13,7 @@ local StartDungeon = ReplicatedStorageProject:GetResource("GameReplication.Dunge
 local EndDungeon = ReplicatedStorageProject:GetResource("GameReplication.DungeonReplication.EndDungeon")
 local DisplayReward = ReplicatedStorageProject:GetResource("GameReplication.DungeonReplication.DisplayReward")
 local DisplayMessage = ReplicatedStorageProject:GetResource("GameReplication.DungeonReplication.DisplayMessage")
+local ItemAwardAnimation = ReplicatedStorageProject:GetResource("UI.ItemAwardAnimation")
 local ItemIcon = ReplicatedStorageProject:GetResource("UI.ItemIcon")
 
 
@@ -116,6 +117,7 @@ DisplayReward.OnClientEvent:Connect(function(ItemName)
         --Show and hide the display.
         Background:TweenPosition(UDim2.new(0.5,0,0.5,0),"InOut","Quad",0.5,true,function()
             wait(4.5)
+            ItemAwardAnimation.DisplayItemAwardFromFrame(ItemName,ItemIconAdorn)
             Background:TweenPosition(UDim2.new(0.5,0,-0.5,0),"InOut","Quad",0.5)
         end)
     end

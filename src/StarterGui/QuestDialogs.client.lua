@@ -14,8 +14,10 @@ local ControlModule = require(Players.LocalPlayer.PlayerScripts:WaitForChild("Pl
 local Quests = ReplicatedStorageProject:GetResource("State.Quests").new(Players.LocalPlayer)
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local ItemAwardAnimation = ReplicatedStorageProject:GetResource("UI.ItemAwardAnimation")
 local StartQuest = ReplicatedStorageProject:GetResource("GameReplication.QuestReplication.StartQuest")
 local TurnInQuest = ReplicatedStorageProject:GetResource("GameReplication.QuestReplication.TurnInQuest")
+local DisplayItemAwards = ReplicatedStorageProject:GetResource("GameReplication.QuestReplication.DisplayItemAwards")
 
 
 
@@ -224,3 +226,14 @@ end
 
 --Connect starting dialogs.
 StartDialogEvent.Event:Connect(RunDialogForNPC)
+
+--Connect displaying rewards.
+DisplayItemAwards.OnClientEvent:Connect(function(Items)
+    for _,Item in pairs(Items) do
+        if Item.Type == "Item" then
+            ItemAwardAnimation.DisplayItemAwardFromPosition(Item.Name,UDim2.new(0.5,0,0.9,0))
+        elseif Item.Type == "Bloxkin" then
+            ItemAwardAnimation.DisplayBloxkinAwardFromPosition(Item.Name,UDim2.new(0.5,0,0.9,0))
+        end
+    end
+end)

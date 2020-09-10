@@ -26,6 +26,7 @@ function CornerMenuButtons:__new(BottomFrame)
 
     --Create the bottom bar container.
     local MenuBottomBarBackground = Instance.new("ImageLabel")
+    MenuBottomBarBackground.Name = "MenuBottomBarBackground"
     MenuBottomBarBackground.Size = UDim2.new(1.8,0,1.8,0)
     MenuBottomBarBackground.SizeConstraint = "RelativeYY"
     MenuBottomBarBackground.AnchorPoint = Vector2.new(0.025,0.325)
@@ -61,6 +62,7 @@ function CornerMenuButtons:__new(BottomFrame)
     
     --Create the buttons.
     local InventoryImage = Instance.new("ImageLabel")
+    InventoryImage.Name = "Inventory"
     InventoryImage.BackgroundTransparency = 1
     InventoryImage.Size = UDim2.new(128/256,0,64/256,0)
     InventoryImage.Position = UDim2.new(38/256,0,60/256,0)
@@ -75,6 +77,7 @@ function CornerMenuButtons:__new(BottomFrame)
     local StoreButton = ImageEventBinder.new(StoreImage,UDim2.new(62/128,0,45/64,0),"rbxassetid://132718288","rbxassetid://132717962","rbxassetid://132717976")
 
     local CollectablesImage = Instance.new("ImageLabel")
+    CollectablesImage.Name = "Collectables"
     CollectablesImage.BackgroundTransparency = 1
     CollectablesImage.Size = UDim2.new(128/256,0,64/256,0)
     CollectablesImage.Position = UDim2.new(38/256,0,112/256,0)
