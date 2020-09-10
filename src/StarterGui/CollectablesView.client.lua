@@ -83,6 +83,7 @@ for BloxkinName,BloxkinData in pairs(Bloxkins) do
     BloxkinImage.Position = UDim2.new(BloxkinData.PosX/(1082 * 2),0,BloxkinData.PosY/600,0)
     BloxkinImage.Image = BloxkinData.LockedImage
     BloxkinImage.Parent = CollectablesScrollFrame
+    BloxkinImage.ZIndex = BloxkinData.PosY
     BloxkinImages[BloxkinName] = BloxkinImage
 end
 
