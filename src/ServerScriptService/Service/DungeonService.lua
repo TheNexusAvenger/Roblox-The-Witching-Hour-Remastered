@@ -234,7 +234,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
 
     --Clear the dungeon.
     ClearDungeon:FireAllClients(X,Y,Id)
-    self.DungeonAllocation:Dellocate(Id)
+    self.DungeonAllocation:Deallocate(Id)
     DungeonModel:Destroy()
 end
 

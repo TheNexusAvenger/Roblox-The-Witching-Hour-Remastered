@@ -11,6 +11,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
+local NexusDataStore = ReplicatedStorageProject:GetResource("ExternalUtil.NexusDataStore")
 
 local PlayerDataService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 PlayerDataService:SetClassName("PlayerDataService")
@@ -30,7 +31,7 @@ function PlayerDataService:LoadPlayer(Player)
     
     --Initialize the player data.
     self.PlayerData[Player] = PlayerData.GetPlayerData(Player)
-    self.PlayerData[Player]:InitializeFromSerializedData() --TODO: Fetch player data.
+    self.PlayerData[Player]:InitializeFromSerializedData(NexusDataStore:GetSaveData(Player):Get("SerializedPlayerData"))
 end
 
 --[[
@@ -44,7 +45,7 @@ end
 Saves the player data for a player.
 --]]
 function PlayerDataService:SavesPlayerData(Player)
-    --TODO: Implement
+    NexusDataStore:GetSaveData(Player):Set("SerializedPlayerData",self.PlayerData[Player].PlayerData)
 end
 
 --[[
@@ -53,6 +54,8 @@ Clears a player.
 function PlayerDataService:ClearPlayer(Player)
     --Save the player data.
     self:SavesPlayerData(Player)
+    NexusDataStore:GetSaveData(Player):Flush()
+    NexusDataStore:RemoveFromCache(Player)
 
     --Clear the resources.
     self.PlayerData[Player] = nil

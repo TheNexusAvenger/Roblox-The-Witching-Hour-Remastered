@@ -39,6 +39,12 @@
                     "NexusInstance": {
                         "$path": "./module/Nexus-Project/module/Nexus-Instance/src"
                     }
+                },
+                "NexusDataStore": {
+                    "$path": "./module/Nexus-Data-Store/src",
+                    "NexusInstance": {
+                        "$path": "./module/Nexus-Project/module/Nexus-Instance/src"
+                    }
                 }
             }
         },
