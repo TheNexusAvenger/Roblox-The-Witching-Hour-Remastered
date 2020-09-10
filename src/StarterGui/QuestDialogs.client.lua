@@ -235,5 +235,6 @@ DisplayItemAwards.OnClientEvent:Connect(function(Items)
         elseif Item.Type == "Bloxkin" then
             ItemAwardAnimation.DisplayBloxkinAwardFromPosition(Item.Name,UDim2.new(0.5,0,0.9,0))
         end
+        wait(0.25)
     end
 end)
