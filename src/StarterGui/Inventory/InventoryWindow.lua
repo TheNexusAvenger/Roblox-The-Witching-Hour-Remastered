@@ -594,7 +594,7 @@ function InventoryWindow:SetUpDraggning()
             end
         end
         for SlotName,SlotIcon in pairs(self.InventorySlotIcons) do
-            if SlotName == Slot then
+            if SlotName == ((Slot - 1) % SLOTS_PER_PAGE) + 1 then
                 SlotIcon.ViewportFrame.Visible = false
                 break
             end
