@@ -649,6 +649,7 @@ function InventoryWindow:SetUpDraggning()
             SwapSlots:FireServer(CurrentSlot,Slot)
         end
         CurrentDraggingFrame:Destroy()
+        CurrentDraggingFrame = nil
         CurrentIcon:Destroy()
 
         --Show the original icon.
