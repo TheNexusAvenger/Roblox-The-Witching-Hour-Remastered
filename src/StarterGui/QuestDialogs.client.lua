@@ -10,6 +10,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
+local ControlModule = require(Players.LocalPlayer.PlayerScripts:WaitForChild("PlayerModule"):WaitForChild("ControlModule"))
 local Quests = ReplicatedStorageProject:GetResource("State.Quests").new(Players.LocalPlayer)
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
@@ -113,16 +114,7 @@ local function EndDialog()
     Background:TweenPosition(UDim2.new(0.5,0,1.5,0),"Out","Quad",0.5,true)
 
     --Unlock the player.
-    local Character = Players.LocalPlayer.Character
-    if Character then
-        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-        if HumanoidRootPart then
-            local PositionLock = HumanoidRootPart:FindFirstChild("PositionLock")
-            if PositionLock then
-                PositionLock:Destroy()
-            end
-        end
-    end
+    ControlModule:Enable()
 end
 
 --[[
@@ -203,17 +195,7 @@ local function RunDialog(DialogData,NPCName,Adornee)
     Background:TweenPosition(UDim2.new(0.5,0,1,0),"Out","Quad",0.5,true)
 
     --Lock the player.
-    local Character = Players.LocalPlayer.Character
-    if Character then
-        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
-        if HumanoidRootPart and not HumanoidRootPart:FindFirstChild("PositionLock") then
-            local PositionLock = Instance.new("BodyPosition")
-            PositionLock.Name = "PositionLock"
-            PositionLock.Position = HumanoidRootPart.Position
-            PositionLock.MaxForce = Vector3.new(math.huge,0,math.huge)
-            PositionLock.Parent = HumanoidRootPart
-        end
-    end
+    ControlModule:Disable()
 
     --Run the dialog.
     RunDialogSection(DialogData,NPCName)
