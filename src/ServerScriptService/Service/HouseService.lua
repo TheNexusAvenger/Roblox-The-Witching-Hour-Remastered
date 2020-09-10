@@ -111,10 +111,8 @@ function HouseService:StartHouse(X,Y)
     self:SetHouseState(X,Y,"INACTIVE")
     if #PlayersInCell > 0 then
         DungeonService:RunDungeon(X,Y,PlayersInCell)
-        wait(10)
-    else
-        wait(30)
     end
+    wait(30)
 
     --Reset the house.
     self:SetHouseState(X,Y,"ACTIVE")
