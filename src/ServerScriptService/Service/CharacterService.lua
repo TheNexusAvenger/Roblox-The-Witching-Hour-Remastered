@@ -12,6 +12,7 @@ local RESPAWN_DELAY = 5
 
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local PhysicsService = game:GetService("PhysicsService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
@@ -25,6 +26,12 @@ ServerScriptServiceProject:SetContextResource(CharacterService)
 
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local PetService = ServerScriptServiceProject:GetResource("Service.PetService")
+
+
+
+--Set up the characters collision group.
+PhysicsService:CreateCollisionGroup("Characters")
+PhysicsService:CollisionGroupSetCollidable("Characters","Characters",false)
 
 
 
@@ -104,6 +111,18 @@ function CharacterService:SpawnCharacter(Player)
 
     --Spawn the pet.
     PetService:SpawnPet(Player)
+
+    --Make the character uncollidable with others.
+    for _,Part in pairs(Character:GetDescendants()) do
+        if Part:IsA("BasePart") then
+            PhysicsService:SetPartCollisionGroup(Part,"Characters")
+        end
+    end
+    Character.DescendantAdded:Connect(function(Part)
+        if Part:IsA("BasePart") then
+            PhysicsService:SetPartCollisionGroup(Part,"Characters")
+        end
+    end)
 end
 
 --[[
