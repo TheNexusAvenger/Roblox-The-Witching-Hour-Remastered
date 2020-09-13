@@ -25,11 +25,14 @@ ServerScriptServiceProject:SetContextResource(DungeonService)
 
 local DungeonAllocation = ReplicatedStorageProject:GetResource("State.DungeonAllocation")
 DungeonService.DungeonAllocation = DungeonAllocation.new()
+local MonsterData = ReplicatedStorageProject:GetResource("GameData.Generation.Monsters")
 local Zones = ReplicatedStorageProject:GetResource("State.Zones")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 local Dungeon = ServerStorageProject:GetResource("Dungeon")
+local Monsters = ServerStorageProject:GetResource("Monsters")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
+local QuestService = ServerScriptServiceProject:GetResource("Service.QuestService")
 
 
 
@@ -113,10 +116,51 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
     DungeonModel.Parent = DungeonsContainer
 
     local DungeonCompleted = false
+    local AlivePlayersMap = {}
     if Type == "Monster" then
         --Spawn monsters for the zone.
-        --TODO: Implement
-        DungeonCompleted = true
+        local MonstersInZone = MonsterData[Zone]
+        local MonsterSpawns = DungeonModel:WaitForChild("MonsterSpawns")
+        local MonstersAlive = 0
+        if MonstersInZone then
+            for i = 1,math.random(2,3) do
+                MonstersAlive = MonstersAlive + 1
+
+                --Create a random monster.
+                local RandomMonster = MonstersInZone[math.random(1,#MonstersInZone)]
+                local MonsterModel = Monsters:WaitForChild(RandomMonster.Name):Clone()
+                local Humanoid,HumanoidRootPart = MonsterModel:WaitForChild("Humanoid"),MonsterModel:WaitForChild("HumanoidRootPart")
+                MonsterModel.PrimaryPart = HumanoidRootPart
+
+                --Spawn the monster.
+                local RandomSpawnPart = MonsterSpawns:GetChildren()[math.random(1,#MonsterSpawns:GetChildren())]
+                MonsterModel:SetPrimaryPartCFrame(RandomSpawnPart.CFrame * CFrame.new((math.random() - 0.5) * RandomSpawnPart.Size.X,2 + (HumanoidRootPart.Size.Y/2) + Humanoid.HipHeight,(math.random() - 0.5) * RandomSpawnPart.Size.Z))
+                MonsterModel.Parent = DungeonModel
+
+                --Set up the monster.
+                --TODO: Implement
+
+                --Connect the monster being killed.
+                Humanoid.Died:Connect(function()
+                    --End the dungeon if all monsters were killed.
+                    MonstersAlive = MonstersAlive - 1
+                    if MonstersAlive == 0 then
+                        DungeonCompleted = true
+                    end
+
+                    --Register the monster kill for quests.
+                    for Player,_ in pairs(AlivePlayersMap) do
+                        QuestService:RegisterMonsterKill(Player,RandomMonster.Name)
+                    end
+
+                    --Destroy the monster.
+                    wait(5)
+                    MonsterModel:Destroy()
+                end)
+            end
+        else
+            DungeonCompleted = true
+        end
     elseif Type == "Treasure" then
         --Set up the treasure chests.
         local ValidChestId = math.random(1,4)
@@ -155,7 +199,6 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
     end
 
     --Connect players dying and move the players.
-    local AlivePlayersMap = {}
     local PlayersAlive = 0
     for _,Player in pairs(DungeonPlayers) do
         local Character = Player.Character

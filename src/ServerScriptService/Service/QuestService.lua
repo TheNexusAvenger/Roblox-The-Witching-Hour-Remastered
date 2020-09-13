@@ -210,6 +210,13 @@ function QuestService:SelectQuest(Player,QuestName)
 end
 
 --[[
+Registers a monster kill.
+--]]
+function QuestService:RegisterMonsterKill(Player,MonsterName)
+    self.PlayerQuests[Player]:RegisterMonsterKill(MonsterName)
+end
+
+--[[
 Clears a player.
 --]]
 function QuestService:ClearPlayer(Player)
