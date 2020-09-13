@@ -9,6 +9,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
+local Levels = ReplicatedStorageProject:GetResource("State.Levels")
 
 local CenterStats = NexusObject:Extend()
 CenterStats:SetClassName("CenterStats")
@@ -91,6 +92,7 @@ function CenterStats:__new(BottomFrame)
     --TODO: Connect energy
 
     --Create the experience bar.
+    local PlayerLevels = Levels.GetLevels(Players.LocalPlayer)
     local ExperienceBarBackground = Instance.new("ImageLabel")
     ExperienceBarBackground.BackgroundTransparency = 1
     ExperienceBarBackground.Size = UDim2.new(512/1024,0,16/256)
@@ -100,7 +102,7 @@ function CenterStats:__new(BottomFrame)
 
     local ExperienceBarFill = Instance.new("ImageLabel")
     ExperienceBarFill.BackgroundTransparency = 1
-    ExperienceBarFill.Size = UDim2.new(1,0,1,0)
+    ExperienceBarFill.Size = UDim2.new((PlayerLevels.TotalExperience - PlayerLevels.PreviousLevelExperience)/(PlayerLevels.NextLevelExperience - PlayerLevels.PreviousLevelExperience),0,1,0)
     ExperienceBarFill.Image = "rbxassetid://132725249"
     ExperienceBarFill.Parent = ExperienceBarBackground
 
@@ -117,7 +119,9 @@ function CenterStats:__new(BottomFrame)
     ExperienceBarText.Image = "rbxassetid://132725160"
     ExperienceBarText.Parent = ExperienceBarBackground
 
-    --TODO: Connect experience
+    PlayerLevels.Changed:Connect(function()
+        ExperienceBarFill:TweenSize(UDim2.new((PlayerLevels.TotalExperience - PlayerLevels.PreviousLevelExperience)/(PlayerLevels.NextLevelExperience - PlayerLevels.PreviousLevelExperience),0,1,0),"InOut","Quad",0.5,true)
+    end)
 
     --Create the attacks bar.
     --TODO: Implement attacks

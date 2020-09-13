@@ -21,6 +21,7 @@ local ItemIcon = ReplicatedStorageProject:GetResource("UI.ItemIcon")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
+local Levels = ReplicatedStorageProject:GetResource("State.Levels")
 local PlayerDisplay = require(script.Parent:WaitForChild("PlayerDisplay"))
 local PetDisplay = require(script.Parent:WaitForChild("PetDisplay"))
 local SwapSlots = ReplicatedStorageProject:GetResource("GameReplication.InventoryReplication.SwapSlots")
@@ -90,15 +91,20 @@ function InventoryWindow:__new()
     LevelBackground.Image = "rbxassetid://5558262263"
     LevelBackground.Parent = PlayerMenu
 
+    local PlayerLevels = Levels.GetLevels(Players.LocalPlayer)
     local LevelText = Instance.new("TextLabel")
     LevelText.BackgroundTransparency = 1
     LevelText.Size = UDim2.new(0.8,0,0.8,0)
     LevelText.Position = UDim2.new(0.1,0,0.025,0)
     LevelText.Font = Enum.Font.Antique
-    LevelText.Text = "Level 1"
+    LevelText.Text = "Level "..tostring(PlayerLevels.Level)
     LevelText.TextColor3 = Color3.new(40/255,40/255,40/255)
     LevelText.TextScaled = true
     LevelText.Parent = LevelBackground
+
+    PlayerLevels:GetPropertyChangedSignal("Level"):Connect(function()
+        LevelText.Text = "Level "..tostring(PlayerLevels.Level)
+    end)
 
     --Create the username display.
     local UsernameBackground = Instance.new("ImageLabel")
