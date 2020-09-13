@@ -138,7 +138,8 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                 MonsterModel.Parent = DungeonModel
 
                 --Set up the monster.
-                --TODO: Implement
+                local SetupFunction = ServerStorageProject:GetResource("MonsterScripts."..RandomMonster.Type)
+                SetupFunction(MonsterModel,DungeonPlayers)
 
                 --Connect the monster being killed.
                 Humanoid.Died:Connect(function()
