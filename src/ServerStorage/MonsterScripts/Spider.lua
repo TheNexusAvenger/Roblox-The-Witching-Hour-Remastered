@@ -38,7 +38,13 @@ return function(MonsterModel,DungeonPlayers)
             end
 
             --Run the lunge attack.
-            HumanoidRootPart.Velocity = (HumanoidRootPart.CFrame.lookVector * 200) + Vector3.new(0,50,0)
+            local BodyVelocity = Instance.new("BodyVelocity")
+            BodyVelocity.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+            BodyVelocity.Velocity = (HumanoidRootPart.CFrame.lookVector * 200) + Vector3.new(0,50,0)
+            BodyVelocity.Parent = HumanoidRootPart
+            delay(0.5,function()
+                BodyVelocity:Destroy()
+            end)
         end
     end)()
 end
