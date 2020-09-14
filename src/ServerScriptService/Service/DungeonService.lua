@@ -25,11 +25,14 @@ ServerScriptServiceProject:SetContextResource(DungeonService)
 
 local DungeonAllocation = ReplicatedStorageProject:GetResource("State.DungeonAllocation")
 DungeonService.DungeonAllocation = DungeonAllocation.new()
+local Levels = ReplicatedStorageProject:GetResource("State.Levels")
 local MonsterData = ReplicatedStorageProject:GetResource("GameData.Generation.Monsters")
+local Attacks = ReplicatedStorageProject:GetResource("GameData.Item.Attacks")
 local Zones = ReplicatedStorageProject:GetResource("State.Zones")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 local Dungeon = ServerStorageProject:GetResource("Dungeon")
 local Monsters = ServerStorageProject:GetResource("Monsters")
+local EnergyService = ServerScriptServiceProject:GetResource("Service.EnergyService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
 local QuestService = ServerScriptServiceProject:GetResource("Service.QuestService")
@@ -63,6 +66,14 @@ DisplayReward.Parent = DungeonReplication
 local DisplayMessage = Instance.new("RemoteEvent")
 DisplayMessage.Name = "DisplayMessage"
 DisplayMessage.Parent = DungeonReplication
+
+local PerformAttack = Instance.new("RemoteEvent")
+PerformAttack.Name = "PerformAttack"
+PerformAttack.Parent = DungeonReplication
+
+PerformAttack.OnServerEvent:Connect(function(Player,AttackId,TargetPosition)
+    DungeonService:PerformAttack(Player,AttackId,TargetPosition)
+end)
 
 
 
@@ -280,6 +291,24 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
     ClearDungeon:FireAllClients(X,Y,Id)
     self.DungeonAllocation:Deallocate(Id)
     DungeonModel:Destroy()
+end
+
+--[[
+Performs an attack from a player.
+--]]
+function DungeonService:PerformAttack(Player,AttackId,TargetPosition)
+    --Return if the player is not in a dungeon.
+    if not self:GetActive(Player) then return end
+    
+    --Return if the attack can't be performed.
+    local AttackData = Attacks[AttackId]
+    if not AttackData then return end
+    if Levels.GetLevels(Player).Level < (AttackData.RequiredLevel or 0) then return end
+
+    --Perform the attack.
+    if EnergyService:UseEnergy(Player,AttackData.EnergyPerUse or 0) then
+        --TODO: Implement
+    end
 end
 
 
