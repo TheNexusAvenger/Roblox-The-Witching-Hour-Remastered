@@ -63,7 +63,6 @@ end
 Performs the attack on the server.
 --]]
 function SwordAttack.PerformServerAttack(Player,DungeonModel,Target)
-    warn(DungeonModel)
     local Character = Player.Character
     if Character then
         local Humanoid = Character:FindFirstChild("Humanoid")
