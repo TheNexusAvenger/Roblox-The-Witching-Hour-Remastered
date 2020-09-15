@@ -123,6 +123,12 @@ function CharacterService:SpawnCharacter(Player)
             PhysicsService:SetPartCollisionGroup(Part,"Characters")
         end
     end)
+
+    --Remove the default healing script.
+    local HealthScript = Character:FindFirstChild("Health")
+    if HealthScript then
+        HealthScript:Destroy()
+    end
 end
 
 --[[
