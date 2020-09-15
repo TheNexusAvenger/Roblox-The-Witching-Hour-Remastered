@@ -12,7 +12,7 @@ return {
         RequiredLevel = 0,
         EnergyPerUse = 0,
         ActivationKeys = {Enum.KeyCode.One},
-        AttackCooldown = 0.5,
+        AttackCooldown = 0.7,
     },
     {
         Name = "Pumpkin",
