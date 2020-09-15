@@ -14,7 +14,7 @@ local BaseMonsterSetupFunction = require(script.Parent:WaitForChild("BaseMonster
 return function(MonsterModel,DungeonPlayers)
     --Set up the base monster.
     BaseMonsterSetupFunction(MonsterModel,DungeonPlayers,{
-        Health = 1300,
+        Health = 130,
         MinDamage = 5,
         MaxDamage = 10,
         DamageCooldown = 5,

@@ -802,7 +802,7 @@
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>8.4003973</X>
-						<Y>3.10000706</Y>
+						<Y>4.10000706</Y>
 						<Z>-38.2958984</Z>
 						<R00>0</R00>
 						<R01>0</R01>
@@ -859,7 +859,7 @@
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>1.70000017</X>
-						<Y>0.199999988</Y>
+						<Y>2.20000005</Y>
 						<Z>1.4000001</Z>
 					</Vector3>
 				</Properties>
@@ -890,20 +890,20 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX0D32F39151AC432896D0805D3652F17F">
+				<Item class="Motor6D" referent="RBXBF14B55016F046BCB575EBD1BF0AFFF8">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
-							<Y>0</Y>
+							<Y>-1</Y>
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -913,11 +913,11 @@
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -6969,7 +6969,7 @@
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>-0.599602997</X>
-						<Y>3.10000706</Y>
+						<Y>4.10000706</Y>
 						<Z>-38.2958984</Z>
 						<R00>0</R00>
 						<R01>0</R01>
@@ -7026,7 +7026,7 @@
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>1.70000017</X>
-						<Y>0.199999988</Y>
+						<Y>2.20000005</Y>
 						<Z>1.4000001</Z>
 					</Vector3>
 				</Properties>
@@ -7057,20 +7057,20 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX1B05AB920F704869A758197428EBB509">
+				<Item class="Motor6D" referent="RBXB096DE69543345E18396F3258E7D4B84">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
-							<Y>0</Y>
+							<Y>-1</Y>
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -7080,11 +7080,11 @@
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -8623,7 +8623,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX3832718433174684B6149D83EFF3495D">
+				<Item class="Weld" referent="RBXC57B0DAE2BE44F9EA7E4FD23F379C497">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -9748,7 +9748,7 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX4372004014944B8AAEAA18893254C95B">
+				<Item class="Weld" referent="RBXE4C9F2D6571145C084313CE2194CFBC0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -17180,7 +17180,7 @@
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>2.40039706</X>
-						<Y>3.10000706</Y>
+						<Y>4.10000706</Y>
 						<Z>-38.2958984</Z>
 						<R00>0</R00>
 						<R01>0</R01>
@@ -17237,7 +17237,7 @@
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>1.70000017</X>
-						<Y>0.199999988</Y>
+						<Y>2.20000005</Y>
 						<Z>1.4000001</Z>
 					</Vector3>
 				</Properties>
@@ -17268,20 +17268,20 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXEB5CC1E16105413B9FA40AEE5FF5BBC6">
+				<Item class="Motor6D" referent="RBXDBA5ED664D314FDABDDB56F5A00B0639">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
-							<Y>0</Y>
+							<Y>-1</Y>
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -17291,11 +17291,11 @@
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -18752,7 +18752,7 @@
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>5.4003973</X>
-						<Y>3.10000706</Y>
+						<Y>4.10000706</Y>
 						<Z>-38.2958984</Z>
 						<R00>0</R00>
 						<R01>0</R01>
@@ -18809,7 +18809,7 @@
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>1.70000017</X>
-						<Y>0.199999988</Y>
+						<Y>2.20000005</Y>
 						<Z>1.4000001</Z>
 					</Vector3>
 				</Properties>
@@ -18840,20 +18840,20 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXB7C00CFAFEF44E0AA15D5041A1D2DEF4">
+				<Item class="Motor6D" referent="RBX89495F47C6734361876F6F71F4B54F35">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
-							<Y>0</Y>
+							<Y>-1</Y>
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -18863,11 +18863,11 @@
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -20324,7 +20324,7 @@
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>11.4003973</X>
-						<Y>3.10000706</Y>
+						<Y>4.10000706</Y>
 						<Z>-38.2958984</Z>
 						<R00>0</R00>
 						<R01>0</R01>
@@ -20381,7 +20381,7 @@
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>1.70000017</X>
-						<Y>0.199999988</Y>
+						<Y>2.20000005</Y>
 						<Z>1.4000001</Z>
 					</Vector3>
 				</Properties>
@@ -20412,20 +20412,20 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBX7CA88EAF57DB41758D3A37177FAE47E9">
+				<Item class="Motor6D" referent="RBX5A85593E2E974DDBB8B05EBC9733F301">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
-							<Y>0</Y>
+							<Y>-1</Y>
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -20435,11 +20435,11 @@
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -21896,7 +21896,7 @@
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>14.4003973</X>
-						<Y>3.10000706</Y>
+						<Y>4.10000706</Y>
 						<Z>-38.2958984</Z>
 						<R00>0</R00>
 						<R01>0</R01>
@@ -21953,7 +21953,7 @@
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>1.70000017</X>
-						<Y>0.199999988</Y>
+						<Y>2.20000005</Y>
 						<Z>1.4000001</Z>
 					</Vector3>
 				</Properties>
@@ -21984,20 +21984,20 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Motor6D" referent="RBXDAD588967BF84B3CA0F433B43CE818C6">
+				<Item class="Motor6D" referent="RBXA05360A87BE94C319C3B872621FEB025">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
-							<Y>0</Y>
+							<Y>-1</Y>
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>
@@ -22007,11 +22007,11 @@
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
-							<R02>-4.37113883e-08</R02>
+							<R02>4.37113883e-08</R02>
 							<R10>0</R10>
 							<R11>1</R11>
 							<R12>0</R12>
-							<R20>4.37113883e-08</R20>
+							<R20>-4.37113883e-08</R20>
 							<R21>0</R21>
 							<R22>1</R22>
 						</CoordinateFrame>

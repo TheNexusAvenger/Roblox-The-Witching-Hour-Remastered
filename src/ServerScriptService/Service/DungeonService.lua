@@ -21,6 +21,7 @@ local ServerStorageProject = require(ReplicatedStorage:WaitForChild("Project"):W
 local DungeonService = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusInstance"):Extend()
 DungeonService:SetClassName("DungeonService")
 DungeonService.ActivePlayers = {}
+DungeonService.PlayerAttackCooldowns = {}
 ServerScriptServiceProject:SetContextResource(DungeonService)
 
 local DungeonAllocation = ReplicatedStorageProject:GetResource("State.DungeonAllocation")
@@ -217,6 +218,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
         if Character and not self:GetActive(Player) then
             local Humanoid = Character:FindFirstChild("Humanoid")
             if Humanoid and Humanoid.Health > 0 then
+                --Connect the player dying.
                 CharacterService:SaveLastSpot(Player)
                 self:SetActive(Player)
                 AlivePlayersMap[Player] = true
@@ -228,7 +230,36 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                     EndDungeon:FireClient(Player,X,Y,Id)
                 end)
 
+                --Move the player.
                 StartDungeon:FireClient(Player,X,Y,Id,Type)
+
+                --Add the sword.
+                if Type == "Monster" then
+                    local RightHand = Character:FindFirstChild("RightHand")
+                    if RightHand then
+                        local RightGripAttachment = RightHand:FindFirstChild("RightGripAttachment")
+                        if RightGripAttachment then
+                            local Sword = Instance.new("Part")
+                            Sword.Name = "Sword"
+                            Sword.CanCollide = false
+                            Sword.Size = Vector3.new(0.51, 4.11, 0.47)
+                            Sword.Parent = Character
+
+                            local SwordMesh = Instance.new("SpecialMesh")
+                            SwordMesh.MeshType = Enum.MeshType.FileMesh
+                            SwordMesh.MeshId = "rbxassetid://132795650"
+                            SwordMesh.TextureId = "rbxassetid://132795756"
+                            SwordMesh.Parent = Sword
+
+                            local SwordWeld = Instance.new("Weld")
+                            SwordWeld.Part0 = RightHand
+                            SwordWeld.Part1 = Sword
+                            SwordWeld.C0 = RightGripAttachment.CFrame
+                            SwordWeld.C1 = CFrame.new(0,-1.5,0)
+                            SwordWeld.Parent = RightHand
+                        end
+                    end
+                end
             end
         end
     end
@@ -304,11 +335,18 @@ function DungeonService:PerformAttack(Player,AttackId,TargetPosition)
     local AttackData = Attacks[AttackId]
     if not AttackData then return end
     if Levels.GetLevels(Player).Level < (AttackData.RequiredLevel or 0) then return end
+    if self.PlayerAttackCooldowns[Player] then return end
+    self.PlayerAttackCooldowns[Player] = true
 
     --Perform the attack.
     if EnergyService:UseEnergy(Player,AttackData.EnergyPerUse or 0) then
-        --TODO: Implement
+        local AttackClass = ReplicatedStorageProject:GetResource("State.Tool.Attack."..AttackData.Name)
+        if AttackClass.PerformServerAttack then
+            AttackClass.PerformServerAttack(Player,TargetPosition)
+        end
     end
+    wait(AttackData.AttackCooldown or 0)
+    self.PlayerAttackCooldowns[Player] = nil
 end
 
 
