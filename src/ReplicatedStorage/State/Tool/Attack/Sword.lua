@@ -62,20 +62,20 @@ end
 --[[
 Performs the attack on the server.
 --]]
-function SwordAttack.PerformServerAttack(Player,Target)
+function SwordAttack.PerformServerAttack(Player,DungeonModel,Target)
+    warn(DungeonModel)
     local Character = Player.Character
     if Character then
         local Humanoid = Character:FindFirstChild("Humanoid")
         if Humanoid and Humanoid.Health > 0 then
             local Sword = Character:WaitForChild("Sword")
-            local Dungeons = Workspace:WaitForChild("Dungeons")
 
             --Connect damaging the sword.
             local MonsterDBs = {}
             local RandomAnimation = SWORD_ANIMATIONS[math.ceil((Target.X + Target.Z) % #SWORD_ANIMATIONS)]
             local TouchEvent = Sword.Touched:Connect(function(TouchPart)
                 local MonsterCharacter = TouchPart.Parent
-                if MonsterCharacter and MonsterCharacter:IsDescendantOf(Dungeons) and not MonsterDBs[MonsterCharacter] then
+                if MonsterCharacter and MonsterCharacter:IsDescendantOf(DungeonModel) and not MonsterDBs[MonsterCharacter] then
                     local MonsterHumanoid = MonsterCharacter:FindFirstChild("Humanoid")
                     if MonsterHumanoid then
                         MonsterDBs[MonsterCharacter] = true

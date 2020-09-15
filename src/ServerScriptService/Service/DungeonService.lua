@@ -82,14 +82,14 @@ end)
 Returns if a player is active.
 --]]
 function DungeonService:GetActive(Player)
-    return self.ActivePlayers[Player] == true
+    return self.ActivePlayers[Player]
 end
 
 --[[
 Sets a player as active.
 --]]
-function DungeonService:SetActive(Player)
-    self.ActivePlayers[Player] = true
+function DungeonService:SetActive(Player,DungeonModel)
+    self.ActivePlayers[Player] = DungeonModel
 end
 
 --[[
@@ -220,7 +220,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
             if Humanoid and Humanoid.Health > 0 then
                 --Connect the player dying.
                 CharacterService:SaveLastSpot(Player)
-                self:SetActive(Player)
+                self:SetActive(Player,DungeonModel)
                 AlivePlayersMap[Player] = true
                 PlayersAlive = PlayersAlive + 1
                 Humanoid.Died:Connect(function()
@@ -329,7 +329,8 @@ Performs an attack from a player.
 --]]
 function DungeonService:PerformAttack(Player,AttackId,TargetPosition)
     --Return if the player is not in a dungeon.
-    if not self:GetActive(Player) then return end
+    local DungeonModel = self:GetActive(Player)
+    if not DungeonModel then return end
     
     --Return if the attack can't be performed.
     local AttackData = Attacks[AttackId]
@@ -342,7 +343,7 @@ function DungeonService:PerformAttack(Player,AttackId,TargetPosition)
     if EnergyService:UseEnergy(Player,AttackData.EnergyPerUse or 0) then
         local AttackClass = ReplicatedStorageProject:GetResource("State.Tool.Attack."..AttackData.Name)
         if AttackClass.PerformServerAttack then
-            AttackClass.PerformServerAttack(Player,TargetPosition)
+            AttackClass.PerformServerAttack(Player,DungeonModel,TargetPosition)
         end
     end
     wait(AttackData.AttackCooldown or 0)
