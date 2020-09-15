@@ -23,7 +23,7 @@ return {
         ActivationKeys = {Enum.KeyCode.Two},
     },
     {
-        Name = "[ Name Unknown ]",
+        Name = "Snowball", --Fabricated name.
         Description = "Blast an enemy with ice to slow them down!",
         Icon = 132790870,
         RequiredLevel = 5,
