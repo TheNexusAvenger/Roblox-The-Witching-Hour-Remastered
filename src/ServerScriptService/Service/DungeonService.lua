@@ -312,6 +312,10 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                 if Humanoid then
                     Humanoid.Health = Humanoid.MaxHealth
                 end
+                local Sword = Character:FindFirstChild("Sword")
+                if Sword then
+                    Sword:Destroy()
+                end
             end
         end
     else
