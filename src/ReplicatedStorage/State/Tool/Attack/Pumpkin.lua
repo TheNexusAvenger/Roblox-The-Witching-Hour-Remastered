@@ -60,9 +60,9 @@ function PumpkinAttack.PerformServerAttack(Player,DungeonModel,Target)
                         PumpkinProjectile:Destroy()
 
                         --Start damaging the monster.
-                        MonsterHumanoid:TakeDamage(20)
+                        MonsterHumanoid:TakeDamage(20 * (Character:FindFirstChild("BoostEffect") and 2 or 1))
                         for i = 1,24 do
-                            MonsterHumanoid:TakeDamage(3)
+                            MonsterHumanoid:TakeDamage(3 * (Character:FindFirstChild("BoostEffect") and 2 or 1))
                             wait(0.125)
                         end
                         Fire:Destroy()

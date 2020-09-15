@@ -78,7 +78,7 @@ function SwordAttack.PerformServerAttack(Player,DungeonModel,Target)
                     local MonsterHumanoid = MonsterCharacter:FindFirstChild("Humanoid")
                     if MonsterHumanoid then
                         MonsterDBs[MonsterCharacter] = true
-                        MonsterHumanoid:TakeDamage(RandomAnimation.Damage)
+                        MonsterHumanoid:TakeDamage(RandomAnimation.Damage * (Character:FindFirstChild("BoostEffect") and 2 or 1))
                     end
                 end
             end)

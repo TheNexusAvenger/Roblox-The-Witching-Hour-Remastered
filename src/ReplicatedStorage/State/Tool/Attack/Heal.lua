@@ -152,16 +152,18 @@ function HealEffect.PerformServerAttack(Player,DungeonModel,Target)
             TransparentWaveEffect.RotSpeed = NumberRange.new(100,200)
             TransparentWaveEffect.Parent = Attachment
 
-            --Heal the player.
-            for i = 1,25 do
-                wait(0.25)
-                if Humanoid.Health > 0 then
-                    Humanoid.Health = Humanoid.Health + 1
+            coroutine.wrap(function()
+                --Heal the player.
+                for i = 1,25 do
+                    wait(0.25)
+                    if Humanoid.Health > 0 then
+                        Humanoid.Health = Humanoid.Health + (Character:FindFirstChild("BoostEffect") and 2 or 1)
+                    end
                 end
-            end
 
-            --Clear the effect.
-            Attachment:Destroy()
+                --Clear the effect.
+                Attachment:Destroy()
+            end)()
         end
     end
 end
