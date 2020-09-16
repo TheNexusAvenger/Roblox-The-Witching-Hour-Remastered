@@ -213,13 +213,20 @@ function CornerMap:__new(BottomFrame)
     end
 
     --Set up opening and closing the map.
+    local GuiOpenStatesFolder = script.Parent.Parent:WaitForChild("GuiOpenStates")
+    local MapOpenState = Instance.new("BoolValue")
+    MapOpenState.Name = "Map"
+    MapOpenState.Value = false
+    MapOpenState.Parent = GuiOpenStatesFolder
+
     local DB = true
-    local MapOpen = false
+    MapOpenState.Changed:Connect(function()
+        Background:TweenPosition(UDim2.new(0.5,0,MapOpenState.Value and 0.5 or 1.5),"Out","Quad",0.5,true)
+    end)
     MiniMapContainer.MouseButton1Down:Connect(function()
         if DB then
             DB = false
-            MapOpen = not MapOpen
-            Background:TweenPosition(UDim2.new(0.5,0,MapOpen and 0.5 or 1.5),"Out","Quad",0.5,true)
+            MapOpenState.Value = not MapOpenState.Value
             wait()
             DB = true
         end
@@ -227,8 +234,7 @@ function CornerMap:__new(BottomFrame)
     MapCloseButton.Button.MouseButton1Down:Connect(function()
         if DB then
             DB = false
-            MapOpen = false
-            Background:TweenPosition(UDim2.new(0.5,0,1.5),"Out","Quad",0.5,true)
+            MapOpenState.Value = false
             wait()
             DB = true
         end

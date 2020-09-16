@@ -21,6 +21,10 @@ local PLAYER_DATA_LAYOUT = {
         Type = "Table",
         Default = "[]",
     },
+    ToolsOwned = {
+        Type = "Table",
+        Default = "[]",
+    },
     CurrentPet = {
         Type = "String",
         Default = "Dog",
