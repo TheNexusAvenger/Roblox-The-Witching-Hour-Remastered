@@ -7,6 +7,40 @@ Class is static (should not be created).
 
 local DUNGEON_TREASURE_CHEST_CHANCE = 0.1
 local REWARD_TREASURE_CHEST_CHANGE = 0.05
+local DUNGEON_COLORS = {
+    {
+        --Orange
+        ColorLight = {
+            Color = Color3.fromRGB(255,102,0),
+        },
+        ColorFire = {
+            Color = Color3.fromRGB(191,191,0),
+			SecondaryColor = Color3.fromRGB(98,103,0),
+        },
+        ColorPillar = {
+            Color = Color3.fromRGB(170,85,0),
+        },
+        Mesh = {
+            TextureId = "rbxassetid://16973739",
+        },
+    },
+    {
+        --Purple
+        ColorLight = {
+            Color = Color3.fromRGB(106,0,255),
+        },
+        ColorFire = {
+            Color = Color3.fromRGB(102,0,191),
+			SecondaryColor = Color3.fromRGB(22,0,34),
+        },
+        ColorPillar = {
+            Color = Color3.fromRGB(107,50,124),
+        },
+        Mesh = {
+            TextureId = "rbxassetid://132648848",
+        },
+    },
+}
 
 
 
@@ -126,6 +160,14 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
     DungeonModel.PrimaryPart = DungeonModel:WaitForChild("Ground")
     DungeonModel:SetPrimaryPartCFrame(CFrame.new(X * 100,-250 * Height,Y * 100))
     DungeonModel.Parent = DungeonsContainer
+    
+    --Recolor the dungeon.
+    local Colors = DUNGEON_COLORS[math.random(1,#DUNGEON_COLORS)]
+    for _,Ins in pairs(DungeonModel:GetDescendants()) do
+        for Property,Value in pairs(Colors[Ins.Name] or {}) do
+            Ins[Property] = Value
+        end
+    end
 
     local DungeonCompleted = false
     local AlivePlayersMap = {}
