@@ -4018,7 +4018,7 @@ return {
 			RequiredQuests = {
 				{
 					Name = "Jackal and Hide",
-					Status = "AllItems"
+					Status = {"AllItems","TurnedIn"},
 				},
 				{
 					Name = "Tomb Sweet Tomb",
