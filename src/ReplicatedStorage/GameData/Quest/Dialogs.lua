@@ -1393,6 +1393,7 @@ return {
 				}
 			},
 			Text = "Hello. You might not want to get to close.",
+			TurnIn = "Grab a Bite",
 			Alternatives = {
 				{
 					Text = "Why? Is something wrong?",
