@@ -156,16 +156,16 @@ local function RunDialogSection(DialogData,NPCName)
                             Event:Disconnect()
                         end
 
+                        --Claim the quest.
+                        if RepsonseData.Quest then
+                            Quests:AddQuest(RepsonseData.Quest)
+                            StartQuest:FireServer(NPCName,RepsonseData.Quest)
+                        end
+
                         if RepsonseData.Response then
                             --Run the next dialog.
                             RunDialogSection(RepsonseData.Response,NPCName)
                         else
-                            --Claim the quest.
-                            if RepsonseData.Quest then
-                                Quests:AddQuest(RepsonseData.Quest)
-                                StartQuest:FireServer(NPCName,RepsonseData.Quest)
-                            end
-
                             --End the dialog.
                             EndDialog()
                         end
