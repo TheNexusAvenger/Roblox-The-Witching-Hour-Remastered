@@ -4039,31 +4039,6 @@ return {
 			}
 		},
 		{
-			Name = "Creature Keeper_JackalAndHide_DONE2",
-			--TODO: This dialog is fabricated.
-			RequiredQuests = {
-				{
-					Name = "Jackal and Hide",
-					Status = "TurnedIn"
-				},
-				{
-					Name = "Tomb Sweet Tomb",
-					Status = "NotUnlocked"
-				}
-			},
-			Text = "I sense that you have the Creeper Crunchies.",
-			Alternatives = {
-				{
-					Text = "Sure do! Am I done yet??",
-					Response = {
-						Text = "Yes, almost. Just head over to Ostrich! He has one more quest for you.",
-						Quest = "Tomb Sweet Tomb",
-						End = true
-					}
-				}
-			}
-		},
-		{
 			Name = "Creature Keeper_FALLBACK",
 			RequiredQuests = nil,
 			Text = "Sorry, I specialize only in feed for more monsterious companions than yours.",
