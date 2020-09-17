@@ -128,6 +128,12 @@ local function RunDialogSection(DialogData,NPCName)
         TurnInQuest:FireServer(NPCName,DialogData.TurnIn)
     end
 
+    --Claim the quest.
+    if DialogData.Quest then
+        Quests:AddQuest(DialogData.Quest)
+        StartQuest:FireServer(NPCName,DialogData.Quest)
+    end
+
     --Update the text bubble.
     NPCDialogText.Text = DialogData.Text
 
@@ -148,12 +154,6 @@ local function RunDialogSection(DialogData,NPCName)
                         --Disconnect the button events.
                         for _,Event in pairs(ResponseEvents) do
                             Event:Disconnect()
-                        end
-
-                        --Claim the quest.
-                        if RepsonseData.Quest then
-                            Quests:AddQuest(RepsonseData.Quest)
-                            StartQuest:FireServer(NPCName,RepsonseData.Quest)
                         end
 
                         if RepsonseData.Response then
