@@ -18,6 +18,20 @@ if game.PlaceId == 5674151342 then
             SwordLunge = "rbxassetid://2960989618",
             SwordOverhead = "rbxassetid://2960990006",
         },
+
+        --Developer Produced used in the game.
+        DeveloperProducts = {
+            HalloCycle = 1087548927,
+            TrickOrTreatBag = 1087549221,
+            Candy17 = 1087549438,
+            Candy85 = 1087549718,
+            Candy170 = 1087549770,
+            Candy850 = 1087549867,
+            Candy1700 = 1087549950,
+            Candy8500 = 1087550004,
+            Candy17000 = 1087550065,
+            Candy85000 = 1087550098,
+        },
     }
 else
     --Nexus Development release (default)
@@ -27,6 +41,21 @@ else
             SwordAttack = "rbxassetid://2016260994",
             SwordLunge = "rbxassetid://2016262978",
             SwordOverhead = "rbxassetid://2016256809",
+        },
+
+        --Developer Produced used in the game.
+        --TODO: Same as Nexus Development Quality Assurance for testing; must create new ones for release.
+        DeveloperProducts = {
+            HalloCycle = 1087548927,
+            TrickOrTreatBag = 1087549221,
+            Candy17 = 1087549438,
+            Candy85 = 1087549718,
+            Candy170 = 1087549770,
+            Candy850 = 1087549867,
+            Candy1700 = 1087549950,
+            Candy8500 = 1087550004,
+            Candy17000 = 1087550065,
+            Candy85000 = 1087550098,
         },
     }
 end
