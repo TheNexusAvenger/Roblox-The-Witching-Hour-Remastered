@@ -31,7 +31,7 @@ local PLAYER_DATA_LAYOUT = {
     },
     Currency = {
         Type = "Integer",
-        Default = 0,
+        Default = 10000, --TODO: Revert
     },
     WarpPurchased = {
         Type = "Boolean",

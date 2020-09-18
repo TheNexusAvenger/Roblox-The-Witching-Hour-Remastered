@@ -11,8 +11,10 @@ local ReplicatedStorageProject = require(game:GetService("ReplicatedStorage"):Wa
 
 local StoreItems = ReplicatedStorageProject:GetResource("GameData.Item.Store")
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
+local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData").GetPlayerData(Players.LocalPlayer)
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory").GetInventory(Players.LocalPlayer)
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
+local PurchaseItem = ReplicatedStorageProject:GetResource("GameReplication.StoreReplication.PurchaseItem")
 
 local StoreItem = NexusObject:Extend()
 StoreItem:SetClassName("StoreItem")
@@ -112,13 +114,17 @@ function StoreItem:__new(TransactionId,Parent)
                 --Hide the button.
                 DB = false
                 BuyImage.Visible = false
+                self.TransactionInProgress = true
                 
                 --Start the purchase.
                 BuyStatusText.Text = "Please wait..."
                 BuyStatusText.TextColor3 = Color3.new(1,1,1)
                 BuyStatusText.TextStrokeColor3 = Color3.new(0,0,0)
                 BuyStatusText.Visible = true
-                local PurchaseSuccessful = true --TODO: Implment
+                local PurchaseSuccessful = false
+                if PlayerData:GetValue("Currency") >= self.TransactionData.CostCandy and (not self.TransactionData.CanPurchase or self.TransactionData.CanPurchase(Players.LocalPlayer)) then
+                    PurchaseSuccessful = PurchaseItem:InvokeServer(TransactionId)
+                end
     
                 --Show the status.
                 if PurchaseSuccessful then
@@ -131,6 +137,7 @@ function StoreItem:__new(TransactionId,Parent)
                     BuyStatusText.TextStrokeColor3 = Color3.new(100/255,0,0)
                 end
                 wait(1)
+                self.TransactionInProgress = nil
                 BuyImage.Visible = true
                 BuyStatusText.Visible = false
                 DB = true
@@ -141,6 +148,7 @@ function StoreItem:__new(TransactionId,Parent)
     --Connect inventory space running out.
     if self.TransactionData.RequiresInventorySpace then
         Inventory.InventoryChanged:Connect(function()
+            while self.TransactionInProgress do wait() end
             if Inventory:GetNextOpenSlot() then
                 BuyStatusText.Visible = false
                 BuyImage.Visible = true
