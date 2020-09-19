@@ -89,7 +89,7 @@ return {
     },
 
     --TODO: The textures are unknown.
-    ["Wereworlf"] = {
+    ["Werewolf"] = {
         Dog = 132549809,
         Cat = 132553894,
         Pig = 0,
