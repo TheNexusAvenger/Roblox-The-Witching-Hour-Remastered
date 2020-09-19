@@ -56,6 +56,9 @@ CollectablesScrollFrame.Position = UDim2.new(0.026,0,0.036,0)
 CollectablesScrollFrame.Size = UDim2.new(1 - (0.026 * 2),0,1 - (0.036 * 2),0)
 CollectablesScrollFrame.CanvasSize = UDim2.new(2 * (1 - (0.026 * 2)),0,0,0)
 CollectablesScrollFrame.ScrollBarThickness = 10
+CollectablesScrollFrame.TopImage = "rbxassetid://5706837205"
+CollectablesScrollFrame.MidImage = "rbxassetid://5706836960"
+CollectablesScrollFrame.BottomImage = "rbxassetid://5706836746"
 CollectablesScrollFrame.Parent = Background
 
 local BackgroundTexture1 = Instance.new("ImageLabel")

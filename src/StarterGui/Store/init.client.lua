@@ -91,6 +91,9 @@ StoreScrollingFrame.BackgroundTransparency = 1
 StoreScrollingFrame.BorderSizePixel = 0
 StoreScrollingFrame.Size = UDim2.new(1 - (20/903),0,1 - (245/640),0)
 StoreScrollingFrame.Position = UDim2.new(10/903,0,221/640,0)
+StoreScrollingFrame.TopImage = "rbxassetid://5706837205"
+StoreScrollingFrame.MidImage = "rbxassetid://5706836960"
+StoreScrollingFrame.BottomImage = "rbxassetid://5706836746"
 StoreScrollingFrame.Parent = Background
 
 StoreGridLayout = Instance.new("UIGridLayout")

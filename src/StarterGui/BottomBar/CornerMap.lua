@@ -139,6 +139,9 @@ function CornerMap:__new(BottomFrame)
     LandmarkList.AnchorPoint = Vector2.new(1,0)
     LandmarkList.Position = UDim2.new(0.94,12,0.07,0)
     LandmarkList.Size = UDim2.new(0.25 * (1/4) * (188/52),12,0.25,0)
+    LandmarkList.TopImage = "rbxassetid://5706837205"
+    LandmarkList.MidImage = "rbxassetid://5706836960"
+    LandmarkList.BottomImage = "rbxassetid://5706836746"
     LandmarkList.Parent = Background
 
     --Initialize the maps.

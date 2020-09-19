@@ -87,6 +87,9 @@ QuestsScroll.BackgroundTransparency = 1
 QuestsScroll.BorderSizePixel = 0
 QuestsScroll.Size = UDim2.new(0.33,0,0.72,0)
 QuestsScroll.Position = UDim2.new(0.0325,0,0.25,0)
+QuestsScroll.TopImage = "rbxassetid://5706837205"
+QuestsScroll.MidImage = "rbxassetid://5706836960"
+QuestsScroll.BottomImage = "rbxassetid://5706836746"
 QuestsScroll.Parent = Background
 
 local MakeActiveImage = Instance.new("ImageLabel")
