@@ -24,7 +24,7 @@ return function(NexusAdminAPI)
         Listable = true,
         
         --[[
-        Transforms the string to a list of fast flags.
+        Transforms the string to a list of game items.
         --]]
         Transform = function(Text,Executor)
             return NexusAdminAPI.Cmdr.Util.MakeFuzzyFinder(ItemNames)(Text)

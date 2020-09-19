@@ -1,7 +1,7 @@
 --[[
 TheNexusAvenger
 
-Calculates levels fo rplayers.
+Calculates levels for players.
 --]]
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
