@@ -1909,9 +1909,9 @@ return {
 		},
 	},
 	
-	["fusroblox"] = {
+	["Fusroblox"] = {
 		{
-			Name = "fusroblox_ExperimentGoneWrong_CHECKUP",
+			Name = "Fusroblox_ExperimentGoneWrong_CHECKUP",
 			RequiredQuests = {
 				{
 					Name = "Experiment Gone Wrong",
@@ -1952,7 +1952,7 @@ return {
 			}
 		},
 		{
-			Name = "fusroblox_LostMarbles_START",
+			Name = "Fusroblox_LostMarbles_START",
 			RequiredQuests = {
 				{
 					Name = "Experiment Gone Wrong",
@@ -1992,7 +1992,7 @@ return {
 			}
 		},
 		{
-			Name = "fusroblox_LostMarbles_DONE",
+			Name = "Fusroblox_LostMarbles_DONE",
 			RequiredQuests = {
 				{
 					Name = "Lost His Marbles",
@@ -2012,7 +2012,7 @@ return {
 			}
 		},
 		{
-			Name = "fusroblox_ClankClank_START",
+			Name = "Fusroblox_ClankClank_START",
 			RequiredQuests = {
 				{
 					Name = "Lost His Marbles",
@@ -2061,7 +2061,7 @@ return {
 			}
 		},
 		{
-			Name = "fusroblox_ClankClank_DONE",
+			Name = "Fusroblox_ClankClank_DONE",
 			RequiredQuests = {
 				{
 					Name = "Clank Clank",
@@ -2078,7 +2078,7 @@ return {
 			}
 		},
 		{
-			Name = "fusroblox_LocatingTotbl_START",
+			Name = "Fusroblox_LocatingTotbl_START",
 			RequiredQuests = {
 				{
 					Name = "Clank Clank",
@@ -2115,7 +2115,7 @@ return {
 			}
 		},
 		{
-			Name = "fusroblox_FALLBACK",
+			Name = "Fusroblox_FALLBACK",
 			RequiredQuests = nil,
 			Text = "Bloxburg is falling to Bloxhilda...and I'm falling apart...sigh.",
 			Alternatives = {
@@ -2269,7 +2269,7 @@ return {
 					Status = "NotUnlocked"
 				}
 			},
-			Text = "Now that the castle is clear it's time you go back to fusroblox and get his bloxikin. We have to defeat Bloxhilda as soon as possible.",
+			Text = "Now that the castle is clear it's time you go back to Fusroblox and get his bloxikin. We have to defeat Bloxhilda as soon as possible.",
 			Alternatives = {
 				{
 					Text = "Okay!",
