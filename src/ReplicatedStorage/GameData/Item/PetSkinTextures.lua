@@ -63,7 +63,7 @@ return {
         Panda = 133464571,
         Dragon = 133464447,
     },
-    ["Fraken"] = {
+    ["Frankenstein"] = {
         Dog = 133464357,
         Cat = 133464291,
         Pig = 133464963,

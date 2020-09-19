@@ -27,7 +27,7 @@ return {
 			}
 		}
 	},
-	["Find Telamom"] = {	--TODO: Currently not used, but not required; just helps game flow.
+	["Find Telamom"] = {
 		Description = "Speak to Telamom",
 		QuestType = "NPC",
 		RequiredNPC = {
@@ -842,14 +842,14 @@ return {
 			XP = 1500
 		}
 	},
-	["Barely Human"] = { --TODO: Not given.
+	["Barely Human"] = {
 		Description = "Find OnlyTwentyCharacters at his hideout",
 		QuestType = "NPC",
 		RequiredNPC = {
 			Name = "OnlyTwentyCharacters"
 		},
 	},
-	["BLOXing Time"] = { --TODO: Not used.
+	["BLOXing Time"] = {
 		Description = "Return to Fusroblox near the entrance of the castle.",
 		QuestType = "NPC",
 		RequiredNPC = {
@@ -857,6 +857,17 @@ return {
 		},
 		Rewards = {
 			--TODO: Determine rewards.
+		}
+	},
+	["Stitched Together"] = { --TODO: Not used
+		Description = "Equip the full Frankenstein Companion Set.",
+		QuestType = "Dressup",
+		RequiredSet = {
+			Name = "Frankenstein",
+			DisplayName = "Frankenstein Companion Set",
+		},
+		Rewards = {
+			Badge = "fusroblox"
 		}
 	},
 	

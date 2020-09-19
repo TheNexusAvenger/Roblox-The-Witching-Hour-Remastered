@@ -913,40 +913,38 @@ return {
     },
 
     --Fraken costume.
-    --[[ Not used?
-    ["PetFrakenCostumeHat"] = {
-        DisplayName = "Fraken Costume Hat",
+    ["PetFrankensteinCostumeHat"] = {
+        DisplayName = "Frankenstein Costume Hat",
         ItemType = "PetCostumeHat",
-        CostumeName = "Fraken",
+        CostumeName = "Frankenstein",
         MeshId = 132566464,
         TextureId = 133463239,
         Size = Vector3.new(1.4,1.4,1.4),
     },
-    ["PetFrakenCostumeCollar"] = {
-        DisplayName = "Fraken Costume Collar",
+    ["PetFrankensteinCostumeCollar"] = {
+        DisplayName = "Frankenstein Costume Collar",
         ItemType = "PetCostumeCollar",
-        CostumeName = "Fraken",
+        CostumeName = "Frankenstein",
         MeshId = 132567849,
         TextureId = 133463239,
         Size = Vector3.new(1,1,1),
     },
-    ["PetFrakenCostumeCape"] = {
-        DisplayName = "Fraken Costume Cape",
+    ["PetFrankensteinCostumeCape"] = {
+        DisplayName = "Frankenstein Costume Cape",
         ItemType = "PetCostumeBack",
-        CostumeName = "Fraken",
+        CostumeName = "Frankenstein",
         MeshId = 132566900,
         TextureId = 133463239,
         Size = Vector3.new(1.5,1.5,1.5),
     },
-    ["PetFrakenCostumeAnklet"] = {
-        DisplayName = "Fraken Costume Anklet",
+    ["PetFrankensteinCostumeAnklet"] = {
+        DisplayName = "Frankenstein Costume Anklet",
         ItemType = "PetCostumeAnkle",
-        CostumeName = "Fraken",
+        CostumeName = "Frankenstein",
         MeshId = 132762876,
         TextureId = 133463239,
         Size = Vector3.new(0.3,0.3,0.3),
     },
-    ]]
 
     --Mummy costume.
     ["PetMummyCostumeHat"] = {

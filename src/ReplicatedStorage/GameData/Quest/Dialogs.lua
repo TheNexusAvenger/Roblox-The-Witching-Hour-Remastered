@@ -539,6 +539,10 @@ return {
 					Status = "TurnedIn"
 				},
 				{
+					Name = "Stitched Together",
+					Status = "TurnedIn",
+				},
+				{
 					Name = "Clear Thy Soul",
 					Status = "NotUnlocked"
 				},
@@ -1634,6 +1638,26 @@ return {
 			}
 		},
 		{
+			Name = "StickmasterLuke_NotSoCured_DONE", --Fabricated
+			RequiredQuests = {
+				{
+					Name = "Not so Cured",
+					Status = "AllItems"
+				},
+			},
+			TurnIn = "Not so Cured",
+			Text = "Ahh! Don't let it bite me!",
+			Alternatives = {
+				{
+					Text = "Don't worry, it's just a costume.",
+					Response = {
+						Text = "I know, but it still scares me."
+					},
+					End = true
+				}
+			}
+		},
+		{
 			Name = "StickMasterLuke_FALLBACK",
 			RequiredQuests = nil,
 			Text = "Don't mess with zombies...the worry of turning into one just doesn't go away.",
@@ -1928,6 +1952,46 @@ return {
 			}
 		},
 		{
+			Name = "fusroblox_LostMarbles_START",
+			RequiredQuests = {
+				{
+					Name = "Experiment Gone Wrong",
+					Status = "TurnedIn"
+				},
+				{
+					Name = "Lost His Marbles",
+					Status = "NotUnlocked"
+				}
+			},
+			Text = "Go away and leave me to suffer!",
+			Alternatives = {
+				{
+					Text = "What's wrong?",
+					Response = {
+						Text = "I've lost my marbles and I feel like there's a great hole in soul- woe unto me!",
+						Alternatives = {
+							{
+								Text = "Maybe I can help?",
+								Quest = "Lost His Marbles",
+								End = true,
+								Response = {
+									Text = "It's too late for me. But if you insist, you will need to find 12 marbles. The monsters stole them.",
+								}
+							},
+							{
+								Text = "Haha",
+								End = true
+							}
+						},
+					}
+				},
+				{
+					Text = "Alright, if that's how you want it.",
+					End = true
+				}
+			}
+		},
+		{
 			Name = "fusroblox_LostMarbles_DONE",
 			RequiredQuests = {
 				{
@@ -2185,6 +2249,46 @@ return {
 				},
 				{
 					Text = "Yeah, now what?",
+					End = true
+				}
+			}
+		},
+		{ --FABRICATED
+			Name = "Totbl_BloxingTimeBarelyHuman_START", 
+			RequiredQuests = {
+				{
+					Name = "Clearing the Castle",
+					Status = "TurnedIn"
+				},
+				{
+					Name = "BLOXing Time",
+					Status = {"NotUnlocked","Inventory"},
+				},
+				{
+					Name = "Barely Human",
+					Status = "NotUnlocked"
+				}
+			},
+			Text = "Now that the castle is clear it's time you go back to fusroblox and get his bloxikin. We have to defeat Bloxhilda as soon as possible.",
+			Alternatives = {
+				{
+					Text = "Okay!",
+					Quest = "BLOXing Time",
+					Response = {
+						{
+							Text = "I almost forgot! You should find OnlyTwentyCharacters as well. When he got turned into a werewolf he hid himself away from people, but you'll need his help to defeat Bloxhilda.",
+							Alternatives = {
+								{
+									Text = "Alright, I'm on my way.",
+									End = true,
+									Quest = "Barely Human",
+								}
+							}
+						}
+					}
+				},
+				{
+					Text = "I'd rather just chill here.",
 					End = true
 				}
 			}
@@ -2772,12 +2876,48 @@ return {
 				},
 			}
 		},
-		--TODO: Add Find Telamom quest giver. It can be completd without it, but is unclear for new players.
+		{
+			Name = "Shedletsky_FindTelamom_START", --FABRICATED by konlon15
+			RequiredQuests = {
+				{
+					Name = "Mech Suit",
+					Status = "TurnedIn"
+				}, 
+				{
+					Name = "Find Telamom",
+					Status = "NotUnlocked"
+				}
+			},
+			Text = "Now that my 1337 M3<|-| 5U17 is done, I need you to do something else.",
+			Alternatives = {
+				{
+					Text = "What's that?",
+					Response = {
+						Text = "I'd like you to meet... my mom. Embarassing, I know.. but you'll get an exclusive Shedletsky action figure as a reward!",
+						Alternatives = {
+							{
+								Text = "Sweet!",
+								End = true,
+								Quest = "Find Telamom"
+							},
+							{
+								Text = "You still live with your mom?! Get outta here.",
+								End = true
+							}
+						}
+					}
+				},
+				{
+					Text = "You're annoying.",
+					End = true
+				}
+			}
+		},
 		{
 			Name = "Shedletsky_ActionFigureMadness_START",
 			RequiredQuests = {
 				{
-					Name = "Mech Suit", 
+					Name = "Find Telamom",
 					Status = "TurnedIn"
 				},
 				{
@@ -2857,6 +2997,26 @@ return {
 	},
 	
 	["Telamom"] = {
+		{
+			Name = "Telamom_FindTelamom_CHECKUP",
+			RequiredQuests = {
+				{
+					Name = "Find Telamom",
+					Status = "Inventory"
+				}
+			},
+			TurnIn = "Find Telamom",
+			Text = "Telakins sent you? My boy.. what did he ask for?",
+			Alternatives = {
+				{
+					Text = "He just wanted me to stop by and say hello.",
+					Response = {
+						Text = "Well then, nice to meet you. Telakins doesn't have a lot of friends.",
+					},
+					End = true,
+				}
+			}
+		},
 		{
 			Name = "Telamom_The13Swords_START",
 			RequiredQuests = {
@@ -2970,6 +3130,26 @@ return {
 				},
 				{
 					Text = "Nah I'm done with that guy.",
+					End = true
+				}
+			}
+		},
+		{
+			Name = "Telamom_FriedChickenFraces_MID", 			
+			RequiredQuests = {
+				{
+					Name = "Fried Chicken Fracas", 
+					Status = "Inventory"
+				}
+			},
+			Text = "Telakins is still hungry!",
+			Alternatives = {
+				{
+					Text = "Ugh.",
+					End = true
+				},
+				{
+					Text = "Ugh...",
 					End = true
 				}
 			}
@@ -4908,7 +5088,7 @@ return {
 				}
 			},
 			TurnIn = "Barely Human",
-			Text = "[ We have no idea what OnlyTwentyCharacters is supposed to say here. ]",
+			Text = "How did you find me?! When I knew I had become a werewolf I moved out here, to the middle of nowhere.", --This line is fabricated.
 			Alternatives = {
 				{
 					Text = "...its in the middle of the city.",
