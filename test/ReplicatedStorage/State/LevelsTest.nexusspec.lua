@@ -4,6 +4,10 @@ TheNexusAvenger
 Tests the Levels class.
 --]]
 
+local XP_MULTIPLIER = 80
+
+
+
 local NexusUnitTesting = require("NexusUnitTesting")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
@@ -39,33 +43,33 @@ NexusUnitTesting:RegisterUnitTest(InventoryTest.new("TestSettingXP"):SetRun(func
     --Assert the intial level is valid.
     self:AssertEquals(self.CuT.Level,1,"Level is invalid.")
     self:AssertEquals(self.CuT.PreviousLevelExperience,0,"Current level XP is invalid.")
-    self:AssertEquals(self.CuT.NextLevelExperience,100,"Next level XP is invalid.")
+    self:AssertEquals(self.CuT.NextLevelExperience,XP_MULTIPLIER,"Next level XP is invalid.")
 
     --Asset high levels are valid.
-    self.XPValue.Value = 50
+    self.XPValue.Value = 0.5 * XP_MULTIPLIER
     self:AssertEquals(self.CuT.Level,1,"Level is invalid.")
     self:AssertEquals(self.CuT.PreviousLevelExperience,0,"Current level XP is invalid.")
-    self:AssertEquals(self.CuT.NextLevelExperience,100,"Next level XP is invalid.")
-    self.XPValue.Value = 100
+    self:AssertEquals(self.CuT.NextLevelExperience,1 * XP_MULTIPLIER,"Next level XP is invalid.")
+    self.XPValue.Value = 1 * XP_MULTIPLIER
     self:AssertEquals(self.CuT.Level,2,"Level is invalid.")
-    self:AssertEquals(self.CuT.PreviousLevelExperience,100,"Current level XP is invalid.")
-    self:AssertEquals(self.CuT.NextLevelExperience,300,"Next level XP is invalid.")
-    self.XPValue.Value = 200
+    self:AssertEquals(self.CuT.PreviousLevelExperience,1 * XP_MULTIPLIER,"Current level XP is invalid.")
+    self:AssertEquals(self.CuT.NextLevelExperience,3 * XP_MULTIPLIER,"Next level XP is invalid.")
+    self.XPValue.Value = 2 * XP_MULTIPLIER
     self:AssertEquals(self.CuT.Level,2,"Level is invalid.")
-    self:AssertEquals(self.CuT.PreviousLevelExperience,100,"Current level XP is invalid.")
-    self:AssertEquals(self.CuT.NextLevelExperience,300,"Next level XP is invalid.")
-    self.XPValue.Value = 300
+    self:AssertEquals(self.CuT.PreviousLevelExperience,1 * XP_MULTIPLIER,"Current level XP is invalid.")
+    self:AssertEquals(self.CuT.NextLevelExperience,3 * XP_MULTIPLIER,"Next level XP is invalid.")
+    self.XPValue.Value = 3 * XP_MULTIPLIER
     self:AssertEquals(self.CuT.Level,3,"Level is invalid.")
-    self:AssertEquals(self.CuT.PreviousLevelExperience,300,"Current level XP is invalid.")
-    self:AssertEquals(self.CuT.NextLevelExperience,600,"Next level XP is invalid.")
-    self.XPValue.Value = 600
+    self:AssertEquals(self.CuT.PreviousLevelExperience,3 * XP_MULTIPLIER,"Current level XP is invalid.")
+    self:AssertEquals(self.CuT.NextLevelExperience,6 * XP_MULTIPLIER,"Next level XP is invalid.")
+    self.XPValue.Value = 6 * XP_MULTIPLIER
     self:AssertEquals(self.CuT.Level,4,"Level is invalid.")
-    self:AssertEquals(self.CuT.PreviousLevelExperience,600,"Current level XP is invalid.")
-    self:AssertEquals(self.CuT.NextLevelExperience,1000,"Next level XP is invalid.")
-    self.XPValue.Value = 1000
+    self:AssertEquals(self.CuT.PreviousLevelExperience,6 * XP_MULTIPLIER,"Current level XP is invalid.")
+    self:AssertEquals(self.CuT.NextLevelExperience,10 * XP_MULTIPLIER,"Next level XP is invalid.")
+    self.XPValue.Value = 10 * XP_MULTIPLIER
     self:AssertEquals(self.CuT.Level,5,"Level is invalid.")
-    self:AssertEquals(self.CuT.PreviousLevelExperience,1000,"Current level XP is invalid.")
-    self:AssertEquals(self.CuT.NextLevelExperience,1500,"Next level XP is invalid.")
+    self:AssertEquals(self.CuT.PreviousLevelExperience,10 * XP_MULTIPLIER,"Current level XP is invalid.")
+    self:AssertEquals(self.CuT.NextLevelExperience,15 * XP_MULTIPLIER,"Next level XP is invalid.")
 end))
 
 

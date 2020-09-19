@@ -4,6 +4,10 @@ TheNexusAvenger
 Calculates levels for players.
 --]]
 
+local XP_MULTIPLIER = 50
+
+
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
@@ -55,17 +59,17 @@ Updates the level for the total XP.
 --]]
 function Levels:UpdateLevel()
     --Update the level and current level expereince.
-    --Current implementation requires level * 100 experience per level.
-    self.Level = math.floor(((-1 + math.sqrt((8 * (self.TotalExperience / 100) + 1)))/2) + 1)
+    --Current implementation requires level * XP_MULTIPLIER experience per level.
+    self.Level = math.floor(((-1 + math.sqrt((8 * (self.TotalExperience / XP_MULTIPLIER) + 1)))/2) + 1)
     if self.Level == 1 then
         self.PreviousLevelExperience = 0
-        self.NextLevelExperience = 100
+        self.NextLevelExperience = XP_MULTIPLIER
     elseif self.Level == 2 then
-        self.PreviousLevelExperience = 100
-        self.NextLevelExperience = 300
+        self.PreviousLevelExperience = XP_MULTIPLIER
+        self.NextLevelExperience = 3 * XP_MULTIPLIER
     else
-        self.PreviousLevelExperience = (0.5 * (self.Level - 1) * self.Level) * 100
-        self.NextLevelExperience = (0.5 * self.Level * (self.Level + 1)) * 100
+        self.PreviousLevelExperience = (0.5 * (self.Level - 1) * self.Level) * XP_MULTIPLIER
+        self.NextLevelExperience = (0.5 * self.Level * (self.Level + 1)) * XP_MULTIPLIER
     end
 end
 
