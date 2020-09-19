@@ -23,12 +23,12 @@ local SwordAnimations = {
         Damage = 50,
     },
     {
-        AnimationId = EnvironmentConfiguration.Animations.LungeAttack,
+        AnimationId = EnvironmentConfiguration.Animations.SwordLunge,
         SoundId = "rbxasset://sounds//swordslash.wav",
         Damage = 50,
     },
     {
-        AnimationId = EnvironmentConfiguration.Animations.OverheadAttack,
+        AnimationId = EnvironmentConfiguration.Animations.SwordOverhead,
         SoundId = "rbxasset://sounds//swordlunge.wav",
         Damage = 100,
     },
