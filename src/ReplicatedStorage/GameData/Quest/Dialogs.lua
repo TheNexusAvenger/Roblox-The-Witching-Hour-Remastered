@@ -2275,14 +2275,12 @@ return {
 					Text = "Okay!",
 					Quest = "BLOXing Time",
 					Response = {
-						{
-							Text = "I almost forgot! You should find OnlyTwentyCharacters as well. When he got turned into a werewolf he hid himself away from people, but you'll need his help to defeat Bloxhilda.",
-							Alternatives = {
-								{
-									Text = "Alright, I'm on my way.",
-									End = true,
-									Quest = "Barely Human",
-								}
+						Text = "I almost forgot! You should find OnlyTwentyCharacters as well. When he got turned into a werewolf he hid himself away from people, but you'll need his help to defeat Bloxhilda.",
+						Alternatives = {
+							{
+								Text = "Alright, I'm on my way.",
+								End = true,
+								Quest = "Barely Human",
 							}
 						}
 					}

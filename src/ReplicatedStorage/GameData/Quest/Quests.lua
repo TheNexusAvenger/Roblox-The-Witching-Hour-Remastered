@@ -783,7 +783,7 @@ return {
 		}
 	},
 	
-	--fusroblox and Totbl
+	--Fusroblox and Totbl
 	["Lost His Marbles"] = {
 		Description = "Gather Fusroblox's marbles and return them to him.",
 		QuestType = "Items",
@@ -853,7 +853,7 @@ return {
 		Description = "Return to Fusroblox near the entrance of the castle.",
 		QuestType = "NPC",
 		RequiredNPC = {
-			Name = "fusroblox"
+			Name = "Fusroblox"
 		},
 		Rewards = {
 			--TODO: Determine rewards.
@@ -867,7 +867,7 @@ return {
 			DisplayName = "Frankenstein Companion Set",
 		},
 		Rewards = {
-			Badge = "fusroblox"
+			Badge = "Fusroblox"
 		}
 	},
 	
