@@ -11,24 +11,24 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
-local EnvironmentConfigurations = ReplicatedStorageProject:GetResource("EnvironmentConfigurations")
+local EnvironmentConfiguration = ReplicatedStorageProject:GetResource("EnvironmentConfiguration")
 
 local SwordAttack = NexusObject:Extend()
 SwordAttack:SetClassName("SwordAttack")
 
 local SwordAnimations = {
     {
-        AnimationId = EnvironmentConfigurations.Animations.SwordAttack,
+        AnimationId = EnvironmentConfiguration.Animations.SwordAttack,
         SoundId = "rbxasset://sounds//swordslash.wav",
         Damage = 50,
     },
     {
-        AnimationId = EnvironmentConfigurations.Animations.LungeAttack,
+        AnimationId = EnvironmentConfiguration.Animations.LungeAttack,
         SoundId = "rbxasset://sounds//swordslash.wav",
         Damage = 50,
     },
     {
-        AnimationId = EnvironmentConfigurations.Animations.OverheadAttack,
+        AnimationId = EnvironmentConfiguration.Animations.OverheadAttack,
         SoundId = "rbxasset://sounds//swordlunge.wav",
         Damage = 100,
     },
