@@ -2261,10 +2261,6 @@ return {
 					Status = "TurnedIn"
 				},
 				{
-					Name = "BLOXing Time",
-					Status = {"NotUnlocked","Inventory"},
-				},
-				{
 					Name = "Barely Human",
 					Status = "NotUnlocked"
 				}
@@ -5466,9 +5462,7 @@ return {
 					Quest = "Clean-up Crew",
 					End = true,
 					Response = {
-						Text = "Come back when you have defeated 13 ghost spiders!"
-						--NOTE: This is a response GUI made by konlon15 and was NOT in the original.
-						--TODO: Is this actually needed?
+						Text = "Come back when you have defeated 13 ghost spiders!" --Fabricated for clarity of the task.
 					}
 				},
 				{
@@ -5500,10 +5494,6 @@ return {
 				{
 					Name = "Clean-up Crew",
 					Status = "TurnedIn"
-				},
-				{
-					Name = "Is it safe?",
-					Status = "NotUnlocked"
 				},
 				{
 					Name = "Friendly Solar Crane",
