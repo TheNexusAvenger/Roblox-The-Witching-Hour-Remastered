@@ -12,6 +12,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local Bloxkins = ReplicatedStorageProject:GetResource("GameData.Item.Bloxkins")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local DisplayOrderController = ReplicatedStorageProject:GetResource("State.DisplayOrderController")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData").GetPlayerData(Players.LocalPlayer)
 
 
@@ -110,6 +111,7 @@ end)
 
 --Connect opening and closing the window.
 local OpenValue = script.Parent:WaitForChild("GuiOpenStates"):WaitForChild("Collectables")
+DisplayOrderController:Register(ScreenGui,OpenValue)
 OpenValue.Changed:Connect(function()
     Background:TweenPosition(UDim2.new(0.5,0,OpenValue.Value and 0.5 or 1.5,0),"Out","Quad",0.5,true)
 end)

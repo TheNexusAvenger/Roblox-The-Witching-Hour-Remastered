@@ -26,7 +26,7 @@ local DB = true
 local DialogActive = false
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "DialogView"
-ScreenGui.DisplayOrder = 2
+ScreenGui.DisplayOrder = 20
 ScreenGui.Parent = script.Parent
 
 local StartDialogEvent = Instance.new("BindableEvent")

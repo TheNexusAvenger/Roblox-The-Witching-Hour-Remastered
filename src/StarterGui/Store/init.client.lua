@@ -22,6 +22,7 @@ local StoreItems = ReplicatedStorageProject:GetResource("GameData.Item.Store")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local DisplayOrderController = ReplicatedStorageProject:GetResource("State.DisplayOrderController")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData").GetPlayerData(Players.LocalPlayer)
 local StoreItem = require(script:WaitForChild("StoreItem"))
 
@@ -176,6 +177,7 @@ UpdateVisibleStoreFrames()
 
 --Connect opening and closing.
 local OpenValue = script.Parent:WaitForChild("GuiOpenStates"):WaitForChild("Store")
+DisplayOrderController:Register(ScreenGui,OpenValue)
 OpenValue.Changed:Connect(function()
     Background:TweenPosition(UDim2.new(0.5,0,OpenValue.Value and 0.5 or 1.5,0),"Out","Quad",0.5,true)
 end)

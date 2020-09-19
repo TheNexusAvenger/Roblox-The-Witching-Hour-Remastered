@@ -20,6 +20,7 @@ local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEv
 local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
 local BoolGrid = ReplicatedStorageProject:GetResource("State.BoolGrid")
+local DisplayOrderController = ReplicatedStorageProject:GetResource("State.DisplayOrderController")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 local Map = require(script.Parent:WaitForChild("Map"))
 
@@ -54,7 +55,6 @@ function CornerMap:__new(BottomFrame)
     --Create the window.
     local MapScreenGui = Instance.new("ScreenGui")
     MapScreenGui.Name = "Map"
-    MapScreenGui.DisplayOrder = 2
     MapScreenGui.Parent = script.Parent.Parent
 
     local Background = Instance.new("ImageLabel")
@@ -218,6 +218,7 @@ function CornerMap:__new(BottomFrame)
     MapOpenState.Name = "Map"
     MapOpenState.Value = false
     MapOpenState.Parent = GuiOpenStatesFolder
+    DisplayOrderController:Register(MapScreenGui,MapOpenState)
 
     local DB = true
     MapOpenState.Changed:Connect(function()
@@ -333,6 +334,7 @@ function CornerMap:__new(BottomFrame)
             Run = function(_,CommandContext,ShowMapConfidence)
                 self.MiniMap:SetMapConfidence(ShowMapConfidence)
                 self.FullMap:SetMapConfidence(ShowMapConfidence)
+                return "Confidence toggled."
             end,
         })
     end)()

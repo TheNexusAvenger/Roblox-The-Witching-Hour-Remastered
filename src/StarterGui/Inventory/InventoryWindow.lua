@@ -19,6 +19,7 @@ local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEv
 local WideTextButtonDecorator = ReplicatedStorageProject:GetResource("UI.Button.WideTextButtonDecorator")
 local ItemIcon = ReplicatedStorageProject:GetResource("UI.ItemIcon")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local DisplayOrderController = ReplicatedStorageProject:GetResource("State.DisplayOrderController")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory")
 local Levels = ReplicatedStorageProject:GetResource("State.Levels")
@@ -44,7 +45,6 @@ function InventoryWindow:__new()
     self.PlayerData = PlayerData.GetPlayerData(Players.LocalPlayer)
     local InventoryScreenGui = Instance.new("ScreenGui")
     InventoryScreenGui.Name = "Inventory"
-    InventoryScreenGui.DisplayOrder = 2
     InventoryScreenGui.Parent = script.Parent.Parent
     self.InventoryScreenGui = InventoryScreenGui
 
@@ -504,6 +504,7 @@ function InventoryWindow:__new()
 
     --Connect opening and closing.
     local OpenValue = script.Parent.Parent:WaitForChild("GuiOpenStates"):WaitForChild("Inventory")
+    DisplayOrderController:Register(InventoryScreenGui,OpenValue)
     self.OpenValue = OpenValue
     OpenValue.Changed:Connect(function()
         Background:TweenPosition(UDim2.new(0.5,0,OpenValue.Value and 0.5 or 1.5,0),"Out","Quad",0.5,true)

@@ -48,6 +48,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local QuestsData = ReplicatedStorageProject:GetResource("GameData.Quest.Quests")
 local ImageEventBinder = ReplicatedStorageProject:GetResource("UI.Button.ImageEventBinder")
 local AspectRatioSwitcher = ReplicatedStorageProject:GetResource("UI.AspectRatioSwitcher")
+local DisplayOrderController = ReplicatedStorageProject:GetResource("State.DisplayOrderController")
 local Quests = ReplicatedStorageProject:GetResource("State.Quests").GetQuests(Players.LocalPlayer)
 local Inventory = ReplicatedStorageProject:GetResource("State.Inventory").GetInventory(Players.LocalPlayer)
 local SelectQuestEvent = ReplicatedStorageProject:GetResource("GameReplication.QuestReplication.SelectQuest")
@@ -292,6 +293,7 @@ Inventory.InventoryChanged:Connect(UpdateDisplay)
 
 --Connect opening and closing the window.
 local OpenValue = script.Parent:WaitForChild("GuiOpenStates"):WaitForChild("Quests")
+DisplayOrderController:Register(ScreenGui,OpenValue)
 OpenValue.Changed:Connect(function()
     Background:TweenPosition(UDim2.new(0.5,0,OpenValue.Value and 0.5 or 1.5,0),"Out","Quad",0.5,true)
 end)
