@@ -159,7 +159,7 @@ return {
 		PosY = 200,
 		SizeY = 256,
 	},
-	["fusroblox"] = {
+	["Fusroblox"] = {
 		LockedImage = "rbxassetid://132678635",
 		UnlockedImage = "rbxassetid://132678655",
 		PosX = 700,
