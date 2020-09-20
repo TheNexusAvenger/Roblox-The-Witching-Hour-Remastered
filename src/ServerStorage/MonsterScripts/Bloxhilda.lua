@@ -32,6 +32,7 @@ return function(BloxhildaModel,DungeonPlayers)
         while Humanoid.Health > 0 and Dungeon.Parent do
             --Wait to perform a new attack.
             wait(3)
+            if Humanoid.Health == 0 then return end
 
             --Determine the distance to the closest player.
             local ClosestPlayerDistance,ClosestHumnaoidRootPart = math.huge,nil
