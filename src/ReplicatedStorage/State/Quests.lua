@@ -49,8 +49,8 @@ function Quests:__new(Player)
     --Connect the quests changing.
     self.PlayerData:GetValueChangedSignal("Quests"):Connect(function()
         self.QuestData = self.PlayerData:GetValue("Quests")
-        self.QuestsChanged:Fire()
         self:FixQuestData()
+        self.QuestsChanged:Fire()
     end)
 end
 
