@@ -73,6 +73,7 @@ local EnergyService = ServerScriptServiceProject:GetResource("Service.EnergyServ
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
 local QuestService = ServerScriptServiceProject:GetResource("Service.QuestService")
+local AchievementService = ServerScriptServiceProject:GetResource("Service.AchievementService")
 
 
 
@@ -256,6 +257,11 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers,OverrideType)
         Humanoid.Died:Connect(function()
             --End the dungeon.
             DungeonCompleted = true
+
+            --Award the achievement.
+            for Player,_ in pairs(AlivePlayersMap) do
+                AchievementService:AwardAchievement(Player,"ThePortal")
+            end
 
             --Destroy the monster.
             wait(5)

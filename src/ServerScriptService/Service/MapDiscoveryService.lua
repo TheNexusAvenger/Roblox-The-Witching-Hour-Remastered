@@ -11,6 +11,7 @@ local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project
 local ServerScriptServiceProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ServerScriptService")):GetContext(script)
 
 local BoolGrid = ReplicatedStorageProject:GetResource("State.BoolGrid")
+local AchievementService = ServerScriptServiceProject:GetResource("Service.AchievementService")
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 
@@ -50,6 +51,11 @@ function MapDiscoveryService:LoadPlayer(Player)
                             if not PlayerBoolGrid:GetValue(X,Y) then
                                 PlayerBoolGrid:SetValue(X,Y,true)
                                 SectionsWereDiscovered = true
+
+                                --Award the beyond the rocks achievement.
+                                if X < 10 and Y > 183 then
+                                    AchievementService:AwardAchievement(Player,"BeyondTheRocks")
+                                end
                             end
                         end
                     end

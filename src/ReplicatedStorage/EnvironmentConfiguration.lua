@@ -32,6 +32,15 @@ if game.PlaceId == 5674151342 then
             Candy17000 = 1087550065,
             Candy85000 = 1087550098,
         },
+
+        --Badges used in the game.
+        --TODO: Upload actual badges.
+        Badges = {
+            BloxkinCollector = 0,
+            ThePortal = 0,
+            BloxhildasRevenge = 0,
+            BeyondTheRocks = 0,
+        },
     }
 else
     --Nexus Development release (default)
@@ -56,6 +65,15 @@ else
             Candy8500 = 1087550004,
             Candy17000 = 1087550065,
             Candy85000 = 1087550098,
+        },
+
+        --Badges used in the game.
+        --TODO: Upload actual badges.
+        Badges = {
+            BloxkinCollector = 0,
+            ThePortal = 0,
+            BloxhildasRevenge = 0,
+            BeyondTheRocks = 0,
         },
     }
 end

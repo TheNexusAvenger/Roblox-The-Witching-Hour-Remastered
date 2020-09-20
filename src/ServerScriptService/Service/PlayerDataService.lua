@@ -18,6 +18,8 @@ PlayerDataService:SetClassName("PlayerDataService")
 PlayerDataService.PlayerData = {}
 ServerScriptServiceProject:SetContextResource(PlayerDataService)
 
+local AchievementService = ServerScriptServiceProject:GetResource("Service.AchievementService")
+
 
 
 --[[
@@ -42,6 +44,14 @@ function PlayerDataService:LoadPlayer(Player)
     end)
     self.PlayerData[Player] = PlayerData.GetPlayerData(Player)
     self.PlayerData[Player]:InitializeFromSerializedData(SavedPlayerData)
+
+    --Connect the Sorcus bloxkin (last bloxkin) being obtained.
+    local LoadedPlayerData = self.PlayerData[Player]
+    LoadedPlayerData:GetValueChangedSignal("CollectedBloxkins"):Connect(function()
+        if LoadedPlayerData:GetValue("CollectedBloxkins")["Sorcus"] then
+            AchievementService:AwardAchievement(Player,"BloxkinCollector")
+        end
+    end)
 end
 
 --[[
