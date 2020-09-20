@@ -589,7 +589,7 @@ return {
 																	Quest = "Clear Thy Soul",
 																	End = true,
 																	Response = {
-																		"Go collect 77 souls for me."
+																		Text = "Go collect 77 souls for me."
 																	}
 																}
 															}
@@ -2112,6 +2112,85 @@ return {
 					Text = "I'm not a messanger service!",
 					End = true,
 				}
+			}
+		},
+		{
+			Name = "fusroblox_BloxingTime_CHECKUP",
+			RequiredQuests = {
+				{
+					Name = "BLOXing Time",
+					Status = "Inventory"
+				}
+			},
+			Text = "Great work on clearing out those blood fangs!",
+			TurnIn = "BLOXing Time",
+			Alternatives = {
+				{
+					Text = "No problem!",
+					End = true
+				}
+			}
+		},
+		{
+			Name = "fusroblox_StitchedTogether_START",
+			RequiredQuests = {
+				{
+					Name = "Stitched Together",
+					Status = "NotUnlocked"
+				},
+				{
+					Name = "BLOXing Time",
+					Status = "TurnedIn"
+				}
+			},
+			Text = "Now that I'm all stitched up, we can get to work on that bloxikin.",
+			Alternatives = {
+				{
+					Text = "What do you need me to do?",
+					Response = {
+						Text = "Stitch your dog together like a true frankenstein's monster!",
+						Alternatives = {
+							{
+								Text = "Alright, on it!",
+								Quest = "Stitched Together",
+								End = true
+							},
+							{
+								Text = "I like my dog whole.",
+								End = true
+							}
+						}
+					}
+				},
+				{
+					Text = "Nah, I <3 bloxhilda!",
+					End = true
+				}
+			}
+		},
+		{
+			Name = "fusroblox_StitchedTogether_END",
+			RequiredQuests = {
+				{
+					Name = "Stitched Together",
+					Status = "AllItems"
+				},
+			},
+			Text = "Wow... you really are a mad scientist.",
+			TurnIn = "Stitched Together",
+			Alternatives = {
+				{
+					Text = "Well, I guess so!",
+					Response = {
+						Text = "Take this bloxikin, and then go on and defeat bloxhilda once and for all!",
+						Alternatives = {
+							{
+								Text = "Heck yeah!",
+								End = true
+							},
+						}
+					}
+				},
 			}
 		},
 		{
