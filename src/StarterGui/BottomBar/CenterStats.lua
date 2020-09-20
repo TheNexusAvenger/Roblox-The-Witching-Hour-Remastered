@@ -193,6 +193,7 @@ function CenterStats:__new(BottomFrame)
         UserInputService.InputBegan:Connect(function(Input,Processed)
             if Processed then return end
             if not AttackButtonsContainer.Visible or not AttackButton.Visible then return end
+            if UserInputService:GetFocusedTextBox() then return end
             for _,KeyCode in pairs(AttackData.ActivationKeys or {}) do
                 if KeyCode == Input.KeyCode then
                     self:SelectWeapon(i)
