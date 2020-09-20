@@ -31,10 +31,15 @@ function PlayerDataService:LoadPlayer(Player)
     
     --Initialize the player data.
     local SavedPlayerData = {}
-    local DataStore = NexusDataStore:GetSaveData(Player)
-    for Key,_ in pairs(PlayerData.PlayerDataLayout) do
-        SavedPlayerData[Key] = DataStore:Get(Key)
-    end
+    xpcall(function()
+        local DataStore = NexusDataStore:GetSaveData(Player)
+        for Key,_ in pairs(PlayerData.PlayerDataLayout) do
+            SavedPlayerData[Key] = DataStore:Get(Key)
+        end
+    end,function(Message)
+        --This error happens when a DataStore can't be obtained (not published to Roblox?).
+        warn("Loading default data for "..Player.Name.."; "..Message)
+    end)
     self.PlayerData[Player] = PlayerData.GetPlayerData(Player)
     self.PlayerData[Player]:InitializeFromSerializedData(SavedPlayerData)
 end
@@ -50,10 +55,15 @@ end
 Saves the player data for a player.
 --]]
 function PlayerDataService:SavesPlayerData(Player)
-    local DataStore = NexusDataStore:GetSaveData(Player)
-    for Key,_ in pairs(PlayerData.PlayerDataLayout) do
-        DataStore:Set(Key,self.PlayerData[Player].PlayerData[Key])
-    end
+    xpcall(function()
+        local DataStore = NexusDataStore:GetSaveData(Player)
+        for Key,_ in pairs(PlayerData.PlayerDataLayout) do
+            DataStore:Set(Key,self.PlayerData[Player].PlayerData[Key])
+        end
+    end,function(Message)
+        --This error happens when a DataStore can't be obtained (not published to Roblox?).
+        warn("Not saving data for "..Player.Name.."; "..Message)
+    end)
 end
 
 --[[
