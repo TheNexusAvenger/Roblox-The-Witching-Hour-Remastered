@@ -129,7 +129,7 @@ return function(BloxhildaModel,DungeonPlayers)
                 else
                     --Determine the spike locations.
                     local SpikeLocations = {}
-                    local SpikeCenter = CFrame.new(HumanoidRootPart.CFrame.Position,ClosestHumnaoidRootPart.Position)
+                    local SpikeCenter = CFrame.new(HumanoidRootPart.Position,Vector3.new(ClosestHumnaoidRootPart.Position.X,HumanoidRootPart.Position.Y,ClosestHumnaoidRootPart.Position.Z))
                     if math.random() > 0.5 then
                         --Create a ring of spikes.
                         for Angle = math.rad(20),math.pi * 2,math.rad(20) do
