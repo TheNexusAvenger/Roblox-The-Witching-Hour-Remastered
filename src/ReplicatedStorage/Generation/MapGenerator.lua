@@ -33,6 +33,9 @@ local CustomStructures = ReplicatedStorageProject:GetResource("GameData.Generati
 local MapCellData = ReplicatedStorageProject:GetResource("GameData.Generation.MapCells")
 local NPCLocations = ReplicatedStorageProject:GetResource("GameData.Generation.NPCLocations")
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
+local StartBloxhildaDungeon = ReplicatedStorageProject:GetResource("GameReplication.DungeonReplication.StartBloxhildaDungeon")
+local Quests = ReplicatedStorageProject:GetResource("State.Quests").GetQuests(Players.LocalPlayer)
+local BloxhildaPortal = ReplicatedStorageProject:GetResource("BloxhildaPortal")
 
 local CellGenerators = {
     BaseGrass = ReplicatedStorageProject:GetResource("Generation.Cell.BaseGrassCell"),
@@ -144,6 +147,45 @@ function MapGenerator:GenerateCustomCells()
             AnimationTrack:Play()
         end)()
     end
+
+    --[[
+    Generates the Bloxhilda portal.
+    --]]
+    local function CreateBloxhildaPortal()
+        --Return if the portal exists.
+        if Workspace:FindFirstChild("BloxhildaPortal") then
+            return
+        end
+
+        --Return if the final quest wasn't completed.
+        if not Quests:QuestConditonValid("End of Days","TurnedIn") then
+            return
+        end
+
+        --Create the portal.
+        local Portal = BloxhildaPortal:Clone()
+        Portal.PrimaryPart = Portal:WaitForChild("Center")
+        Portal:SetPrimaryPartCFrame(CFrame.new(24 * 100,0,9 * 100) * CFrame.new(-35,0,30) * CFrame.Angles(0,-math.rad(10),0))
+        Portal.Parent = Workspace
+
+        --Connect the portal.
+        local DB = true
+        Portal:WaitForChild("Portal").Touched:Connect(function(TouchPart)
+            if DB then
+                DB = false
+                if TouchPart.Parent == Players.LocalPlayer.Character then
+                    --Start the Bloxhilda dungeon.
+                    StartBloxhildaDungeon:FireServer()
+                end
+                wait()
+                DB = true
+            end
+        end)
+    end
+
+    --Create the portal.
+    CreateBloxhildaPortal()
+    Quests.QuestsChanged:Connect(CreateBloxhildaPortal)
 end
 
 --[[
