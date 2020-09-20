@@ -67,12 +67,11 @@ else
         },
 
         --Badges used in the game.
-        --TODO: Upload actual badges.
         Badges = {
-            BloxkinCollector = 0,
-            ThePortal = 0,
-            BloxhildasRevenge = 0,
-            BeyondTheRocks = 0,
+            BloxkinCollector = 2124610820,
+            ThePortal = 2124610829,
+            BloxhildasRevenge = 2124610830,
+            BeyondTheRocks = 2124610831,
         },
     }
 end
