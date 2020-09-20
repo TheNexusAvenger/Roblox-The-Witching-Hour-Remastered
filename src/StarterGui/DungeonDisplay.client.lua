@@ -53,7 +53,6 @@ MessageText.BackgroundTransparency = 1
 MessageText.Size = UDim2.new(0.8,0,0.6,0)
 MessageText.Position = UDim2.new(0.1,0,0.2,0)
 MessageText.Font = Enum.Font.Antique
-MessageText.Text = "You have no more space in your inventory. Please free some space by buying more pages or deleting some items from it."
 MessageText.TextWrapped = true
 MessageText.TextColor3 = Color3.new(1,1,1)
 MessageText.TextSize = ScreenGui.AbsoluteSize.Y * 0.05
@@ -124,8 +123,8 @@ DisplayReward.OnClientEvent:Connect(function(ItemName)
 end)
 
 DisplayMessage.OnClientEvent:Connect(function(Message)
-    ItemAwardText.Text = Message
-    ItemAwardText.Visible = true
+    MessageText.Text = Message
+    MessageText.Visible = true
     wait(5)
-    ItemAwardText.Visible = false
+    MessageText.Visible = false
 end)
