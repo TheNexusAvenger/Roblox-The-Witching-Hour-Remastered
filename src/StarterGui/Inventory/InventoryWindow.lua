@@ -600,10 +600,12 @@ function InventoryWindow:SetUpDraggning()
                 break
             end
         end
-        for SlotName,SlotIcon in pairs(self.InventorySlotIcons) do
-            if SlotName == ((Slot - 1) % SLOTS_PER_PAGE) + 1 then
-                SlotIcon.ViewportFrame.Visible = false
-                break
+        if type(Slot) == "number" then
+            for SlotName,SlotIcon in pairs(self.InventorySlotIcons) do
+                if SlotName == ((Slot - 1) % SLOTS_PER_PAGE) + 1 then
+                    SlotIcon.ViewportFrame.Visible = false
+                    break
+                end
             end
         end
     end)
