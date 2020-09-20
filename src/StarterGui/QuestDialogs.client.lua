@@ -94,7 +94,7 @@ for i = 1,5 do
 
     local ButtonText = Instance.new("TextLabel")
     ButtonText.BackgroundTransparency = 1
-    ButtonText.Size = UDim2.new(1,0,0.8,0)
+    ButtonText.Size = UDim2.new(0.53,0,0.8,0)
     ButtonText.Position = UDim2.new(0.01,0,-0.05,0)
     ButtonText.Font = Enum.Font.Antique
     ButtonText.TextColor3 = Color3.new(0,0,0)
