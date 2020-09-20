@@ -171,6 +171,7 @@ function PlayerData:GetValue(Key)
     --Deserialize the value.
     local ValueData = PLAYER_DATA_LAYOUT[Key]
     if ValueData then
+        Value = Value or ValueData.Default
         local ValueTypeData = TYPE_TO_SERIALIZATION[ValueData.Type]
         if ValueTypeData and ValueTypeData.Deserialize then
             Value = ValueTypeData.Deserialize(Value)
