@@ -4,7 +4,7 @@ TheNexusAvenger
 Tests the Levels class.
 --]]
 
-local XP_MULTIPLIER = 80
+local XP_MULTIPLIER = 50
 
 
 
