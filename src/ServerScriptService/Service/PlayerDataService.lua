@@ -30,8 +30,13 @@ function PlayerDataService:LoadPlayer(Player)
     PlayerDataFolder.Parent = Player
     
     --Initialize the player data.
+    local SavedPlayerData = {}
+    local DataStore = NexusDataStore:GetSaveData(Player)
+    for Key,_ in pairs(PlayerData.PlayerDataLayout) do
+        SavedPlayerData[Key] = DataStore:Get(Key)
+    end
     self.PlayerData[Player] = PlayerData.GetPlayerData(Player)
-    self.PlayerData[Player]:InitializeFromSerializedData(NexusDataStore:GetSaveData(Player):Get("SerializedPlayerData"))
+    self.PlayerData[Player]:InitializeFromSerializedData(SavedPlayerData)
 end
 
 --[[
@@ -45,7 +50,10 @@ end
 Saves the player data for a player.
 --]]
 function PlayerDataService:SavesPlayerData(Player)
-    NexusDataStore:GetSaveData(Player):Set("SerializedPlayerData",self.PlayerData[Player].PlayerData)
+    local DataStore = NexusDataStore:GetSaveData(Player)
+    for Key,_ in pairs(PlayerData.PlayerDataLayout) do
+        DataStore:Set(Key,self.PlayerData[Player].PlayerData[Key])
+    end
 end
 
 --[[

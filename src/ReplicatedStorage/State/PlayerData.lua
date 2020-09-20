@@ -80,6 +80,7 @@ local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInst
 local NexusEventCreator = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEventCreator")
 
 local PlayerData = NexusObject:Extend()
+PlayerData.PlayerDataLayout = PLAYER_DATA_LAYOUT
 PlayerData.CachedPlayerData = {}
 setmetatable(PlayerData.CachedPlayerData,{__mode="k"})
 PlayerData:SetClassName("PlayerData")
