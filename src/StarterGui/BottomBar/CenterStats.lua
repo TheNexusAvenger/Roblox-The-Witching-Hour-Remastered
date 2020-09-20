@@ -218,7 +218,7 @@ function CenterStats:__new(BottomFrame)
 
     --Connect showing and hiding the attacks.
     StartDungeon.OnClientEvent:Connect(function(_,_,_,Type)
-        if Type == "Monster" then
+        if Type == "Monster" or Type == "Bloxhilda" then
             AttackButtonsContainer.Visible = true
         end
     end)

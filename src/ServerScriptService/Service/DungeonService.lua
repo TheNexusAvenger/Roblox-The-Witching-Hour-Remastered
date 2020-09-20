@@ -66,7 +66,9 @@ local Attacks = ReplicatedStorageProject:GetResource("GameData.Item.Attacks")
 local Zones = ReplicatedStorageProject:GetResource("State.Zones")
 local GameReplication = ReplicatedStorageProject:GetResource("GameReplication")
 local Dungeon = ServerStorageProject:GetResource("Dungeon")
+local BloxhildaDungeon = ServerStorageProject:GetResource("BloxhildaDungeon")
 local Monsters = ServerStorageProject:GetResource("Monsters")
+local Bloxhilda = ServerStorageProject:GetResource("Bloxhilda")
 local EnergyService = ServerScriptServiceProject:GetResource("Service.EnergyService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
@@ -110,6 +112,14 @@ PerformAttack.OnServerEvent:Connect(function(Player,AttackId,TargetPosition)
     DungeonService:PerformAttack(Player,AttackId,TargetPosition)
 end)
 
+local StartBloxhildaDungeon = Instance.new("RemoteEvent")
+StartBloxhildaDungeon.Name = "StartBloxhildaDungeon"
+StartBloxhildaDungeon.Parent = DungeonReplication
+
+StartBloxhildaDungeon.OnServerEvent:Connect(function(Player)
+    DungeonService:StartBloxhildaDungeon(Player)
+end)
+
 
 
 --[[
@@ -136,7 +146,7 @@ end
 --[[
 Starts a dungeon and yields for it to be done.
 --]]
-function DungeonService:RunDungeon(X,Y,DungeonPlayers)
+function DungeonService:RunDungeon(X,Y,DungeonPlayers,OverrideType)
     --Return if there are no players who can run the dungeon.
     local PlayersAbleToPlayer = false
     for _,Player in pairs(DungeonPlayers) do
@@ -151,21 +161,32 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
 
     --Create the dungeon.
     local Zone = Zones:GetZone(X,Y)
-    local IsTreasureDungeon = math.random() <= DUNGEON_TREASURE_CHEST_CHANCE
-    local Type = IsTreasureDungeon and "Treasure" or "Monster"
+    local Type = (math.random() <= DUNGEON_TREASURE_CHEST_CHANCE) and "Treasure" or "Monster"
+    if OverrideType then
+        Type = OverrideType
+    end
 
     local Height,Id = self.DungeonAllocation:Allocate(X,Y)
-    local DungeonModel = Dungeon:Clone()
-    DungeonModel.Name = Id
-    DungeonModel.PrimaryPart = DungeonModel:WaitForChild("Ground")
-    DungeonModel:SetPrimaryPartCFrame(CFrame.new(X * 100,-250 * Height,Y * 100))
-    DungeonModel.Parent = DungeonsContainer
-    
-    --Recolor the dungeon.
-    local Colors = DUNGEON_COLORS[math.random(1,#DUNGEON_COLORS)]
-    for _,Ins in pairs(DungeonModel:GetDescendants()) do
-        for Property,Value in pairs(Colors[Ins.Name] or {}) do
-            Ins[Property] = Value
+    local DungeonModel
+    if Type == "Bloxhilda" then
+        DungeonModel = BloxhildaDungeon:Clone()
+        DungeonModel.Name = Id
+        DungeonModel.PrimaryPart = DungeonModel:WaitForChild("Ground")
+        DungeonModel:SetPrimaryPartCFrame(CFrame.new(X * 100,-250 * Height,Y * 100))
+        DungeonModel.Parent = DungeonsContainer
+    else
+        DungeonModel = Dungeon:Clone()
+        DungeonModel.Name = Id
+        DungeonModel.PrimaryPart = DungeonModel:WaitForChild("Ground")
+        DungeonModel:SetPrimaryPartCFrame(CFrame.new(X * 100,-250 * Height,Y * 100))
+        DungeonModel.Parent = DungeonsContainer
+        
+        --Recolor the dungeon.
+        local Colors = DUNGEON_COLORS[math.random(1,#DUNGEON_COLORS)]
+        for _,Ins in pairs(DungeonModel:GetDescendants()) do
+            for Property,Value in pairs(Colors[Ins.Name] or {}) do
+                Ins[Property] = Value
+            end
         end
     end
 
@@ -216,6 +237,30 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
         else
             DungeonCompleted = true
         end
+    elseif Type == "Bloxhilda" then
+        Zone = nil
+
+        --Spawn Bloxhilda.
+        local MonsterModel = Bloxhilda:Clone()
+        local Humanoid,HumanoidRootPart = MonsterModel:WaitForChild("Humanoid"),MonsterModel:WaitForChild("HumanoidRootPart")
+        MonsterModel.PrimaryPart = HumanoidRootPart
+
+        local SpawnPart = DungeonModel:WaitForChild("BloxhildaSpawn")
+        MonsterModel:SetPrimaryPartCFrame(SpawnPart.CFrame * CFrame.new(0,5,0))
+        MonsterModel.Parent = DungeonModel
+
+        local SetupFunction = ServerStorageProject:GetResource("MonsterScripts.Bloxhilda")
+        SetupFunction(MonsterModel,DungeonPlayers)
+
+        --Connect the monster being killed.
+        Humanoid.Died:Connect(function()
+            --End the dungeon.
+            DungeonCompleted = true
+
+            --Destroy the monster.
+            wait(5)
+            MonsterModel:Destroy()
+        end)
     elseif Type == "Treasure" then
         --Set up the treasure chests.
         local ValidChestId = math.random(1,4)
@@ -276,7 +321,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
                 StartDungeon:FireClient(Player,X,Y,Id,Type)
 
                 --Add the sword.
-                if Type == "Monster" then
+                if Type == "Monster" or Type == "Bloxhilda" then
                     local RightHand = Character:FindFirstChild("RightHand")
                     if RightHand then
                         local RightGripAttachment = RightHand:FindFirstChild("RightGripAttachment")
@@ -368,6 +413,19 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers)
     ClearDungeon:FireAllClients(X,Y,Id)
     self.DungeonAllocation:Deallocate(Id)
     DungeonModel:Destroy()
+end
+
+--[[
+Starts a Bloxhilda dungeon for a player.
+--]]
+function DungeonService:StartBloxhildaDungeon(Player)
+    --Return if the dungeon was not unlocked.
+    if not QuestService:QuestConditonValid(Player,"End of Days","TurnedIn") then
+        return
+    end
+
+    --Run the dungeon.
+    self:RunDungeon(174,13,{Player},"Bloxhilda")
 end
 
 --[[

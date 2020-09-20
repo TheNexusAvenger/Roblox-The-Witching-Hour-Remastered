@@ -41,13 +41,30 @@ function DeathBallAttack.PerformServerAttack(Player,DungeonModel,Target)
             BodyVelocity.Parent = DeathBallProjectile
 
             --Set up killing the monster.
-            DeathBallProjectile.Touched:Connect(function(TouchPart)
+            local TouchEvent
+            TouchEvent = DeathBallProjectile.Touched:Connect(function(TouchPart)
                 local MonsterCharacter = TouchPart.Parent
                 if MonsterCharacter and MonsterCharacter:IsDescendantOf(DungeonModel) then
                     local MonsterHumanoid = MonsterCharacter:FindFirstChild("Humanoid")
                     if MonsterHumanoid then
-                        MonsterHumanoid:TakeDamage(MonsterHumanoid.Health)
-                        DeathBallProjectile:Destroy()
+                        if MonsterCharacter.Name == "Bloxhilda" then
+                            --Reflect the attack to make Bloxhilda not easy.
+                            TouchEvent:Disconnect()
+                            DeathBallProjectile.CFrame = TouchPart.CFrame
+                            BodyVelocity.Velocity = CFrame.new(TouchPart.Position,HumanoidRootPart.CFrame.Position).LookVector * 200
+
+                            --Connect killing the player.
+                            DeathBallProjectile.Touched:Connect(function(NewTouchPart)
+                                if NewTouchPart.Parent == Character then
+                                    Humanoid:TakeDamage(Humanoid.Health)
+                                    DeathBallProjectile:Destroy()
+                                end
+                            end)
+                        else
+                            --Kill the monster.
+                            MonsterHumanoid:TakeDamage(MonsterHumanoid.Health)
+                            DeathBallProjectile:Destroy()
+                        end
                     end
                 end
             end)
