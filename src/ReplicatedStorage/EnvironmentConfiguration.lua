@@ -47,9 +47,9 @@ else
     return {
         --Custom animations used in the game.
         Animations = {
-            SwordAttack = "rbxassetid://2016260994",
-            SwordLunge = "rbxassetid://2016262978",
-            SwordOverhead = "rbxassetid://2016256809",
+            SwordAttack = "rbxassetid://2117143663",
+            SwordLunge = "rbxassetid://2117144519",
+            SwordOverhead = "rbxassetid://2117142586",
         },
 
         --Developer Produced used in the game.
