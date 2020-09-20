@@ -274,10 +274,6 @@ function CenterStats:ActivateWeapon(X,Y)
     if not self.AttackDB then return end
     self.AttackDB = false
 
-    --Remove the energy for the attack.
-    local AttackData = Attacks[self.SelectedAttack]
-    self.EnergyValue.Value = self.EnergyValue.Value - (AttackData.EnergyPerUse or 0)
-
     --Determine the target.
     local Camera = Workspace.CurrentCamera
     local CameraMouseRay = Camera:ScreenPointToRay(X,Y,10000)
@@ -288,6 +284,7 @@ function CenterStats:ActivateWeapon(X,Y)
     local RaycastResults = Workspace:Raycast(Camera.CFrame.Position,TargetEndPos - Camera.CFrame.Position,CharacterIgnoreList)
 
     --Activate the attack.
+    local AttackData = Attacks[self.SelectedAttack]
     local AttackClass = ReplicatedStorageProject:GetResource("State.Tool.Attack."..AttackData.Name)
     if RaycastResults then
         if AttackClass.PerformClientAttack then
