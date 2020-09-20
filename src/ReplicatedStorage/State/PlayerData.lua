@@ -127,6 +127,7 @@ end
 Connects a value being added.
 --]]
 function PlayerData:ConnectValueObject(ValueObject)
+    --Connect changes to the object.
     local ValueName = ValueObject.Name
     ValueObject.Changed:Connect(function()
         self.PlayerData[ValueName] = ValueObject.Value
@@ -135,7 +136,16 @@ function PlayerData:ConnectValueObject(ValueObject)
             self.ValueChangedEvents[ValueName]:Fire()
         end
     end)
+
+    --Store the current value.
     self.PlayerData[ValueName] = ValueObject.Value
+
+    --Fire the changed event for the initial object.
+    --Done in case of a race condition.
+    self.ValueChanged:Fire(ValueName)
+    if self.ValueChangedEvents[ValueName] then
+        self.ValueChangedEvents[ValueName]:Fire()
+    end
 end
 
 --[[
