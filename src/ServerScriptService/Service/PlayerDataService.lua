@@ -35,6 +35,7 @@ function PlayerDataService:LoadPlayer(Player)
     local SavedPlayerData = {}
     xpcall(function()
         local DataStore = NexusDataStore:GetSaveData(Player)
+        DataStore:SetSendDataChangeUpdates(false)
         for Key,_ in pairs(PlayerData.PlayerDataLayout) do
             SavedPlayerData[Key] = DataStore:Get(Key)
         end
