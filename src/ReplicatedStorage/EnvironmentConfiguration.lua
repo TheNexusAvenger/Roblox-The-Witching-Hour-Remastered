@@ -53,18 +53,17 @@ else
         },
 
         --Developer Produced used in the game.
-        --TODO: Same as Nexus Development Quality Assurance for testing; must create new ones for release.
         DeveloperProducts = {
-            HalloCycle = 1087548927,
-            TrickOrTreatBag = 1087549221,
-            Candy17 = 1087549438,
-            Candy85 = 1087549718,
-            Candy170 = 1087549770,
-            Candy850 = 1087549867,
-            Candy1700 = 1087549950,
-            Candy8500 = 1087550004,
-            Candy17000 = 1087550065,
-            Candy85000 = 1087550098,
+            HalloCycle = 1087853295,
+            TrickOrTreatBag = 1087853338,
+            Candy17 = 1087852933,
+            Candy85 = 1087853001,
+            Candy170 = 1087853032,
+            Candy850 = 1087853060,
+            Candy1700 = 1087853141,
+            Candy8500 = 1087853169,
+            Candy17000 = 1087853198,
+            Candy85000 = 1087853232,
         },
 
         --Badges used in the game.
