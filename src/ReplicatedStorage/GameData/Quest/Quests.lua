@@ -859,7 +859,7 @@ return {
 			--TODO: Determine rewards.
 		}
 	},
-	["Stitched Together"] = { --TODO: Not used
+	["Stitched Together"] = {
 		Description = "Equip the full Frankenstein Companion Set.",
 		QuestType = "Dressup",
 		RequiredSet = {
