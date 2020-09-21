@@ -41,8 +41,10 @@ room for improvement.
   with various permutations. The original had more types
   of houses, and more should be added to the remaster
   to make the selection more diverse.
-- Textures: Some pet skins and costume item textures
+- Pet Textures: Some pet skins and costume item textures
   haven't been re-found. They should be found or remade.
+- Item Meshes: The UI was changed from a 2D UI to a 3D UI,
+  but the quest items were not updated. 3D versions should be made.
 - More pets: Textures exist for Horses, Dragons, and Pigs,
   but the meshes haven't been found. They could be
   re-added even though they weren't used in the original.
@@ -50,6 +52,7 @@ room for improvement.
   with automated tests are those under
   `src/ReplicatedStorage/State`. Services and UI components
   could also use automatation tests.
+- [Petting companions.](https://twitter.com/CanYouPetTheDog)
 
 ## Contributing
 Contributions are accepted for this project. However,
