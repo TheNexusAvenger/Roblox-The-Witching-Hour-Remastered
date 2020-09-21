@@ -29,15 +29,14 @@ ScreenGui.Parent = script.Parent
 local Background = Instance.new("ImageLabel")
 Background.BackgroundTransparency = 1
 Background.Position = UDim2.new(1,0,0.5,0)
+Background.Size = UDim2.new(0.25 * (97/206),0,0.25,0)
 Background.AnchorPoint = Vector2.new(0.95,0.6)
 Background.Image = "rbxassetid://132929425"
 Background.Parent = ScreenGui
 
 AspectRatioSwitcher.new(ScreenGui,1,function()
-    Background.Size = UDim2.new(0.2 * (97/206),0,0.2,0)
     Background.SizeConstraint = Enum.SizeConstraint.RelativeYY
 end,function()
-    Background.Size = UDim2.new(0.2 * (97/206),0,0.2,0)
     Background.SizeConstraint = Enum.SizeConstraint.RelativeXX
 end)
 

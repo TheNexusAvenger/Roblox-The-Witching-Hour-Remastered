@@ -60,8 +60,8 @@ NPCDialogText.Parent = NPCDialogBackground
 
 local function ResizeNPCDialog()
     local WindowHeight = ScreenGui.AbsoluteSize.Y
-    NPCDialogBillboardGui.Size = UDim2.new(0,WindowHeight * 0.5,0,WindowHeight * 0.25)
-    NPCDialogText.TextSize = 28 * ((WindowHeight * 0.25)/256)
+    NPCDialogBillboardGui.Size = UDim2.new(0,WindowHeight * 0.6,0,WindowHeight * 0.3)
+    NPCDialogText.TextSize = 28 * ((WindowHeight * 0.3)/256)
 end
 ScreenGui:GetPropertyChangedSignal("AbsoluteSize"):Connect(ResizeNPCDialog)
 ResizeNPCDialog()
@@ -75,7 +75,7 @@ Background.Image = "rbxassetid://132725671"
 Background.Parent = ScreenGui
 
 AspectRatioSwitcher.new(ScreenGui,1.1,function()
-    Background.Size = UDim2.new(1,0,0.5,0)
+    Background.Size = UDim2.new(1.4,0,0.7,0)
     Background.SizeConstraint = "RelativeYY"
 end,function()
     Background.Size = UDim2.new(0.8,0,0.4,0)

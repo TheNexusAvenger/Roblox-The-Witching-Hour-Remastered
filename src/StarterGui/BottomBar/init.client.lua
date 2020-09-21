@@ -23,7 +23,7 @@ local BottomFrame = Instance.new("Frame")
 BottomFrame.Name = "BottomFrame"
 BottomFrame.BackgroundTransparency = 1
 BottomFrame.AnchorPoint = Vector2.new(0,1)
-BottomFrame.Size = UDim2.new(1,0,0.15,0)
+BottomFrame.Size = UDim2.new(1,0,0.2,0)
 BottomFrame.Position = UDim2.new(0,0,1,0)
 BottomFrame.Parent = ScreenGui
 
