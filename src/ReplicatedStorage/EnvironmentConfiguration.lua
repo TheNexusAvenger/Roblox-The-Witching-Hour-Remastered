@@ -34,12 +34,11 @@ if game.PlaceId == 5674151342 then
         },
 
         --Badges used in the game.
-        --TODO: Upload actual badges.
         Badges = {
-            BloxkinCollector = 0,
-            ThePortal = 0,
-            BloxhildasRevenge = 0,
-            BeyondTheRocks = 0,
+            BloxkinCollector = 2124612003,
+            ThePortal = 2124612004,
+            BloxhildasRevenge = 2124612005,
+            BeyondTheRocks = 2124612006,
         },
     }
 else
