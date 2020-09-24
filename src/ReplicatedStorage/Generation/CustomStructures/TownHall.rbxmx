@@ -34,7 +34,7 @@
 				<R21>0</R21>
 				<R22>1</R22>
 			</CoordinateFrame>
-			<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+			<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 			<Vector3 name="ModelMeshSize">
 				<X>0</X>
 				<Y>0</Y>
@@ -42,6 +42,7 @@
 			</Vector3>
 			<string name="Name">TownHall</string>
 			<Ref name="PrimaryPart">RBXE2A0CAD124684A3C85AFCA6D5008A37D</Ref>
+			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
 		<Item class="Model" referent="RBX32495B28302546DAAB83EC2A580D8F2B">
@@ -76,7 +77,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -84,6 +85,7 @@
 				</Vector3>
 				<string name="Name">ExteriorWalls</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBXD4B6762F54D64333BFA8274ED0A0E22E">
@@ -142,6 +144,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -218,6 +221,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -294,6 +298,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -370,6 +375,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -446,6 +452,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -522,6 +529,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -598,6 +606,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -674,6 +683,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -750,6 +760,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -826,6 +837,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -902,6 +914,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -978,6 +991,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1054,6 +1068,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1130,6 +1145,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1206,6 +1222,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1282,6 +1299,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1335,7 +1353,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -1343,6 +1361,7 @@
 				</Vector3>
 				<string name="Name">Stairs</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBXC0D4D80AC01A40078AA93FCF51081247">
@@ -1401,6 +1420,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1477,6 +1497,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1552,6 +1573,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1628,6 +1650,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1703,6 +1726,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1778,6 +1802,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1854,6 +1879,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -1930,6 +1956,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2006,6 +2033,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2082,6 +2110,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2157,6 +2186,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2233,6 +2263,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2309,6 +2340,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2385,6 +2417,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2461,6 +2494,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2537,6 +2571,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2613,6 +2648,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2689,6 +2725,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2765,6 +2802,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2841,6 +2879,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2917,6 +2956,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -2993,6 +3033,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3069,6 +3110,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3145,6 +3187,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3221,6 +3264,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3297,6 +3341,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3373,6 +3418,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3449,6 +3495,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3525,6 +3572,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3578,7 +3626,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -3586,6 +3634,7 @@
 				</Vector3>
 				<string name="Name">UpperWalls</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBX26F48A4D32834C45847F1FAB125F9D0C">
@@ -3644,6 +3693,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3720,6 +3770,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3796,6 +3847,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3872,6 +3924,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -3948,6 +4001,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4024,6 +4078,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4100,6 +4155,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4176,6 +4232,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4252,6 +4309,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4328,6 +4386,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4404,6 +4463,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4480,6 +4540,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4556,6 +4617,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4632,6 +4694,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4708,6 +4771,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4784,6 +4848,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4860,6 +4925,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -4936,6 +5002,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5012,6 +5079,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5088,6 +5156,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5141,7 +5210,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -5149,6 +5218,7 @@
 				</Vector3>
 				<string name="Name">LowerFoundation</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBX04B372DB780D4EC9B9568573BC65BF71">
@@ -5207,6 +5277,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5283,6 +5354,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5359,6 +5431,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5435,6 +5508,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5511,6 +5585,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5564,7 +5639,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -5572,6 +5647,7 @@
 				</Vector3>
 				<string name="Name">Roof</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="WedgePart" referent="RBXDF46F5568C1E47878F2089D9E970F837">
@@ -5630,6 +5706,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5705,6 +5782,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5781,6 +5859,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5857,6 +5936,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -5933,6 +6013,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6009,6 +6090,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6085,6 +6167,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6160,6 +6243,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6236,6 +6320,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6312,6 +6397,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6388,6 +6474,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6463,6 +6550,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6538,6 +6626,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6591,7 +6680,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -6599,6 +6688,7 @@
 				</Vector3>
 				<string name="Name">Clock</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBXF43D88874959457BBA6E41FDF1C69327">
@@ -6657,6 +6747,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6733,6 +6824,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6809,6 +6901,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6885,6 +6978,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -6961,6 +7055,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -7014,7 +7109,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -7022,6 +7117,7 @@
 				</Vector3>
 				<string name="Name">Pillars</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Model" referent="RBXB475DAF2D23F44868E00B213C35850BE">
@@ -7056,7 +7152,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -7064,6 +7160,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX1A57806C337E467F9EFC5F54BD825366">
@@ -7122,6 +7219,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7198,6 +7296,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7274,6 +7373,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7350,6 +7450,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7426,6 +7527,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7479,7 +7581,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -7487,6 +7589,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXEBA1C1CF56F2494B89CC5156D023688B">
@@ -7545,6 +7648,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7621,6 +7725,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7697,6 +7802,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7773,6 +7879,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7849,6 +7956,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -7902,7 +8010,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -7910,6 +8018,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXCBEEE3318E3C49EE80CDAAB49372EE74">
@@ -7968,6 +8077,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8044,6 +8154,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8120,6 +8231,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8196,6 +8308,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8272,6 +8385,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8325,7 +8439,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -8333,6 +8447,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXF3AB4ADAAC1D494E9A3AC98DF78D66EA">
@@ -8391,6 +8506,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8467,6 +8583,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8543,6 +8660,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8619,6 +8737,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8695,6 +8814,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8748,7 +8868,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -8756,6 +8876,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXF750DDAACD064F16A755B7B89FD6EDA4">
@@ -8814,6 +8935,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8890,6 +9012,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -8966,6 +9089,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9042,6 +9166,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9118,6 +9243,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9171,7 +9297,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -9179,6 +9305,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXEF8DD9381B194FBCB20C4FA235021190">
@@ -9237,6 +9364,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9313,6 +9441,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9389,6 +9518,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9465,6 +9595,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9541,6 +9672,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9594,7 +9726,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -9602,6 +9734,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXE13EC103011742BB96820213D0D924DE">
@@ -9660,6 +9793,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9736,6 +9870,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9812,6 +9947,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9888,6 +10024,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -9964,6 +10101,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10017,7 +10155,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -10025,6 +10163,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX926E02FB918A4709964790F546C2143D">
@@ -10083,6 +10222,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10159,6 +10299,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10235,6 +10376,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10311,6 +10453,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10387,6 +10530,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10440,7 +10584,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -10448,6 +10592,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXF79F490F4D5E4181B9C1DBBB71AC4718">
@@ -10506,6 +10651,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10582,6 +10728,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10658,6 +10805,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10734,6 +10882,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10810,6 +10959,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -10863,7 +11013,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -10871,6 +11021,7 @@
 					</Vector3>
 					<string name="Name">Pillar</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX07F0ED154B22417C8854D9359F86ACAD">
@@ -10929,6 +11080,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -11005,6 +11157,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -11081,6 +11234,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -11157,6 +11311,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -11233,6 +11388,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -11287,7 +11443,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -11295,6 +11451,7 @@
 				</Vector3>
 				<string name="Name">Separator</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBXDD0499D7BFD544F5B40C8D4A6494D431">
@@ -11353,6 +11510,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -11429,6 +11587,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -11505,6 +11664,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -11581,6 +11741,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -11657,6 +11818,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -11733,6 +11895,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -11809,6 +11972,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -11885,6 +12049,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -11961,6 +12126,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -12037,6 +12203,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -12113,6 +12280,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -12189,6 +12357,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -12265,6 +12434,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -12318,7 +12488,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -12326,6 +12496,7 @@
 				</Vector3>
 				<string name="Name">LightPosts</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Model" referent="RBX9DCB30D123F444269B4D47A7D4A60B2B">
@@ -12360,7 +12531,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -12368,6 +12539,7 @@
 					</Vector3>
 					<string name="Name">LightPost</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX42D4627A639C47A19C4941EAF1B81169">
@@ -12426,6 +12598,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -12502,6 +12675,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -12578,6 +12752,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -12610,6 +12785,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -12670,6 +12846,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -12746,6 +12923,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -12822,6 +13000,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -12898,6 +13077,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -12974,6 +13154,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13006,6 +13187,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -13066,6 +13248,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13098,6 +13281,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -13158,6 +13342,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13234,6 +13419,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13310,6 +13496,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13386,6 +13573,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13462,6 +13650,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13496,7 +13685,7 @@
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>354.600464</X>
-							<Y>12.1996078</Y>
+							<Y>11.6996078</Y>
 							<Z>-204.298981</Z>
 							<R00>-1</R00>
 							<R01>0</R01>
@@ -13538,6 +13727,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13553,7 +13743,7 @@
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>6</X>
-							<Y>1</Y>
+							<Y>2</Y>
 							<Z>6</Z>
 						</Vector3>
 					</Properties>
@@ -13614,6 +13804,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13690,6 +13881,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13766,6 +13958,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13842,6 +14035,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -13874,6 +14068,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -13934,6 +14129,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14010,6 +14206,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14042,6 +14239,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -14102,6 +14300,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14155,7 +14354,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -14163,6 +14362,7 @@
 					</Vector3>
 					<string name="Name">LightPost</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXA96E1F2E28D04BEC802FD05199D91FB3">
@@ -14221,6 +14421,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14297,6 +14498,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14373,6 +14575,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14405,6 +14608,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -14465,6 +14669,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14541,6 +14746,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14617,6 +14823,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14693,6 +14900,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14769,6 +14977,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14801,6 +15010,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -14861,6 +15071,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -14893,6 +15104,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -14953,6 +15165,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15029,6 +15242,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15105,6 +15319,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15181,6 +15396,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15257,6 +15473,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15291,7 +15508,7 @@
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>354.600464</X>
-							<Y>12.1996078</Y>
+							<Y>11.6996078</Y>
 							<Z>-131.298981</Z>
 							<R00>-1</R00>
 							<R01>0</R01>
@@ -15333,6 +15550,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15348,7 +15566,7 @@
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>6</X>
-							<Y>1</Y>
+							<Y>2</Y>
 							<Z>6</Z>
 						</Vector3>
 					</Properties>
@@ -15409,6 +15627,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15485,6 +15704,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15561,6 +15781,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15637,6 +15858,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15669,6 +15891,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -15729,6 +15952,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15805,6 +16029,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15837,6 +16062,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -15897,6 +16123,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -15950,7 +16177,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -15958,6 +16185,7 @@
 					</Vector3>
 					<string name="Name">LightPost</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXA1FCDC9592ED48009F452B726D0895BC">
@@ -16016,6 +16244,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16092,6 +16321,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16168,6 +16398,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16200,6 +16431,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -16260,6 +16492,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16336,6 +16569,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16412,6 +16646,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16488,6 +16723,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16564,6 +16800,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16596,6 +16833,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -16656,6 +16894,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16688,6 +16927,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -16748,6 +16988,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16824,6 +17065,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16900,6 +17142,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -16976,6 +17219,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17052,6 +17296,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17086,7 +17331,7 @@
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>354.600464</X>
-							<Y>12.1996078</Y>
+							<Y>11.6996078</Y>
 							<Z>-98.2989883</Z>
 							<R00>-1</R00>
 							<R01>0</R01>
@@ -17128,6 +17373,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17143,7 +17389,7 @@
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>6</X>
-							<Y>1</Y>
+							<Y>2</Y>
 							<Z>6</Z>
 						</Vector3>
 					</Properties>
@@ -17204,6 +17450,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17280,6 +17527,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17356,6 +17604,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17432,6 +17681,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17464,6 +17714,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -17524,6 +17775,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17600,6 +17852,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17632,6 +17885,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -17692,6 +17946,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17745,7 +18000,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -17753,6 +18008,7 @@
 					</Vector3>
 					<string name="Name">LightPost</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX161C25A81E4F47ED9694676F52D060D7">
@@ -17811,6 +18067,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17887,6 +18144,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17963,6 +18221,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -17995,6 +18254,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -18055,6 +18315,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18131,6 +18392,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18207,6 +18469,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18283,6 +18546,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18359,6 +18623,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18391,6 +18656,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -18451,6 +18717,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18483,6 +18750,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -18543,6 +18811,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18619,6 +18888,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18695,6 +18965,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18771,6 +19042,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18847,6 +19119,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18881,7 +19154,7 @@
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>354.600464</X>
-							<Y>12.1996078</Y>
+							<Y>11.1996078</Y>
 							<Z>-24.2989883</Z>
 							<R00>-1</R00>
 							<R01>0</R01>
@@ -18923,6 +19196,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -18938,7 +19212,7 @@
 						<token name="shape">1</token>
 						<Vector3 name="size">
 							<X>6</X>
-							<Y>1</Y>
+							<Y>3</Y>
 							<Z>6</Z>
 						</Vector3>
 					</Properties>
@@ -18999,6 +19273,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -19075,6 +19350,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -19151,6 +19427,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -19227,6 +19504,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -19259,6 +19537,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -19319,6 +19598,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -19395,6 +19675,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -19427,6 +19708,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">40</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -19487,6 +19769,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -19541,7 +19824,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -19549,6 +19832,7 @@
 				</Vector3>
 				<string name="Name">LowerWalls</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBX1032D54AFF23426AB21848FAF4423924">
@@ -19607,6 +19891,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -19683,6 +19968,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -19759,6 +20045,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -19835,6 +20122,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -19911,6 +20199,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -19987,6 +20276,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20063,6 +20353,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20139,6 +20430,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20215,6 +20507,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20291,6 +20584,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20367,6 +20661,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20443,6 +20738,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20519,6 +20815,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20595,6 +20892,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20671,6 +20969,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20747,6 +21046,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20823,6 +21123,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20899,6 +21200,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -20975,6 +21277,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21051,6 +21354,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21127,6 +21431,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21203,6 +21508,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21279,6 +21585,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21355,6 +21662,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21431,6 +21739,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21484,7 +21793,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -21492,6 +21801,7 @@
 				</Vector3>
 				<string name="Name">FrontArch</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBX45C2AFCAB52F416AB314B72E8EE90489">
@@ -21550,6 +21860,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21626,6 +21937,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21702,6 +22014,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21777,6 +22090,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21852,6 +22166,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -21905,7 +22220,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -21913,6 +22228,7 @@
 				</Vector3>
 				<string name="Name">DoorsWall</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Part" referent="RBX346A01D7FFC8498EA54CE836CD2A8033">
@@ -21971,6 +22287,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -22047,6 +22364,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -22123,6 +22441,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -22199,6 +22518,7 @@
 						<Y>0</Y>
 						<Z>0</Z>
 					</Vector3>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 					<float name="TopParamA">-0.5</float>
 					<float name="TopParamB">0.5</float>
@@ -22252,7 +22572,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -22260,6 +22580,7 @@
 				</Vector3>
 				<string name="Name">LowerWindows</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Model" referent="RBX9B9F87501EB54606AA11D72C81EFBBEE">
@@ -22294,7 +22615,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -22302,6 +22623,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX53D290129568411E922DA8EAF7ACF783">
@@ -22360,6 +22682,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -22392,6 +22715,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -22452,6 +22776,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -22505,7 +22830,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -22513,6 +22838,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXCFAF8EF1CC4249A4A73FE0C980876242">
@@ -22571,6 +22897,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -22603,6 +22930,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -22663,6 +22991,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -22716,7 +23045,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -22724,6 +23053,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX25DC8FE6D30E419A82E4C23D21CB9F2B">
@@ -22782,6 +23112,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -22814,6 +23145,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -22874,6 +23206,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -22927,7 +23260,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -22935,6 +23268,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX2E6D013A911A45B0931E68C2A0710D5A">
@@ -22993,6 +23327,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23025,6 +23360,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -23085,6 +23421,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23138,7 +23475,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -23146,6 +23483,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXEE829F964B4A4E77AAC4BA169A27FB35">
@@ -23204,6 +23542,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23236,6 +23575,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -23296,6 +23636,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23349,7 +23690,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -23357,6 +23698,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX26F2471CA05B468A89B37E1ACA4DA6FC">
@@ -23415,6 +23757,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23447,6 +23790,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -23507,6 +23851,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23560,7 +23905,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -23568,6 +23913,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX0A78DA3C56734A43874892E0D8905C0B">
@@ -23626,6 +23972,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23658,6 +24005,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -23718,6 +24066,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23771,7 +24120,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -23779,6 +24128,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXCA1E58A5E7AB4973B28DC1B964E274CD">
@@ -23837,6 +24187,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23869,6 +24220,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -23929,6 +24281,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -23982,7 +24335,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -23990,6 +24343,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX90EC9C20965C47A7806845C0E006DB9B">
@@ -24048,6 +24402,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24080,6 +24435,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -24140,6 +24496,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24193,7 +24550,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -24201,6 +24558,7 @@
 					</Vector3>
 					<string name="Name">LowerWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXBC570AC30A9B4F0F9D4176B8D5034DB4">
@@ -24259,6 +24617,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24291,6 +24650,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -24351,6 +24711,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24405,7 +24766,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -24413,6 +24774,7 @@
 				</Vector3>
 				<string name="Name">Doors</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Model" referent="RBXE883B5F916614CA78BFAD2ED453B2348">
@@ -24447,7 +24809,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -24455,6 +24817,7 @@
 					</Vector3>
 					<string name="Name">Doors</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBXDD2A06A9C53947F0897C09C10F0AFBA1">
@@ -24513,6 +24876,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24589,6 +24953,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24665,6 +25030,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24741,6 +25107,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24817,6 +25184,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24893,6 +25261,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -24946,7 +25315,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -24954,6 +25323,7 @@
 					</Vector3>
 					<string name="Name">Doors</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX039B9B3F9BB34CF1A90C66CEFE195799">
@@ -25012,6 +25382,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25088,6 +25459,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25164,6 +25536,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25240,6 +25613,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25316,6 +25690,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25392,6 +25767,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25446,7 +25822,7 @@
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 				<Vector3 name="ModelMeshSize">
 					<X>0</X>
 					<Y>0</Y>
@@ -25454,6 +25830,7 @@
 				</Vector3>
 				<string name="Name">UpperWindows</string>
 				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 			<Item class="Model" referent="RBX7C3050067EED40CEBA00A3D51EE72C57">
@@ -25488,7 +25865,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -25496,6 +25873,7 @@
 					</Vector3>
 					<string name="Name">UpperWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX7EE532E828E24F9E9AADDB5D217620DA">
@@ -25554,6 +25932,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25630,6 +26009,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25705,6 +26085,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25781,6 +26162,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25857,6 +26239,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -25932,6 +26315,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26008,6 +26392,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26083,6 +26468,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26158,6 +26544,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26234,6 +26621,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26266,6 +26654,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -26303,7 +26692,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -26311,6 +26700,7 @@
 					</Vector3>
 					<string name="Name">UpperWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX004D1AD098914BA0BB360D22C6881477">
@@ -26369,6 +26759,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26445,6 +26836,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26520,6 +26912,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26596,6 +26989,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26672,6 +27066,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26747,6 +27142,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26823,6 +27219,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26898,6 +27295,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -26973,6 +27371,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27049,6 +27448,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27081,6 +27481,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -27118,7 +27519,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -27126,6 +27527,7 @@
 					</Vector3>
 					<string name="Name">UpperWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX9849224447814C60A42E0B97988DE7CF">
@@ -27184,6 +27586,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27260,6 +27663,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27335,6 +27739,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27411,6 +27816,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27487,6 +27893,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27562,6 +27969,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27638,6 +28046,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27713,6 +28122,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27788,6 +28198,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27864,6 +28275,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -27896,6 +28308,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -27933,7 +28346,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -27941,6 +28354,7 @@
 					</Vector3>
 					<string name="Name">UpperWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX7F25129274CC495A9D2F5015E7C40C78">
@@ -27999,6 +28413,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28075,6 +28490,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28150,6 +28566,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28226,6 +28643,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28302,6 +28720,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28377,6 +28796,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28453,6 +28873,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28528,6 +28949,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28603,6 +29025,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28679,6 +29102,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28711,6 +29135,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -28748,7 +29173,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -28756,6 +29181,7 @@
 					</Vector3>
 					<string name="Name">UpperWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX50E87353607F4016A84C2427881A493D">
@@ -28814,6 +29240,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28890,6 +29317,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -28965,6 +29393,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29041,6 +29470,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29117,6 +29547,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29192,6 +29623,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29268,6 +29700,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29343,6 +29776,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29418,6 +29852,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29494,6 +29929,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29526,6 +29962,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -29563,7 +30000,7 @@
 						<R21>0</R21>
 						<R22>1</R22>
 					</CoordinateFrame>
-					<SharedString name="ModelMeshData">1B2M2Y8AsgTpgAmY7PhCfg==</SharedString>
+					<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
 					<Vector3 name="ModelMeshSize">
 						<X>0</X>
 						<Y>0</Y>
@@ -29571,6 +30008,7 @@
 					</Vector3>
 					<string name="Name">UpperWindow</string>
 					<Ref name="PrimaryPart">null</Ref>
+					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 				<Item class="Part" referent="RBX199DCCDC906749F5B5C9DB2BB5F7ADE9">
@@ -29629,6 +30067,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29705,6 +30144,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29780,6 +30220,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29856,6 +30297,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -29932,6 +30374,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -30007,6 +30450,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -30083,6 +30527,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -30158,6 +30603,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -30233,6 +30679,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -30309,6 +30756,7 @@
 							<Y>0</Y>
 							<Z>0</Z>
 						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 						<float name="TopParamA">-0.5</float>
 						<float name="TopParamB">0.5</float>
@@ -30341,6 +30789,7 @@
 							<string name="Name">Light</string>
 							<float name="Range">20</float>
 							<bool name="Shadows">true</bool>
+							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
@@ -30403,6 +30852,7 @@
 					<Y>0</Y>
 					<Z>0</Z>
 				</Vector3>
+				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
@@ -30425,6 +30875,6 @@
 		</Item>
 	</Item>
 	<SharedStrings>
-		<SharedString md5="1B2M2Y8AsgTpgAmY7PhCfg=="></SharedString>
+		<SharedString md5="yuZpQdnvvUBOTYh1jqZ2cA=="></SharedString>
 	</SharedStrings>
 </roblox>
