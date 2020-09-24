@@ -37,27 +37,11 @@ local function TeleportPlayerToDungeon()
 end
 
 --[[
-Updates the visible dungeon.
---]]
-local function UpdateVisibleDungeons()
-    for Id,DungeonModel in pairs(StoredDungeons) do
-        DungeonModel.Parent = (Id == CurrentDungeon and DungeonsContainer or nil)
-    end
-end
-
---[[
 Registers a new dungeon model.
 --]]
 local function DungeonAdded(Model)
     StoredDungeons[Model.Name] = Model
-    if Model.Name ~= CurrentDungeon then
-        coroutine.wrap(function()
-            wait()
-            if Model.Name ~= CurrentDungeon then
-                Model.Parent = nil
-            end
-        end)()
-    else
+    if Model.Name == CurrentDungeon then
         TeleportPlayerToDungeon()
     end
 end
@@ -74,7 +58,6 @@ DungeonsContainer.ChildAdded:Connect(DungeonAdded)
 StartDungeon.OnClientEvent:Connect(function(X,Y,Id)
     --Set the current dungeon.
     CurrentDungeon = Id
-    UpdateVisibleDungeons()
 
     --Teleport the player.
     TeleportPlayerToDungeon()
