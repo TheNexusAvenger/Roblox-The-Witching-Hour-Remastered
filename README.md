@@ -48,9 +48,9 @@ room for improvement.
 - More pets: Textures exist for Horses, Dragons, and Pigs,
   but the meshes haven't been found. They could be
   re-added even though they weren't used in the original.
-- Item name display: Right vs left arms can be hard to identify,
-  and pet companion parts can be hard to determine. The name
-  of an item should be visible somewhere.
+- Item name display: In the inventory, right vs left arms can
+  be hard to identify, and pet companion parts can be hard to
+  determine. The name of an item should be visible somewhere.
 - More automated tests: The only logic-heavy components
   with automated tests are those under
   `src/ReplicatedStorage/State`. Services and UI components
