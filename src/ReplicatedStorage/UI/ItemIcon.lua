@@ -80,13 +80,25 @@ function ItemIcon:SetItem(ModelName)
             local CharacterMesh = Model:FindFirstChild("R6"):FindFirstChildWhichIsA("CharacterMesh")
             if CharacterMesh then
                 self.Model = Instance.new("Part")
-                self.Model.Size = (ModelData.ItemType == "Torso" and Vector3.new(2,2,1) or Vector3.new(1,2,1))
+                self.Model.Size = (ModelData.ItemType == "PlayerTorso" and Vector3.new(2,2,1) or Vector3.new(1,2,1))
                 self.Model.Parent = self.ViewportFrame
+
+                if ModelData.ItemType == "PlayerTorso" then
+                    self.Model.BrickColor = BrickColor.new("Bright green")
+                elseif ModelData.ItemType == "PlayerLeftArm" or  ModelData.ItemType == "PlayerRightArm" then
+                    self.Model.BrickColor = BrickColor.new("Bright blue")
+                else
+                    self.Model.BrickColor = BrickColor.new("Bright yellow")
+                end
 
                 local Mesh = Instance.new("SpecialMesh")
                 Mesh.MeshType = Enum.MeshType.FileMesh
                 Mesh.MeshId = "rbxassetid://"..CharacterMesh.MeshId
-                Mesh.TextureId = "rbxassetid://"..CharacterMesh.OverlayTextureId
+                if CharacterMesh.OverlayTextureId ~= 0 then
+                    Mesh.TextureId = "rbxassetid://"..CharacterMesh.OverlayTextureId
+                elseif CharacterMesh.BaseTextureId ~= 0 then
+                    Mesh.TextureId = "rbxassetid://"..CharacterMesh.BaseTextureId
+                end
                 Mesh.Parent = self.Model
             end
         end
