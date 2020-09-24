@@ -7,7 +7,7 @@ Displays the credits for the game.
 local CREDITS_TEXT = "This game was created to be the first feature-complete "..
 "recreation of Halloween 2013: The Witching Hour by the Roblox Games "..
 "Team since the original game was never released.\n\n"..
-"Building: Roblox Games Team, TheNexusAvneger\n"..
+"Building: Roblox Games Team, TheNexusAvenger\n"..
 "Coding: TheNexusAvenger\n"..
 "Story: Roblox Games Team, konlon15\n"..
 "Map: Roblox Games Team, TheNexusAvenger, konlon15\n"..
