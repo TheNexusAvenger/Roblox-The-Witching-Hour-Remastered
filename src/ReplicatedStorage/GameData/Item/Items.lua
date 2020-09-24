@@ -24,13 +24,13 @@ return {
     ["MrRobotLeftArm"] = {
         DisplayName = "Mr. Robot Left Arm",
         ItemType = "PlayerLeftArm",
-        RobloxId = 54116338,
+        RobloxId = 54116373,
         Zone = "Skeleton",
     },
     ["MrRobotRightArm"] = {
         DisplayName = "Mr. Robot Right Arm",
         ItemType = "PlayerRightArm",
-        RobloxId = 54116373,
+        RobloxId = 54116338,
         Zone = "Skeleton",
     },
     ["MrRobotLeftLeg"] = {
