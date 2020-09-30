@@ -154,6 +154,7 @@ function CharacterService:TeleportToLastSpot(Player)
         if HumanoidRootPart then
             HumanoidRootPart.CFrame = self.LastPlayerCFrames[Player]
         end
+        self.LastPlayerCFrames[Player] = nil
     end
 end
 
