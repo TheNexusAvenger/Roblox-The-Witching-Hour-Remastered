@@ -41,7 +41,7 @@ room for improvement.
   with various permutations. The original had more types
   of houses, and more should be added to the remaster
   to make the selection more diverse.
-- Pet Textures: Some pet skins and costume item textures
+- Pet Textures: Some pet costume item textures
   haven't been re-found. They should be found or remade.
 - Item Meshes: The UI was changed from a 2D UI to a 3D UI,
   but the quest items were not updated. 3D versions should be made.

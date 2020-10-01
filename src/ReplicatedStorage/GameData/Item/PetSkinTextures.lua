@@ -87,34 +87,28 @@ return {
         Panda = 133464691,
         Dragon = 133464373,
     },
-
-    --TODO: The textures are unknown.
     ["Werewolf"] = {
-        Dog = 132549809,
-        Cat = 132553894,
-        Pig = 0,
-        Horse = 0,
-        Panda = 132554561,
-        Dragon =  0,
+        Dog = 134039149,
+        Cat = 134039084,
+        Pig = 134039403,
+        Horse = 134039495,
+        Panda = 134039303,
+        Dragon =  134039227,
     },
-
-    --TODO: The textures are unknown.
     ["Ghost"] = {
-        Dog = 132549809,
-        Cat = 132553894,
-        Pig = 0,
-        Horse = 0,
-        Panda = 132554561,
-        Dragon =  0,
+        Dog = 134039105,
+        Cat = 134039028,
+        Pig = 134039328,
+        Horse = 134039436,
+        Panda = 134039269,
+        Dragon =  134039172,
     },
-
-    --TODO: The textures are unknown.
     ["GrimReaper"] = {
-        Dog = 132549809,
-        Cat = 132553894,
-        Pig = 0,
-        Horse = 0,
-        Panda = 132554561,
-        Dragon =  0,
+        Dog = 134039131,
+        Cat = 134039069,
+        Pig = 134039372,
+        Horse = 134039456,
+        Panda = 134039290,
+        Dragon =  134039207,
     },
 }
