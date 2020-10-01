@@ -533,7 +533,7 @@
 					</Vector3>
 				</Properties>
 			</Item>
-			<Item class="Weld" referent="RBXD2036115471245FEA58892A992F2971B">
+			<Item class="Weld" referent="RBX96C968A5D5C64E34B5BA223B9CCFF221">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<CoordinateFrame name="C0">
@@ -606,6 +606,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -649,7 +650,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549595051</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767999044</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -826,6 +827,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -869,7 +871,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549595051</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767999044</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -1046,6 +1048,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -1089,7 +1092,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594876</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767999044</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -1266,6 +1269,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -1309,7 +1313,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594876</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767999044</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -1486,6 +1490,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -1529,7 +1534,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594876</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767999044</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -1706,6 +1711,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -1749,7 +1755,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549595146</url></Content>
+				<Content name="TextureID"><url>http://roblox.com/asset/?id=5767998139</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -2178,6 +2184,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -2221,7 +2228,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549595146</url></Content>
+				<Content name="TextureID"><url>http://roblox.com/asset/?id=5767998139</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -2578,6 +2585,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -2621,7 +2629,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594803</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767998637</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -2834,6 +2842,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -2877,7 +2886,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594803</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767998637</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -3054,6 +3063,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -3097,7 +3107,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594803</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767998637</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -3274,6 +3284,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -3317,7 +3328,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594957</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767998637</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -3530,6 +3541,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -3573,7 +3585,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594957</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767998637</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -3750,6 +3762,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -3793,7 +3806,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549594957</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767998637</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -3970,6 +3983,7 @@
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
+				<bool name="DoubleSided">false</bool>
 				<float name="FrontParamA">-0.5</float>
 				<float name="FrontParamB">0.5</float>
 				<token name="FrontSurface">0</token>
@@ -4013,7 +4027,7 @@
 				</Vector3>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
-				<Content name="TextureID"><url>http://roblox.com/asset/?id=549595051</url></Content>
+				<Content name="TextureID"><url>rbxassetid://5767999044</url></Content>
 				<float name="TopParamA">-0.5</float>
 				<float name="TopParamB">0.5</float>
 				<token name="TopSurface">0</token>
@@ -4211,6 +4225,7 @@
 					<PhysicalProperties name="CustomPhysicalProperties">
 						<CustomPhysics>false</CustomPhysics>
 					</PhysicalProperties>
+					<bool name="DoubleSided">false</bool>
 					<float name="FrontParamA">-0.5</float>
 					<float name="FrontParamB">0.5</float>
 					<token name="FrontSurface">0</token>
@@ -4303,7 +4318,7 @@
 					<R22>1</R22>
 				</CoordinateFrame>
 				<BinaryString name="AttributesSerialize"></BinaryString>
-				<string name="Name">Witch Wizard Hat Purple</string>
+				<string name="Name">Witch Hat</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
@@ -4320,18 +4335,18 @@
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>-6.68663979</X>
-						<Y>9.81789494</Y>
+						<X>-6.73879623</X>
+						<Y>9.56247425</Y>
 						<Z>-30.7679882</Z>
-						<R00>4.37113883e-08</R00>
-						<R01>2.64697796e-23</R01>
-						<R02>-1</R02>
-						<R10>1.81158594e-23</R10>
-						<R11>1</R11>
-						<R12>2.64697796e-23</R12>
+						<R00>3.02998127e-15</R00>
+						<R01>-0.087155737</R01>
+						<R02>-0.99619472</R02>
+						<R10>-7.87137555e-09</R10>
+						<R11>0.99619472</R11>
+						<R12>-0.087155737</R12>
 						<R20>1</R20>
-						<R21>-1.25575334e-30</R21>
-						<R22>4.37113883e-08</R22>
+						<R21>7.84142262e-09</R21>
+						<R22>-6.86032564e-10</R22>
 					</CoordinateFrame>
 					<bool name="CanCollide">false</bool>
 					<bool name="CastShadow">true</bool>
@@ -4383,50 +4398,22 @@
 						<Z>1</Z>
 					</Vector3>
 				</Properties>
-				<Item class="SpecialMesh" referent="RBXF686E64C5CDB4D9FB36E79E42B0FA191">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<token name="LODX">2</token>
-						<token name="LODY">2</token>
-						<Content name="MeshId"><url>rbxassetid://5673945409</url></Content>
-						<token name="MeshType">5</token>
-						<string name="Name">SpecialMesh</string>
-						<Vector3 name="Offset">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<Vector3 name="Scale">
-							<X>1.5</X>
-							<Y>1.5</Y>
-							<Z>1.5</Z>
-						</Vector3>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<Content name="TextureId"><url>rbxassetid://5699724529</url></Content>
-						<Vector3 name="VertexColor">
-							<X>1</X>
-							<Y>1</Y>
-							<Z>1</Z>
-						</Vector3>
-					</Properties>
-				</Item>
 				<Item class="Attachment" referent="RBXBF7C681900D84213A520F3A5214F0E30">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="CFrame">
 							<X>0.00899999961</X>
-							<Y>-0.850000024</Y>
+							<Y>-0.600000024</Y>
 							<Z>-0.0359999985</Z>
 							<R00>1</R00>
-							<R01>7.87137555e-09</R01>
-							<R02>-4.37113847e-08</R02>
-							<R10>-7.87137555e-09</R10>
-							<R11>1</R11>
-							<R12>-4.14442607e-16</R12>
-							<R20>4.37113847e-08</R20>
-							<R21>7.58511334e-16</R21>
-							<R22>1</R22>
+							<R01>0</R01>
+							<R02>-0</R02>
+							<R10>0</R10>
+							<R11>0.99619472</R11>
+							<R12>0.087155737</R12>
+							<R20>0</R20>
+							<R21>-0.087155737</R21>
+							<R22>0.99619472</R22>
 						</CoordinateFrame>
 						<string name="Name">HatAttachment</string>
 						<int64 name="SourceAssetId">-1</int64>
@@ -4447,22 +4434,22 @@
 						</Vector3>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBX22A4209CAE8B4B0F906B919EC44D3C9E">
+				<Item class="Weld" referent="RBX42F64F3CF2F748FA836B8A4490B7222D">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0.00899999961</X>
-							<Y>-0.850000024</Y>
+							<Y>-0.600000024</Y>
 							<Z>-0.0359999985</Z>
 							<R00>1</R00>
-							<R01>7.87137555e-09</R01>
-							<R02>-4.37113847e-08</R02>
-							<R10>-7.87137555e-09</R10>
-							<R11>1</R11>
-							<R12>-4.14442607e-16</R12>
-							<R20>4.37113847e-08</R20>
-							<R21>7.58511334e-16</R21>
-							<R22>1</R22>
+							<R01>0</R01>
+							<R02>-0</R02>
+							<R10>0</R10>
+							<R11>0.99619472</R11>
+							<R12>0.087155737</R12>
+							<R20>0</R20>
+							<R21>-0.087155737</R21>
+							<R22>0.99619472</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
 							<X>0</X>
@@ -4484,6 +4471,34 @@
 						<Ref name="Part1">RBXF7678FDAFD7F4884BC58C2D6688B40D7</Ref>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="SpecialMesh" referent="RBXADF75CD649BA45DCA7E70F0D66CCE35F">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<token name="LODX">2</token>
+						<token name="LODY">2</token>
+						<Content name="MeshId"><url>http://www.roblox.com/asset/?id=1165242</url></Content>
+						<token name="MeshType">5</token>
+						<string name="Name">Mesh</string>
+						<Vector3 name="Offset">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<Vector3 name="Scale">
+							<X>0.0900000036</X>
+							<Y>0.0900000036</Y>
+							<Z>0.0900000036</Z>
+						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Content name="TextureId"><url>http://www.roblox.com/asset/?id=134156139</url></Content>
+						<Vector3 name="VertexColor">
+							<X>1</X>
+							<Y>1</Y>
+							<Z>1</Z>
+						</Vector3>
 					</Properties>
 				</Item>
 			</Item>
