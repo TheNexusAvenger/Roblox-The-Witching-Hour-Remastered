@@ -11,8 +11,8 @@ local CREDITS_TEXT = "This game was created to be the first feature-complete "..
 "Coding: TheNexusAvenger\n"..
 "Story: Roblox Games Team, konlon15\n"..
 "Map: Roblox Games Team, TheNexusAvenger, konlon15\n"..
-"Assets: Roblox Games Team\n"..
-"Asset discovery: CaptainJadeFlames, konlon15, TheNexusAvenger\n\n"..
+"Assets: Roblox Games Team, Spectaqual\n"..
+"Asset discovery: chris12902, konlon15, TheNexusAvenger\n\n"..
 "Also thanks to the following for video references:\n"..
 "JamiyJamie, Alexrocks911, Arxenious, gerben13, darkchaos321, Justinlol,\n"..
 "endryin, Thepdotgamers, Exeplex, PolyMoose\n\n"..
