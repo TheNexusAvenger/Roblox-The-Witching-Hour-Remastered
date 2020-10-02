@@ -690,6 +690,7 @@ return {
     --]]
     --Cat costume.
     ["PetCatCostumeHat"] = {
+        DisplayName = "Cat Costume Hat",
         ItemType = "PetCostumeHat",
         CostumeName = "Cat",
         MeshId = 132566464,
@@ -698,6 +699,7 @@ return {
         Zone = "Cat",
     },
     ["PetCatCostumeCollar"] = {
+        DisplayName = "Cat Costume Collar",
         ItemType = "PetCostumeCollar",
         CostumeName = "Cat",
         MeshId = 132567849,
@@ -706,6 +708,7 @@ return {
         Zone = "Cat",
     },
     ["PetCatCostumeCape"] = {
+        DisplayName = "Cat Costume Cape",
         ItemType = "PetCostumeBack",
         CostumeName = "Cat",
         MeshId = 132566900,
@@ -714,6 +717,7 @@ return {
         Zone = "Cat",
     },
     ["PetCatCostumeAnklet"] = {
+        DisplayName = "Cat Costume Anklet",
         ItemType = "PetCostumeAnkle",
         CostumeName = "Cat",
         MeshId = 132762876,
@@ -724,7 +728,7 @@ return {
 
     --Swamp monster costume.
     ["PetSwampMonsterCostumeHat"] = {
-        DisplayName = "Cat Costume Hat",
+        DisplayName = "Swamp Monster Costume Hat",
         ItemType = "PetCostumeHat",
         CostumeName = "SwampMonster",
         MeshId = 132566464,
@@ -733,7 +737,7 @@ return {
         Zone = "Swamp",
     },
     ["PetSwampMonsterCostumeCollar"] = {
-        DisplayName = "Cat Costume Collar",
+        DisplayName = "Swamp Monster Costume Collar",
         ItemType = "PetCostumeCollar",
         CostumeName = "SwampMonster",
         MeshId = 132567849,
@@ -742,7 +746,7 @@ return {
         Zone = "Swamp",
     },
     ["PetSwampMonsterCostumeCape"] = {
-        DisplayName = "Cat Costume Cape",
+        DisplayName = "Swamp Monster Costume Cape",
         ItemType = "PetCostumeBack",
         CostumeName = "SwampMonster",
         MeshId = 132566900,
@@ -751,7 +755,7 @@ return {
         Zone = "Swamp",
     },
     ["PetSwampMonsterCostumeAnklet"] = {
-        DisplayName = "Cat Costume Anklet",
+        DisplayName = "Swamp Monster Costume Anklet",
         ItemType = "PetCostumeAnkle",
         CostumeName = "SwampMonster",
         MeshId = 132762876,
