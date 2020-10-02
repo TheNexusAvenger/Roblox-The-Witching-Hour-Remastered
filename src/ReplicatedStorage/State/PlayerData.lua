@@ -35,7 +35,7 @@ local PLAYER_DATA_LAYOUT = {
     },
     WarpPurchased = {
         Type = "Boolean",
-        Default = false,
+        Default = true,
     },
     Quests = {
         Type = "Table",
