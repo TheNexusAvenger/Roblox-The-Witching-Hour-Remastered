@@ -3,6 +3,8 @@ TheNexusAvenger
 
 Helps players get used to using houses
 for the first quest.
+Also shows a beacon for Builderman for
+the first quest.
 --]]
 
 local HOUSE_INDICATOR_LOCATIONS = {
@@ -20,9 +22,11 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
-local Quests = ReplicatedStorageProject:GetResource("State.Quests").new(Players.LocalPlayer)
-local Inventory = ReplicatedStorageProject:GetResource("State.Inventory").new(Players.LocalPlayer)
+local NPCLocations = ReplicatedStorageProject:GetResource("GameData.Generation.NPCLocations")
+local Quests = ReplicatedStorageProject:GetResource("State.Quests").GetQuests(Players.LocalPlayer)
+local Inventory = ReplicatedStorageProject:GetResource("State.Inventory").GetInventory(Players.LocalPlayer)
 
+local InitialQuestStarted = false
 local InitialQuestActive = false
 
 
@@ -31,10 +35,28 @@ local InitialQuestActive = false
 Updates the inital quest being active.
 --]]
 local function UpdateInitialQuestActive()
+    InitialQuestStarted = Quests:QuestConditonValid("Fortifying Town Hall","NotUnlocked")
     InitialQuestActive = Quests:QuestConditonValid("Fortifying Town Hall","Inventory")
 end
 
 
+
+--Create the Builderman beacon.
+local BuildermanLocation = NPCLocations["Builderman"]
+local BuildermanBeacon = Instance.new("Part")
+BuildermanBeacon.Name = "BuildermanBeacon"
+BuildermanBeacon.Color = Color3.new(0,170/255,0)
+BuildermanBeacon.Material = Enum.Material.Neon
+BuildermanBeacon.Anchored = true
+BuildermanBeacon.CanCollide = false
+BuildermanBeacon.Size = Vector3.new(5,5,5)
+BuildermanBeacon.CFrame = CFrame.new(BuildermanLocation.CellX * 100,0,BuildermanLocation.CellY * 100) * BuildermanLocation.OffsetCFrame * CFrame.new(0,10,0) * CFrame.Angles(0,0,math.pi/2)
+BuildermanBeacon.Parent = Workspace
+
+local BuildermanBeaconMesh = Instance.new("SpecialMesh")
+BuildermanBeaconMesh.MeshType = Enum.MeshType.Cylinder
+BuildermanBeaconMesh.Scale = Vector3.new(1000,1,1)
+BuildermanBeaconMesh.Parent = BuildermanBeacon
 
 --Create the gradients.
 local Gradients = {}
@@ -73,9 +95,12 @@ end
 
 --Set up updating the gradients.
 RunService.RenderStepped:Connect(function()
-    local Transparency = InitialQuestActive and (math.sin(tick())/4) + 0.75 or 1
+    local BeaconTransparency = InitialQuestStarted and ((math.sin(tick())/4)/2) + 0.875 or 1
+    local GradientTransparency = InitialQuestActive and (math.sin(tick())/4) + 0.75 or 1
+    
+    BuildermanBeacon.Transparency = BeaconTransparency
     for _,Gradient in pairs(Gradients) do
-        Gradient.Transparency = Transparency
+        Gradient.Transparency = GradientTransparency
     end
 end)
 
