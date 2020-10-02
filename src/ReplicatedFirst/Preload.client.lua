@@ -120,6 +120,15 @@ local ASSETS_TO_PRELOAD = {
         "rbxassetid://5558262263",
         "rbxassetid://5558262263",
         "rbxassetid://5558262263",
+        "rbxassetid://132065232",
+        "rbxassetid://132065183",
+        "rbxassetid://132065208",
+        "rbxassetid://132065751",
+        "rbxassetid://132065680",
+        "rbxassetid://132065721",
+        "rbxassetid://132065051",
+        "rbxassetid://132064995",
+        "rbxassetid://132065018",
 
         --Store.
         "rbxassetid://132891351",
