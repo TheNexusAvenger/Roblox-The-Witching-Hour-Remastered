@@ -296,6 +296,7 @@ function InventoryWindow:__new()
     PetHatSlot.Position = UDim2.new(369/902,0,206/644,0)
     PetHatSlot.Image = "rbxassetid://131490682"
     PetHatSlot.Visible = false
+    PetHatSlot.ZIndex = 3
     PetHatSlot.Parent = Background
 
     local PetCollarSlot = Instance.new("ImageLabel")
@@ -304,6 +305,7 @@ function InventoryWindow:__new()
     PetCollarSlot.Position = UDim2.new(369/902,0,282/644,0)
     PetCollarSlot.Image = "rbxassetid://131528533"
     PetCollarSlot.Visible = false
+    PetCollarSlot.ZIndex = 3
     PetCollarSlot.Parent = Background
 
     local PetBackSlot = Instance.new("ImageLabel")
@@ -312,6 +314,7 @@ function InventoryWindow:__new()
     PetBackSlot.Position = UDim2.new(369/902,0,358/644,0)
     PetBackSlot.Image = "rbxassetid://131528494"
     PetBackSlot.Visible = false
+    PetBackSlot.ZIndex = 3
     PetBackSlot.Parent = Background
     
     local PetAnkleSlot = Instance.new("ImageLabel")
@@ -320,6 +323,7 @@ function InventoryWindow:__new()
     PetAnkleSlot.Position = UDim2.new(369/902,0,434/644,0)
     PetAnkleSlot.Image = "rbxassetid://131528543"
     PetAnkleSlot.Visible = false
+    PetAnkleSlot.ZIndex = 3
     PetAnkleSlot.Parent = Background
 
     local PetDisplayFrame = Instance.new("Frame")
