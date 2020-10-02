@@ -261,10 +261,10 @@ function InventoryWindow:__new()
     self.PetToggleButtons = {
         Dog = {DogToggleButton,"rbxassetid://132064980","rbxassetid://132064940","rbxassetid://132064966"},
         Cat = {CatToggleButton,"rbxassetid://132064800","rbxassetid://132064800","rbxassetid://132064768"},
-        Pig = {PigToggleButton,"rbxassetid://132065232","rbxassetid://132065183","rbxassetid://132065208"}, --TODO: Add to preload
-        Horse = {HorseToggleButton,"rbxassetid://132065751","rbxassetid://132065680","rbxassetid://132065721"}, --TODO: Add to preload
+        Pig = {PigToggleButton,"rbxassetid://132065232","rbxassetid://132065183","rbxassetid://132065208"},
+        Horse = {HorseToggleButton,"rbxassetid://132065751","rbxassetid://132065680","rbxassetid://132065721"},
         Panda = {PandaToggleButton,"rbxassetid://132065130","rbxassetid://132065075","rbxassetid://132065098"},
-        Dragon = {DragonToggleButton,"rbxassetid://132065051","rbxassetid://132064995","rbxassetid://132065018"}, --TODO: Add to preload
+        Dragon = {DragonToggleButton,"rbxassetid://132065051","rbxassetid://132064995","rbxassetid://132065018"},
     }
 
     local DB = true
