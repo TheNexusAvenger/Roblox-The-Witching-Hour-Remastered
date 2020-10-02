@@ -37,6 +37,8 @@ local TeleportLocations = ReplicatedStorageProject:GetResource("GameData.Generat
 local Landmarks = ReplicatedStorageProject:GetResource("GameData.Generation.Landmarks")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 local CharacterIndicator = require(script:WaitForChild("CharacterIndicator"))
+local StartDungeon = ReplicatedStorageProject:GetResource("GameReplication.DungeonReplication.StartDungeon")
+local EndDungeon = ReplicatedStorageProject:GetResource("GameReplication.DungeonReplication.EndDungeon")
 
 local Map = NexusObject:Extend()
 Map:SetClassName("Map")
@@ -245,13 +247,15 @@ end
 Enables being able to use the warp buttons.
 --]]
 function Map:EnableWarping()
+    --Set up the buttons.
+    local CurrentDungeon
     for Name,Button in pairs(self.WarpIcons) do
         local LocationData = TeleportLocations[Name]
 
-        --Set up clicking the buttons.
+        --Set up clicking the button.
         local DB = true
         Button.MouseButton1Down:Connect(function()
-            if DB then
+            if DB and not CurrentDungeon then
                 DB = false
                 local Character = Players.LocalPlayer.Character
                 if Character then
@@ -269,7 +273,10 @@ function Map:EnableWarping()
                         Scale:Destroy()
 
                         --Teleport the player.
-                        HumanoidRootPart.CFrame = CFrame.new(LocationData[1] * 100,3,LocationData[2] * 100) * CFrame.Angles(0,(-math.pi/2) + LocationData[3],0) * CFrame.new(math.random(-10,10),0,math.random(-10,10))
+                        print(CurrentDungeon)
+                        if not CurrentDungeon then
+                            HumanoidRootPart.CFrame = CFrame.new(LocationData[1] * 100,3,LocationData[2] * 100) * CFrame.Angles(0,(-math.pi/2) + LocationData[3],0) * CFrame.new(math.random(-10,10),0,math.random(-10,10))
+                        end
                     end
                 end
                 
@@ -278,6 +285,17 @@ function Map:EnableWarping()
             end
         end)
     end
+
+    --Connect entering and leaving dungeons.
+    StartDungeon.OnClientEvent:Connect(function(_,_,Id)
+        CurrentDungeon = Id
+    end)
+    
+    EndDungeon.OnClientEvent:Connect(function(_,_,Id)
+        if CurrentDungeon == Id then
+            CurrentDungeon = nil
+        end
+    end)
 end
 
 --[[
