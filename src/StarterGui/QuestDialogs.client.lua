@@ -4,9 +4,15 @@ TheNexusAvenger
 Performs dialogs for quests.
 --]]
 
+local MIN_DIALOG_LINES = 4
+local MAX_DIALOG_LINES = 10
+
+
+
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TextService = game:GetService("TextService")
 
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
@@ -22,6 +28,7 @@ local DisplayItemAwards = ReplicatedStorageProject:GetResource("GameReplication.
 
 
 --Create the ScreenGui.
+local DialogLines = MIN_DIALOG_LINES
 local DB = true
 local DialogActive = false
 local ScreenGui = Instance.new("ScreenGui")
@@ -61,7 +68,7 @@ NPCDialogText.Parent = NPCDialogBackground
 local function ResizeNPCDialog()
     local WindowHeight = ScreenGui.AbsoluteSize.Y
     NPCDialogBillboardGui.Size = UDim2.new(0,WindowHeight * 0.6,0,WindowHeight * 0.3)
-    NPCDialogText.TextSize = 28 * ((WindowHeight * 0.3)/256)
+    NPCDialogText.TextSize = ((28 * 4)/DialogLines) * ((WindowHeight * 0.3)/256)
 end
 ScreenGui:GetPropertyChangedSignal("AbsoluteSize"):Connect(ResizeNPCDialog)
 ResizeNPCDialog()
@@ -136,6 +143,14 @@ local function RunDialogSection(DialogData,NPCName)
 
     --Update the text bubble.
     NPCDialogText.Text = DialogData.Text
+    for i = MIN_DIALOG_LINES,MAX_DIALOG_LINES,0.25 do
+        DialogLines = i
+        local TextBounds = TextService:GetTextSize(DialogData.Text,28 * (4/i),Enum.Font.Antique,Vector2.new(512 * 0.6,2000))
+        if TextBounds.Y < 256 * 0.54 then
+            break
+        end
+    end
+    ResizeNPCDialog()
 
     if DialogData.Alternatives then
         --Set up the buttons.
