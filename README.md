@@ -45,9 +45,6 @@ room for improvement.
   haven't been re-found. They should be found or remade.
 - Item Meshes: The UI was changed from a 2D UI to a 3D UI,
   but the quest items were not updated. 3D versions should be made.
-- More pets: Textures exist for Horses, Dragons, and Pigs,
-  but the meshes haven't been found. They could be
-  re-added even though they weren't used in the original.
 - Item name display: In the inventory, right vs left arms can
   be hard to identify, and pet companion parts can be hard to
   determine. The name of an item should be visible somewhere.

@@ -10,10 +10,10 @@ return {
     ["Default"] = {
         Dog = 132549809,
         Cat = 132553894,
-        Pig = 0,
-        Horse = 0,
+        Pig = 133963316,
+        Horse = 133958190,
         Panda = 132554561,
-        Dragon =  0,
+        Dragon =  133936271,
     },
     ["Cat"] = {
         Dog = 133252818,

@@ -166,6 +166,11 @@ function StoreItem:__new(TransactionId,Parent)
             self:UpdateVisibility()
         end)
     end
+    if self.TransactionData.Type == "Pet" then
+        PlayerData:GetValueChangedSignal("PetsOwned"):Connect(function()
+            self:UpdateVisibility()
+        end)
+    end
 
     --Connect the callback.
     if self.TransactionData.CreateLocalChangeCallback then
@@ -230,6 +235,9 @@ function StoreItem:UpdateVisibility(Category)
         CanShowItem = false
     end
     if CanShowItem and self.TransactionData.Type == "Item" and self.TransactionData.AllowMultiple ~= true and #Inventory:GetItemSlots(self.TransactionData.ItemName) > 0 then
+        CanShowItem = false
+    end
+    if CanShowItem and self.TransactionData.Type == "Pet" and PlayerData:GetValue("PetsOwned")[self.TransactionData.Name] then
         CanShowItem = false
     end
 

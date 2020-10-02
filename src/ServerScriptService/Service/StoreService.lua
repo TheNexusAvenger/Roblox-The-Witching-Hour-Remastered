@@ -62,6 +62,10 @@ function StoreService:CompleteTransaction(Player,TransactionId)
         if Transaction.AllowMultiple ~= true and #Inventory:GetItemSlots(Transaction.ItemName) > 0 then
             return false
         end
+    elseif Transaction.Type == "Pet" then
+        if PlayerData:GetValue("PetsOwned")[Transaction.Name] then
+            return false
+        end
     end
 
     --Complete the transaction and return true.
@@ -69,6 +73,10 @@ function StoreService:CompleteTransaction(Player,TransactionId)
         Transaction.HandlePurchase(Player)
     elseif Transaction.Type == "Item" then
         InventoryService:AddItem(Player,Transaction.ItemName)
+    elseif Transaction.Type == "Pet" then
+        local Pets = PlayerData:GetValue("PetsOwned")
+        Pets[Transaction.Name] = true
+        PlayerData:SetValue("PetsOwned",Pets)
     elseif Transaction.Type == "Candy" then
         PlayerData:SetValue("Currency",PlayerData:GetValue("Currency") + Transaction.CandyAmount)
     end

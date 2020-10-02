@@ -118,42 +118,40 @@ return {
         Name = "Cat",
         IconId = "rbxassetid://133220975",
         Category = "Companions",
-        Type = "Custom",
+        Type = "Pet",
         CostCandy = 110,
-        CanPurchase = function(Player)
-            return PlayerDataClass.GetPlayerData(Player):GetValue("PetsOwned")["Cat"] == nil
-        end,
-        HandlePurchase = function(Player)
-            local PlayerData = PlayerDataClass.GetPlayerData(Player)
-            local Pets = PlayerData:GetValue("PetsOwned")
-            Pets["Cat"] = true
-            PlayerData:SetValue("PetsOwned",Pets)
-        end,
-        CreateLocalChangeCallback = function(Callback)
-            local PlayerData = PlayerDataClass.GetPlayerData(Players.LocalPlayer)
-            PlayerData:GetValueChangedSignal("PetsOwned"):Connect(Callback)
-        end,
+    },
+    {
+        TransactionName = "Pig",
+        Name = "Pig",
+        IconId = "rbxassetid://0",
+        Category = "Companions",
+        Type = "Pet",
+        CostCandy = 250,
+    },
+    {
+        TransactionName = "Horse",
+        Name = "Horse",
+        IconId = "rbxassetid://0",
+        Category = "Companions",
+        Type = "Pet",
+        CostCandy = 400,
     },
     {
         TransactionName = "Panda",
         Name = "Panda",
         IconId = "rbxassetid://133221030",
         Category = "Companions",
-        Type = "Custom",
+        Type = "Pet",
         CostCandy = 550,
-        CanPurchase = function(Player)
-            return PlayerDataClass.GetPlayerData(Player):GetValue("PetsOwned")["Panda"] == nil
-        end,
-        HandlePurchase = function(Player)
-            local PlayerData = PlayerDataClass.GetPlayerData(Player)
-            local Pets = PlayerData:GetValue("PetsOwned")
-            Pets["Panda"] = true
-            PlayerData:SetValue("PetsOwned",Pets)
-        end,
-        CreateLocalChangeCallback = function(Callback)
-            local PlayerData = PlayerDataClass.GetPlayerData(Players.LocalPlayer)
-            PlayerData:GetValueChangedSignal("PetsOwned"):Connect(Callback)
-        end,
+    },
+    {
+        TransactionName = "Dragon",
+        Name = "Dragon",
+        IconId = "rbxassetid://0",
+        Category = "Companions",
+        Type = "Pet",
+        CostCandy = 700,
     },
     {
         TransactionName = "MapEyeBackYellow",

@@ -221,7 +221,6 @@ function InventoryWindow:__new()
     DogToggleButton.AnchorPoint = Vector2.new(0.5,0.5)
     DogToggleButton.Size = UDim2.new(54/387,0,55/72,0)
     DogToggleButton.Position = UDim2.new(54/387,0,36/72,0)
-    DogToggleButton.Image = "rbxassetid://132064980"
     DogToggleButton.Parent = PetTypeContainer
 
     local CatToggleButton = Instance.new("ImageButton")
@@ -229,25 +228,48 @@ function InventoryWindow:__new()
     CatToggleButton.AnchorPoint = Vector2.new(0.5,0.5)
     CatToggleButton.Size = UDim2.new(54/387,0,55/72,0)
     CatToggleButton.Position = UDim2.new(111/387,0,36/72,0)
-    CatToggleButton.Image = "rbxassetid://132064800"
     CatToggleButton.Parent = PetTypeContainer
+
+    local PigToggleButton = Instance.new("ImageButton")
+    PigToggleButton.BackgroundTransparency = 1
+    PigToggleButton.AnchorPoint = Vector2.new(0.5,0.5)
+    PigToggleButton.Size = UDim2.new(54/387,0,55/72,0)
+    PigToggleButton.Position = UDim2.new(168/387,0,36/72,0)
+    PigToggleButton.Parent = PetTypeContainer
+
+    local HorseToggleButton = Instance.new("ImageButton")
+    HorseToggleButton.BackgroundTransparency = 1
+    HorseToggleButton.AnchorPoint = Vector2.new(0.5,0.5)
+    HorseToggleButton.Size = UDim2.new(54/387,0,55/72,0)
+    HorseToggleButton.Position = UDim2.new(225/387,0,36/72,0)
+    HorseToggleButton.Parent = PetTypeContainer
 
     local PandaToggleButton = Instance.new("ImageButton")
     PandaToggleButton.BackgroundTransparency = 1
     PandaToggleButton.AnchorPoint = Vector2.new(0.5,0.5)
     PandaToggleButton.Size = UDim2.new(54/387,0,55/72,0)
     PandaToggleButton.Position = UDim2.new(279/387,0,36/72,0)
-    PandaToggleButton.Image = "rbxassetid://132065130"
     PandaToggleButton.Parent = PetTypeContainer
+
+    local DragonToggleButton = Instance.new("ImageButton")
+    DragonToggleButton.BackgroundTransparency = 1
+    DragonToggleButton.AnchorPoint = Vector2.new(0.5,0.5)
+    DragonToggleButton.Size = UDim2.new(54/387,0,55/72,0)
+    DragonToggleButton.Position = UDim2.new(336/387,0,36/72,0)
+    DragonToggleButton.Parent = PetTypeContainer
 
     self.PetToggleButtons = {
         Dog = {DogToggleButton,"rbxassetid://132064980","rbxassetid://132064940","rbxassetid://132064966"},
         Cat = {CatToggleButton,"rbxassetid://132064800","rbxassetid://132064800","rbxassetid://132064768"},
+        Pig = {PigToggleButton,"rbxassetid://132065232","rbxassetid://132065183","rbxassetid://132065208"}, --TODO: Add to preload
+        Horse = {HorseToggleButton,"rbxassetid://132065751","rbxassetid://132065680","rbxassetid://132065721"}, --TODO: Add to preload
         Panda = {PandaToggleButton,"rbxassetid://132065130","rbxassetid://132065075","rbxassetid://132065098"},
+        Dragon = {DragonToggleButton,"rbxassetid://132065051","rbxassetid://132064995","rbxassetid://132065018"}, --TODO: Add to preload
     }
 
     local DB = true
     for PetName,ButtonData in pairs(self.PetToggleButtons) do
+        ButtonData[1].Image = ButtonData[2]
         ButtonData[1].MouseEnter:Connect(function()
             if self.PlayerData:GetValue("CurrentPet") ~= PetName then
                 ButtonData[1].Image = ButtonData[3]
