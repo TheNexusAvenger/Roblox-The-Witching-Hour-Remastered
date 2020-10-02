@@ -121,7 +121,9 @@ function PetService:UpdatePet(Player)
 		if Part:IsA("BasePart") then
 			local Mesh = Part:FindFirstChildWhichIsA("FileMesh")
 			if Mesh then
-				Mesh.TextureId = "rbxassetid://"..tostring(PetTextureId)
+                Mesh.TextureId = "rbxassetid://"..tostring(PetTextureId)
+            elseif Part:IsA("MeshPart") then
+                Part.TextureID = "rbxassetid://"..tostring(PetTextureId)
 			end
 		end
 	end

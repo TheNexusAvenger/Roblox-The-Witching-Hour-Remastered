@@ -156,6 +156,8 @@ function PetDisplay:SetItem(Slot,Item,ForceUpdate)
 			local Mesh = Part:FindFirstChildWhichIsA("FileMesh")
 			if Mesh then
 				Mesh.TextureId = "rbxassetid://"..tostring(PetTextureId)
+			elseif Part:IsA("MeshPart") then
+				Part.TextureID = "rbxassetid://"..tostring(PetTextureId)
 			end
 		end
 	end
