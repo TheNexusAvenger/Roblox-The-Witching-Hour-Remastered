@@ -694,7 +694,7 @@ return {
 		RequiredItems = {
 			DisplayName = "Zombie Antidotes",
 			{
-				Name = "Zombie Antidote",
+				Name = "Zombie Antidotes",
 				Amount = 9
 			},
 		},

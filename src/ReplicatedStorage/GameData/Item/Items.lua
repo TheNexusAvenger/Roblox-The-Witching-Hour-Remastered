@@ -1266,8 +1266,8 @@ return {
         Quest = "Creeper Crunchies",
         Zone = "Desert",
     },
-    ["Zombie Antidotes"] = {
-        DisplayName = "Zombie Antidotes",
+    ["Zombie Antidotes"] = { --This was inconsistent with the quest, causing the quest to be only able to award 1. The name is this to prevent phantom items.
+        DisplayName = "Zombie Antidote",
         ItemType = "InventoryItem",
         TextureId = 133470976,
         Quest = "Zombie Antidote",
