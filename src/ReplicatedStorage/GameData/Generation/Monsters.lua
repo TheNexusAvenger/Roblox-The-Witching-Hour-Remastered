@@ -123,4 +123,18 @@ return {
             Type = "Humanoid",
         },
     },
+    Death = {
+        {
+            Name = "Ghost Spider",
+            Type = "Spider",
+        },
+        {
+            Name = "Ghost Wolf",
+            Type = "Wolf",
+        },
+        {
+            Name = "Ghost",
+            Type = "Humanoid",
+        },
+    },
 }

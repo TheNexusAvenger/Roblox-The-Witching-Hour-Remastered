@@ -273,7 +273,6 @@ function Map:EnableWarping()
                         Scale:Destroy()
 
                         --Teleport the player.
-                        print(CurrentDungeon)
                         if not CurrentDungeon then
                             HumanoidRootPart.CFrame = CFrame.new(LocationData[1] * 100,3,LocationData[2] * 100) * CFrame.Angles(0,(-math.pi/2) + LocationData[3],0) * CFrame.new(math.random(-10,10),0,math.random(-10,10))
                         end

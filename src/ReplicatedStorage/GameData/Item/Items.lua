@@ -650,37 +650,37 @@ return {
         DisplayName = "PT-ST4 Mobile Armor Unit Helmet",
         ItemType = "PlayerHat",
         RobloxId = 111795617,
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["PTST4MobileArmorUnitTorso"] = {
         DisplayName = "PT-ST4 Mobile Armor Unit Torso",
         ItemType = "PlayerTorso",
         RobloxId = 111819737,
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["PTST4MobileArmorUnitLeftArm"] = {
         DisplayName = "PT-ST4 Mobile Armor Unit Left Arm",
         ItemType = "PlayerLeftArm",
         RobloxId = 111818613,
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["PTST4MobileArmorUnitRightArm"] = {
         DisplayName = "PT-ST4 Mobile Armor Unit Right Arm",
         ItemType = "PlayerRightArm",
         RobloxId = 111818636,
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["PTST4MobileArmorUnitLeftLeg"] = {
         DisplayName = "PT-ST4 Mobile Armor Unit Left Leg",
         ItemType = "PlayerLeftLeg",
         RobloxId = 111818670,
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["PTST4MobileArmorUnitRightLeg"] = {
         DisplayName = "PT-ST4 Mobile Armor Unit Right Leg",
         ItemType = "PlayerRightLeg",
         RobloxId = 111818707,
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
 
     
@@ -1113,7 +1113,7 @@ return {
         MeshId = 132566464,
         TextureId = 0,
         Size = Vector3.new(1.4,1.4,1.4),
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["PetGrimReaperCostumeCollar"] = {
         DisplayName = "Grim Reaper Costume Collar",
@@ -1122,7 +1122,7 @@ return {
         MeshId = 132567849,
         TextureId = 0,
         Size = Vector3.new(1,1,1),
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["PetGrimReaperCostumeCape"] = {
         DisplayName = "Grim Reaper Costume Cape",
@@ -1131,7 +1131,7 @@ return {
         MeshId = 132566900,
         TextureId = 0,
         Size = Vector3.new(1.5,1.5,1.5),
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["PetGrimReaperCostumeAnklet"] = {
         DisplayName = "Grim Reaper Costume Hat",
@@ -1140,7 +1140,7 @@ return {
         MeshId = 132762876,
         TextureId = 0,
         Size = Vector3.new(0.3,0.3,0.3),
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
 
 
@@ -1334,14 +1334,14 @@ return {
         ItemType = "InventoryItem",
         TextureId = 134024628,
         Quest = "Lens Flare",
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["Souls"] = {
         DisplayName = "Souls",
         ItemType = "InventoryItem",
         TextureId = 134024643,
         Quest = "Clear Thy Soul",
-        Zone = "GrimReaper",
+        Zone = "Death",
     },
     ["Quest Chest"] = {
         DisplayName = "Quest Chest",
