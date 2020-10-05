@@ -66,7 +66,7 @@ function SwordAttack.PerformServerAttack(Player,DungeonModel,Target)
 
             --Connect damaging the sword.
             local MonsterDBs = {}
-            local RandomAnimation = SwordAnimations[math.ceil((Target.X + Target.Z) % #SwordAnimations)]
+            local RandomAnimation = SwordAnimations[math.max(math.ceil((Target.X + Target.Z) % #SwordAnimations))]
             local TouchEvent = Sword.Touched:Connect(function(TouchPart)
                 local MonsterCharacter = TouchPart.Parent
                 if MonsterCharacter and MonsterCharacter:IsDescendantOf(DungeonModel) and not MonsterDBs[MonsterCharacter] then
