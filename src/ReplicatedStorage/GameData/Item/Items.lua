@@ -509,31 +509,31 @@ return {
         DisplayName = "Uncle Sam Torso",
         ItemType = "PlayerTorso",
         RobloxId = 55266026,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["UncleSamLeftArm"] = {
         DisplayName = "Uncle Sam Left Arm",
         ItemType = "PlayerLeftArm",
         RobloxId = 55266118,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["UncleSamRightArm"] = {
         DisplayName = "Uncle Sam Right Arm",
         ItemType = "PlayerRightArm",
         RobloxId = 55266080,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["UncleSamLeftLeg"] = {
         DisplayName = "Uncle Sam Left Leg",
         ItemType = "PlayerLeftLeg",
         RobloxId = 55266151,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["UncleSamRightLeg"] = {
         DisplayName = "Uncle Sam Right Leg",
         ItemType = "PlayerRightLeg",
         RobloxId = 55266173,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
 
     --Darkest Assassin (Fusroblox?)
@@ -541,37 +541,37 @@ return {
         DisplayName = "Darkest Assassin Hood",
         ItemType = "PlayerHat",
         RobloxId = 81724957,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["DarkestAssassinTorso"] = {
         DisplayName = "Darkest Assassin Torso",
         ItemType = "PlayerTorso",
         RobloxId = 81727651,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["DarkestAssassinLeftArm"] = {
         DisplayName = "Darkest Assassin Left Arm",
         ItemType = "PlayerLeftArm",
         RobloxId = 81727774,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["DarkestAssassinRightArm"] = {
         DisplayName = "Darkest Assassin Right Arm",
         ItemType = "PlayerRightArm",
         RobloxId = 81727718,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["DarkestAssassinLeftLeg"] = {
         DisplayName = "Darkest Assassin Left Leg",
         ItemType = "PlayerLeftLeg",
         RobloxId = 81727815,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["DarkestAssassinRightLeg"] = {
         DisplayName = "Darkest Assassin Right Leg",
         ItemType = "PlayerRightLeg",
         RobloxId = 81727872,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
 
     --Empyrean Armor (StickMasterLuke)
@@ -924,6 +924,7 @@ return {
         MeshId = 132566464,
         TextureId = 133463239,
         Size = Vector3.new(1.4,1.4,1.4),
+        Zone = "Frankenstein",
     },
     ["PetFrankensteinCostumeCollar"] = {
         DisplayName = "Frankenstein Costume Collar",
@@ -932,6 +933,7 @@ return {
         MeshId = 132567849,
         TextureId = 133463239,
         Size = Vector3.new(1,1,1),
+        Zone = "Frankenstein",
     },
     ["PetFrankensteinCostumeCape"] = {
         DisplayName = "Frankenstein Costume Cape",
@@ -940,6 +942,7 @@ return {
         MeshId = 132566900,
         TextureId = 133463239,
         Size = Vector3.new(1.5,1.5,1.5),
+        Zone = "Frankenstein",
     },
     ["PetFrankensteinCostumeAnklet"] = {
         DisplayName = "Frankenstein Costume Anklet",
@@ -948,6 +951,7 @@ return {
         MeshId = 132762876,
         TextureId = 133463239,
         Size = Vector3.new(0.3,0.3,0.3),
+        Zone = "Frankenstein",
     },
 
     --Mummy costume.
@@ -1292,14 +1296,14 @@ return {
         ItemType = "InventoryItem",
         TextureId = 133551795,
         Quest = "Lost His Marbles",
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["Nuts and Bolts"] = {
         DisplayName = "Nuts and Bolts",
         ItemType = "InventoryItem",
         TextureId = 133551771,
         Quest = "Clank Clank",
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["Matches"] = {
         DisplayName = "Matches",

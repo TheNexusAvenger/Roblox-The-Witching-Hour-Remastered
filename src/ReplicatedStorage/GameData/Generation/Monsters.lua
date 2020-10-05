@@ -123,6 +123,20 @@ return {
             Type = "Humanoid",
         },
     },
+    Frankenstein = {
+        {
+            Name = "Ghost Spider",
+            Type = "Spider",
+        },
+        {
+            Name = "Blood Fang",
+            Type = "Wolf",
+        },
+        {
+            Name = "Ghost",
+            Type = "Humanoid",
+        },
+    },
     Death = {
         {
             Name = "Ghost Spider",

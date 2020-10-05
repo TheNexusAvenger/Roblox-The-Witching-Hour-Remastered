@@ -178,13 +178,13 @@ return {
         CellY = 195,
         OffsetCFrame = CFrame.new(20,34,-20),
         IdleAnimationId = 507766388,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
     ["Totbl"] = {
         CellX = 99,
         CellY = 195,
         OffsetCFrame = CFrame.new(20,0,-57),
         IdleAnimationId = 507766388,
-        Zone = "Ghost",
+        Zone = "Frankenstein",
     },
 }
