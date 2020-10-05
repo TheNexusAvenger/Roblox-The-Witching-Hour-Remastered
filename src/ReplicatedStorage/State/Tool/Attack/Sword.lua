@@ -45,7 +45,7 @@ function SwordAttack.PerformClientAttack(Target)
     if Character then
         local Humanoid = Character:FindFirstChild("Humanoid")
         if Humanoid and Humanoid.Health > 0 then
-            local RandomAnimation = SwordAnimations[math.ceil((Target.X + Target.Z) % #SwordAnimations)]
+            local RandomAnimation = SwordAnimations[math.max(1,math.ceil((Target.X + Target.Z) % #SwordAnimations))]
             local Animation = Instance.new("Animation")
             Animation.AnimationId = RandomAnimation.AnimationId
             local AnimationTrack = Humanoid:LoadAnimation(Animation)
