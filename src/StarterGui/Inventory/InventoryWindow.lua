@@ -571,6 +571,14 @@ function InventoryWindow:SetUpDraggning()
             return
         end
 
+        --Clear the existing drag frame if one exists.
+        --May be caused be opening the menu while dragging.
+        if CurrentDraggingFrame then
+            CurrentDraggingFrame:Destroy()
+            CurrentDraggingFrame = nil
+            CurrentIcon:Destroy()
+        end
+
         --Determine the slot to start from.
         local Slot,StartSlotFrame
         for SlotName,SlotFrame in pairs(self.SpecialInventorySlots) do
