@@ -124,7 +124,7 @@ return {
     {
         TransactionName = "Pig",
         Name = "Pig",
-        IconId = "https://www.roblox.com/asset-thumbnail/image?assetId=4501800116&width=420&height=420&format=png",
+        IconId = "rbxassetid://134112460",
         Category = "Companions",
         Type = "Pet",
         CostCandy = 250,
@@ -132,7 +132,7 @@ return {
     {
         TransactionName = "Horse",
         Name = "Horse",
-        IconId = "https://www.roblox.com/asset-thumbnail/image?assetId=4501806885&width=420&height=420&format=png",
+        IconId = "rbxassetid://134112486",
         Category = "Companions",
         Type = "Pet",
         CostCandy = 400,
@@ -148,7 +148,7 @@ return {
     {
         TransactionName = "Dragon",
         Name = "Dragon",
-        IconId = "https://www.roblox.com/asset-thumbnail/image?assetId=4501822721&width=420&height=420&format=png",
+        IconId = "rbxassetid://134112496",
         Category = "Companions",
         Type = "Pet",
         CostCandy = 700,
