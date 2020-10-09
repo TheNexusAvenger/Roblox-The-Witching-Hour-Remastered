@@ -604,7 +604,7 @@ return {
 			DisplayName = "Squeeky Scarabs",
 			{
 				Name = "Squeeky Scarab",
-				Amount = 13
+				Amount = 10
 			},
 		},
 		Rewards = {
