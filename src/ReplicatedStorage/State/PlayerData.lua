@@ -77,7 +77,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
-local NexusEventCreator = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEvent")
 
 local PlayerData = NexusObject:Extend()
 PlayerData.PlayerDataLayout = PLAYER_DATA_LAYOUT
@@ -97,7 +97,7 @@ function PlayerData:__new(Folder)
     self.PlayerDataFolder = Folder
     self.PlayerData = {}
     self.ValueChangedEvents = {}
-    self.ValueChanged = NexusEventCreator.CreateEvent()
+    self.ValueChanged = NexusEvent.new()
 
     --Connect the value objects.
     for _,ValueObject in pairs(Folder:GetChildren()) do
@@ -223,7 +223,7 @@ Returns the change event for a specific value.
 function PlayerData:GetValueChangedSignal(ValueName)
     --Create the event if it doesn't exist.
     if not self.ValueChangedEvents[ValueName] then
-        self.ValueChangedEvents[ValueName] = NexusEventCreator.CreateEvent()
+        self.ValueChangedEvents[ValueName] = NexusEvent.new()
     end
 
     --Return the event.

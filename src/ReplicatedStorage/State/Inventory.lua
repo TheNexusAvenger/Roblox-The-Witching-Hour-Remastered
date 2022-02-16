@@ -9,7 +9,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
-local NexusEventCreator = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEvent")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
 local PlayerData = ReplicatedStorageProject:GetResource("State.PlayerData")
 
@@ -28,7 +28,7 @@ function Inventory:__new(Player)
 
     --Store the state.
     self.PlayerData = PlayerData.GetPlayerData(Player)
-    self.InventoryChanged = NexusEventCreator.CreateEvent()
+    self.InventoryChanged = NexusEvent.new()
     self.Inventory = self.PlayerData:GetValue("Inventory")
     self.CachedSlotResults = {}
 

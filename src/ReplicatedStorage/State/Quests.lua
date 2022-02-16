@@ -20,7 +20,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ReplicatedStorageProject = require(ReplicatedStorage:WaitForChild("Project"):WaitForChild("ReplicatedStorage"))
 
 local NexusObject = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.NexusObject")
-local NexusEventCreator = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEventCreator")
+local NexusEvent = ReplicatedStorageProject:GetResource("ExternalUtil.NexusInstance.Event.NexusEvent")
 local ItemData = ReplicatedStorageProject:GetResource("GameData.Item.Items")
 local Dialogs = ReplicatedStorageProject:GetResource("GameData.Quest.Dialogs")
 local QuestsData = ReplicatedStorageProject:GetResource("GameData.Quest.Quests")
@@ -42,7 +42,7 @@ function Quests:__new(Player)
     --Store the state.
     self.PlayerData = PlayerData.GetPlayerData(Player)
     self.Inventory = Inventory.GetInventory(Player)
-    self.QuestsChanged = NexusEventCreator.CreateEvent()
+    self.QuestsChanged = NexusEvent.new()
     self.QuestData = self.PlayerData:GetValue("Quests")
     self:FixQuestData()
 
