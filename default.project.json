@@ -12,8 +12,8 @@
                 "$className": "Part",
                 "$properties": {
                     "Transparency": 1,
-                    "CFrame": [17800,0,1300,1,0,0,0,1,0,0,0,1],
-                    "Size": [100,1,100],
+                    "CFrame": [17800, 0, 1300, 1, 0, 0, 0, 1, 0, 0, 0, 1],
+                    "Size": [100, 1, 100],
                     "Anchored": true
                 }
             }
@@ -22,10 +22,7 @@
             "$className": "Lighting",
             "$properties": {
                 "Brightness": 0,
-                "Technology": {
-                    "Type": "Enum",
-                    "Value": 4
-                },
+                "Technology": "Future",
                 "ClockTime": 0
             },
             "$path": "./src/Lighting"
@@ -42,19 +39,13 @@
             "ExternalUtil": {
                 "$className": "Folder",
                 "NexusInstance": {
-                    "$path": "./module/Nexus-Instance/src"
+                    "$path": "./module/Nexus-Instance/"
                 },
                 "NexusProject": {
-                    "$path": "./module/Nexus-Project/src",
-                    "NexusInstance": {
-                        "$path": "./module/Nexus-Project/module/Nexus-Instance/src"
-                    }
+                    "$path": "./module/Nexus-Project/"
                 },
                 "NexusDataStore": {
-                    "$path": "./module/Nexus-Data-Store/src",
-                    "NexusInstance": {
-                        "$path": "./module/Nexus-Project/module/Nexus-Instance/src"
-                    }
+                    "$path": "./module/Nexus-Data-Store/"
                 }
             }
         },
@@ -78,10 +69,7 @@
             "$className": "StarterGui",
             "$path": "./src/StarterGui", 
             "$properties": {
-                "ResetPlayerGuiOnSpawn": {
-                    "Type": "Bool",
-                    "Value": false
-                }
+                "ResetPlayerGuiOnSpawn": false
             }
         },
         "StarterPack": {
