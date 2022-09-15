@@ -112,6 +112,9 @@ return {
         AllowMultiple = true,
         RequiresInventorySpace = true,
         CostCandy = 80,
+        CanPurchase = function(Player)
+            return Player:WaitForChild("CanPurchaseKey").Value
+        end,
     },
     {
         TransactionName = "Cat",

@@ -27,6 +27,7 @@ InventoryService:SetClassName("InventoryService")
 InventoryService.PlayerInventories = {}
 ServerScriptServiceProject:SetContextResource(InventoryService)
 
+local ComplianceService = ServerScriptServiceProject:GetResource("Service.ComplianceService")
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 local PetService = ServerScriptServiceProject:GetResource("Service.PetService")
 local QuestService = ServerScriptServiceProject:GetResource("Service.QuestService")
@@ -76,7 +77,22 @@ end)
 Initializes the inventory for a player.
 --]]
 function InventoryService:LoadPlayer(Player)
-    self.PlayerInventories[Player] = Inventory.GetInventory(Player)
+    local PlayerInventory = Inventory.GetInventory(Player)
+    self.PlayerInventories[Player] = PlayerInventory
+
+    --Unlock all locked chests if the region does not allow for random items.
+    if not ComplianceService:CanUseRandomPaidItems(Player) then
+        local SlotsToUnlock = {}
+        for Slot, Item in PlayerInventory.Inventory do
+            if Item.Name == "TreasureChest" then
+                SlotsToUnlock[Slot] = Item.Zone
+            end
+        end
+        for Slot, Zone in SlotsToUnlock do
+            PlayerInventory:RemoveSlot(Slot)
+            self:AwardRandomItem(Player, Zone)
+        end
+    end
 end
 
 --[[

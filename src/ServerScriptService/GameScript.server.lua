@@ -37,6 +37,7 @@ NPCService:LoadNPCModels()
 
 --Get the services.
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
+local ComplianceService = ServerScriptServiceProject:GetResource("Service.ComplianceService")
 local PlayerDataService = ServerScriptServiceProject:GetResource("Service.PlayerDataService")
 local QuestService = ServerScriptServiceProject:GetResource("Service.QuestService")
 local MapDiscoveryService = ServerScriptServiceProject:GetResource("Service.MapDiscoveryService")
@@ -49,6 +50,7 @@ Handles a player being added.
 --]]
 local function PlayerAdded(Player)
     PlayerDataService:LoadPlayer(Player)
+    ComplianceService:LoadPlayer(Player)
     QuestService:LoadPlayer(Player)
     InventoryService:LoadPlayer(Player)
     CharacterService:SpawnCharacter(Player)
@@ -63,6 +65,7 @@ local function PlayerRemoved(Player)
     MapDiscoveryService:ClearPlayer(Player)
     QuestService:ClearPlayer(Player)
     InventoryService:ClearPlayer(Player)
+    ComplianceService:ClearPlayer(Player)
     PlayerDataService:ClearPlayer(Player)
 end
 

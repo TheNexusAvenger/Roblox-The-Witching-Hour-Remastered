@@ -69,6 +69,7 @@ local Dungeon = ServerStorageProject:GetResource("Dungeon")
 local BloxhildaDungeon = ServerStorageProject:GetResource("BloxhildaDungeon")
 local Monsters = ServerStorageProject:GetResource("Monsters")
 local Bloxhilda = ServerStorageProject:GetResource("Bloxhilda")
+local ComplianceService = ServerScriptServiceProject:GetResource("Service.ComplianceService")
 local EnergyService = ServerScriptServiceProject:GetResource("Service.EnergyService")
 local InventoryService = ServerScriptServiceProject:GetResource("Service.InventoryService")
 local CharacterService = ServerScriptServiceProject:GetResource("Service.CharacterService")
@@ -381,7 +382,7 @@ function DungeonService:RunDungeon(X,Y,DungeonPlayers,OverrideType)
             if not InventoryService:GetInventory(Player):GetNextOpenSlot() then
                 DisplayMessage:FireClient(Player,"You have no more space in your inventory. Please free some space by buying more pages or deleting some items from it.")
             else
-                if math.random() <= REWARD_TREASURE_CHEST_CHANGE then
+                if math.random() <= REWARD_TREASURE_CHEST_CHANGE and ComplianceService:CanUseRandomPaidItems(Player) then
                     InventoryService:AddItem(Player,{Name="TreasureChest",Zone=Zone})
                     DisplayReward:FireClient(Player,"TreasureChest")
                 else
